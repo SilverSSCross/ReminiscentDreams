@@ -57,13 +57,13 @@ define gui.interface_text_color = '#ffffff'
 ## Tipos y tamaños de letra ####################################################
 
 ## El tipo de letra del texto del juego
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "ari-w9500-bold.ttf"
 
 ## El tipo de letra de los nombres de personajes
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "ari-w9500-bold.ttf"
 
 ## El tipo de letra del texto externo al juego.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "ari-w9500-bold.ttf"
 
 ## El tamaño normal del texto del diálogo.
 define gui.text_size = 33
@@ -160,7 +160,7 @@ define gui.button_borders = Borders(6, 6, 6, 6)
 define gui.button_tile = False
 
 ## Tipo de letra del botón.
-define gui.button_text_font = gui.interface_text_font
+define gui.button_text_font = "ari-w9500-bold.ttf"
 
 ## Tamaño de letra del botón.
 define gui.button_text_size = gui.interface_text_size
@@ -209,7 +209,7 @@ define gui.choice_button_width = 1185
 define gui.choice_button_height = None
 define gui.choice_button_tile = False
 define gui.choice_button_borders = Borders(150, 8, 150, 8)
-define gui.choice_button_text_font = gui.text_font
+define gui.choice_button_text_font = "ari-w9500-bold.ttf"
 define gui.choice_button_text_size = gui.text_size
 define gui.choice_button_text_xalign = 0.5
 define gui.choice_button_text_idle_color = '#888888'
