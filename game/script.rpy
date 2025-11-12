@@ -21,6 +21,7 @@ label start:
 
     show eileen happy
 
+
     # Presenta las líneas del diálogo.
 
     e "Has creado un nuevo juego Ren'Py."
