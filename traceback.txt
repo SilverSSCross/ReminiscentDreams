@@ -1,8 +1,8 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 26, in script
-    e "Has creado un nuevo juego Ren'Py."
+While processing text tag {color=##5F24B5} in "While processing text tag {color=##5F24B5} in 'No puedo abandonar a un pájaro que se niega a salir de su {color=##5F24B5}jaula de espinas{/color}.'.:".:
+  File "game/script.rpy", line 109, in script
+    th "No puedo abandonar a un pájaro que se niega a salir de su {color=##5F24B5}jaula de espinas{/color}."
   File "renpy/display/render.pyx", line 487, in renpy.display.render.render_screen
   File "renpy/display/render.pyx", line 260, in renpy.display.render.render
   File "renpy/display/render.pyx", line 170, in renpy.display.render.render
@@ -19,15 +19,15 @@ While running game code:
   File "renpy/display/render.pyx", line 260, in renpy.display.render.render
   File "renpy/display/render.pyx", line 170, in renpy.display.render.render
   File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-Exception: Could not find font 'ari-w9500-bold.ttf'.
+Exception: Color string '#5F24B5' must be 3, 4, 6, or 8 hex digits long.
 
 During handling of the above exception, another exception occurred:
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 26, in script
-    e "Has creado un nuevo juego Ren'Py."
-  File "game/script.rpy", line 26, in script
-    e "Has creado un nuevo juego Ren'Py."
+  File "game/script.rpy", line 109, in script
+    th "No puedo abandonar a un pájaro que se niega a salir de su {color=##5F24B5}jaula de espinas{/color}."
+  File "game/script.rpy", line 109, in script
+    th "No puedo abandonar a un pájaro que se niega a salir de su {color=##5F24B5}jaula de espinas{/color}."
   File "renpy/display/render.pyx", line 487, in renpy.display.render.render_screen
   File "renpy/display/render.pyx", line 260, in renpy.display.render.render
   File "renpy/display/render.pyx", line 170, in renpy.display.render.render
@@ -42,38 +42,42 @@ Traceback (most recent call last):
   File "renpy/display/render.pyx", line 260, in renpy.display.render.render
   File "renpy/display/render.pyx", line 170, in renpy.display.render.render
   File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-Exception: Could not find font 'ari-w9500-bold.ttf'.
+  File "renpy/display/render.pyx", line 313, in renpy.display.render.render_for_size
+  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
+  File "renpy/display/render.pyx", line 313, in renpy.display.render.render_for_size
+  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
+  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
+  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
+  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
+  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
+Exception: Color string '#5F24B5' must be 3, 4, 6, or 8 hex digits long.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 26, in script
-    e "Has creado un nuevo juego Ren'Py."
+  File "game/script.rpy", line 109, in script
+    th "No puedo abandonar a un pájaro que se niega a salir de su {color=##5F24B5}jaula de espinas{/color}."
   File "renpy/ast.py", line 2915, in execute
     Say.execute(self)
     ~~~~~~~~~~~^^^^^^
-  File "renpy/ast.py", line 965, in execute
-    statement_name(stmt_name)
-    ~~~~~~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 547, in statement_name
-    i(name)
-    ~^^^^^^
-  File "renpy/common/000window.rpy", line 132, in _window_auto_callback
-    _window_show(auto=True)
-    ~~~~~~~~~~~~^^^^^^^^^^^
-  File "renpy/common/000window.rpy", line 75, in _window_show
-    renpy.with_statement(trans)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^
-  File "renpy/exports/statementexports.py", line 260, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/core.py", line 1579, in do_with
-    return self.interact(
-           ~~~~~~~~~~~~~^
-        trans_pause=True, suppress_overlay=not renpy.config.overlay_during_with, mouse="with", clear=clear
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
+  File "renpy/ast.py", line 991, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/sayexports.py", line 129, in say
+    who(what, *args, **kwargs)
+    ~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1543, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+    ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 1198, in do_display
+    display_say(who, what, self.do_show, **display_args)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/character.py", line 888, in display_say
+    rv = renpy.ui.interact(mouse="say", type=type, roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 304, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/display/core.py", line 2219, in interact
     repeat, rv = self.interact_core(
                  ~~~~~~~~~~~~~~~~~~^
@@ -105,11 +109,6 @@ Traceback (most recent call last):
            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/display/render.pyx", line 170, in renpy.display.render.render
   File "renpy/display/render.pyx", line 260, in renpy.display.render.render
-  File "renpy/display/transition.py", line 375, in render
-    top = render(self.new_widget, width, height, st, at)
-          ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
-  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
   File "renpy/display/layout.py", line 899, in render
     surf = render(child, width, height, cst, cat)
            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -135,31 +134,23 @@ Traceback (most recent call last):
            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/display/render.pyx", line 170, in renpy.display.render.render
   File "renpy/display/render.pyx", line 260, in renpy.display.render.render
+  File "renpy/display/layout.py", line 899, in render
+    surf = render(child, width, height, cst, cat)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
+  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
   File "renpy/text/text.py", line 2730, in render
     virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
                      ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/text/text.py", line 820, in __init__
-    seg_glyphs, rtl = self.glyphs_paragraph(p, order)
-                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "renpy/text/text.py", line 1673, in glyphs_paragraph
-    rv.append((ts, ts.glyphs(s[offset:], self, l)))
-                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^  
-  File "renpy/text/text.py", line 357, in glyphs
-    fo = font.get_font(
-         ~~~~~~~~~~~~~^
-        self.font,
-        ^^^^^^^^^^
-    ...<11 lines>...
-        self.features,
-        ^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/text/font.py", line 750, in get_font
-    face = load_face(fn, shaper)
-           ~~~~~~~~~^^^^^^^^^^^^
-  File "renpy/text/font.py", line 668, in load_face
-    raise Exception("Could not find font {0!r}.".format(orig_fn))
-Exception: Could not find font 'ari-w9500-bold.ttf'.
+  File "renpy/text/text.py", line 799, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/text/text.py", line 1480, in segment
+    push().color = renpy.easy.color(value)
+                   ~~~~~~~~~~~~~~~~^^^^^^^
+  File "renpy/color.py", line 162, in __new__
+    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
+Exception: Color string '#5F24B5' must be 3, 4, 6, or 8 hex digits long.
 
 During handling of the above exception, another exception occurred:
 
@@ -176,10 +167,10 @@ Traceback (most recent call last):
   File "renpy/execution.py", line 1022, in run_context
     context.run()
     ~~~~~~~~~~~^^
-  File "game/script.rpy", line 26, in script
-    e "Has creado un nuevo juego Ren'Py."
-  File "game/script.rpy", line 26, in script
-    e "Has creado un nuevo juego Ren'Py."
+  File "game/script.rpy", line 109, in script
+    th "No puedo abandonar a un pájaro que se niega a salir de su {color=##5F24B5}jaula de espinas{/color}."
+  File "game/script.rpy", line 109, in script
+    th "No puedo abandonar a un pájaro que se niega a salir de su {color=##5F24B5}jaula de espinas{/color}."
   File "renpy/display/error.py", line 135, in report_exception
     renpy.game.invoke_in_new_context(
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
@@ -255,33 +246,46 @@ Traceback (most recent call last):
            ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
   File "renpy/display/render.pyx", line 170, in renpy.display.render.render
   File "renpy/display/render.pyx", line 260, in renpy.display.render.render
+  File "renpy/display/layout.py", line 1953, in render
+    cwidth, cheight = sizeit("c", width, height, 0, 0)
+                      ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1950, in sizeit
+    rend = renpy.display.render.render_for_size(pos_d[pos], width, height, st, at)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/render.pyx", line 313, in renpy.display.render.render_for_size
+  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
+  File "renpy/display/layout.py", line 1953, in render
+    cwidth, cheight = sizeit("c", width, height, 0, 0)
+                      ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1950, in sizeit
+    rend = renpy.display.render.render_for_size(pos_d[pos], width, height, st, at)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/render.pyx", line 313, in renpy.display.render.render_for_size
+  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
+  File "renpy/display/viewport.py", line 283, in render
+    surf = renpy.display.render.render(self.child, child_width, child_height, st, at)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
+  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
+  File "renpy/display/layout.py", line 1162, in render
+    surf = render(d, width - x, rh, cst, cat)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/render.pyx", line 170, in renpy.display.render.render
+  File "renpy/display/render.pyx", line 260, in renpy.display.render.render
   File "renpy/text/text.py", line 2730, in render
     virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
                      ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/text/text.py", line 820, in __init__
-    seg_glyphs, rtl = self.glyphs_paragraph(p, order)
-                      ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^
-  File "renpy/text/text.py", line 1673, in glyphs_paragraph
-    rv.append((ts, ts.glyphs(s[offset:], self, l)))
-                   ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^  
-  File "renpy/text/text.py", line 357, in glyphs
-    fo = font.get_font(
-         ~~~~~~~~~~~~~^
-        self.font,
-        ^^^^^^^^^^
-    ...<11 lines>...
-        self.features,
-        ^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/text/font.py", line 750, in get_font
-    face = load_face(fn, shaper)
-           ~~~~~~~~~^^^^^^^^^^^^
-  File "renpy/text/font.py", line 668, in load_face
-    raise Exception("Could not find font {0!r}.".format(orig_fn))
-Exception: Could not find font 'ari-w9500-bold.ttf'.
+  File "renpy/text/text.py", line 799, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+                      ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/text/text.py", line 1480, in segment
+    push().color = renpy.easy.color(value)
+                   ~~~~~~~~~~~~~~~~^^^^^^^
+  File "renpy/color.py", line 162, in __new__
+    raise Exception("Color string {!r} must be 3, 4, 6, or 8 hex digits long.".format(c))
+Exception: Color string '#5F24B5' must be 3, 4, 6, or 8 hex digits long.
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.4.1.25072401
 SilencioGilM 1.0
-Tue Nov 11 21:18:49 2025
+Fri Nov 14 22:34:47 2025
