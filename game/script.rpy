@@ -29,25 +29,25 @@ label start:
     #e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
 
 
-    "Según la Teoría de las huellas Múltiples, cada vez que recuperamos un recuerdo, el registro de este mismo constituye otra memoria en sí."
+    "According to the Multiple Trace Theory, every time we retrieve a memory, the record of that memory constitutes another memory in itself."
 
-    "La memoria como tal está estrechamente relacionada con las emociones de un individuo siendo que cuanto mayor impacto emocional mayor es la capacidad del recuerdo mismo."
+    "Memory is closely related to an individual's emotions, since the greater the emotional impact, the greater the capacity for recall itself."
 
-    "Los recuerdos que más perduran en nuestro ser son aquellos que tienen que ver con emociones de mayores magnitudes, tales como la felicidad, la tristeza o el miedo."
+    "The memories that linger longest in our minds are those associated with powerful emotions, such as happiness, sadness or fear."
 
-    "Por otro lado, los traumas representan tanto amenazas en el bienestar de un individuo como a la consecuencia de estas sobre la estructura mental o la vida emocional de este mismo."
+    "On the other hand, traumas represent both threats to an individual's well-being and consequences for their mental structure or emotional life."
 
-    "Los traumas emocionales a causa de sucesos ocurridos en la niñez, ya sea por estrés o miedo, pueden causar que el cerebro recuerde vívidamente estas memorias o que, por el contrario, se fragmenten o repriman para ayudar a una persona a salir hacia adelante."
+    "Emotional trauma caused by events that occurred in childhood, whether due to stress or fear, can cause the brain to vividly remember these memories or, conversely, to fragment or repress them to help a person move forward."
 
-    "Los individuos que sufren de traumas tienden a buscar ayuda de diversas formas. Aunque sobra decir que cada persona tiene sus propios demonios con los que luchar y que no todos son capaces de lograr la victoria frente a estos."
+    "Individuals suffering from trauma tend to seek help in various ways. Needless to say, each person has their own demons to fight, and not everyone is capable of overcoming them."
 
-    "En los peores casos hablamos de problemas emocionales, dificultad en las relaciones y conductas autodestructivas que de no ser controladas pueden acompañar al individuo toda la vida……………"
+    "In the worst cases, we are talking about emotional problems, relationship difficulties and self-destructive behaviours which, if left unchecked, can accompany the individual throughout their life……………"
 
     image red = "gui/red.jpg"
     
     scene red
 
-    "{color=#732020}Fue tu culpa"
+    "{color=#732020}It was your fault"
 
     scene black
 
@@ -56,68 +56,70 @@ label start:
 
     show th
 
-    th "¿Hoy hace bastante frio no? Incluso para esta zona de las montañas es una temperatura baja."
+    th "It's quite cold today, isn't it? Even for this area of the mountains, it's a low temperature."
 
     mc "......"
 
-    th "¿Quieres un poco de té para beber? Es bueno para la circulación y con este frio seguro que no sienta mal."
+    th "Would you like some tea? It's good for your circulation, and with this cold weather, it certainly won't do you any harm."
 
     mc "............"
 
     th "..."
 
-    th "Has vuelto a tener pesadillas, ¿No es así?"
+    th "You've been having nightmares again, haven't you?"
 
-    mc "¿Acaso es alguna novedad?"
+    mc "Is that anything new at all?"
 
-    th "¿De qué han sido esta vez?"
+    th "What were they about this time?"
 
-    mc "De aquel {color=#FF0000}{b}Sluagh{b}{/color}"
+    mc "Of that {color=#FF0000}{b}Sluagh{b}{/color}."
 
-    th "¿Que pasaba en el sueño?"
+    th "What happened in the dream?"
 
-    mc "Solo se quedaba mirándome desde la ventana mientras la arañaba y gruñía."
+    mc "He just stood there watching me from the window while he scratched it and growled."
 
-    th "Entonces sigue siendo ese {i}sueño recurrente{/i}."
+    th "So it's still that {i}recurring dream{/i}."
 
-    th "Si mal no recuerdo, estas últimas semanas han sido más constantes"
+    th "If I remember correctly, these last few weeks have been more consistent."
 
-    mc "Si..."
+    mc "Yeah..."
 
-    th "Llevas {color=#FF0000}años{/color} viniendo a mis consultas y sin embargo no siento que hayamos avanzado {color=#5F24B5}{i}nada{/i}{/color}."
+    th "You have been coming to my consultations for {color=#FF0000}years{/color}, and yet I don't feel that we have made {color=#5F24B5}{i}any progress at all{/i}{/color}."
 
-    th "Reprimes tus memorias y revives los traumas que te atormentan, impidiendo que puedas superarlos."
+    th "You repress your memories and relive the traumas that torment you, preventing you from overcoming them."
 
     th "*Sigh*"
 
-    th "Sabes, soy cliente habitual del bar de la esquina. La camarera y yo nos caemos bien. Me cuenta cosas que le pasan por allí."
+    th "You know, I'm a regular at the bar on the corner. The barmaid and I get on well. She tells me things that happen there."
 
-    th "Cosas como que {i}Scott ha atropellado un ciervo{/i}, que {i}Lumi ha engañado a su marido con el nuevo vecino{/i}, o que {color=#FF0000}{b}TÚ{/b} le has estado dando a la bebida más de la cuenta últimamente{/color}, que ya es decir."
+    th "Things like {i}Scott running over a deer{/i}, {i}Lumi cheating on her husband with the new neighbour{/i}, or {color=#FF0000}{b}YOU{/b} drinking more than you should lately{/color}, which is saying something."
 
-    mc "Métase en sus asuntos"
+    mc "Mind your own buisness."
 
-    th "Al principio me costaba entender el por qué seguías viniendo a mis consultas pese a lo reacio que te muestras a hablar sobre tu pasado."
+    th "At first, I found it difficult to understand why you kept coming to my consultations despite your reluctance to talk about your past."
 
-    th "Ahora veo que usas la excusa de venir por terapia con tal de encontrar un pequeño momento de {color=#5CDBFF}paz{/color} en tu conciencia. Un pequeño campo {color=#5CDBFF}Eliseo{/color} dentro del {color=#5F24B5}zarzal envenenado{/color} de tu {color=#F9FF24}memoria{/color}."
-
-    mc "..."
-
-    th "En fin. Tenía que darte una noticia ahora que estas sobrio. Dentro de poco me jubilare y este viejo psicólogo tendrá que colgar la bata."
-
-    mc "¿Va a abandonarme?"
-
-    th "No puedo abandonar a un pájaro que se niega a salir de su {color=#5F24B5}jaula de espinas{/color}."
+    th "Now I see that you use the excuse of coming for therapy in order to find a little moment of {color=#5CDBFF}peace{/color} in your conscience. A small {color=#5CDBFF}Elysian field{/color} within the {color=#5F24B5}poisoned brambles{/color} of your {color=#F9FF24}memory{/color}."
 
     mc "..."
 
-    th "Te tiendo la mano una {b}última vez{/b}. Es decisión tuya si aceptarla e intentar hacer frente a aquello que lleva atormentándote desde niño"
+    th "Anyway. I had to tell you this now that you're sober. I'll be retiring soon, and this old psychologist will have to hang up his coat."
 
-    th "O, por el contrario, prefieres seguir viviendo en una jaula con olor a Kossu (licor finlandés con sabor a etanol puro) barato."
+    mc "Are you abandoning me?"
+
+    th "I cannot abandon a bird that refuses to leave its {color=#5F24B5}cage of thorns{/color}."
+
+    mc "..."
+
+    th "I am extending my hand to you one last time."
+
+    th "It is your decision whether to accept it and try to face what has been tormenting you since childhood."
+
+    th "Or, on the contrary, would you rather continue living in a cage that smells like cheap Kossu? (a Finnish liqueur that tastes like pure ethanol)"
 
     menu:
-        "Negarse a aceptar su mano":
+        "Refuse to accept the therapy":
             jump bad_ending
-        "Aceptar su mano":
+        "Accept the helping hand":
             jump new_beggining
 
 
@@ -126,7 +128,7 @@ label start:
     return
 
 label bad_ending:
-    th "Es una verdadera lástima la verdad. Eras un buen muchacho. De verdad."
+    th "It's a real shame, honestly. You were a good kid. Truly."
 
     hide th
     with dissolve
@@ -142,18 +144,18 @@ label bad_ending:
     scene news
     with dissolve
 
-    np "Joven es encontrado en el callejón del bar del pueblo sin vida."
+    np "Young man found dead in the alley behind the village bar."
 
-    np "El joven, aún sin identificar, ha sido encontrado sin vida en al lado de los contenedores de basura del bar OAKS."
+    np "The young man, who has not yet been identified, was found dead next to the rubbish bins outside the OAKS bar."
 
-    np "La policía ha declarado que el joven había sufrido un paro cardiaco causado por una sobredosis producto de numerosas sustancias entre las que se encuentran alcohol y varios estupefacientes."
+    np "The police have stated that the young man suffered a cardiac arrest caused by an overdose of numerous substances, including alcohol and various narcotics."
 
-    np "Los clientes habituales del bar comentan que era un borracho que frecuentaba el local a altas horas de la noche y causaba revueltas violentas."
+    np "Regular customers at the bar say he was a drunk who frequented the premises late at night and caused violent disturbances."
 
     scene black
     with dissolve
 
-    "A veces no es mala idea aceptar una mano ajena."
+    "Sometimes it's not a bad idea to accept a helping hand."
 
     hide narrator
     with dissolve
@@ -163,7 +165,7 @@ label bad_ending:
 
     return
 label new_beggining:
-    th "Me alegra oír eso hijo."
+    th "I'm glad to hear that, son."
 
     hide th
     with dissolve
@@ -180,15 +182,15 @@ label new_beggining:
     show th
     with dissolve
 
-    th "He traído un mapa del pueblo."
+    th "I have brought a map of the village."
 
-    th "Quiero que te concentres en los lugares que significaron algo para ti. Tanto los que avoquen {color=#5CDBFF}recuerdos felices{/color} como los que te inducen {color=#5F24B5}pesadillas{/color}."
+    th "I want you to focus on the places that meant something to you. Both those that bring back {color=#5CDBFF}happy memories{/color} and those that induce {color=#5F24B5}nightmares{/color}."
 
-    th "Vamos a intentar encontrar la raíz de tus {color=#5F24B5}males{/color} a través de tus {color=#F9FF24}recuerdos{/color}."
+    th "We will try to find the root of your {color=#5F24B5}problems{/color} through your {color=#F9FF24}memories{/color}."
 
-    th "Ahora bien."
+    th "Alright then."
 
-    th "Comencemos."
+    th "Let's get this started."
 
     return
 
