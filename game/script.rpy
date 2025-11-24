@@ -1,8 +1,24 @@
 ﻿# Coloca el código de tu juego en este archivo.
 
 # Declara los personajes usados en el juego como en el ejemplo:
-
 define th = Character("Therapist")
+transform character_Base:
+    xpos 0.4
+    ypos 0.5
+    xanchor 1.0
+    yanchor 1.0
+    zoom 3
+image th:
+    "gui/PsicologoFrame1.png"
+    pause 4
+
+    "gui/PsicologoFrame2.png"
+    pause 0.5
+
+    "gui/PsicologoFrame1.png"
+    pause 0.5
+
+    repeat
 define mc = Character("You")
 define np = Character("News of Helsinki")
 
@@ -52,9 +68,12 @@ label start:
     scene black
 
     ""
-    scene bg room
 
-    show th
+    image TherapyBg = "gui/TherapyBg.jpg"
+
+    scene TherapyBg
+
+    show th at character_Base
 
     th "It's quite cold today, isn't it? Even for this area of the mountains, it's a low temperature."
 
@@ -176,10 +195,10 @@ label new_beggining:
     centered "{b}Two days Later{/b}"
     with dissolve
 
-    scene bg room
+    scene TherapyBg
     with dissolve
 
-    show th
+    show th at character_Base
     with dissolve
 
     th "I have brought a map of the village."
