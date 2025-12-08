@@ -3,8 +3,8 @@
 # Declara los personajes usados en el juego como en el ejemplo:
 define th = Character("Therapist")
 transform character_Base:
-    xpos 0.4
-    ypos 0.5
+    xpos 0.65
+    ypos 0.87
     xanchor 1.0
     yanchor 1.0
     zoom 3
