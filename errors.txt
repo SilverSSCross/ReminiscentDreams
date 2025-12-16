@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at character_Base
-                     ^
+File "game/script.rpy", line 79: expected statement.
+    ??? "It's quite cold today, isn't it? Even for this area of the mountains, it's a low temperature."
+    ^
 
 Ren'Py Version: Ren'Py 8.4.1.25072401
-Mon Nov 24 21:39:02 2025
+Thu Dec 11 20:35:11 2025

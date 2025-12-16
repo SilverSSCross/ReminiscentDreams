@@ -3,10 +3,10 @@
 # Declara los personajes usados en el juego como en el ejemplo:
 define th = Character("Therapist")
 transform character_Base:
-    xpos 0.4
-    ypos 0.5
-    xanchor 1.0
-    yanchor 1.0
+    xpos 0.3
+    ypos 0.2
+    xanchor 0.1
+    yanchor 0.1
     zoom 3
 image th:
     "gui/PsicologoFrame1.png"
@@ -21,6 +21,9 @@ image th:
     repeat
 define mc = Character("You")
 define np = Character("News of Helsinki")
+define mf = Character("Mefi")
+define unknown = Character("???")
+define ol = Character("Olive")
 
 # El juego comienza aquí.
 
@@ -137,7 +140,7 @@ label start:
 
     menu:
         "Refuse to accept the therapy":
-            jump bad_ending
+            jump bad_ending1
         "Accept the helping hand":
             jump new_beggining
 
@@ -146,7 +149,7 @@ label start:
 
     return
 
-label bad_ending:
+label bad_ending1:
     th "It's a real shame, honestly. You were a good kid. Truly."
 
     hide th
@@ -183,6 +186,7 @@ label bad_ending:
     with dissolve
 
     return
+
 label new_beggining:
     th "I'm glad to hear that, son."
 
@@ -212,6 +216,187 @@ label new_beggining:
     th "Let's get this started."
 
     return
+
+label house:
+    hide narrator
+    with dissolve
+
+    scene black
+    with dissolve
+
+    image house = "gui/Casa.jpg"
+
+    scene house
+    with dissolve
+
+    image padre = "gui/Silueta_padre.png"
+
+    show padre at left
+    with dissolve
+
+    return
+
+
+
+label house_lore:
+    scene black
+    with dissolve
+
+    centered "The man with the big nose and the man with the long eyes."
+    with dissolve
+
+    scene bg_cuento
+    with dissolve
+
+    "Once upon a time there were two very different men."
+
+    "One was a fat man with a large nose who lived a comfortable life." 
+    
+    "The other was a thin man with long eyes who lived in poverty."
+
+    "Each of them owned a house with a garden where no flowers grew."
+
+    "One day a devil named Mephi appeared and asked them:"
+
+    mf "Do you want to make a deal? Your flowers will grow and the plants will sprout."
+
+    "The man with the big nose accepted without a doubt, while the man with long eyes rejected him without hesitation."
+
+    "Some time later, the garden of the man with the big nose burst into life like never before," 
+    
+    "and the garden of the man with the long eyes finally withered away."
+
+    "The man with the long eyes wept incessantly because he was so poor that he didn't know what else to do."
+
+    "On the other hand, the big-nosed man was ecstatic with joy as he looked at his large garden and satisfied his appetite with juicy apples that grew in it." 
+    
+    "That's why he didn't realize that his garden was beginning to die."
+
+    "Once he realized it, all he could do was sob in a withered, lifeless garden."
+
+    "The man with the big nose wished he had never made a pact with the devil."
+
+    "Meanwhile, the man with the long eyes was starving." 
+    
+    "He wished he had made a pact with the devil back then."
+
+    mf "I see, let's make a deal."
+    
+    "Said the devil."
+
+    scene black
+    with dissolve
+
+    "Tell me. Would you have taken the deal?"
+
+    menu:
+        "Yes":
+            pass
+        "No":
+            pass
+    
+    "It really is irrelevant."
+
+    "We all end up regretting the things we don't do."
+
+    "You come back to reality."
+
+    return
+
+label school_lore:
+    scene bg_escuela
+    with dissolve
+
+    "You have a vague memory of this place."
+
+    show unknown
+    with dissolve
+
+    unknown "Are you daydreaming again?"
+
+    unknown "Hey. I'm talking to you."
+    
+    "The voice comes from a boy your age."
+    
+    "It's your friend Olive."
+
+    show ol
+    
+    "You nod your head and make a small grimace to let him know you're listening."
+
+    ol "As I was saying..."
+
+    ol "It's not very common for people to approach me."
+
+    ol "That's because I was abandoned and stuff."
+
+    ol "They treat me like I'm a pest."
+
+    ol "But I plan to find my mother and we'll clear this up."
+
+    ol "No mother would abandon her child."
+
+    ol "I'm sure she had her reasons for just disappearing."
+    
+    "You don't know what expression to put on your face when you hear those words."
+    
+    "You're not sure whether to feel sorry for him or be happy that he still has hope inside him after everything that's happened in his life."
+
+    ol "I'm sure it's nice to have a full table."
+
+    hide ol
+
+    scene black
+    
+    "..."
+
+    scene red
+
+    centered "*CRACK*"
+
+    "..."
+
+    "You feel as if something has broken."
+    
+    "Something in that sentence causes a deep discomfort within you."
+    
+    "There is apparently nothing wrong with Olive's sentence."
+    
+    "But something grates on your mind when you hear it."
+    
+    "You feel as if it burns you to hear it."
+    
+    "It irritates you, in fact."
+
+    "Part of you wants to ⫣⊫⫣⊫⫣⊫⫣⊫⫣⊫⫣l͞⊫⫣⊫"
+
+    scene black
+    
+    "..."
+    
+    "..."
+
+    scene bg_escuela
+
+    "You calm down."
+    
+    "You don't understand what happened to you."
+    
+    "You whisper a melody that was stored in your subconscious."
+    
+    "(Insert melody that is the lake puzzle solution)"
+    
+    "The ripples of memory fade like waves in the water."
+
+    "You return to reality."
+
+    return
+
+
+
+
+
+
 
 
 

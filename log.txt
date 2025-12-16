@@ -1,34 +1,34 @@
-2025-11-24 20:30:31 UTC
+2025-12-11 19:22:19 UTC
 Windows-11-10.0.26200-SP0
 Ren'Py 8.4.1.25072401
 
 Early init took 40 ms
-Loading error handling took 44 ms
-Loading script took 182 ms
-Loading save slot metadata took 113 ms
+Loading error handling took 30 ms
+Loading script took 627 ms
+Loading save slot metadata took 21 ms
 Loading persistent took 0 ms
-Running init code took 78 ms
-Loading analysis data took 10 ms
-Analyze and compile ATL took 0 ms
-Reloading save slot metadata took 86 ms
+Running init code took 37 ms
+Loading analysis data took 6 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 12 ms
 Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 34 ms
+Dump and make backups took 35 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 28 ms
+Initial gc took 29 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 240 ms
+Creating interface object took 246 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 6 ms
-Analyze screens took 8 ms
-Save screen analysis took 8 ms
-Save pyanalysis took 3 ms
-Save bytecode took 17 ms
+Load screen analysis took 1 ms
+Analyze screens took 6 ms
+Save screen analysis took 9 ms
+Save pyanalysis took 0 ms
+Save bytecode took 18 ms
 Running _start took 1 ms
-Interface start took 177 ms
+Interface start took 175 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3440, 1440)
@@ -38,34 +38,122 @@ Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 580.88'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 77, in script
+    show th at centered
+  File "renpy/ast.py", line 1357, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 730, in show_imspec
+    renpy.config.show(
+    ~~~~~~~~~~~~~~~~~^
+        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/exports/displayexports.py", line 498, in show
+    img = i(img)  # type: ignore
+          ~^^^^^                
+  File "renpy/character.py", line 1460, in __call__
+    raise Exception(f"Character expects its what argument to be a string, got {what!r}.")
+Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000008ce36e0>.
+
+While running game code:
+  File "game/script.rpy", line 77, in script
+    show th at centered
+Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000008ce36e0>.
 Resetting cache.
-Early init took 6 ms
-Loading error handling took 16 ms
-Loading script took 74 ms
+Early init took 7 ms
+Loading error handling took 14 ms
+Loading script took 69 ms
 Loading save slot metadata took 14 ms
 Loading persistent took 0 ms
-Running init code took 25 ms
-Loading analysis data took 6 ms
+Running init code took 24 ms
+Loading analysis data took 7 ms
 Analyze and compile ATL took 1 ms
 Reloading save slot metadata took 11 ms
-Dump and make backups took 30 ms
-Cleaning cache took 1 ms
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 31 ms
+Initial gc took 33 ms
 DPI scale factor: 1.000000
-Creating interface object took 0 ms
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 241 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 13 ms
+Load screen analysis took 14 ms
 Analyze screens took 1 ms
 Save screen analysis took 0 ms
 Save pyanalysis took 0 ms
 Save bytecode took 0 ms
 Running _start took 0 ms
+Interface start took 160 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 77, in script
+    show th at centered
+  File "renpy/ast.py", line 1357, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 730, in show_imspec
+    renpy.config.show(
+    ~~~~~~~~~~~~~~~~~^
+        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/exports/displayexports.py", line 498, in show
+    img = i(img)  # type: ignore
+          ~^^^^^                
+  File "renpy/character.py", line 1460, in __call__
+    raise Exception(f"Character expects its what argument to be a string, got {what!r}.")
+Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000005559a00>.
+
+While running game code:
+  File "game/script.rpy", line 77, in script
+    show th at centered
+Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000005559a00>.
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 15 ms
+Loading script took 70 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 24 ms
+Loading analysis data took 8 ms
+Analyze and compile ATL took 0 ms
+Reloading save slot metadata took 12 ms
+Dump and make backups took 30 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 33 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 254 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 15 ms
+Analyze screens took 0 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
 Interface start took 157 ms
 
 Initializing gl2 renderer:
@@ -76,38 +164,124 @@ Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 580.88'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 77, in script
+    show th at centered
+  File "renpy/ast.py", line 1357, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 730, in show_imspec
+    renpy.config.show(
+    ~~~~~~~~~~~~~~~~~^
+        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/exports/displayexports.py", line 498, in show
+    img = i(img)  # type: ignore
+          ~^^^^^                
+  File "renpy/character.py", line 1460, in __call__
+    raise Exception(f"Character expects its what argument to be a string, got {what!r}.")
+Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000004097fb0>.
+
+While running game code:
+  File "game/script.rpy", line 77, in script
+    show th at centered
+Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000004097fb0>.
 Resetting cache.
 Early init took 7 ms
-Loading error handling took 16 ms
-Loading script took 109 ms
-Loading save slot metadata took 15 ms
+Loading error handling took 14 ms
+Loading script took 69 ms
+Loading save slot metadata took 14 ms
 Loading persistent took 0 ms
-Running init code took 27 ms
-Loading analysis data took 10 ms
+Running init code took 24 ms
+Loading analysis data took 7 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 12 ms
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 34 ms
+DPI scale factor: 1.000000
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 251 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 14 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 163 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+
+Full traceback:
+  File "game/script.rpy", line 77, in script
+    show th at centered
+  File "renpy/ast.py", line 1357, in execute
+    show_imspec(self.imspec, atl=getattr(self, "atl", None))
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ast.py", line 730, in show_imspec
+    renpy.config.show(
+    ~~~~~~~~~~~~~~~~~^
+        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "renpy/exports/displayexports.py", line 498, in show
+    img = i(img)  # type: ignore
+          ~^^^^^                
+  File "renpy/character.py", line 1460, in __call__
+    raise Exception(f"Character expects its what argument to be a string, got {what!r}.")
+Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000006f377d0>.
+
+While running game code:
+  File "game/script.rpy", line 77, in script
+    show th at centered
+Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000006f377d0>.
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 15 ms
+Loading script took 99 ms
+Loading save slot metadata took 14 ms
+Loading persistent took 0 ms
+Running init code took 24 ms
+Loading analysis data took 8 ms
 Analyze and compile ATL took 1 ms
 Reloading save slot metadata took 12 ms
 Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 36 ms
+Dump and make backups took 34 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 45 ms
+Initial gc took 38 ms
 DPI scale factor: 1.000000
-Creating interface object took 1 ms
+nvdrs: Loaded, about to disable thread optimizations.
+nvdrs: Disabled thread optimizations.
+Creating interface object took 240 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 0 ms
-Analyze screens took 8 ms
-Save screen analysis took 10 ms
+Analyze screens took 7 ms
+Save screen analysis took 9 ms
 Save pyanalysis took 3 ms
-Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 179 ms
+Save bytecode took 1 ms
+Running _start took 0 ms
+Interface start took 157 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3440, 1440)
@@ -121,29 +295,253 @@ Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
 Early init took 7 ms
-Loading error handling took 19 ms
-Loading script took 110 ms
+Loading error handling took 8 ms
+Loading script took 111 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 25 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 11 ms
+Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
+Dump and make backups took 34 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 42 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 7 ms
+Save screen analysis took 9 ms
+Save pyanalysis took 4 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 161 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 10 ms
+Loading script took 113 ms
 Loading save slot metadata took 15 ms
 Loading persistent took 0 ms
 Running init code took 25 ms
-Loading analysis data took 9 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 11 ms
+Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
+Dump and make backups took 34 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 43 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 1 ms
+Load screen analysis took 0 ms
+Analyze screens took 8 ms
+Save screen analysis took 8 ms
+Save pyanalysis took 4 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 173 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 9 ms
+Loading script took 110 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 27 ms
+Loading analysis data took 2 ms
 Analyze and compile ATL took 1 ms
 Reloading save slot metadata took 12 ms
 Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
+Dump and make backups took 35 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 40 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 6 ms
+Save screen analysis took 10 ms
+Save pyanalysis took 3 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 168 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 8 ms
+Loading script took 77 ms
+Loading save slot metadata took 14 ms
+Loading persistent took 0 ms
+Running init code took 24 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 12 ms
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 39 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 14 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 0 ms
+Interface start took 162 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Maximum texture size: 4096x4096
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 9 ms
+Loading script took 121 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 27 ms
+Loading analysis data took 4 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 12 ms
+Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
+Dump and make backups took 37 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 48 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 2 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 7 ms
+Save screen analysis took 10 ms
+Save pyanalysis took 4 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 177 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 9 ms
+Loading script took 80 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 27 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 13 ms
 Dump and make backups took 33 ms
 Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 35 ms
+Making clean stores took 0 ms
+Initial gc took 43 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 14 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 169 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 9 ms
+Loading script took 114 ms
+Loading save slot metadata took 16 ms
+Loading persistent took 0 ms
+Running init code took 25 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 12 ms
+Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
+Dump and make backups took 35 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 46 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 0 ms
-Analyze screens took 8 ms
+Analyze screens took 7 ms
 Save screen analysis took 9 ms
-Save pyanalysis took 0 ms
-Save bytecode took 1 ms
-Running _start took 0 ms
+Save pyanalysis took 3 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
 Interface start took 166 ms
 
 Initializing gl2 renderer:
@@ -157,638 +555,20 @@ Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 25
 Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 12 ms
-Loading error handling took 15 ms
-Loading script took 89 ms
-Loading save slot metadata took 15 ms
-Loading persistent took 0 ms
-Running init code took 27 ms
-Loading analysis data took 2 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 12 ms
-Dump and make backups took 35 ms
-Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 44 ms
-DPI scale factor: 1.000000
-Creating interface object took 1 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 16 ms
-Analyze screens took 1 ms
-Save screen analysis took 0 ms
-Save pyanalysis took 0 ms
-Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 189 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 9 ms
-Loading script took 91 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 59 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 9 ms
-Loading script took 79 ms
-Loading save slot metadata took 45 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 57 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 9 ms
-Loading script took 78 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 49 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 8 ms
-Loading script took 78 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 48 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 9 ms
-Loading script took 94 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 57 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 9 ms
-Loading script took 77 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 53 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 8 ms
-Loading script took 78 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 49 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 8 ms
-Loading script took 76 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 48 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 8 ms
-Loading script took 76 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 50 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 10 ms
-Loading script took 94 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 59 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 8 ms
-Loading script took 76 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at CharacterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 52 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 10 ms
-Loading script took 94 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at characterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 62 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 10 ms
-Loading script took 76 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at characterBase
-                    ^
-DPI scale factor: 1.000000
-Interface start took 53 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 9 ms
-Loading script took 98 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at character_Base
-                     ^
-DPI scale factor: 1.000000
-Interface start took 59 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 8 ms
-Loading script took 77 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-
-File "game/script.rpy", line 12: ATL statement contains two expressions in a row; is one of them a misspelled property? If not, separate them with pass.
-    at character_Base
-                     ^
-DPI scale factor: 1.000000
-Interface start took 55 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 10 ms
-Loading script took 111 ms
-Loading save slot metadata took 15 ms
-Loading persistent took 0 ms
-Running init code took 56 ms
-Loading analysis data took 3 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 11 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 35 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 30 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 6 ms
-Save screen analysis took 8 ms
-Save pyanalysis took 4 ms
-Save bytecode took 1 ms
-Running _start took 0 ms
-Interface start took 165 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 9 ms
-Loading script took 103 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 0 ms
-Running init code took 25 ms
-Loading analysis data took 7 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 11 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 32 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 35 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 7 ms
-Save screen analysis took 7 ms
-Save pyanalysis took 4 ms
-Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 159 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 9 ms
-Loading script took 103 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-Running init code took 24 ms
-Loading analysis data took 12 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 11 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 32 ms
-Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 35 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 7 ms
-Save screen analysis took 8 ms
-Save pyanalysis took 3 ms
-Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 156 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 9 ms
-Loading script took 102 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 0 ms
-Running init code took 25 ms
-Loading analysis data took 8 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 10 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 33 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 39 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 7 ms
-Save screen analysis took 7 ms
-Save pyanalysis took 3 ms
-Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 167 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
 Early init took 8 ms
 Loading error handling took 9 ms
-Loading script took 106 ms
-Loading save slot metadata took 14 ms
+Loading script took 112 ms
+Loading save slot metadata took 19 ms
 Loading persistent took 0 ms
-Running init code took 25 ms
-Loading analysis data took 8 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 11 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 33 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 35 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 6 ms
-Save screen analysis took 8 ms
-Save pyanalysis took 3 ms
-Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 159 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 9 ms
-Loading script took 103 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 0 ms
-Running init code took 25 ms
-Loading analysis data took 7 ms
+Running init code took 26 ms
+Loading analysis data took 3 ms
 Analyze and compile ATL took 1 ms
 Reloading save slot metadata took 12 ms
 Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 32 ms
+Dump and make backups took 34 ms
 Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 38 ms
+Making clean stores took 0 ms
+Initial gc took 45 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
@@ -796,10 +576,10 @@ Cleaning stores took 0 ms
 Load screen analysis took 1 ms
 Analyze screens took 7 ms
 Save screen analysis took 9 ms
-Save pyanalysis took 2 ms
+Save pyanalysis took 3 ms
 Save bytecode took 0 ms
-Running _start took 2 ms
-Interface start took 162 ms
+Running _start took 1 ms
+Interface start took 181 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3440, 1440)
@@ -809,35 +589,33 @@ Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 580.88'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
 Early init took 7 ms
-Loading error handling took 9 ms
-Loading script took 92 ms
-Loading save slot metadata took 14 ms
+Loading error handling took 10 ms
+Loading script took 110 ms
+Loading save slot metadata took 15 ms
 Loading persistent took 0 ms
-Running init code took 24 ms
-Loading analysis data took 7 ms
+Running init code took 25 ms
+Loading analysis data took 3 ms
 Analyze and compile ATL took 1 ms
 Reloading save slot metadata took 11 ms
 Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 31 ms
+Dump and make backups took 33 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 39 ms
+Initial gc took 40 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 6 ms
-Save screen analysis took 10 ms
-Save pyanalysis took 3 ms
+Load screen analysis took 2 ms
+Analyze screens took 7 ms
+Save screen analysis took 8 ms
+Save pyanalysis took 4 ms
 Save bytecode took 0 ms
-Running _start took 1 ms
+Running _start took 0 ms
 Interface start took 164 ms
 
 Initializing gl2 renderer:
@@ -848,153 +626,33 @@ Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 580.88'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 10 ms
-Loading script took 103 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-Running init code took 23 ms
-Loading analysis data took 8 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 10 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 33 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 37 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 7 ms
-Save screen analysis took 8 ms
-Save pyanalysis took 3 ms
-Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 158 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 10 ms
-Loading script took 101 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-Running init code took 24 ms
-Loading analysis data took 7 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 11 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 32 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 40 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 7 ms
-Save screen analysis took 8 ms
-Save pyanalysis took 3 ms
-Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 161 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 6 ms
-Loading error handling took 9 ms
-Loading script took 102 ms
-Loading save slot metadata took 13 ms
-Loading persistent took 1 ms
-Running init code took 24 ms
-Loading analysis data took 8 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 10 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 32 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 38 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 7 ms
-Save screen analysis took 10 ms
-Save pyanalysis took 3 ms
-Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 160 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
 Early init took 7 ms
 Loading error handling took 9 ms
-Loading script took 100 ms
-Loading save slot metadata took 14 ms
+Loading script took 90 ms
+Loading save slot metadata took 15 ms
 Loading persistent took 0 ms
-Running init code took 24 ms
-Loading analysis data took 7 ms
+Running init code took 26 ms
+Loading analysis data took 3 ms
 Analyze and compile ATL took 1 ms
 Reloading save slot metadata took 11 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 33 ms
+Dump and make backups took 32 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 35 ms
+Initial gc took 42 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 7 ms
-Save screen analysis took 7 ms
-Save pyanalysis took 4 ms
+Load screen analysis took 15 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
 Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 170 ms
+Running _start took 0 ms
+Interface start took 174 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3440, 1440)
@@ -1004,110 +662,30 @@ Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 580.88'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
 Early init took 7 ms
-Loading error handling took 8 ms
-Loading script took 105 ms
-Loading save slot metadata took 13 ms
+Loading error handling took 9 ms
+Loading script took 109 ms
+Loading save slot metadata took 15 ms
 Loading persistent took 0 ms
 Running init code took 25 ms
-Loading analysis data took 9 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 11 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 12 ms
 Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 34 ms
+Dump and make backups took 33 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 36 ms
+Initial gc took 42 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
 Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 6 ms
+Cleaning stores took 1 ms
+Load screen analysis took 0 ms
+Analyze screens took 7 ms
 Save screen analysis took 9 ms
-Save pyanalysis took 3 ms
-Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 160 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 7 ms
-Loading error handling took 8 ms
-Loading script took 102 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-Running init code took 25 ms
-Loading analysis data took 7 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 10 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 33 ms
-Cleaning cache took 0 ms
-Making clean stores took 2 ms
-Initial gc took 36 ms
-DPI scale factor: 1.000000
-Creating interface object took 1 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 7 ms
-Save screen analysis took 8 ms
-Save pyanalysis took 3 ms
-Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 162 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Resetting cache.
-Early init took 8 ms
-Loading error handling took 9 ms
-Loading script took 92 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-Running init code took 23 ms
-Loading analysis data took 8 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 11 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 31 ms
-Cleaning cache took 0 ms
-Making clean stores took 0 ms
-Initial gc took 39 ms
-DPI scale factor: 1.000000
-Creating interface object took 1 ms
-Init translation took 0 ms
-Cleaning stores took 0 ms
-Load screen analysis took 0 ms
-Analyze screens took 8 ms
-Save screen analysis took 8 ms
 Save pyanalysis took 3 ms
 Save bytecode took 0 ms
 Running _start took 1 ms
@@ -1121,36 +699,34 @@ Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 580.88'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
 Early init took 7 ms
 Loading error handling took 9 ms
-Loading script took 103 ms
-Loading save slot metadata took 14 ms
+Loading script took 110 ms
+Loading save slot metadata took 15 ms
 Loading persistent took 0 ms
-Running init code took 24 ms
-Loading analysis data took 8 ms
-Analyze and compile ATL took 0 ms
-Reloading save slot metadata took 11 ms
+Running init code took 25 ms
+Loading analysis data took 2 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 12 ms
 Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 33 ms
+Dump and make backups took 34 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
 Initial gc took 41 ms
 DPI scale factor: 1.000000
 Creating interface object took 0 ms
-Init translation took 0 ms
-Cleaning stores took 1 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
 Load screen analysis took 0 ms
 Analyze screens took 7 ms
-Save screen analysis took 8 ms
+Save screen analysis took 9 ms
 Save pyanalysis took 3 ms
 Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 167 ms
+Running _start took 0 ms
+Interface start took 164 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3440, 1440)
@@ -1160,36 +736,34 @@ Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 580.88'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
 Resetting cache.
-Early init took 8 ms
+Early init took 6 ms
 Loading error handling took 9 ms
-Loading script took 104 ms
-Loading save slot metadata took 15 ms
+Loading script took 117 ms
+Loading save slot metadata took 18 ms
 Loading persistent took 0 ms
-Running init code took 25 ms
-Loading analysis data took 8 ms
-Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 11 ms
+Running init code took 26 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 12 ms
 Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 32 ms
+Dump and make backups took 34 ms
 Cleaning cache took 0 ms
-Making clean stores took 2 ms
-Initial gc took 38 ms
+Making clean stores took 0 ms
+Initial gc took 41 ms
 DPI scale factor: 1.000000
-Creating interface object took 0 ms
+Creating interface object took 1 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
 Load screen analysis took 1 ms
 Analyze screens took 7 ms
 Save screen analysis took 8 ms
-Save pyanalysis took 3 ms
+Save pyanalysis took 4 ms
 Save bytecode took 0 ms
-Running _start took 0 ms
-Interface start took 163 ms
+Running _start took 1 ms
+Interface start took 169 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3440, 1440)
@@ -1199,9 +773,251 @@ Vendor: 'NVIDIA Corporation'
 Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
 Version: '4.6.0 NVIDIA 580.88'
 Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
-Maximum texture size: 4096x4096
 Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
 Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 15 ms
+Loading script took 96 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+
+File "game/script.rpy", line 79: expected statement.
+    ??? "It's quite cold today, isn't it? Even for this area of the mountains, it's a low temperature."
+    ^
+DPI scale factor: 1.000000
+Interface start took 63 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 10 ms
+Loading script took 90 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 49 ms
+Loading analysis data took 7 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 11 ms
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 31 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 14 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 2 ms
+Running _start took 0 ms
+Interface start took 165 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 8 ms
+Loading error handling took 10 ms
+Loading script took 121 ms
+Loading save slot metadata took 14 ms
+Loading persistent took 0 ms
+Running init code took 25 ms
+Loading analysis data took 8 ms
+Analyze and compile ATL took 0 ms
+Reloading save slot metadata took 12 ms
+Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
+Dump and make backups took 34 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 38 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 1 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 8 ms
+Save screen analysis took 9 ms
+Save pyanalysis took 0 ms
+Save bytecode took 1 ms
+Running _start took 1 ms
+Interface start took 166 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 9 ms
+Loading script took 121 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 27 ms
+Loading analysis data took 10 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 14 ms
+Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
+Dump and make backups took 36 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 43 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 0 ms
+Analyze screens took 8 ms
+Save screen analysis took 9 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 169 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 6 ms
+Loading error handling took 9 ms
+Loading script took 78 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 24 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 12 ms
+Dump and make backups took 31 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 38 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 14 ms
+Analyze screens took 1 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 169 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 9 ms
+Loading script took 78 ms
+Loading save slot metadata took 15 ms
+Loading persistent took 0 ms
+Running init code took 24 ms
+Loading analysis data took 3 ms
+Analyze and compile ATL took 2 ms
+Reloading save slot metadata took 11 ms
+Dump and make backups took 33 ms
+Cleaning cache took 0 ms
+Making clean stores took 0 ms
+Initial gc took 46 ms
+DPI scale factor: 1.000000
+Creating interface object took 0 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 18 ms
+Analyze screens took 2 ms
+Save screen analysis took 0 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 180 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Resetting cache.
+Early init took 7 ms
+Loading error handling took 9 ms
+Loading script took 114 ms
+Loading save slot metadata took 14 ms
+Loading persistent took 0 ms
+Running init code took 24 ms
+Loading analysis data took 8 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 11 ms
+Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
+Dump and make backups took 33 ms
+Cleaning cache took 0 ms
+Making clean stores took 1 ms
+Initial gc took 38 ms
+DPI scale factor: 1.000000
+Creating interface object took 1 ms
+Init translation took 0 ms
+Cleaning stores took 0 ms
+Load screen analysis took 1 ms
+Analyze screens took 6 ms
+Save screen analysis took 8 ms
+Save pyanalysis took 0 ms
+Save bytecode took 0 ms
+Running _start took 1 ms
+Interface start took 162 ms
+
+Initializing gl2 renderer:
+primary display bounds: (0, 0, 3440, 1440)
+swap interval: 1 frames
+Windowed mode.
+Vendor: 'NVIDIA Corporation'
+Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
+Version: '4.6.0 NVIDIA 580.88'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(2434, 1369) drawable=(2434, 1369)
+Maximum texture size: 4096x4096
+Cleaning stores took 0 ms
+Load screen analysis took 15 ms
+Analyze screens took 0 ms
+Running _start took 1 ms
