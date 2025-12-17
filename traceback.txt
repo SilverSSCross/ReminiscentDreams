@@ -1,23 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 296, in script
-    jump house
-renpy.script.LabelNotFound: could not find label 'house'.
+  File "game/script.rpy", line 302, in script
+    show screen mapa
+renpy.display.screen.ScreenNotFound: Screen 'mapa' is not known.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 296, in script
-    jump house
-  File "renpy/ast.py", line 1928, in execute
-    rv = renpy.game.script.lookup(target)
-         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
-  File "renpy/script.py", line 1161, in lookup
-    raise LabelNotFound(original)
-renpy.script.LabelNotFound: could not find label 'house'.
+  File "game/script.rpy", line 302, in script
+    show screen mapa
+  File "renpy/ast.py", line 2241, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 381, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 671, in execute_show_screen
+    renpy.show_screen(name, *args, **kwargs)
+    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 1355, in show_screen
+    raise ScreenNotFound(name[0])
+renpy.display.screen.ScreenNotFound: Screen 'mapa' is not known.
 
 Windows-11-10.0.26200-SP0 AMD64
-Ren'Py 8.4.1.25072401
+Ren'Py 8.5.0.25111603
 SilencioGilM 1.0
-Tue Dec 16 19:04:34 2025
+Wed Dec 17 18:38:06 2025

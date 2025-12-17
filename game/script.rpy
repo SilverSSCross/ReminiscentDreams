@@ -141,17 +141,17 @@ label start:
 
     menu:
         "Refuse to accept the therapy":
-            jump new_beggining
+            jump bad_ending1
         "Accept the helping hand":
             jump new_beggining
-
-
     # Finaliza el juego:
 
     return
 
 label bad_ending1:
     th "It's a real shame, honestly. You were a good kid. Truly."
+
+    hide narrator
 
     hide th
     with dissolve
@@ -220,12 +220,6 @@ label new_beggining:
 
     ##########call screen mapa_mundo#################
 
-
-    
-
-
-    #######################ESCENA BOSQUE##########################################################
-
     return
 
 #Bloque casa
@@ -234,27 +228,27 @@ screen casa():
     add "gui/Casa.jpg"
 
     imagebutton:
+        idle "gui/Casa.jpg"
+        hover "gui/Casa.jpg"
+        action ShowMenu("empty")
+    imagebutton:
         idle "gui/Ventana.png"
         hover "gui/Ventana_hover.png"
-        xpos 1425
-        ypos 150
+        xpos 0.341
+        ypos 0.125
         action ShowMenu("ventana")
     imagebutton:
         idle "gui/Cuadro.png"
         hover "gui/Cuadro_hover.png"
-        xpos 675
-        ypos 225
+        xpos 0.752
+        ypos 0.216
         action ShowMenu("cuadro")
     imagebutton:
         idle "gui/Libro.png"
         hover "gui/Libro_hover.png"
-        xpos 300
-        ypos 900
+        xpos 0.393
+        ypos 0.809
         action ShowMenu("libro")
-    imagebutton:
-        idle "gui/Casa.jpg"
-        hover "gui/Casa.jpg"
-        action ShowMenu("empty")
     imagebutton:
         at left 
         idle "gui/Silueta_padre.png" 
@@ -263,7 +257,13 @@ screen casa():
 
 label house_puzzle:
 
+    mc "Im going home."
+
+    scene black
+    with dissolve
+
     show screen casa
+    with dissolve
 
     image padre = "gui/Silueta_padre.png"
 
@@ -275,14 +275,12 @@ label house_puzzle:
 
 label cuadro:
     show screen casa
-    "A strange painting for sure." 
-    "A gentleman with a book and a pen, I think. He seems obsessed with finding something."
+    "A strange painting for sure. \nA gentleman with a book and a pen, I think. He seems obsessed with finding something."
     jump house_puzzle
 
 label ventana: 
     show screen casa
-    "There is a snowstorm outside." 
-    "I remember that one of the children from the village died in one not long ago."
+    "There is a snowstorm outside. \nI remember that one of the children from the village died in one not long ago."
     jump house_puzzle
 
 label padre:
@@ -296,15 +294,21 @@ label libro:
     show screen casa
     "It appears to have an inscription."
     $Answer = renpy.input("I am that which drives all thinking beings, even towards their own destruction. I am that which scholars covet and for which they would be willing to sell their souls to the devil. What am I?")
-    if Answer is None:
-        show screen mapa
+    if Answer != Correct_Answer:
+        show screen casa
+        mc "No, I don't think that will do anything, gotta find more information. \nCould there be anything useful here?"
         jump house_puzzle
-    if Answer.lower() == Correct_Answer:
+    if Answer == Correct_Answer:
+        hide screen casa
+        hide th
+        hide TherapyBg
+        hide padre
+        scene black
         jump house_lore
 
 label empty:
     show screen casa
-    jump house_puzzle
+    pause
 
 
 label house_lore:
@@ -369,6 +373,8 @@ label house_lore:
     "We all end up regretting the things we don't do."
 
     "You come back to reality."
+
+    jump start
 
     return
 
