@@ -216,6 +216,16 @@ label new_beggining:
 
     th "Let's get this started."
 
+    #Llamar al mapa
+
+    ##########call screen mapa_mundo#################
+
+
+    
+
+
+    #######################ESCENA BOSQUE##########################################################
+
     return
 
 #Bloque casa
@@ -450,6 +460,369 @@ label school_lore:
     "The ripples of memory fade like waves in the water."
 
     "You return to reality."
+
+    return
+
+#Bloque bosque
+
+label Bosque:
+
+    image BosqueBg = "gui/BosqueBg.jpg"
+    scene BosqueBg
+
+    # FINAL MALO BOSQUE
+
+    "A part of you tells you that you should keep digging into your past."
+
+    "However, you decide not to listen to it."
+
+    "You want to end this experience as soon as possible, so you venture deeper into the forest."
+
+    "You reflect on the decisions you've made throughout your life."
+
+    "Though of course, you barely have any memories of that life."
+
+    "Can a human be considered alive if their life has been ripped out entirely from their subconscious?"
+
+    "Can you even consider that you've had a life?"
+
+    "I mean, you're definitely alive."
+
+    "The fact that you're alive is a completely objective and undeniable truth."
+
+    "Despite this, what other proof of your life do you have beyond simply being here in the present?"
+
+    "Without memories, you're nothing more than a vagabond wandering through this world until the day of your inevitable end."
+
+    "In that case, what's the point of even living?"
+
+    "We're all going to die one way or another."
+
+    "The only thing that differentiates us is the path to that end."
+
+    "But if you have no path, what sets you apart from someone who doesn't exist?"
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "You have no answer to these doubts."
+
+    "You're not even aware of why you're suddenly asking yourself such profound questions out of nowhere."
+
+    "¡¡WHAM!!"
+
+    "You can't even get to the root of why you're having these thoughts in the first place."
+
+    "A sharp, stabbing pain pierces your chest, and you collapse to the ground, unable to think any further."
+
+    "The only thing you're able to do before the weak flame of your so-called life flickers out is to make out a subtle yellow silhouette."
+
+    "Everything turns black."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "Are you still here?"
+
+    "Well, I suppose you want to know what happened in reality."
+
+    "You suffered an attack in the middle of the session."
+
+    "The psychologist simply watched as, from one moment to the next, you began convulsing until you lay completely still on the floor."
+
+    "The police arrived shortly after."
+
+    "Your funeral was quite depressing."
+
+    "The only person present was your psychologist, and he only stayed for a little while."
+
+    "You also left no trace whatsoever of your time in this world."
+
+    "You were simply someone who passed through without fanfare or glory."
+
+    "Or well, isn't that the case for most people?"
+
+    "You practically didn't even exist."
+
+    "Your psychologist died a few years later, and the people you knew who are still alive have simply forgotten you."
+
+    "You had no adult friends, you never met your parents, and those who once remembered you stopped doing so over time."
+
+    "Can it even be said that you existed?"
+
+    "..."
+
+    "..."
+
+    "Who am I?"
+
+    "Who knows."
+
+    "Maybe I'm God."
+
+    "Maybe I'm the Devil."
+
+    "Maybe I'm a being beyond comprehension, or perhaps I'm just your dying subconscious."
+
+    "In any case."
+
+    "Does it really matter?"
+
+    "It's over."
+
+    "That's all."
+
+    "Goodbye, nameless one."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    centered "BAD ENDING: THE NONEXISTENCE ABOUT THE YOU."
+
+
+
+    #FINAL VERDADERO
+
+    "Your memories converge into one."
+
+    "You decide to venture into the depths of the forest."
+
+    "Your steps are determined and agile."
+
+    "One could even say that you are one with nature itself, seeing how naturally you delve deep into the woods."
+    
+    "You’re not aware of how much time has passed when you reach a cliff."
+    
+    "Standing just inches from the edge is the creature that has been watching you."
+    
+    "Its yellow raincoat flutters in the wind in an almost orchestrated rhythm."
+    
+    "You approach slowly, but confidently."
+    
+    "You stop just a few steps away from the creature."
+    
+    "Though you shouldn’t keep calling it that anymore."
+    
+    "Should you?"
+
+    mc "How are you, Olive?"
+
+    "The creature known as Olive remains motionless."
+
+    mc "You really surprised me back then."
+
+    mc "I didn’t think you would actually jump."
+
+    mc "I was just testing the limits of how much someone could endure."
+
+    mc "Years ago I tried the same thing at that orphanage."
+
+    mc "The result was pitiful."
+
+    mc "It made me want to vomit. I still have that bad taste in my mouth."
+
+    mc "What I can’t quite remember is precisely why it took me so long to recall it."
+
+    mc "I suppose the monotony and disappointment from not finding what I was looking for made me lock myself in a bubble and never come out."
+    
+    mc "Well, look at me!"
+   
+    mc "I’m no longer bound by those chains, and here I am again, Olive."
+   
+    "Olive makes no movement at all."
+    
+    "He simply stares at you fixedly."
+
+    mc "Hey, Olive."
+
+    mc "Before we end all this, why don’t we reminisce about the old times?"
+
+    "Olive tenses slightly."
+   
+    mc "We are born because we are loved."
+
+    mc "Our birth has meaning because someone loved us."
+
+    mc "We live because we are loved, because we are wanted."
+
+    mc "But you… you were abandoned, Olive."
+
+    mc "Maybe your mother loved you because she hated you."
+
+    mc "There is nothing special about being born."
+
+    mc "Most of the universe is dead."
+
+    mc "In this cruel world we live in, the birth of a tiny, insignificant life in a corner of the cosmos means absolutely nothing."
+
+    mc "Death is the norm."
+
+    mc "So why live?"
+
+    mc "Do you think you were wanted?"
+
+    mc "Who loved you?"
+
+    mc "If no one loved you, what is your reason for living at all?"
+
+    "Olive steps closer to the edge of the precipice."
+
+    "The cold wind blows."
+
+    "Olive looks at you one last time, and the wind uncovers his hood."
+
+    "Then he jumps."
+
+    "The wind stops."
+
+    "After gazing at the edge of the cliff for a few seconds, you take a deep breath."
+
+    mc "It feels so good to be free."
+
+    "As those words escape your lips, you breathe deeply again."
+
+    "You count the seconds while feeling nature envelop you."
+
+    "You hear the birds singing in your ears."
+
+    "The gentle touch of moonlight."
+
+    "And above everything else, you feel the cold ground running along your body, giving way to a warm sensation of hot blood spilling out from your body shattering against the cold granite."
+    
+    "..."
+
+    "..."
+
+    "..."
+
+    "Life is a sigh in a corner,"
+
+    "an echo that fades without reason,"
+
+    "a lightning bolt that breaks in the blue,"
+
+    "leaving only shadow at dawn."
+
+    "One day we are breeze, we are light,"
+
+    "the next, ashes and stillness."
+
+    "The rose that blooms in its splendor"
+
+    "soon loses its charm and virtue."
+
+    "..."
+
+    "..."
+
+    "..."
+
+    centered "Months later"
+
+    "It all began quietly, almost imperceptibly."
+
+    "A psychologist who had thrown himself out a window."
+
+    "People thought that so much therapy had finally taken its toll."
+
+    "Soon after, news began to spread that a woman from the town had killed her unfaithful husband."
+    
+    "Once again, it could pass as just another story."
+    
+    "However, shortly afterward, word came of a family that had committed suicide."
+    
+    "Then another murder."
+    
+    "And one after another."
+    
+    "Soon, people began leaving the town or simply disappearing."
+    
+    "Who knows."
+    
+    "The few who remained went from being a community to turning against one another."
+    
+    "No one did anything directly, but all it took was a small spark to ignite the flame."
+    
+    "And eventually, it happened."
+    
+    "It was a relatively small community, but the images seen after the “incident” suggested there had been many people, judging by the number of bodies."
+    
+    "No one knows what caused such a tragedy."
+    
+    "Some say the inhabitants were lunatics."
+    
+    "Others that the small tensions finally exploded because of some madman."
+   
+    "No one knows."
+   
+    "The strange thing is that on some of the walls of what remains of the houses, there are drawings of a yellow figure."
+    
+    "Isn’t it strange how manipulable people can be?"
+    
+    "The devil instigates, but it is the human hand that carries out his will."
+   
+    "Who is truly worse?"
+
+    "..."
+
+    "..."
+
+    "..."
+
+    "Memory is a surprising thing, isn’t it?"
+
+    "Memory is not an exact reproduction; we actively reconstruct memories based on pre-existing schemas, which can distort and “give weight” to certain aspects of an event depending on our perspective."
+    
+    "How would you consider a person with no memory of any kind?"
+   
+    "Inherently good or inherently evil?"
+    
+    "I’m talking about whether human beings are good or evil by nature."
+    
+    "We grow as people based on our childhood and the memories we hold."
+    
+    "It’s not completely accurate, but a turbulent childhood often leads to depressive, aggressive, or psychotic behavior…"
+   
+    "On the contrary, a joyful childhood full of affection usually forms more empathetic people."
+   
+    "But is it possible for a person to be born good and remain so despite everything bad that happens to them?"
+    
+    "This applies to the opposite case, of course."
+   
+    "Very well, now let’s consider a hypothetical."
+    
+    "A person is born as the very incarnation of evil, but at the same time completely loses their memory."
+    
+    "If you restored their memory, they would become a monster again; on the other hand, if you didn’t, you would be robbing them of their reason for living."
+    
+    "Do we all in this world truly have the same worth?"
+    
+    "Does the soul of a good person have the same value as that of a murderer?"
+    
+    "If heaven and hell exist, logic tells us that the wicked will be punished for all eternity."
+   
+    "But supposing neither heaven nor hell exists, what difference is there in our value as beings that exist?"
+    
+    "I have no objective answer to these dilemmas, and I could go on talking about the very concept of existence itself."
+    
+    "Though I suppose that’s not relevant here."
+    
+    "I am merely a narrator created by someone so that a reader like you can see their ideas and feelings brought to life."
+   
+    "In the end of the universe, none of this will matter."
+    
+    "Everything that has happened and will happen in the life of the universe will be nothing more than a REMINISCENT DREAM at the end of time."
+    
+    centered "FINALE: A PARADOX ABOUT THE SOUL"
 
     return
 

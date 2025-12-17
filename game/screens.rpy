@@ -1622,3 +1622,24 @@ style slider_vbox:
 style slider_slider:
     variant "small"
     xsize 900
+
+
+####################################################
+#Pantalla Mapa
+
+screen mapa_mundo():
+    imagemap:
+        ground "Mapa/Mapa_(iconos).png"  # Imagen base
+# Opcional (puede omitirse)
+        hover "images/Mapa.png"    # Imagen con highlights
+
+        # Hotspot: (x, y, ancho, alto) action Acción_al_clic
+        hotspot (100, 200, 150, 100) action Jump("escena_Bosque")  # Ejemplo: cambia a label "escena_ciudad"
+        hotspot (400, 300, 200, 150) action Jump("escena_Casa")
+        hotspot (700, 100, 180, 120) action Jump("escena_Lago")
+        hotspot (700, 100, 180, 120) action Jump("escena_Orfanato")
+        hotspot (700, 100, 180, 120) action Jump("escena_Colegio")
+
+
+
+####################################################
