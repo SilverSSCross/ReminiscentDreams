@@ -141,7 +141,7 @@ label start:
 
     menu:
         "Refuse to accept the therapy":
-            jump house_puzzle
+            jump new_beggining
         "Accept the helping hand":
             jump new_beggining
 
