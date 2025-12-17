@@ -1,33 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 77, in script
-    show th at centered
-Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000006f377d0>.
+  File "game/script.rpy", line 296, in script
+    jump house
+renpy.script.LabelNotFound: could not find label 'house'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 77, in script
-    show th at centered
-  File "renpy/ast.py", line 1357, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/ast.py", line 730, in show_imspec
-    renpy.config.show(
-    ~~~~~~~~~~~~~~~~~^
-        name, at_list=at_list, layer=layer, what=expression, zorder=zorder, tag=tag, behind=behind, atl=atl
-        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-    )
-    ^
-  File "renpy/exports/displayexports.py", line 498, in show
-    img = i(img)  # type: ignore
-          ~^^^^^                
-  File "renpy/character.py", line 1460, in __call__
-    raise Exception(f"Character expects its what argument to be a string, got {what!r}.")
-Exception: Character expects its what argument to be a string, got <renpy.display.image.ImageReference object ('th',) at 0x0000000006f377d0>.
+  File "game/script.rpy", line 296, in script
+    jump house
+  File "renpy/ast.py", line 1928, in execute
+    rv = renpy.game.script.lookup(target)
+         ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^
+  File "renpy/script.py", line 1161, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'house'.
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.4.1.25072401
 SilencioGilM 1.0
-Thu Dec 11 20:25:50 2025
+Tue Dec 16 19:04:34 2025

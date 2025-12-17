@@ -24,6 +24,7 @@ define np = Character("News of Helsinki")
 define mf = Character("Mefi")
 define unknown = Character("???")
 define ol = Character("Olive")
+define ft = Character("Father?")
 
 # El juego comienza aquí.
 
@@ -140,7 +141,7 @@ label start:
 
     menu:
         "Refuse to accept the therapy":
-            jump bad_ending1
+            jump house_puzzle
         "Accept the helping hand":
             jump new_beggining
 
@@ -217,25 +218,83 @@ label new_beggining:
 
     return
 
-label house:
-    hide narrator
-    with dissolve
+#Bloque casa
 
-    scene black
-    with dissolve
+screen casa():
+    add "gui/Casa.jpg"
 
-    image house = "gui/Casa.jpg"
+    imagebutton:
+        idle "gui/Ventana.png"
+        hover "gui/Ventana_hover.png"
+        xpos 1425
+        ypos 150
+        action ShowMenu("ventana")
+    imagebutton:
+        idle "gui/Cuadro.png"
+        hover "gui/Cuadro_hover.png"
+        xpos 675
+        ypos 225
+        action ShowMenu("cuadro")
+    imagebutton:
+        idle "gui/Libro.png"
+        hover "gui/Libro_hover.png"
+        xpos 300
+        ypos 900
+        action ShowMenu("libro")
+    imagebutton:
+        idle "gui/Casa.jpg"
+        hover "gui/Casa.jpg"
+        action ShowMenu("empty")
+    imagebutton:
+        at left 
+        idle "gui/Silueta_padre.png" 
+        hover "gui/Silueta_padre_hover.png" 
+        action ShowMenu("padre")
 
-    scene house
-    with dissolve
+label house_puzzle:
+
+    show screen casa
 
     image padre = "gui/Silueta_padre.png"
 
     show padre at left
-    with dissolve
+
+    pause
 
     return
 
+label cuadro:
+    show screen casa
+    "A strange painting for sure." 
+    "A gentleman with a book and a pen, I think. He seems obsessed with finding something."
+    jump house_puzzle
+
+label ventana: 
+    show screen casa
+    "There is a snowstorm outside." 
+    "I remember that one of the children from the village died in one not long ago."
+    jump house_puzzle
+
+label padre:
+    show screen casa
+    ft "I am the spirit that always denies. And I do so with full rights, for everything that is born deserves to be destroyed; it would be better, then, if it had never been born. Therefore, my true nature is what you call sin and destruction, in a word, Evil."
+    hide narrator
+    jump house_puzzle
+
+label libro:
+    $Correct_Answer = "Knowledge"
+    show screen casa
+    "It appears to have an inscription."
+    $Answer = renpy.input("I am that which drives all thinking beings, even towards their own destruction. I am that which scholars covet and for which they would be willing to sell their souls to the devil. What am I?")
+    if Answer is None:
+        show screen mapa
+        jump house_puzzle
+    if Answer.lower() == Correct_Answer:
+        jump house_lore
+
+label empty:
+    show screen casa
+    jump house_puzzle
 
 
 label house_lore:
@@ -302,6 +361,8 @@ label house_lore:
     "You come back to reality."
 
     return
+
+#Fin bloque casa
 
 label school_lore:
     scene bg_escuela
