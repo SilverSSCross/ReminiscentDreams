@@ -225,34 +225,34 @@ label new_beggining:
 #Bloque casa
 
 screen casa():
-    add "gui/Casa.jpg"
+    add "gui/House/Puzzle/Casa.jpg"
 
     imagebutton:
-        idle "gui/Casa.jpg"
-        hover "gui/Casa.jpg"
+        idle "gui/House/Puzzle/Casa.jpg"
+        hover "gui/House/Puzzle/Casa.jpg"
         action ShowMenu("empty")
     imagebutton:
-        idle "gui/Ventana.png"
-        hover "gui/Ventana_hover.png"
+        idle "gui/House/Puzzle/Ventana.png"
+        hover "gui/House/Puzzle/Ventana_hover.png"
         xpos 0.341
         ypos 0.125
         action ShowMenu("ventana")
     imagebutton:
-        idle "gui/Cuadro.png"
-        hover "gui/Cuadro_hover.png"
+        idle "gui/House/Puzzle/Cuadro.png"
+        hover "gui/House/Puzzle/Cuadro_hover.png"
         xpos 0.752
         ypos 0.216
         action ShowMenu("cuadro")
     imagebutton:
-        idle "gui/Libro.png"
-        hover "gui/Libro_hover.png"
+        idle "gui/House/Puzzle/Libro.png"
+        hover "gui/House/Puzzle/Libro_hover.png"
         xpos 0.393
         ypos 0.809
         action ShowMenu("libro")
     imagebutton:
         at left 
-        idle "gui/Silueta_padre.png" 
-        hover "gui/Silueta_padre_hover.png" 
+        idle "gui/House/Puzzle/Silueta_padre.png" 
+        hover "gui/House/Puzzle/Silueta_padre_hover.png" 
         action ShowMenu("padre")
 
 label house_puzzle:
@@ -265,7 +265,7 @@ label house_puzzle:
     show screen casa
     with dissolve
 
-    image padre = "gui/Silueta_padre.png"
+    image padre = "gui/House/Puzzle/Silueta_padre.png"
 
     show padre at left
 
@@ -312,13 +312,23 @@ label empty:
 
 
 label house_lore:
+
+    image escena1 = "gui/House/Lore/Frame_intro_cuento.jpg"
+    image escena2 = "gui/House/Lore/Frame_jardines_cuento.jpg"
+    image escena3 = "gui/House/Lore/Frame_intro_mefi.jpg"
+    image escena4 = "gui/House/Lore/Frame_trato_mefi.jpg"
+    image escena5 = "gui/House/Lore/Frame_jardines_cuento2.jpg"
+    image escena6 = "gui/House/Lore/Frame_jardines_cuento3.jpg"
+    image escena7 = "gui/House/Lore/Frame_jardines_cuento4.jpg"
+    image finalMefi = "gui/House/Lore/Frame_final_mefi.jpg"
+
     scene black
     with dissolve
 
     centered "The man with the big nose and the man with the long eyes."
     with dissolve
 
-    scene bg_cuento
+    scene escena1
     with dissolve
 
     "Once upon a time there were two very different men."
@@ -327,23 +337,47 @@ label house_lore:
     
     "The other was a thin man with long eyes who lived in poverty."
 
+    scene escena2
+
+    hide escena1
+
     "Each of them owned a house with a garden where no flowers grew."
+
+    scene escena3
+
+    hide escena2
 
     "One day a devil named Mephi appeared and asked them:"
 
     mf "Do you want to make a deal? Your flowers will grow and the plants will sprout."
 
+    scene escena4
+
+    hide escena3
+
     "The man with the big nose accepted without a doubt, while the man with long eyes rejected him without hesitation."
+
+    scene escena5
+
+    hide escena4
 
     "Some time later, the garden of the man with the big nose burst into life like never before," 
     
     "and the garden of the man with the long eyes finally withered away."
+
+    scene escena6
+
+    hide escena5
 
     "The man with the long eyes wept incessantly because he was so poor that he didn't know what else to do."
 
     "On the other hand, the big-nosed man was ecstatic with joy as he looked at his large garden and satisfied his appetite with juicy apples that grew in it." 
     
     "That's why he didn't realize that his garden was beginning to die."
+
+    scene escena7
+
+    hide escena6
 
     "Once he realized it, all he could do was sob in a withered, lifeless garden."
 
@@ -353,12 +387,18 @@ label house_lore:
     
     "He wished he had made a pact with the devil back then."
 
+    scene finalMefi
+
+    hide escena7
+
     mf "I see, let's make a deal."
     
     "Said the devil."
 
     scene black
     with dissolve
+
+    hide finalMefi
 
     "Tell me. Would you have taken the deal?"
 
