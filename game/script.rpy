@@ -25,6 +25,7 @@ define mf = Character("Mefi")
 define unknown = Character("???")
 define ol = Character("Olive")
 define ft = Character("Father?")
+define sl = Character("Sluagh")
 
 # El juego comienza aquí.
 
@@ -220,7 +221,7 @@ label new_beggining:
 
     ##########call screen mapa_mundo#################
 
-    return
+    #return
 
 #Bloque casa
 
@@ -516,7 +517,34 @@ label Bosque:
     image BosqueBg = "gui/BosqueBg.jpg"
     scene BosqueBg
 
-    # FINAL MALO BOSQUE
+    "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
+
+    menu:
+        "Entrar al bosque":
+            jump eleccionFinal
+        "Dar la vuelta":
+            "Volver mapa"
+            #jump screen mapa_mundo
+
+label eleccionFinal:
+
+    ###############
+    #Contador para si ocurre un final u otro. Una vez estructurado el proyecto colocar bien
+
+    default numero_recuerdos = 0
+
+    #Cuando consigues un recuerdo
+
+    label buscar_recuerdos:
+    "Has recuperado una de tus memorias perdidas."
+    $ cantidad_recuerdos += 1
+    "Ahora tienes [cantidad_recuerdos] recuerdos."
+
+    ###############
+
+    #if cantidad_recuerdos < 4:
+
+    # FINAL MALO BOSQUE########################################################################################################################
 
     "A part of you tells you that you should keep digging into your past."
 
@@ -558,21 +586,29 @@ label Bosque:
 
     "You're not even aware of why you're suddenly asking yourself such profound questions out of nowhere."
 
+    #Insertar sonido de corte/apuñalamiento
+
     "¡¡WHAM!!"
 
     "You can't even get to the root of why you're having these thoughts in the first place."
 
     "A sharp, stabbing pain pierces your chest, and you collapse to the ground, unable to think any further."
 
+    # show SluaghFrame2 (completamente en negro)
+
     "The only thing you're able to do before the weak flame of your so-called life flickers out is to make out a subtle yellow silhouette."
 
     "Everything turns black."
 
-    "..."
+    #scene black
 
     "..."
 
     "..."
+
+    "..."
+
+    #Insertar musica piano clasica
 
     "Are you still here?"
 
@@ -636,19 +672,30 @@ label Bosque:
 
 
 
-    #FINAL VERDADERO
+    #else:
+
+
+
+
+    #FINAL VERDADERO##########################################################################
 
     "Your memories converge into one."
 
     "You decide to venture into the depths of the forest."
+
+    #Sonido pasos
 
     "Your steps are determined and agile."
 
     "One could even say that you are one with nature itself, seeing how naturally you delve deep into the woods."
     
     "You’re not aware of how much time has passed when you reach a cliff."
+
+    scene AcantiladoBg
     
     "Standing just inches from the edge is the creature that has been watching you."
+
+    show SluaghFrame2
     
     "Its yellow raincoat flutters in the wind in an almost orchestrated rhythm."
     
@@ -692,6 +739,10 @@ label Bosque:
 
     mc "Before we end all this, why don’t we reminisce about the old times?"
 
+    hide SluaghFrame2
+
+    show SluaghFrame1
+
     "Olive tenses slightly."
    
     mc "We are born because we are loved."
@@ -720,9 +771,15 @@ label Bosque:
 
     mc "If no one loved you, what is your reason for living at all?"
 
+    #Poner sonido de pasos
+
+    hide SluaghFrame1
+
     "Olive steps closer to the edge of the precipice."
 
     "The cold wind blows."
+
+    #CG de Olive sin capucha
 
     "Olive looks at you one last time, and the wind uncovers his hood."
 
@@ -742,13 +799,24 @@ label Bosque:
 
     "The gentle touch of moonlight."
 
+    scene black
+
     "And above everything else, you feel the cold ground running along your body, giving way to a warm sensation of hot blood spilling out from your body shattering against the cold granite."
     
-    "..."
+    #sonido choque (reventarse el cuerpo)
+
+    scene red
+
+    scene black
+
 
     "..."
 
     "..."
+
+    "..."
+
+    #Tal vez poner imagen del cielo 
 
     "Life is a sigh in a corner,"
 
@@ -773,6 +841,8 @@ label Bosque:
     "..."
 
     centered "Months later"
+
+    #Escena de pueblo abandonado
 
     "It all began quietly, almost imperceptibly."
 
@@ -809,6 +879,8 @@ label Bosque:
     "Others that the small tensions finally exploded because of some madman."
    
     "No one knows."
+
+    #Imagen mural Dibujo figura amarilla
    
     "The strange thing is that on some of the walls of what remains of the houses, there are drawings of a yellow figure."
     
@@ -818,11 +890,16 @@ label Bosque:
    
     "Who is truly worse?"
 
-    "..."
+    #Fundido a negro
 
     "..."
 
     "..."
+
+    "..."
+
+
+    #Pensando si poner una imagen de un libro, una silueta o algo tipo narrador omnisciente (musica o Daisy Daisy o algo similar)
 
     "Memory is a surprising thing, isn’t it?"
 
@@ -866,7 +943,7 @@ label Bosque:
    
     "In the end of the universe, none of this will matter."
     
-    "Everything that has happened and will happen in the life of the universe will be nothing more than a REMINISCENT DREAM at the end of time."
+    "Everything that has happened and will happen in the life of the universe will be nothing more than a REMINISCENT DREAM at the end of the times."
     
     centered "FINALE: A PARADOX ABOUT THE SOUL"
 

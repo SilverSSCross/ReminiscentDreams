@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 renpy.geometry renpy.solid
 renpy.solid
 <<<<<<< HEAD
@@ -10,3 +11,19 @@ renpy.ftl
 renpy.texture
 =======
 renpy.alpha renpy.geometry renpy.texture
+=======
+renpy.alpha renpy.texture
+renpy.geometry renpy.texture
+renpy.texture
+renpy.ftl
+=======
+renpy.dissolve renpy.dissolve
+<<<<<<< Updated upstream
+renpy.geometry renpy.solid
+renpy.dissolve renpy.geometry
+renpy.alpha renpy.geometry renpy.texture
+renpy.solid
+<<<<<<< HEAD
+>>>>>>> Stashed changes
+>>>>>>> 03f1496959d4133a1a78c707a98795b93b502d91
+>>>>>>> 187ad876995476f0cb524fcfe0789cf5b1fdd8a1
