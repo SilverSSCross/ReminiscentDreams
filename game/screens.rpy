@@ -355,7 +355,7 @@ screen main_menu():
     ## Esto asegura que cualquier otra pantalla de menu es remplazada.
     tag menu
     ## Simplemente escribir la ruta sin poner ninguna extension (Asegurar que la imagen se llama igual que la variable)
-    add gui.main_menu
+    add gui.main_menu_background
 
     ## Este marco vacío oscurece el menu principal.
     frame:

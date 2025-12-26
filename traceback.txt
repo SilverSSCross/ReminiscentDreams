@@ -85,4 +85,4 @@ AttributeError: 'StoreModule' object has no attribute 'main_menu'
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.5.0.25111603
 SilencioGilM 1.0
-Thu Dec 25 14:19:15 2025
+Fri Dec 26 20:06:52 2025
