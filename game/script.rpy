@@ -50,6 +50,11 @@ label start:
     #e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
 
 
+    #Zona inicio pruebas
+
+    ########################################
+
+
     "According to the Multiple Trace Theory, every time we retrieve a memory, the record of that memory constitutes another memory in itself."
 
     "Memory is closely related to an individual's emotions, since the greater the emotional impact, the greater the capacity for recall itself."
@@ -509,6 +514,39 @@ label school_lore:
     "You return to reality."
 
     return
+
+#Bloque Lago
+label Lago:
+    
+    #Se añade la imagen de fondo del lago
+    #Interactuable Cielo, Barcaza, Lago (Puzle Musical)
+
+
+label lago_puzle_zona:
+    "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
+    call lago_puzle
+
+    return
+
+screen lago_puzle():
+    #Se define la solucion del puzle musical
+    #Se define lo que introduce el jugador
+    $ player_input=[]
+
+    #Se introducen las funcionalidades de los botones
+    imagebutton:
+        idle "gui/Lago/Buttons/Placeholder_Do.png"
+        hover "gui/Lago/Buttons/Blanco.png"
+    imagebutton:
+        idle "gui/House/Puzzle/Libro.png"
+        hover "gui/House/Puzzle/Libro_hover.png"
+        xpos 0.393
+        ypos 0.809
+        action ShowMenu("libro")
+    
+
+
+    
 
 #Bloque bosque
 
