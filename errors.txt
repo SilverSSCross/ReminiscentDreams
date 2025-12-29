@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 485: choice menuitem expects a non-empty block.
-    "Dar la vuelta":
-                    ^
+File "game/script.rpy", line 536: Line is indented, but the preceding one-line python statement statement does not expect a block. Please check this line's indentation. You may have forgotten a colon (:).
+    label .loop:
+    ^
 
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Wed Dec 17 19:57:57 2025
+Ren'Py Version: Ren'Py 8.5.0.25111603
+Mon Dec 29 22:23:16 2025

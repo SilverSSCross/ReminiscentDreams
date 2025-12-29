@@ -1,4 +1,4 @@
-# Changelog
+# Devlog
 
 Logs de lo añadido al proyecto. Espero que se use
 
@@ -10,3 +10,8 @@ Logs de lo añadido al proyecto. Espero que se use
 ### Fixed
 ### Removed
 ---
+## [] - 29-12-2025 - Jose
+
+### Added
+- Puzle funcional (Faltan imagenes y la solucion)
+- Lore empezado (Falta las imagenes y confirmar los personajes)

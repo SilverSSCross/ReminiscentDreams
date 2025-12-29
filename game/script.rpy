@@ -51,7 +51,7 @@ label start:
 
 
     #Zona inicio pruebas
-
+    call lago_puzle_zona
     ########################################
 
 
@@ -516,6 +516,10 @@ label school_lore:
     return
 
 #Bloque Lago
+
+#Definir cualquier funcion que se quiera usar
+
+
 label Lago:
     
     #Se añade la imagen de fondo del lago
@@ -523,26 +527,93 @@ label Lago:
 
 
 label lago_puzle_zona:
+    play music "audio/Lago/Sample.ogg" fadein 1.0
     "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
-    call lago_puzle
+    #Se define la solucion del puzle musical
+    $ lago_solution=[1,2,3,4,5]
+    #Se define lo que introduce el jugador
+    $ lago_player_input=[]
+        #Se inicializa un loop
+    label .loop:
+    call screen lago_puzle
+    if lago_player_input == lago_solution:
+        jump lago_lore
+        stop music fadeout 1.0
+    else:
+        $ lago_player_input.clear()
+        jump .loop
 
-    return
+label lago_lore:
+    "A mechanic noise is heard"
+    "The noise of a car"
+    "The noise that is heard when sitting inside of a car"
+    "An elder and a man sit on the front seats"
+    "No face was identifiable from the backseats"
+    #Mediana edad
+    "Think that this is a good one boss?"
+    #Viejo    
+    "Im sure. Now shut up, i don't pay you to talk"
+
+    "Silence filled the car, only interrupted with the ocasional groan that the elder made from coughing"
+    "Probably from a respiratory disease"
+    "Or maybe it was simply from the age"
+    "I guess that is a bit irrelevant"
+    "The route continued for a long time"
+
+
 
 screen lago_puzle():
-    #Se define la solucion del puzle musical
-    #Se define lo que introduce el jugador
-    $ player_input=[]
-
+    text "[lago_player_input]":
+        xalign 0.5
+        yalign 0.1
     #Se introducen las funcionalidades de los botones
     imagebutton:
         idle "gui/Lago/Buttons/Placeholder_Do.png"
         hover "gui/Lago/Buttons/Blanco.png"
+        action Function(lago_player_input.append, 1)
     imagebutton:
-        idle "gui/House/Puzzle/Libro.png"
-        hover "gui/House/Puzzle/Libro_hover.png"
-        xpos 0.393
-        ypos 0.809
-        action ShowMenu("libro")
+        idle "gui/Lago/Buttons/Placeholder_Re.png"
+        hover "gui/Lago/Buttons/Blanco.png"
+        xalign 0.2
+        action Function(lago_player_input.append, 2)
+    imagebutton:
+        idle "gui/Lago/Buttons/Placeholder_Mi.png"
+        hover "gui/Lago/Buttons/Blanco.png"
+        xalign 0.4
+        action Function(lago_player_input.append, 3)
+    imagebutton:
+        idle "gui/Lago/Buttons/Placeholder_Fa.png"
+        hover "gui/Lago/Buttons/Blanco.png"
+        xalign 0.6
+        action Function(lago_player_input.append, 4)
+    imagebutton:
+        idle "gui/Lago/Buttons/Placeholder_Sol.png"
+        hover "gui/Lago/Buttons/Blanco.png"
+        xalign 0.7
+        action Function(lago_player_input.append, 5)
+    imagebutton:
+        idle "gui/Lago/Buttons/Placeholder_La.png"
+        hover "gui/Lago/Buttons/Blanco.png"
+        xalign 0.8
+        action Function(lago_player_input.append, 6)
+    imagebutton:
+        idle "gui/Lago/Buttons/Placeholder_Si.png"
+        hover "gui/Lago/Buttons/Blanco.png"
+        xalign 1.0
+        action Function(lago_player_input.append, 7)
+    imagebutton:
+        idle "gui/Lago/Buttons/Verificar.png"
+        hover "gui/Lago/Buttons/Blanco.png"
+        xalign 0.4
+        yalign 0.8
+        action Return()
+    imagebutton:
+        idle "gui/Lago/Buttons/Borrar.png"
+        hover "gui/Lago/Buttons/Blanco.png"
+        xalign 0.6
+        yalign 0.8
+        action Function(lago_player_input.clear)
+
     
 
 
