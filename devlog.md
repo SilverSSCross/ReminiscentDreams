@@ -10,8 +10,9 @@ Logs de lo añadido al proyecto. Espero que se use
 ### Fixed
 ### Removed
 ---
-## [] - 29-12-2025 - Jose
+## [] - 29/12/2025 - 02/01/2025 - Jose
 
 ### Added
 - Puzle funcional (Faltan imagenes y la solucion)
-- Lore empezado (Falta las imagenes y confirmar los personajes)
+- Lore empezado (Falta las imagenes y confirmar los personajes.
+Buscar por viejo, Mediana edad, player, bestia)
