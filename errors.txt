@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 485: choice menuitem expects a non-empty block.
-    "Dar la vuelta":
-                    ^
+File "game/script.rpy", line 451: expected end of line.
+    pause return
+          ^
 
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Wed Dec 17 19:57:57 2025
+Ren'Py Version: Ren'Py 8.5.0.25111603
+Sun Jan  4 18:30:05 2026
