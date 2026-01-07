@@ -1,15 +1,40 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
   File "game/script.rpy", line 590, in script
     pause
 Exception: 'puzzle_armario' is not a screen or a label.
+=======
+<<<<<<< HEAD
+  File "game/script.rpy", line 302, in script
+    show screen mapa
+renpy.display.screen.ScreenNotFound: Screen 'mapa' is not known.
+=======
+  File "game/screens.rpy", line 353, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 353, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 358, in execute
+    add gui.main_menu
+  File "game/screens.rpy", line 358, in <module>
+    add gui.main_menu
+        ^^^^^^^^^^^^^
+AttributeError: 'StoreModule' object has no attribute 'main_menu'
+>>>>>>> Menu
+>>>>>>> af1cd950c1daed8fb8c6bc5aa561204720db6700
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "game/script.rpy", line 590, in script
     pause
+=======
+<<<<<<< HEAD
+  File "game/script.rpy", line 302, in script
+    show screen mapa
+>>>>>>> af1cd950c1daed8fb8c6bc5aa561204720db6700
   File "renpy/ast.py", line 2241, in execute
     self.call("execute")
     ~~~~~~~~~^^^^^^^^^^^
@@ -72,4 +97,81 @@ Exception: 'puzzle_armario' is not a screen or a label.
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.0.25111603
 SilencioGilM 1.0
+<<<<<<< HEAD
 Wed Jan  7 18:46:48 2026
+=======
+Wed Dec 17 18:38:06 2025
+=======
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1273, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+    ~~~~~~~~~~~^^
+  File "renpy/ui.py", line 304, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2117, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 2655, in interact_core
+    root_widget.visit_all(lambda d: d.per_interact())
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/displayable.py", line 457, in visit_all
+    d.visit_all(callback, seen)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 503, in visit_all
+    callback(self)
+    ~~~~~~~~^^^^^^
+  File "renpy/display/core.py", line 2655, in <lambda>
+    root_widget.visit_all(lambda d: d.per_interact())
+                                    ~~~~~~~~~~~~~~^^ 
+  File "renpy/display/screen.py", line 514, in per_interact
+    self.update()
+    ~~~~~~~~~~~^^
+  File "renpy/display/screen.py", line 715, in update
+    self.screen.function(**self.scope)
+    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 353, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 353, in execute
+    screen main_menu():
+  File "game/screens.rpy", line 358, in execute
+    add gui.main_menu
+  File "renpy/python.py", line 1305, in py_eval
+    return py_eval_bytecode(code, globals, locals)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1298, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/screens.rpy", line 358, in <module>
+    add gui.main_menu
+        ^^^^^^^^^^^^^
+AttributeError: 'StoreModule' object has no attribute 'main_menu'
+
+Windows-10-10.0.19045-SP0 AMD64
+Ren'Py 8.5.0.25111603
+SilencioGilM 1.0
+Fri Dec 26 20:06:52 2025
+>>>>>>> Menu
+>>>>>>> af1cd950c1daed8fb8c6bc5aa561204720db6700

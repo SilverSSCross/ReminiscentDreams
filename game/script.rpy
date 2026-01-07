@@ -279,18 +279,18 @@ label house_puzzle:
 label cuadro:
     show screen casa
     "A strange painting for sure. \nA gentleman with a book and a pen, I think. He seems obsessed with finding something."
-    jump house_puzzle
+    return
 
 label ventana: 
     show screen casa
     "There is a snowstorm outside. \nI remember that one of the children from the village died in one not long ago."
-    jump house_puzzle
+    return
 
 label padre:
     show screen casa
     ft "I am the spirit that always denies. And I do so with full rights, for everything that is born deserves to be destroyed; it would be better, then, if it had never been born. Therefore, my true nature is what you call sin and destruction, in a word, Evil."
-    hide narrator
-    jump house_puzzle
+    window hide
+    return
 
 label libro:
     $Correct_Answer = "Knowledge"
@@ -300,7 +300,8 @@ label libro:
     if Answer != Correct_Answer:
         show screen casa
         mc "No, I don't think that will do anything, gotta find more information. \nCould there be anything useful here?"
-        jump house_puzzle
+        window hide
+        return
     if Answer == Correct_Answer:
         hide screen casa
         hide th
