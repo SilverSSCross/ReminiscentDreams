@@ -23,6 +23,39 @@ define mc = Character("You")
 define np = Character("News of Helsinki")
 define mf = Character("Mefi")
 define unknown = Character("???")
+image unknown:
+    "gui/Ojos1.jpg"
+    pause 0.2
+
+    "gui/Ojos2.jpg"
+    pause 0.2
+
+    "gui/Ojos3.jpg"
+    pause 0.2
+
+    "gui/Ojos4.jpg"
+    pause 0.2
+
+    "gui/Ojos5.jpg"
+    pause 0.2
+
+    "gui/Ojos6.jpg"
+    pause 0.2
+
+    "gui/Ojos7.jpg"
+    pause 0.2
+
+    "gui/Ojos8.jpg"
+    pause 0.2
+
+    "gui/Ojos9.jpg"
+    pause 0.2
+
+    "gui/Ojos10.jpg"
+    pause 0.2
+
+    repeat
+
 define ol = Character("Olive")
 define ft = Character("Father?")
 define sl = Character("Sluagh")
@@ -847,6 +880,10 @@ label eleccionFinal:
 
     #Insertar sonido de corte/apuñalamiento
 
+    image InfiernoBg = "gui/Infierno.jpg"
+    scene InfiernoBg
+    with vpunch
+
     "¡¡WHAM!!"
 
     "You can't even get to the root of why you're having these thoughts in the first place."
@@ -855,11 +892,17 @@ label eleccionFinal:
 
     # show SluaghFrame2 (completamente en negro)
 
+    show SluaghFrame2
+    with fade
+
     "The only thing you're able to do before the weak flame of your so-called life flickers out is to make out a subtle yellow silhouette."
 
     "Everything turns black."
 
-    #scene black
+    hide SluaghFrame2
+
+    scene black
+    with fade
 
     "..."
 
@@ -877,7 +920,15 @@ label eleccionFinal:
 
     "The psychologist simply watched as, from one moment to the next, you began convulsing until you lay completely still on the floor."
 
+    image SirenaPoliciaBg = "gui/SirenaPolicia.jpg"
+    scene SirenaPoliciaBg
+    with dissolve
+    
     "The police arrived shortly after."
+
+    image CementerioBg = "gui/Cementerio.jpg"
+    scene CementerioBg
+    with dissolve
 
     "Your funeral was quite depressing."
 
@@ -897,6 +948,9 @@ label eleccionFinal:
 
     "Can it even be said that you existed?"
 
+    scene black
+
+
     "..."
 
     "..."
@@ -904,6 +958,12 @@ label eleccionFinal:
     "Who am I?"
 
     "Who knows."
+
+    show unknown 
+
+
+
+
 
     "Maybe I'm God."
 
@@ -950,11 +1010,14 @@ label eleccionFinal:
     
     "You’re not aware of how much time has passed when you reach a cliff."
 
+    image AcantiladoBg = "gui/AcantiladoBg.jpg"
+
     scene AcantiladoBg
     
     "Standing just inches from the edge is the creature that has been watching you."
 
     show SluaghFrame2
+    with fade
     
     "Its yellow raincoat flutters in the wind in an almost orchestrated rhythm."
     
@@ -1001,6 +1064,7 @@ label eleccionFinal:
     hide SluaghFrame2
 
     show SluaghFrame1
+    with fade
 
     "Olive tenses slightly."
    
@@ -1033,6 +1097,7 @@ label eleccionFinal:
     #Poner sonido de pasos
 
     hide SluaghFrame1
+    with dissolve
 
     "Olive steps closer to the edge of the precipice."
 
@@ -1064,9 +1129,8 @@ label eleccionFinal:
     
     #sonido choque (reventarse el cuerpo)
 
-    scene red
-
-    scene black
+    scene InfiernoBg
+    with vpunch
 
 
     "..."
@@ -1076,6 +1140,12 @@ label eleccionFinal:
     "..."
 
     #Tal vez poner imagen del cielo 
+
+    image CieloBg = "gui/Cielo.jpg"
+
+    scene CieloBg
+
+    with dissolve
 
     "Life is a sigh in a corner,"
 
@@ -1099,9 +1169,17 @@ label eleccionFinal:
 
     "..."
 
+    scene black
+    
     centered "Months later"
 
     #Escena de pueblo abandonado
+
+    image PuebloAbandonadoBg = "gui/PuebloAbandonado.jpg"
+
+    scene PuebloAbandonadoBg
+
+    with dissolve
 
     "It all began quietly, almost imperceptibly."
 
@@ -1110,7 +1188,11 @@ label eleccionFinal:
     "People thought that so much therapy had finally taken its toll."
 
     "Soon after, news began to spread that a woman from the town had killed her unfaithful husband."
-    
+
+
+    #Imagen periodico
+
+
     "Once again, it could pass as just another story."
     
     "However, shortly afterward, word came of a family that had committed suicide."
@@ -1140,16 +1222,33 @@ label eleccionFinal:
     "No one knows."
 
     #Imagen mural Dibujo figura amarilla
+
+    image ParedMonstruoBg = "gui/ParedMonstruo.jpg"
+
+    scene ParedMonstruoBg
+
+    with dissolve
    
     "The strange thing is that on some of the walls of what remains of the houses, there are drawings of a yellow figure."
     
     "Isn’t it strange how manipulable people can be?"
+
+    #Imagen diablo
+
+    image SatanBg = "gui/Satan.jpg"
+
+    scene SatanBg
+
+    with dissolve
     
     "The devil instigates, but it is the human hand that carries out his will."
    
     "Who is truly worse?"
 
     #Fundido a negro
+
+    scene black
+
 
     "..."
 
@@ -1160,6 +1259,12 @@ label eleccionFinal:
 
     #Pensando si poner una imagen de un libro, una silueta o algo tipo narrador omnisciente (musica o Daisy Daisy o algo similar)
 
+    image NarradorBg = "gui/Narrador.jpg"
+
+    scene NarradorBg
+
+    with dissolve
+    
     "Memory is a surprising thing, isn’t it?"
 
     "Memory is not an exact reproduction; we actively reconstruct memories based on pre-existing schemas, which can distort and “give weight” to certain aspects of an event depending on our perspective."
@@ -1203,6 +1308,8 @@ label eleccionFinal:
     "In the end of the universe, none of this will matter."
     
     "Everything that has happened and will happen in the life of the universe will be nothing more than a REMINISCENT DREAM at the end of the times."
+    
+    scene black
     
     centered "FINALE: A PARADOX ABOUT THE SOUL"
 
