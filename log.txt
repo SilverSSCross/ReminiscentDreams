@@ -1,65 +1,45 @@
-2026-01-07 18:18:03 UTC
+2026-01-09 19:00:49 UTC
 Windows-11-10.0.26200-SP0
-Ren'Py 8.5.0.25111603
+Ren'Py 8.4.1.25072401
 
-Early init took 40 ms
-Loading error handling took 21 ms
-Loading script took 225 ms
-Loading save slot metadata took 21 ms
+Early init took 45 ms
+Loading error handling took 20 ms
+Loading script took 260 ms
+Loading save slot metadata took 19 ms
 Loading persistent took 0 ms
-Running init code took 39 ms
-Loading analysis data took 11 ms
+Running init code took 38 ms
+Loading analysis data took 15 ms
 Analyze and compile ATL took 1 ms
-Reloading save slot metadata took 11 ms
-Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
-Dump and make backups took 42 ms
+Reloading save slot metadata took 9 ms
+Backing up script files to 'C:\\Users\\Hodori\\AppData\\Roaming/RenPy/backups\\SilencioGilM':
+Dump and make backups took 37 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 31 ms
+Initial gc took 36 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
-nvdrs: Disabled thread optimizations.
-Creating interface object took 249 ms
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 2 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 1 ms
-Analyze screens took 17 ms
-Save screen analysis took 13 ms
+Load screen analysis took 0 ms
+Analyze screens took 19 ms
+Save screen analysis took 14 ms
 Save pyanalysis took 0 ms
-Save bytecode took 0 ms
+Save bytecode took 26 ms
 Running _start took 1 ms
-Interface start took 263 ms
+Interface start took 293 ms
 
 Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
+primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 165, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Vendor: 'ATI Technologies Inc.'
+Renderer: 'AMD Radeon RX 6650 XT'
+Version: '4.6.0 Compatibility Profile Context 25.12.1.251128'
+Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 1920, 'current_h': 1080, 'refresh_rate': 144, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1057) drawable=(1920, 1057)
 Maximum texture size: 4096x4096
 INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
+Screen sizes: virtual=(1920, 1080) physical=(1920, 1057) drawable=(1920, 1057)
 Maximum texture size: 4096x4096
-Cleaning stores took 1 ms
-Load screen analysis took 39 ms
-Analyze screens took 0 ms
-Running _start took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 26 ms
-Analyze screens took 0 ms
-Running _start took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 25 ms
-Analyze screens took 0 ms
-Running _start took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 27 ms
-Analyze screens took 0 ms
-Running _start took 1 ms
-Cleaning stores took 1 ms
-Load screen analysis took 25 ms
-Analyze screens took 0 ms
-Running _start took 2 ms

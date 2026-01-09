@@ -1627,19 +1627,35 @@ style slider_slider:
 ####################################################
 #Pantalla Mapa
 
-screen mapa_mundo():
+screen mapa():
     imagemap:
-        ground "Mapa/Mapa_(iconos).png"  # Imagen base
-# Opcional (puede omitirse)
-        hover "images/Mapa.png"    # Imagen con highlights
+        ground "Mapa/mapa.png"  # Fondo base (zonas no clicables)
+        idle "Mapa/mapa.png"    # Estado normal de hotspots
+        hover "Mapa/mapa_(iconos).png"  # Efecto al pasar el mouse
 
-        # Hotspot: (x, y, ancho, alto) action Acción_al_clic
-        hotspot (100, 200, 150, 100) action Jump("escena_Bosque")  # Ejemplo: cambia a label "escena_ciudad"
-        hotspot (400, 300, 200, 150) action Jump("escena_Casa")
-        hotspot (700, 100, 180, 120) action Jump("escena_Lago")
-        hotspot (700, 100, 180, 120) action Jump("escena_Orfanato")
-        hotspot (700, 100, 180, 120) action Jump("escena_Colegio")
+        # Ejemplos de hotspots (reemplaza con tus coordenadas)
+        hotspot (1121, 554, 121, 88) action Jump("orfanato") alt "Ir al orfanato"
+        hotspot (897, 342, 96, 78) action Jump("school_puzzle") alt "Ir al colegio"
+        hotspot (1021, 653, 306, 155) action Jump("Bosque") alt "Visitar el bosque"
+        hotspot (758, 332, 91, 82) action Jump("house_puzzle") alt "Ir a la casa"
+        hotspot (1068, 420, 214, 123) action Jump("lago") alt "Visitar el lago"
 
 
 
 ####################################################
+#Atajo mapa
+screen tecla_mapa():
+    zorder 250  # Muy arriba para que funcione sobre todo
+    # Solo activa si NO estás en el mapa
+    if not renpy.get_screen("mapa"):
+        key "m" action [
+            Hide("orfanato"),
+            Hide("school_puzzle"),
+            Hide("Bosque"),
+            Hide("house_puzzle"),
+            Hide("lago"),
+            # Agrega Hide("otras_localizaciones") aquí si tienes más
+            Return()
+        ]  # Return() sale de la localización actual y vuelve al bucle del mapa
+
+   

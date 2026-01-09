@@ -254,7 +254,7 @@ label new_beggining:
 
     #Llamar al mapa
 
-    ##########call screen mapa_mundo#################
+    call screen mapa
 
     #return
 
@@ -815,8 +815,7 @@ label Bosque:
         "Entrar al bosque":
             jump eleccionFinal
         "Dar la vuelta":
-            "Volver mapa"
-            #jump screen mapa_mundo
+            call screen mapa
 
 label eleccionFinal:
 
