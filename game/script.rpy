@@ -462,6 +462,7 @@ label house_lore:
 
 default Taquilla_Open = False 
 default Armario_Open = False
+default Profesora_tip = False
 
 label school_puzzle:
 
@@ -518,6 +519,26 @@ screen pasillo():
         idle "gui/School/Puzzle/clase.png"
         hover "gui/School/Puzzle/clase_hover.png"
         action ShowMenu("scene_clase")
+    imagebutton
+        at right
+        idle "gui/School/Puzzle/SiluetaNiño.png"
+        hover "gui/School/Puzzle/SiluetaNiño_hover.png"
+        action ShowMenu("niño")
+
+
+
+label niño:
+    show screen scene_pasillo
+    kid "Hey you. Wanna know something?"
+    menu:
+        "Yeah, sure":
+            kid ""
+            $Profesora_tip = true
+            pass
+        "Get lost kid":
+            pass
+    window hide
+    return
 
 label scene_taquilla:
     if Taquilla_Open == True:
@@ -613,6 +634,31 @@ screen clase():
         idle "gui/School/Puzzle/puerta.png"
         hover "gui/School/Puzzle/puerta_hover.png"
         action ShowMenu("scene_pasillo")
+    imagebutton
+        at left
+        idle "gui/School/Puzzle/SiluetaProfesora.png"
+        hover "gui/School/Puzzle/SiluetaProfesora_hover.png"
+        action ShowMenu("profesora")
+
+label profesora:
+    show screen scene_clase
+    Profe "What are you doing here? Shouldn't you be somewhere else wasting someone else time?"
+    menu:
+        "Not really. Why can't i unlock my locker? I want some stuff that I left there":
+            Profe "It's not your locker anymore silly, besides, it's been inhabilitated and the code has been changed, \n I don't know what the hell you have in there for that, and I ain't giving you the code."
+            pass
+        "Sure, I don't even know why I'm talking to you":
+            Profe "Jerk"
+            pass
+        "" if Profesora_tip == True:
+            Profe "Wait. How do YOU know!?"
+            Profe "Damn it!"
+            Profe "Ok ok, the locker's sheet code is in the cupboard at mi right"
+            Profe "The code is 3516"
+            Profe "Now go!\n AND DON'T YOU DARE TELL ANYONE WHAT YOU KNOW OR YOU WILL REGRET IT!"
+            pass
+    window hide
+    return
 
 label scene_armario:
     if Armario_Open == True:
