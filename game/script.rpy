@@ -684,6 +684,7 @@ label foto:
 label empty_escuela:
     show screen escuela
     pause
+    call screen mapa
     #ir al mapa
 
 label empty_pasillo:
