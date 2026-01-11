@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 1661: 'init' is not a keyword argument or valid child of the screen statement.
-    init python:
-        ^
+File "game/script.rpy", line 652: the focus_mask keyword argument was not given a value.
+    focus_mask
+              ^
 
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Fri Jan  9 19:58:11 2026
+Ren'Py Version: Ren'Py 8.5.0.25111603
+Sun Jan 11 20:18:25 2026

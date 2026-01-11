@@ -23,6 +23,8 @@ define mc = Character("You")
 define np = Character("News of Helsinki")
 define mf = Character("Mefi")
 define unknown = Character("???")
+define kid = Character("Student")
+define Profe = Character("Teacher")
 image unknown:
     "gui/Ojos1.jpg"
     pause 0.2
@@ -462,6 +464,7 @@ label house_lore:
 
 default Taquilla_Open = False 
 default Armario_Open = False
+default Profesora_tip = False
 
 label school_puzzle:
 
@@ -518,6 +521,33 @@ screen pasillo():
         idle "gui/School/Puzzle/clase.png"
         hover "gui/School/Puzzle/clase_hover.png"
         action ShowMenu("scene_clase")
+    imagebutton:
+        at right
+        xsize 0.3
+        ysize 0.7
+        focus_mask True
+        idle "gui/School/Puzzle/SiluetaNiño.png"
+        hover "gui/School/Puzzle/SiluetaNiño_hover.png"
+        action ShowMenu("niño")
+
+
+
+label niño:
+    show screen pasillo
+    kid "Hey you. Wanna know something?"
+    menu:
+        "Yeah, sure":
+            kid "Ralf told me that Eeli is getting a lot of great grades, it's weird coming from the laziest kid in the class."
+            kid "So he followed him in the recess \nand he found out that the teacher gives him chores in her house in exchange of getting good grades."
+            kid "Do you think i could do it too?"
+            mc "I don't think you should, but you gave me an idea, now go kid."
+            $Profesora_tip = True
+            jump scene_pasillo
+            window hide
+        "Get lost kid":
+            jump scene_pasillo
+            window hide
+    return
 
 label scene_taquilla:
     if Taquilla_Open == True:
@@ -558,7 +588,7 @@ screen taquilla_cerrada():
         action ShowMenu("puzle_taquilla")
 
 label puzle_taquilla:
-    $Correct_Answer = "1968"
+    $Correct_Answer = "7531"
     show screen taquilla_cerrada
 
     mc "It needs a code"
@@ -598,10 +628,6 @@ screen clase():
     add "gui/School/Puzzle/Clase.jpg"
 
     imagebutton:
-        idle "gui/School/Puzzle/Clase.jpg"
-        hover "gui/School/Puzzle/Clase.jpg"
-        action ShowMenu("empty_clase")
-    imagebutton:
         xpos 0.79
         ypos 0.22
         idle "gui/School/Puzzle/Armario.png"
@@ -613,6 +639,35 @@ screen clase():
         idle "gui/School/Puzzle/puerta.png"
         hover "gui/School/Puzzle/puerta_hover.png"
         action ShowMenu("scene_pasillo")
+    imagebutton:
+        at left
+        ysize 0.7
+        focus_mask True
+        idle "gui/School/Puzzle/SiluetaProfesora.png"
+        hover "gui/School/Puzzle/SiluetaProfesora_hover.png"
+        action ShowMenu("profesora")
+
+label profesora:
+    show screen clase
+    Profe "What are you doing here? Shouldn't you be somewhere else wasting someone else time?"
+    menu:
+        "Not really. Why can't i unlock my locker? I want some stuff that I left there":
+            Profe "It's not your locker anymore silly, besides, it's been inhabilitated and the code has been changed, \n I don't know what the hell you have in there for that, and I ain't giving you the code."
+            jump scene_clase
+            window hide
+        "Sure, I don't even know why I'm talking to you":
+            Profe "Jerk"
+            jump scene_clase
+            window hide
+        "Like you waste the time of your students doing stuff\n you don't want to do in exchange for an easy A++?" if Profesora_tip == True:
+            Profe "Wait. How do YOU know!?"
+            Profe "Damn it!"
+            Profe "Ok ok, the locker's sheet code is in the cupboard at mi right"
+            Profe "The code is 3516"
+            Profe "Now go!\n AND DON'T YOU DARE TELL ANYONE WHAT YOU KNOW OR YOU WILL REGRET IT!"
+            jump scene_clase
+            window hide
+    return
 
 label scene_armario:
     if Armario_Open == True:
@@ -630,7 +685,7 @@ label scene_armario:
         
 
 label puzle_armario:
-    $Correct_Answer = "1968"
+    $Correct_Answer = "3516"
     show screen armario_cerrado
 
     mc "It needs a code"
@@ -673,7 +728,63 @@ screen armario_abierto():
         hover "gui/School/Puzzle/Armario_Abierto.jpg"
         action ShowMenu("empty_armario_abierto")
     #añadir estante con papeles usando draggable
+    imagebutton:
+        idle "gui/School/Puzzle/InteriorArmario.png"
+        hover "gui/School/Puzzle/InteriorArmario_hover.png"
+        action ShowMenu("interior_armario")
 
+screen interior_armario_puzzle():
+    add "gui/School/Puzzle/InteriorArmarioPuzzle.jpg"
+
+    imagebutton:
+        idle "gui/School/Puzzle/InteriorArmarioPuzzle.jpg"
+        hover "gui/School/Puzzle/InteriorArmarioPuzzle.jpg"
+        action ShowMenu("empty_puzle_armario")
+    draggroup:
+        drag:
+            drag_name "pieza1"
+            child "pieza1.png"
+            draggable True
+            droppable False
+            xpos 100 ypos 200
+        drag:
+            drag_name "pieza2"
+            child "pieza2.png"
+            draggable True
+            droppable False
+            xpos 100 ypos 200
+        drag:
+            drag_name "pieza3"
+            child "pieza3.png"
+            draggable True
+            droppable False
+            xpos 100 ypos 200
+        drag:
+            drag_name "pieza4"
+            child "pieza4.png"
+            draggable True
+            droppable False
+            xpos 100 ypos 200
+        drag:
+            drag_name "pieza5"
+            child "pieza5.png"
+            draggable True
+            droppable False
+            xpos 100 ypos 200
+        drag:
+            drag_name "pieza6"
+            child "pieza6.png"
+            draggable True
+            droppable False
+            xpos 100 ypos 200
+
+label interior_armario:
+    show screen interior_armario_puzzle
+    with dissolve
+    
+    pause 
+    return
+    
 
 label foto:
     mc "Wait a minute, this picture reminds me of something....."
@@ -682,14 +793,18 @@ label foto:
     jump school_lore
 
 label empty_escuela:
-    show screen escuela
+    show screen mapa
     pause
-    call screen mapa
     #ir al mapa
+
+label empty_clase:
+    show screen clase
+    pause
 
 label empty_pasillo:
     show screen escuela
     pause
+
 
 label empty_taquilla_cerrada:
     show screen pasillo
@@ -699,16 +814,16 @@ label empty_taquilla_abierta:
     show screen pasillo
     pause
 
-label empty_clase:
-    show screen clase
-    pause
-
 label empty_armario_cerrado:
     show screen clase
     pause
 
 label empty_armario_abierto:
     show screen clase
+    pause
+
+label empty_puzle_armario:
+    show screen armario_abierto
     pause
 
 

@@ -1,22 +1,23 @@
-renpy.geometry renpy.texture
 renpy.geometry renpy.matrixcolor renpy.solid
->>>>>>> Menu
->>>>>>> Stashed changes
-<<<<<<< Updated upstream
-renpy.alpha renpy.texture
 renpy.dissolve renpy.dissolve
-<<<<<<< HEAD
->>>>>>> 187ad876995476f0cb524fcfe0789cf5b1fdd8a1
->>>>>>> af1cd950c1daed8fb8c6bc5aa561204720db6700
 renpy.solid
-renpy.mask renpy.mask
-renpy.texture
->>>>>>> 03f1496959d4133a1a78c707a98795b93b502d91
-=======
-renpy.matrixcolor renpy.matrixcolor renpy.solid
-renpy.matrixcolor renpy.solid
-renpy.dissolve renpy.geometry
-renpy.alpha renpy.geometry renpy.texture
-renpy.geometry renpy.solid
-renpy.geometry renpy.mask
+>>>>>>> af1cd950c1daed8fb8c6bc5aa561204720db6700
+>>>>>>> 187ad876995476f0cb524fcfe0789cf5b1fdd8a1
+renpy.alpha renpy.texture
+<<<<<<< Updated upstream
+renpy.geometry renpy.texture
 renpy.ftl
+renpy.mask renpy.mask
+>>>>>>> Menu
+renpy.matrixcolor renpy.matrixcolor renpy.solid
+renpy.geometry renpy.solid
+renpy.dissolve renpy.geometry
+>>>>>>> 03f1496959d4133a1a78c707a98795b93b502d91
+renpy.geometry renpy.mask
+renpy.matrixcolor renpy.solid
+<<<<<<< HEAD
+renpy.alpha renpy.geometry renpy.texture
+>>>>>>> 13d4b0bad331ec79a32cbfa1d69cb9d367a6b856
+renpy.texture
+>>>>>>> Stashed changes
+=======
