@@ -212,3 +212,12 @@ init python:
 ## separados por una barra.
 
 # define build.itch_project = "renpytom/test-project"
+
+
+###Atajo rapido
+init python:
+    # Define el evento 'show_map' y asigna la tecla M (usa 'K_m' para simbólica, o 'm' para carácter)
+    config.keymap['show_map'] = ['K_m']
+
+    # Agrega un Keymap invisible al underlay (siempre activo, debajo de todo)
+    config.underlay.append(renpy.Keymap(show_map=ToggleScreen("mapa")))

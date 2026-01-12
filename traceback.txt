@@ -1,6 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< Updated upstream
   File "game/script.rpy", line 934, in script
     call screen mapa
 renpy.game.JumpException: orfanato
@@ -13,10 +14,19 @@ Traceback (most recent call last):
   File "game/script.rpy", line 934, in script
     call screen mapa
 renpy.script.LabelNotFound: could not find label 'orfanato'.
+=======
+  File "game/script.rpy", line 831, in script
+    $ cantidad_recuerdos += 1
+  File "game/script.rpy", line 831, in <module>
+    $ cantidad_recuerdos += 1
+      ^^^^^^^^^^^^^^^^^^     
+NameError: name 'cantidad_recuerdos' is not defined
+>>>>>>> Stashed changes
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
+<<<<<<< Updated upstream
   File "game/script.rpy", line 934, in script
     call screen mapa
   File "renpy/ast.py", line 2241, in execute
@@ -163,8 +173,26 @@ Traceback (most recent call last):
   File "renpy/script.py", line 1201, in lookup
     raise LabelNotFound(original)
 renpy.script.LabelNotFound: could not find label 'orfanato'.
+=======
+  File "game/script.rpy", line 831, in script
+    $ cantidad_recuerdos += 1
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1260, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 831, in <module>
+    $ cantidad_recuerdos += 1
+      ^^^^^^^^^^^^^^^^^^     
+NameError: name 'cantidad_recuerdos' is not defined
+>>>>>>> Stashed changes
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.0.25111603
 SilencioGilM 1.0
+<<<<<<< Updated upstream
 Sun Jan 11 20:28:41 2026
+=======
+Mon Jan 12 19:11:51 2026
+>>>>>>> Stashed changes
