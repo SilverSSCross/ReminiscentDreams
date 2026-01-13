@@ -61,6 +61,9 @@ image unknown:
 define ol = Character("Olive")
 define ft = Character("Father?")
 define sl = Character("Sluagh")
+image SluaghFrame1 = "gui/SluaghFrame1.png"
+
+image SluaghFrame2 = "gui/SluaghFrame2.png"
 
 # El juego comienza aquí.
 
@@ -896,7 +899,7 @@ label school_lore:
 
     scene black
     
-    "..."
+    ".."
     
     "..."
 
@@ -918,6 +921,10 @@ label school_lore:
 
 #fin bloque escuela
 
+
+###################################################################################################################################
+
+
 #Bloque bosque
 
 label Bosque:
@@ -935,23 +942,32 @@ label Bosque:
 
 label eleccionFinal:
 
-    ###############
-    #Contador para si ocurre un final u otro. Una vez estructurado el proyecto colocar bien
+    menu:
+        "Final Malo":
+            jump Final1
+        "Final Verdadero":
+            jump Final2
 
-    default numero_recuerdos = 0
+    ###############
+    #Contador para si ocurre un final u otro. Una vez estructurado el proyecto descomentar
+
+    #default numero_recuerdos = 0
 
     #Cuando consigues un recuerdo
 
-    label buscar_recuerdos:
-    "Has recuperado una de tus memorias perdidas."
-    $ cantidad_recuerdos += 1
-    "Ahora tienes [cantidad_recuerdos] recuerdos."
+    #label buscar_recuerdos:
+    #"Has recuperado una de tus memorias perdidas."
+    #$ cantidad_recuerdos += 1
+    #"Ahora tienes [cantidad_recuerdos] recuerdos."
 
     ###############
 
     #if cantidad_recuerdos < 4:
 
     # FINAL MALO BOSQUE########################################################################################################################
+
+
+    label Final1:
 
     "A part of you tells you that you should keep digging into your past."
 
@@ -983,9 +999,9 @@ label eleccionFinal:
 
     "But if you have no path, what sets you apart from someone who doesn't exist?"
 
-    "..."
+    "."
 
-    "..."
+    ".."
 
     "..."
 
@@ -1019,9 +1035,9 @@ label eleccionFinal:
     scene black
     with fade
 
-    "..."
+    "."
 
-    "..."
+    ".."
 
     "..."
 
@@ -1066,7 +1082,7 @@ label eleccionFinal:
     scene black
 
 
-    "..."
+    ".."
 
     "..."
 
@@ -1096,15 +1112,15 @@ label eleccionFinal:
 
     "Goodbye, nameless one."
 
-    "..."
+    "."
 
-    "..."
+    ".."
 
     "..."
 
     centered "BAD ENDING: THE NONEXISTENCE ABOUT THE YOU."
 
-
+    return
 
     #else:
 
@@ -1112,6 +1128,8 @@ label eleccionFinal:
 
 
     #FINAL VERDADERO##########################################################################
+
+    label Final2:
 
     "Your memories converge into one."
 
@@ -1248,9 +1266,9 @@ label eleccionFinal:
     with vpunch
 
 
-    "..."
+    "."
 
-    "..."
+    ".."
 
     "..."
 
@@ -1278,9 +1296,9 @@ label eleccionFinal:
 
     "soon loses its charm and virtue."
 
-    "..."
+    "."
 
-    "..."
+    ".."
 
     "..."
 
@@ -1365,9 +1383,9 @@ label eleccionFinal:
     scene black
 
 
-    "..."
+    "."
 
-    "..."
+    ".."
 
     "..."
 
