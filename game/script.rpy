@@ -68,6 +68,7 @@ image SluaghFrame2 = "gui/SluaghFrame2.png"
 # El juego comienza aquí.
 
 label start:
+    stop music 
     camera:
         perspective True 
 
@@ -119,6 +120,8 @@ label start:
     scene TherapyBg
 
     show th at character_Base
+
+    play music reloj 
 
     th "It's quite cold today, isn't it? Even for this area of the mountains, it's a low temperature."
 
@@ -191,6 +194,7 @@ label start:
 
 label bad_ending1:
     th "It's a real shame, honestly. You were a good kid. Truly."
+    stop music
 
     hide narrator
 
@@ -202,6 +206,9 @@ label bad_ending1:
 
     centered "Some days later...."
     with dissolve
+
+    play sound sonidoperiodico
+    play music undiamas
 
     image news = "gui/newspaper.jpg"
     scene black
@@ -227,10 +234,13 @@ label bad_ending1:
     centered "Bad ending 1 (The demon in the bottle)"
     with dissolve
 
+    stop music
+
     return
 
 label new_beggining:
     th "I'm glad to hear that, son."
+    stop music
 
     hide th
     with dissolve
@@ -258,6 +268,8 @@ label new_beggining:
     th "Let's get this started."
 
     #Llamar al mapa
+    play sound sonidoperiodico
+
 
     call screen mapa
 
@@ -305,6 +317,8 @@ label house_puzzle:
 
     show screen casa
     with dissolve
+
+    play music nieve loop
 
     image padre = "gui/House/Puzzle/Silueta_padre.png"
 
@@ -366,6 +380,9 @@ label house_lore:
 
     scene black
     with dissolve
+
+    stop music
+    play music psalm loop
 
     centered "The man with the big nose and the man with the long eyes."
     with dissolve
@@ -440,6 +457,8 @@ label house_lore:
     scene black
     with dissolve
 
+    stop music
+
     hide finalMefi
 
     "Tell me. Would you have taken the deal?"
@@ -478,6 +497,9 @@ label school_puzzle:
 
     show screen escuela
     with dissolve
+
+    stop music
+
 
     pause
 
@@ -932,6 +954,10 @@ label Bosque:
     image BosqueBg = "gui/BosqueBg.jpg"
     scene BosqueBg
 
+    stop music
+
+    play music bosquenieve loop
+
     "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
 
     menu:
@@ -975,6 +1001,8 @@ label eleccionFinal:
 
     "You want to end this experience as soon as possible, so you venture deeper into the forest."
 
+    play sound pasosnieve loop
+
     "You reflect on the decisions you've made throughout your life."
 
     "Though of course, you barely have any memories of that life."
@@ -1009,11 +1037,15 @@ label eleccionFinal:
 
     "You're not even aware of why you're suddenly asking yourself such profound questions out of nowhere."
 
+    stop sound
+
     #Insertar sonido de corte/apuñalamiento
 
     image InfiernoBg = "gui/Infierno.jpg"
     scene InfiernoBg
     with vpunch
+
+    play sound corte
 
     "¡¡WHAM!!"
 
@@ -1041,7 +1073,11 @@ label eleccionFinal:
 
     "..."
 
+    stop music
+
     #Insertar musica piano clasica
+
+    play music claire
 
     "Are you still here?"
 
@@ -1079,6 +1115,8 @@ label eleccionFinal:
 
     "Can it even be said that you existed?"
 
+    stop music
+
     scene black
 
 
@@ -1089,6 +1127,8 @@ label eleccionFinal:
     "Who am I?"
 
     "Who knows."
+
+    play music daisy 
 
     show unknown 
 
@@ -1120,6 +1160,8 @@ label eleccionFinal:
 
     centered "BAD ENDING: THE NONEXISTENCE ABOUT THE YOU."
 
+    stop music
+
     return
 
     #else:
@@ -1135,7 +1177,7 @@ label eleccionFinal:
 
     "You decide to venture into the depths of the forest."
 
-    #Sonido pasos
+    play sound pasosnieve loop
 
     "Your steps are determined and agile."
 
@@ -1146,6 +1188,8 @@ label eleccionFinal:
     image AcantiladoBg = "gui/AcantiladoBg.jpg"
 
     scene AcantiladoBg
+
+    stop sound
     
     "Standing just inches from the edge is the creature that has been watching you."
 
@@ -1227,7 +1271,8 @@ label eleccionFinal:
 
     mc "If no one loved you, what is your reason for living at all?"
 
-    #Poner sonido de pasos
+    play sound pasosnieve 
+    
 
     hide SluaghFrame1
     with dissolve
@@ -1243,6 +1288,8 @@ label eleccionFinal:
     "Then he jumps."
 
     "The wind stops."
+
+    stop music
 
     "After gazing at the edge of the cliff for a few seconds, you take a deep breath."
 
@@ -1260,7 +1307,7 @@ label eleccionFinal:
 
     "And above everything else, you feel the cold ground running along your body, giving way to a warm sensation of hot blood spilling out from your body shattering against the cold granite."
     
-    #sonido choque (reventarse el cuerpo)
+    play sound caida
 
     scene InfiernoBg
     with vpunch
@@ -1279,6 +1326,8 @@ label eleccionFinal:
     scene CieloBg
 
     with dissolve
+
+    play music vivaldi156
 
     "Life is a sigh in a corner,"
 
@@ -1322,9 +1371,10 @@ label eleccionFinal:
 
     "Soon after, news began to spread that a woman from the town had killed her unfaithful husband."
 
+    play sound sonidoperiodico
 
-    #Imagen periodico
-
+    scene news
+    with dissolve
 
     "Once again, it could pass as just another story."
     
@@ -1337,6 +1387,9 @@ label eleccionFinal:
     "Soon, people began leaving the town or simply disappearing."
     
     "Who knows."
+
+    scene PuebloAbandonadoBg 
+    with dissolve
     
     "The few who remained went from being a community to turning against one another."
     
@@ -1382,6 +1435,10 @@ label eleccionFinal:
 
     scene black
 
+    stop music
+
+    play sound vela loop
+
 
     "."
 
@@ -1397,6 +1454,9 @@ label eleccionFinal:
     scene NarradorBg
 
     with dissolve
+
+    
+    play music fever
     
     "Memory is a surprising thing, isn’t it?"
 
@@ -1441,10 +1501,17 @@ label eleccionFinal:
     "In the end of the universe, none of this will matter."
     
     "Everything that has happened and will happen in the life of the universe will be nothing more than a REMINISCENT DREAM at the end of the times."
+
+    stop sound
+
     
     scene black
     
     centered "FINALE: A PARADOX ABOUT THE SOUL"
+
+    stop music
+
+
 
     return
 
