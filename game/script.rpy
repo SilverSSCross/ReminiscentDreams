@@ -190,6 +190,8 @@ label start:
             jump new_beggining
     # Finaliza el juego:
 
+    pause
+
     return
 
 label bad_ending1:
@@ -281,32 +283,31 @@ screen casa():
     add "gui/House/Puzzle/Casa.jpg"
 
     imagebutton:
-        idle "gui/House/Puzzle/Casa.jpg"
-        hover "gui/House/Puzzle/Casa.jpg"
-        action ShowMenu("empty")
-    imagebutton:
         idle "gui/House/Puzzle/Ventana.png"
         hover "gui/House/Puzzle/Ventana_hover.png"
         xpos 0.341
         ypos 0.125
-        action ShowMenu("ventana")
+        action Jump("ventana")
     imagebutton:
         idle "gui/House/Puzzle/Cuadro.png"
         hover "gui/House/Puzzle/Cuadro_hover.png"
         xpos 0.752
         ypos 0.216
-        action ShowMenu("cuadro")
+        action Jump("cuadro")
+        focus_mask True
     imagebutton:
         idle "gui/House/Puzzle/Libro.png"
         hover "gui/House/Puzzle/Libro_hover.png"
         xpos 0.393
         ypos 0.809
-        action ShowMenu("libro")
+        action Jump("libro")
+        focus_mask True
     imagebutton:
         at left 
         idle "gui/House/Puzzle/Silueta_padre.png" 
         hover "gui/House/Puzzle/Silueta_padre_hover.png" 
-        action ShowMenu("padre")
+        action Jump("padre")
+        focus_mask True
 
 label house_puzzle:
 
@@ -315,34 +316,33 @@ label house_puzzle:
     scene black
     with dissolve
 
-    show screen casa
-    with dissolve
+    label puzzle_loop:
+        window hide
+        call screen casa
+        play music nieve loop
+        jump puzzle_loop
 
-    play music nieve loop
+    
 
-    image padre = "gui/House/Puzzle/Silueta_padre.png"
 
-    show padre at left
-
-    pause
-
-    return
 
 label cuadro:
     show screen casa
+    window show
     "A strange painting for sure. \nA gentleman with a book and a pen, I think. He seems obsessed with finding something."
-    return
+    jump puzzle_loop
 
 label ventana: 
     show screen casa
+    window show
     "There is a snowstorm outside. \nI remember that one of the children from the village died in one not long ago."
-    return
+    jump puzzle_loop
 
 label padre:
     show screen casa
+    window show
     ft "I am the spirit that always denies. And I do so with full rights, for everything that is born deserves to be destroyed; it would be better, then, if it had never been born. Therefore, my true nature is what you call sin and destruction, in a word, Evil."
-    window hide
-    return
+    jump puzzle_loop
 
 label libro:
     $Correct_Answer = "Knowledge"
@@ -353,7 +353,7 @@ label libro:
         show screen casa
         mc "No, I don't think that will do anything, gotta find more information. \nCould there be anything useful here?"
         window hide
-        return
+        jump puzzle_loop
     if Answer == Correct_Answer:
         hide screen casa
         hide th
@@ -361,10 +361,6 @@ label libro:
         hide padre
         scene black
         jump house_lore
-
-label empty:
-    show screen casa
-    pause
 
 
 label house_lore:
@@ -475,9 +471,9 @@ label house_lore:
 
     "You come back to reality."
 
-    jump start
+    call screen mapa
 
-    return
+    #return
 
 #Fin bloque casa
 
@@ -964,6 +960,7 @@ label Bosque:
         "Entrar al bosque":
             jump eleccionFinal
         "Dar la vuelta":
+            stop music
             call screen mapa
 
 label eleccionFinal:
