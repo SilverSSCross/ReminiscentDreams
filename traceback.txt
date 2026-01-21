@@ -1,45 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 1080, in script
-    play music Claire
-  File "game/script.rpy", line 1080, in <module>
-    play music Claire
-               ^^^^^^
-NameError: name 'Claire' is not defined. Did you mean: 'claire'?
+  File "game/tl/spanish/screens.rpy", line 326, in script
+    old "Skip"
+Exception: A translation for "Skip" already exists at game/tl/spanish/screens.rpy:15.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 1080, in script
-    play music Claire
-  File "renpy/ast.py", line 2231, in execute
-    self.call("execute")
-    ~~~~~~~~~^^^^^^^^^^^
-  File "renpy/ast.py", line 2195, in call
-    return renpy.statements.call(method, parsed, *args, **kwargs)
-           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/statements.py", line 379, in call
-    return method(parsed, *args, **kwargs)
-           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/common/000statements.rpy", line 131, in execute_play_music
-    _audio_eval(p["file"]),
-    ~~~~~~~~~~~^^^^^^^^^^^ 
-  File "renpy/common/000statements.rpy", line 39, in _audio_eval
-    return eval(expr, locals=store.audio.__dict__)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1292, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1285, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 1080, in <module>
-    play music Claire
-               ^^^^^^
-NameError: name 'Claire' is not defined. Did you mean: 'claire'?
+  File "game/tl/spanish/screens.rpy", line 326, in script
+    old "Skip"
+  File "renpy/ast.py", line 3036, in execute
+    renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 586, in add_string_translation
+    stl.add(old, new, newloc)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 532, in add
+    raise Exception('A translation for "{}" already exists at {}:{}.'.format(quote_unicode(old), fn, line))
+Exception: A translation for "Skip" already exists at game/tl/spanish/screens.rpy:15.
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.4.1.25072401
 Reminiscent Dream 1.0
-Tue Jan 20 18:40:05 2026
+Wed Jan 21 19:04:51 2026
