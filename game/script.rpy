@@ -491,70 +491,35 @@ label school_puzzle:
     scene black
     with dissolve
 
-    show screen escuela
-    with dissolve
-
     stop music
-
-
-    pause
-
-    return
-
-screen escuela():
-    add "gui/School/Puzzle/Entrada.jpg"
-
-    imagebutton:
-        idle "gui/School/Puzzle/Entrada.jpg"
-        hover "gui/School/Puzzle/Entrada.jpg"
-        action ShowMenu("empty_escuela")
-    imagebutton:
-        xpos 0.797
-        ypos 0.246
     
-        idle "gui/School/Puzzle/pasillo.png"
-        hover "gui/School/Puzzle/pasillo_hover.png"
-        action ShowMenu("scene_pasillo")
-
-label scene_pasillo:
-    show screen pasillo
-    with dissolve
-
-    pause 
-    return
-
-screen pasillo():
-    add "gui/School/Puzzle/Pasillo.jpg"
-
-    imagebutton:
-        idle "gui/School/Puzzle/Pasillo.jpg"
-        hover "gui/School/Puzzle/Pasillo.jpg"
-        action ShowMenu("empty_pasillo")
-    imagebutton:
-        xpos 0.452
-        ypos 0.435
-        idle "gui/School/Puzzle/taquilla.png"
-        hover "gui/School/Puzzle/taquilla_hover.png"
-        action ShowMenu("scene_taquilla")
-    imagebutton:
-        xpos 0.342
-        ypos 0.299
-        idle "gui/School/Puzzle/clase.png"
-        hover "gui/School/Puzzle/clase_hover.png"
-        action ShowMenu("scene_clase")
-    imagebutton:
-        at right
-        xsize 0.3
-        ysize 0.7
-        focus_mask True
-        idle "gui/School/Puzzle/SiluetaNiño.png"
-        hover "gui/School/Puzzle/SiluetaNiño_hover.png"
-        action ShowMenu("niño")
-
-
+    
+    label scene_escuela:
+        window hide
+        call screen escuela
+        with dissolve
+        jump scene_escuela
+    
+    label scene_pasillo:
+        window hide
+        call screen pasillo
+        with dissolve
+        jump scene_pasillo
+    
+    label scene_clase:
+        window hide
+        call screen clase
+        with dissolve
+        jump scene_clase
+    
+    label scene_salir:
+        window hide
+        call screen mapa
+        with dissolve
 
 label niño:
-    show screen pasillo
+    call screen pasillo
+    window show
     kid "Hey you. Wanna know something?"
     menu:
         "Yeah, sure":
@@ -564,86 +529,179 @@ label niño:
             mc "I don't think you should, but you gave me an idea, now go kid."
             $Profesora_tip = True
             jump scene_pasillo
-            window hide
         "Get lost kid":
             jump scene_pasillo
-            window hide
-    return
+
+label profesora:
+    call screen clase
+    Profe "What are you doing here? Shouldn't you be somewhere else wasting someone else time?"
+    menu:
+        "Not really. Why can't i unlock my locker? I want some stuff that I left there":
+            Profe "It's not your locker anymore silly, besides, it's been inhabilitated and the code has been changed, \n I don't know what the hell you have in there for that, and I ain't giving you the code."
+        "Sure, I don't even know why I'm talking to you":
+            Profe "Jerk."
+        "Like you waste the time of your students doing stuff\n you don't want to do in exchange for an easy A++?" if Profesora_tip == True:
+            Profe "Wait. How do YOU know!?"
+            Profe "Damn big mouth!"
+            Profe "Ok ok, the locker's sheet code is in the cupboard at mi right"
+            Profe "The code is 3516"
+            Profe "Now go!\n AND DON'T YOU DARE TELL ANYONE WHAT WE KNOW OR YOU WILL REGRET IT!"
+    jump scene_clase
+
+label scene_armario:
+    if Armario_Open == True:
+        call screen armario_abierto
+        with dissolve
+
+        pause
+    if Armario_Open == False:
+        call screen armario_cerrado
+        with dissolve
+
+        pause
 
 label scene_taquilla:
     if Taquilla_Open == True:
-        show screen taquilla_abierta
+        call screen taquilla_abierta
         with dissolve
 
         pause
-        return
     if Taquilla_Open == False:
-        show screen taquilla_cerrada
+        call screen taquilla_cerrada
         with dissolve
 
         pause
-        return
+
+label puzle_armario:
+    call screen armario_cerrado
+    window show
+
+    mc "It needs a code"
+
+    $ Answer = renpy.input("Code: ", length=4)
+    if Answer == "3516":
+        mc "Got it!"
+        $ Armario_Open = True
+    else:
+        mc "Damn it! Maybe the code is somewhere else."
+    
+    jump scene_armario 
+
+label puzle_taquilla:
+    $Correct_Answer = "7531"
+    call screen taquilla_cerrada
+    window show
+    
+    mc "It needs a code"
+
+    $Answer = renpy.input("Code: ")
+    if Answer != Correct_Answer:
+        call screen taquilla_cerrada
+        mc "Damn it! \n maybe the code is somewhere around here."
+        jump scene_taquilla
         
+        
+    if Answer == Correct_Answer:
+        call screen taquilla_abierta
+        mc "Got it!"
+        $Taquilla_Open = True
+        jump scene_taquilla    
 
-label scene_clase:
-    show screen clase
+label interior_armario:
+    call screen interior_armario_puzzle
     with dissolve
-
     pause
-    return
     
+
+label foto:
+    mc "Wait a minute, this picture reminds me of something....."
+    show scene black
+    with dissolve
+    jump school_lore
+
+
+screen escuela():
+    add "gui/School/Puzzle/Entrada.jpg"
+
+    imagebutton:
+        xpos 0.797
+        ypos 0.246
     
+        idle "gui/School/Puzzle/pasillo.png"
+        hover "gui/School/Puzzle/pasillo_hover.png"
+        action Jump("scene_pasillo")
+    imagebutton:
+        xpos 0.45
+        ypos 0.7
+    
+        idle "gui/School/Puzzle/FlechaAbajo.png"
+        hover "gui/School/Puzzle/FlechaAbajo_hover.png"
+        action Jump("scene_salir")
+
+
+screen pasillo():
+    add "gui/School/Puzzle/Pasillo.jpg"
+
+    imagebutton:
+        xpos 0.452
+        ypos 0.435
+        idle "gui/School/Puzzle/taquilla.png"
+        hover "gui/School/Puzzle/taquilla_hover.png"
+        action Jump("scene_taquilla")
+    imagebutton:
+        xpos 0.342
+        ypos 0.299
+        idle "gui/School/Puzzle/clase.png"
+        hover "gui/School/Puzzle/clase_hover.png"
+        action Jump("scene_clase")
+    imagebutton:
+        xpos 0.45
+        ypos 0.7
+    
+        idle "gui/School/Puzzle/FlechaAbajo.png"
+        hover "gui/School/Puzzle/FlechaAbajo_hover.png"
+        action Jump("scene_escuela")
+    imagebutton:
+        at right
+        xsize 0.3
+        ysize 0.7
+        focus_mask True
+        idle "gui/School/Puzzle/SiluetaNiño.png"
+        hover "gui/School/Puzzle/SiluetaNiño_hover.png"
+        action Jump("niño")
 
 screen taquilla_cerrada():
     add "gui/School/Puzzle/Taquilla_Cerrada.jpg"
 
     imagebutton:
-        idle "gui/School/Puzzle/Taquilla_Cerrada.jpg"
-        hover "gui/School/Puzzle/Taquilla_Cerrada.jpg"
-        action ShowMenu("empty_taquilla_cerrada")
-        #accion ir a pasillo
-    imagebutton:
         xpos 0.47
         idle "gui/School/Puzzle/PuertaTaquilla.png"
         hover "gui/School/Puzzle/PuertaTaquilla_hover.png"
-        action ShowMenu("puzle_taquilla")
-
-label puzle_taquilla:
-    $Correct_Answer = "7531"
-    show screen taquilla_cerrada
-
-    mc "It needs a code"
-
-    $Answer = renpy.input("Code: ")
-    if Answer != Correct_Answer:
-        show screen taquilla_cerrada
-        mc "Damn it! \n maybe the code is somewhere around here."
-        window hide
-        jump scene_taquilla
-        
-        
-    if Answer == Correct_Answer:
-        mc "Got it!"
-        $Taquilla_Open = True
-        window hide
-        jump scene_taquilla
-        
-        
+        action Jump("puzle_taquilla")
+    imagebutton:
+        xpos 0.1
+        ypos 0.4
+    
+        idle "gui/School/Puzzle/FlechaIzquierda.png"
+        hover "gui/School/Puzzle/FlechaIzquierda_hover.png"
+        action Jump("scene_pasillo")
 
 screen taquilla_abierta():
     add "gui/School/Puzzle/Taquilla_Abierta.jpg"
 
     imagebutton:
-        idle "gui/School/Puzzle/Taquilla_Abierta.jpg"
-        hover "gui/School/Puzzle/Taquilla_Abierta.jpg"
-        action ShowMenu("empty_taquilla_abierta")
-        #accion ir a pasillo
-    imagebutton:
         xpos 0.505
         ypos 0.4
         idle "gui/School/Puzzle/Imagen_lore.png"
         hover "gui/School/Puzzle/Imagen_Lore.png"
-        action ShowMenu("foto")
+        action Jump("foto")
+    imagebutton:
+        xpos 0.1
+        ypos 0.4
+    
+        idle "gui/School/Puzzle/FlechaIzquierda.png"
+        hover "gui/School/Puzzle/FlechaIzquierda_hover.png"
+        action Jump("scene_pasillo")
 
 screen clase():
     add "gui/School/Puzzle/Clase.jpg"
@@ -653,114 +711,67 @@ screen clase():
         ypos 0.22
         idle "gui/School/Puzzle/Armario.png"
         hover "gui/School/Puzzle/Armario_hover.png"
-        action ShowMenu("scene_armario")
+        action Jump("scene_armario")
     imagebutton:
         xpos 0.914
         ypos 0.197
         idle "gui/School/Puzzle/puerta.png"
         hover "gui/School/Puzzle/puerta_hover.png"
-        action ShowMenu("scene_pasillo")
+        action Jump("scene_pasillo")
     imagebutton:
         at left
         ysize 0.7
         focus_mask True
         idle "gui/School/Puzzle/SiluetaProfesora.png"
         hover "gui/School/Puzzle/SiluetaProfesora_hover.png"
-        action ShowMenu("profesora")
-
-label profesora:
-    show screen clase
-    Profe "What are you doing here? Shouldn't you be somewhere else wasting someone else time?"
-    menu:
-        "Not really. Why can't i unlock my locker? I want some stuff that I left there":
-            Profe "It's not your locker anymore silly, besides, it's been inhabilitated and the code has been changed, \n I don't know what the hell you have in there for that, and I ain't giving you the code."
-            jump scene_clase
-            window hide
-        "Sure, I don't even know why I'm talking to you":
-            Profe "Jerk"
-            jump scene_clase
-            window hide
-        "Like you waste the time of your students doing stuff\n you don't want to do in exchange for an easy A++?" if Profesora_tip == True:
-            Profe "Wait. How do YOU know!?"
-            Profe "Damn it!"
-            Profe "Ok ok, the locker's sheet code is in the cupboard at mi right"
-            Profe "The code is 3516"
-            Profe "Now go!\n AND DON'T YOU DARE TELL ANYONE WHAT YOU KNOW OR YOU WILL REGRET IT!"
-            jump scene_clase
-            window hide
-    return
-
-label scene_armario:
-    if Armario_Open == True:
-        show screen armario_abierto
-        with dissolve
-
-        pause
-        return
-    if Armario_Open == False:
-        show screen armario_cerrado
-        with dissolve
-
-        pause
-        return
-        
-
-label puzle_armario:
-    $Correct_Answer = "3516"
-    show screen armario_cerrado
-
-    mc "It needs a code"
-
-    $Answer = renpy.input("Code: ")
-    if Answer != Correct_Answer:
-        show screen armario_cerrado
-        mc "Damn it! \n maybe the code is somewhere around here."
-        window hide
-        jump scene_armario
-        
-    if Answer == Correct_Answer:
-        show screen armario_abierto
-        mc "Got it!"
-        $Armario_Open = True
-        window hide
-        jump scene_armario
-    
+        action Jump("profesora")
 
 screen armario_cerrado():
     add "gui/School/Puzzle/Armario_Cerrado.jpg"
 
     imagebutton:
-        idle "gui/School/Puzzle/Armario_Cerrado.jpg"
-        hover "gui/School/Puzzle/Armario_Cerrado.jpg"
-        action ShowMenu("empty_armario_cerrado")
-        #accion ir a clase
-    imagebutton:
         xpos 0.307
         ypos 0.3521
         idle "gui/School/Puzzle/PuertaArmario.png"
         hover "gui/School/Puzzle/PuertaArmario_hover.png"
-        action ShowMenu("puzle_armario")
+        action Jump("puzle_armario")
+    imagebutton:
+        xpos 0.8
+        ypos 0.4
+    
+        idle "gui/School/Puzzle/FlechaDerecha.png"
+        hover "gui/School/Puzzle/FlechaDerecha_hover.png"
+        action Jump("scene_clase")
 
 screen armario_abierto():
     add "gui/School/Puzzle/Armario_Abierto.jpg"
 
     imagebutton:
-        idle "gui/School/Puzzle/Armario_Abierto.jpg"
-        hover "gui/School/Puzzle/Armario_Abierto.jpg"
-        action ShowMenu("empty_armario_abierto")
-    #añadir estante con papeles usando draggable
-    imagebutton:
         idle "gui/School/Puzzle/InteriorArmario.png"
         hover "gui/School/Puzzle/InteriorArmario_hover.png"
-        action ShowMenu("interior_armario")
+        action Jump("interior_armario")
+    imagebutton:
+        xpos 0.8
+        ypos 0.4
+    
+        idle "gui/School/Puzzle/FlechaDerecha.png"
+        hover "gui/School/Puzzle/FlechaDerecha_hover.png"
+        action Jump("scene_clase")
 
 screen interior_armario_puzzle():
     add "gui/School/Puzzle/InteriorArmarioPuzzle.jpg"
 
     imagebutton:
-        idle "gui/School/Puzzle/InteriorArmarioPuzzle.jpg"
-        hover "gui/School/Puzzle/InteriorArmarioPuzzle.jpg"
-        action ShowMenu("empty_puzle_armario")
+        idle "gui/School/Puzzle/arrow.jpg"
+        hover "gui/School/Puzzle/arrowhover.jpg"
+        action jump("back_puzle_armario")
+    imagebutton:
+        xpos 0.45
+        ypos 0.7
+    
+        idle "gui/School/Puzzle/FlechaAbajo.png"
+        hover "gui/School/Puzzle/FlechaAbajo_hover.png"
+        action Jump("scene_clase")
     draggroup:
         drag:
             drag_name "pieza1"
@@ -798,55 +809,6 @@ screen interior_armario_puzzle():
             draggable True
             droppable False
             xpos 100 ypos 200
-
-label interior_armario:
-    show screen interior_armario_puzzle
-    with dissolve
-    
-    pause 
-    return
-    
-
-label foto:
-    mc "Wait a minute, this picture reminds me of something....."
-    hide screen escuela
-    scene black
-    jump school_lore
-
-label empty_escuela:
-    show screen mapa
-    pause
-    #ir al mapa
-
-label empty_clase:
-    show screen clase
-    pause
-
-label empty_pasillo:
-    show screen escuela
-    pause
-
-
-label empty_taquilla_cerrada:
-    show screen pasillo
-    pause
-
-label empty_taquilla_abierta:
-    show screen pasillo
-    pause
-
-label empty_armario_cerrado:
-    show screen clase
-    pause
-
-label empty_armario_abierto:
-    show screen clase
-    pause
-
-label empty_puzle_armario:
-    show screen armario_abierto
-    pause
-
 
 label school_lore:
     scene bg_escuela
@@ -935,7 +897,7 @@ label school_lore:
 
     "You return to reality."
 
-    return
+    call screen mapa
 
 #fin bloque escuela
 
