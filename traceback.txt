@@ -1,11 +1,9 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 54, in script call
-    call lago_puzle_zona
-  File "game/script.rpy", line 628, in script
+  File "game/script.rpy", line 768, in script
     $ cantidad_recuerdos += 1
-  File "game/script.rpy", line 628, in <module>
+  File "game/script.rpy", line 768, in <module>
     $ cantidad_recuerdos += 1
       ^^^^^^^^^^^^^^^^^^     
 NameError: name 'cantidad_recuerdos' is not defined
@@ -13,9 +11,7 @@ NameError: name 'cantidad_recuerdos' is not defined
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 54, in script call
-    call lago_puzle_zona
-  File "game/script.rpy", line 628, in script
+  File "game/script.rpy", line 768, in script
     $ cantidad_recuerdos += 1
   File "renpy/ast.py", line 1187, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
@@ -23,7 +19,7 @@ Traceback (most recent call last):
   File "renpy/python.py", line 1273, in py_exec_bytecode
     exec(bytecode, globals, locals)
     ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 628, in <module>
+  File "game/script.rpy", line 768, in <module>
     $ cantidad_recuerdos += 1
       ^^^^^^^^^^^^^^^^^^     
 NameError: name 'cantidad_recuerdos' is not defined
@@ -31,4 +27,4 @@ NameError: name 'cantidad_recuerdos' is not defined
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.5.0.25111603
 SilencioGilM 1.0
-Mon Dec 29 22:25:10 2025
+Mon Jan 26 18:01:26 2026

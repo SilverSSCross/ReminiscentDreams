@@ -1,5 +1,5 @@
 ﻿# Coloca el código de tu juego en este archivo.
-
+image grey = Solid("#252525")
 # Declara los personajes usados en el juego como en el ejemplo:
 define th = Character("Therapist")
 transform character_Base:
@@ -26,6 +26,12 @@ define unknown = Character("???")
 define ol = Character("Olive")
 define ft = Character("Father?")
 define sl = Character("Sluagh")
+define om = Character("Old Man")
+image om:
+    "gui/Lago/Sprites/ImagenViejo.png"
+define ym = Character("Young Man")
+image ym:
+    "gui/Lago/Sprites/ImagenJoven2.png"
 
 # El juego comienza aquí.
 
@@ -51,7 +57,7 @@ label start:
 
 
     #Zona inicio pruebas
-    call lago_puzle_zona
+    jump lago_lore
     ########################################
 
 
@@ -521,12 +527,29 @@ label school_lore:
 
 
 label Lago:
-    
+    stop music fadeout 1.0
     #Se añade la imagen de fondo del lago
     #Interactuable Cielo, Barcaza, Lago (Puzle Musical)
+    call screen lago_main
 
+label lago_cielo:
+    #Imagen es la escena base de llegada a la zona
+    "The sky is completely clear"
+    "Blue like this rarely appears on the sky accentuating it's beauty"
+    pause 1.5
+    "It really makes me want to vomit"
+    jump Lago
+
+label lago_barcaza:
+    #Imagen es la escena base de llegada a la zona
+    "A small boat that they use on the town to take a stroll through the lake"
+    "I remember one time that a teenager stole it to commit suicide"
+    "It gave the place a picturesque touch to such a vulgar place"
+    "I appreciate it"
+    jump Lago
 
 label lago_puzle_zona:
+    #Imagen directamente mirando al lago
     play music "audio/Lago/Sample.ogg" fadein 1.0
     "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
     #Se define la solucion del puzle musical
@@ -537,8 +560,8 @@ label lago_puzle_zona:
     label .loop:
     call screen lago_puzle
     if lago_player_input == lago_solution:
-        jump lago_lore
         stop music fadeout 1.0
+        jump lago_lore
     else:
         $ lago_player_input.clear()
         jump .loop
@@ -546,30 +569,35 @@ label lago_puzle_zona:
 label lago_lore:
     #Inicio Recuerdo
     #En negro todo esto probablemente
-    "A mechanic noise is heard"
-    "The noise of a car"
+    #Audio de coche probablemente
+    "A mechanic noise is heard. The noise of a car"
     "The noise that is heard when sitting inside of a car"
     "An elder and a man sit on the front seats"
     "No face was identifiable from the backseats"
+    scene grey
     #Mediana edad
-    "Think that this is a good one boss?"
+    show ym at left
+    ym "Think that this is a good one boss?"
     #Viejo    
-    "Im sure. Now shut up, i don't pay you to talk"
+    show om at right
+    om "Im sure. Now shut up, i don't pay you to talk"
+    hide ym
+    hide om
 
     "Silence filled the car, only interrupted with the ocasional groan that the elder made from coughing, 
     probably from a respiratory disease"
     "Or maybe it was simply from the age"
     "I guess that is irrelevant"
-    "The route continued for a long time"
-    "It was long like the night on the north and heavy like the years that everybody goes through"
+    "The route continued for a long time.It was long like the night on the north and heavy like the years that everybody goes through"
 
     "*CRUNCH*"
     #Tendria que poner una imagen aqui? Porque si no el disolve to black no tiene sentido
 
     #Mediana edad
-    "Ah, you are finally awake" #Toda la seccion despues de las palabras no pintan en primera persona. "Dijo el hombre con una alegría casi infantil que no se correspondía en lo más mínimo a la lúgubre expresión que portaba en el rostro."
-    "From now on we will get along, okay?"
-
+    show ym at left
+    ym "Ah, you are finally awake" #Toda la seccion despues de las palabras no pintan en primera persona. "Dijo el hombre con una alegría casi infantil que no se correspondía en lo más mínimo a la lúgubre expresión que portaba en el rostro."
+    ym "From now on we will get along, okay?"
+    hide ym
     "..."
     "..."
     "..."
@@ -642,7 +670,7 @@ label lago_lore:
     "It has a ripped yellow raincoat too short for the creature that revealed rotting flesh"
     "A piece of a tree bark impaled almos the whole body and through the chest it looked like something was coming out, although you could't distinguish what it was"
     "You hear a low voice, even if you couldn't tell that was voice, calling out for you"
-    "Finale...hate...fault"
+    sl "Finale...hate...fault"
     "The creature muttered without order or meaning"
     "All your instincts tells you to run"
     "What are you doing?"
@@ -651,25 +679,25 @@ label lago_lore:
         "Flee":
             jump lago_decision_flee
         "Stay":
-            ""
+            jump lago_decision_stay
 
 label lago_decision_flee:
     "You aren't conscious how, but you are able to escape the creature"
 
 label lago_decision_stay:
-    "Your survival instinct displays its abscense and going against every logic impulse that you didn't have, you stay in place while the creature got closer to you"
+    "Your survival instinct displays its absence and going against every logic impulse that you didn't have, you stay in place while the creature got closer to you"
     "When the creature is just a couple centimiters away from your face you are able to distinguish an eye under the hood"
     "The creature starts to do sounds, that only could come from the darkest nightmares in existence, when suddenly it gets completley quiet"
     "You get to see on his beating chest an image that freezes your blood"
 
-    #CG de pecho Sluagh (¿Que cojones es esto?)
+    #CG de pecho Sluagh
     
     "A kind of face buried on the chest"
     # No entiendo la frase "La criatura de dentro de la criatura araña el trozo de madera que tiene clavado atravesándolo y lo miró con una mirada que parecía juzgarlo."
     "A thought crosses your mind"
 
     #Player
-    "What the hell is this? A matryoshka?"
+    mc "What the hell is this? A matryoshka?"
 
     "A thought totaly out of line on the actual life or death situation"
     "Although not so strange"
@@ -683,77 +711,27 @@ label lago_decision_stay:
     "That thought of process was cut violently like when pulling a weed from the garden"
     "The only thought that crossed his mind again was"
     #Player
-    "Huh, aren't those my legs?"
-
     #Go/jo reference
+    mc "Huh, aren't those my legs?"
+
     "A fast cut from the creature's hands was all it was needed to separate the superior half of the boy from his inferior half"
 
     "He hardly felt any pain"
     "It was an almost instant death"
     "In a certain way it was a blessing, knowing averything that it was approaching"
-    "The creature got closer to the boy's body kneeling beside him, in a strange way taking into account the wood fragment that impaled him
-    , it proceed to bury his giant claws on the heart ripping it out"
+    "The creature got closer to the boy's body kneeling beside him, in a strange way taking into account the wood fragment that impaled him,
+    it proceed to bury his giant claws on the heart ripping it out"
     "Then the creature proceeded to devour it"
     "It was a disgusting sound. It made it sound like a pig was eating. Although that would be an insult to pigs"
     "After eating the creature only said one word"
     #Criatura
-    "Empty..."
+    sl "Empty..."
     
     centered "{color=#732020}BAD ENDING: INSATIABLE APPETITE."
 
 
 
-screen lago_puzle():
-    text "[lago_player_input]":
-        xalign 0.5
-        yalign 0.1
-    #Se introducen las funcionalidades de los botones
-    imagebutton:
-        idle "gui/Lago/Buttons/Placeholder_Do.png"
-        hover "gui/Lago/Buttons/Blanco.png"
-        action Function(lago_player_input.append, 1)
-    imagebutton:
-        idle "gui/Lago/Buttons/Placeholder_Re.png"
-        hover "gui/Lago/Buttons/Blanco.png"
-        xalign 0.2
-        action Function(lago_player_input.append, 2)
-    imagebutton:
-        idle "gui/Lago/Buttons/Placeholder_Mi.png"
-        hover "gui/Lago/Buttons/Blanco.png"
-        xalign 0.4
-        action Function(lago_player_input.append, 3)
-    imagebutton:
-        idle "gui/Lago/Buttons/Placeholder_Fa.png"
-        hover "gui/Lago/Buttons/Blanco.png"
-        xalign 0.6
-        action Function(lago_player_input.append, 4)
-    imagebutton:
-        idle "gui/Lago/Buttons/Placeholder_Sol.png"
-        hover "gui/Lago/Buttons/Blanco.png"
-        xalign 0.7
-        action Function(lago_player_input.append, 5)
-    imagebutton:
-        idle "gui/Lago/Buttons/Placeholder_La.png"
-        hover "gui/Lago/Buttons/Blanco.png"
-        xalign 0.8
-        action Function(lago_player_input.append, 6)
-    imagebutton:
-        idle "gui/Lago/Buttons/Placeholder_Si.png"
-        hover "gui/Lago/Buttons/Blanco.png"
-        xalign 1.0
-        action Function(lago_player_input.append, 7)
-    imagebutton:
-        idle "gui/Lago/Buttons/Verificar.png"
-        hover "gui/Lago/Buttons/Blanco.png"
-        xalign 0.4
-        yalign 0.8
-        action Return()
-    imagebutton:
-        idle "gui/Lago/Buttons/Borrar.png"
-        hover "gui/Lago/Buttons/Blanco.png"
-        xalign 0.6
-        yalign 0.8
-        action Function(lago_player_input.clear)
+
 
     
 
