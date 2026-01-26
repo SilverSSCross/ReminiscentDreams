@@ -1,26 +1,22 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 499, in script
-    call screen escuela
-  File "game/script.rpy", line 622, in execute
-    screen escuela():
-  File "game/script.rpy", line 622, in execute
-    screen escuela():
-  File "game/script.rpy", line 625, in execute
-    imagebutton:
-  File "game/script.rpy", line 625, in keywords
-    imagebutton:
-  File "game/script.rpy", line 631, in <module>
-    action jump("scene_pasillo")
-           ^^^^                 
-NameError: name 'jump' is not defined. Did you mean: 'Jump'?
+  File "game/script.rpy", line 287, in script
+    call screen mapa
+renpy.game.JumpException: orfanato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 287, in script
+    call screen mapa
+renpy.script.LabelNotFound: could not find label 'orfanato'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/script.rpy", line 499, in script
-    call screen escuela
+  File "game/script.rpy", line 287, in script
+    call screen mapa
   File "renpy/ast.py", line 2241, in execute
     self.call("execute")
     ~~~~~~~~~^^^^^^^^^^^
@@ -33,6 +29,8 @@ Traceback (most recent call last):
   File "renpy/common/000statements.rpy", line 695, in execute_call_screen
     store._return = renpy.call_screen(name, *args, **kwargs)
                     ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 358, in call_screen
+    raise rv
   File "renpy/exports/statementexports.py", line 348, in call_screen
     rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
          ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -49,50 +47,71 @@ Traceback (most recent call last):
         ^^^^^^^^^
     )
     ^
-  File "renpy/display/core.py", line 2655, in interact_core
-    root_widget.visit_all(lambda d: d.per_interact())
-    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/displayable.py", line 457, in visit_all
-    d.visit_all(callback, seen)
-    ~~~~~~~~~~~^^^^^^^^^^^^^^^^
-  File "renpy/display/screen.py", line 503, in visit_all
-    callback(self)
-    ~~~~~~~~^^^^^^
-  File "renpy/display/core.py", line 2655, in <lambda>
-    root_widget.visit_all(lambda d: d.per_interact())
-                                    ~~~~~~~~~~~~~~^^ 
-  File "renpy/display/screen.py", line 514, in per_interact
-    self.update()
+  File "renpy/display/core.py", line 3203, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 805, in event
+    rv = self.child.event(ev, x, y, st)
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/behavior.py", line 1185, in event
+    return handle_click(self.clicked)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/behavior.py", line 1107, in handle_click
+    rv = run(action)
+         ~~~^^^^^^^^
+  File "renpy/display/behavior.py", line 404, in run
+    new_rv = run(i, *args, **kwargs)
+             ~~~^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/behavior.py", line 411, in run
+    return action(*args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/common/00action_control.rpy", line 79, in __call__
+    renpy.jump(self.label)
+    ~~~~~~~~~~^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 271, in jump
+    raise renpy.game.JumpException(label)
+renpy.game.JumpException: orfanato
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 591, in main
+    run(restart)
+    ~~~^^^^^^^^^
+  File "renpy/main.py", line 137, in run
+    renpy.execution.run_context(True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/execution.py", line 1027, in run_context
+    context.run()
     ~~~~~~~~~~~^^
-  File "renpy/display/screen.py", line 715, in update
-    self.screen.function(**self.scope)
-    ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
-  File "game/script.rpy", line 622, in execute
-    screen escuela():
-  File "game/script.rpy", line 622, in execute
-    screen escuela():
-  File "game/script.rpy", line 625, in execute
-    imagebutton:
-  File "game/script.rpy", line 625, in keywords
-    imagebutton:
-  File "renpy/python.py", line 1305, in py_eval
-    return py_eval_bytecode(code, globals, locals)
-           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1298, in py_eval_bytecode
-    return eval(bytecode, globals, locals)
-           ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 631, in <module>
-    action jump("scene_pasillo")
-           ^^^^                 
-NameError: name 'jump' is not defined. Did you mean: 'Jump'?
+  File "game/script.rpy", line 287, in script
+    call screen mapa
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'orfanato'.
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.0.25111603
 Reminiscent Dream 1.0
-Mon Jan 26 19:21:47 2026
+Mon Jan 26 20:43:47 2026
