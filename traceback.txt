@@ -1,13 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
   File "game/tl/spanish/screens.rpy", line 326, in script
     old "Skip"
 Exception: A translation for "Skip" already exists at game/tl/spanish/screens.rpy:15.
+=======
+  File "game/script.rpy", line 768, in script
+    $ cantidad_recuerdos += 1
+  File "game/script.rpy", line 768, in <module>
+    $ cantidad_recuerdos += 1
+      ^^^^^^^^^^^^^^^^^^     
+NameError: name 'cantidad_recuerdos' is not defined
+>>>>>>> Lago
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "game/tl/spanish/screens.rpy", line 326, in script
     old "Skip"
   File "renpy/ast.py", line 3036, in execute
@@ -24,3 +34,22 @@ Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.4.1.25072401
 Reminiscent Dream 1.0
 Wed Jan 21 19:04:51 2026
+=======
+  File "game/script.rpy", line 768, in script
+    $ cantidad_recuerdos += 1
+  File "renpy/ast.py", line 1187, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/python.py", line 1273, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "game/script.rpy", line 768, in <module>
+    $ cantidad_recuerdos += 1
+      ^^^^^^^^^^^^^^^^^^     
+NameError: name 'cantidad_recuerdos' is not defined
+
+Windows-10-10.0.19045-SP0 AMD64
+Ren'Py 8.5.0.25111603
+SilencioGilM 1.0
+Mon Jan 26 18:01:26 2026
+>>>>>>> Lago

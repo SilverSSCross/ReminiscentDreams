@@ -1,5 +1,5 @@
 ﻿# Coloca el código de tu juego en este archivo.
-
+image grey = Solid("#252525")
 # Declara los personajes usados en el juego como en el ejemplo:
 define th = Character("Therapist")
 transform character_Base:
@@ -64,6 +64,12 @@ define sl = Character("Sluagh")
 image SluaghFrame1 = "gui/SluaghFrame1.png"
 
 image SluaghFrame2 = "gui/SluaghFrame2.png"
+define om = Character("Old Man")
+image om:
+    "gui/Lago/Sprites/ImagenViejo.png"
+define ym = Character("Young Man")
+image ym:
+    "gui/Lago/Sprites/ImagenJoven2.png"
 
 # El juego comienza aquí.
 
@@ -89,6 +95,11 @@ label start:
     #e "Has creado un nuevo juego Ren'Py."
 
     #e "Añade una historia, imágenes y música, ¡y puedes presentarlo al mundo!"
+
+
+    #Zona inicio pruebas
+    jump lago_lore
+    ########################################
 
 
     "According to the Multiple Trace Theory, every time we retrieve a memory, the record of that memory constitutes another memory in itself."
@@ -139,7 +150,7 @@ label start:
 
     th "What were they about this time?"
 
-    mc "Of that {color=#FF0000}{b}Sluagh{b}{/color}."
+    mc "Of that {color=#FF0000}{b}Sluagh{/b}{/color}."
 
     th "What happened in the dream?"
 
@@ -942,6 +953,223 @@ label school_lore:
 
 ###################################################################################################################################
 
+
+#Bloque Lago
+
+#Definir cualquier funcion que se quiera usar
+
+
+label Lago:
+    stop music fadeout 1.0
+    #Se añade la imagen de fondo del lago
+    #Interactuable Cielo, Barcaza, Lago (Puzle Musical)
+    call screen lago_main
+
+label lago_cielo:
+    #Imagen es la escena base de llegada a la zona
+    "The sky is completely clear"
+    "Blue like this rarely appears on the sky accentuating it's beauty"
+    pause 1.5
+    "It really makes me want to vomit"
+    jump Lago
+
+label lago_barcaza:
+    #Imagen es la escena base de llegada a la zona
+    "A small boat that they use on the town to take a stroll through the lake"
+    "I remember one time that a teenager stole it to commit suicide"
+    "It gave the place a picturesque touch to such a vulgar place"
+    "I appreciate it"
+    jump Lago
+
+label lago_puzle_zona:
+    #Imagen directamente mirando al lago
+    play music "audio/Lago/Sample.ogg" fadein 1.0
+    "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
+    #Se define la solucion del puzle musical
+    $ lago_solution=[1,2,3,4,5]
+    #Se define lo que introduce el jugador
+    $ lago_player_input=[]
+        #Se inicializa un loop
+    label .loop:
+    call screen lago_puzle
+    if lago_player_input == lago_solution:
+        stop music fadeout 1.0
+        jump lago_lore
+    else:
+        $ lago_player_input.clear()
+        jump .loop
+
+label lago_lore:
+    #Inicio Recuerdo
+    #En negro todo esto probablemente
+    #Audio de coche probablemente
+    "A mechanic noise is heard. The noise of a car"
+    "The noise that is heard when sitting inside of a car"
+    "An elder and a man sit on the front seats"
+    "No face was identifiable from the backseats"
+    scene grey
+    #Mediana edad
+    show ym at left
+    ym "Think that this is a good one boss?"
+    #Viejo    
+    show om at right
+    om "Im sure. Now shut up, i don't pay you to talk"
+    hide ym
+    hide om
+
+    "Silence filled the car, only interrupted with the ocasional groan that the elder made from coughing, 
+    probably from a respiratory disease"
+    "Or maybe it was simply from the age"
+    "I guess that is irrelevant"
+    "The route continued for a long time.It was long like the night on the north and heavy like the years that everybody goes through"
+
+    "*CRUNCH*"
+    #Tendria que poner una imagen aqui? Porque si no el disolve to black no tiene sentido
+
+    #Mediana edad
+    show ym at left
+    ym "Ah, you are finally awake" #Toda la seccion despues de las palabras no pintan en primera persona. "Dijo el hombre con una alegría casi infantil que no se correspondía en lo más mínimo a la lúgubre expresión que portaba en el rostro."
+    ym "From now on we will get along, okay?"
+    hide ym
+    "..."
+    "..."
+    "..."
+
+    "The is no such thing as love"
+    "Therefore there is no sadness"
+    "Without love we avoid getting hurt..."
+    "Why do we expose ourselves to suffering then?"
+
+    "..."
+    "..."
+    "..."
+
+    scene black
+    with dissolve
+    
+    #Borroso?
+    "The ice chilled me to the bone preventing me from breathing right"
+    "I don't know how long i walked without a specific direction on mind"
+    "The only thing i remember is a word"
+    "Move"
+    "Move"
+    "{b}MOVE!!!{/b}"
+
+    "My legs wouldn't respond and my eyes began to redden due to blood clotting"
+    "On the contrary of what it could look like, i felt warm and the soft touch of death whispering on my ear was kind"
+    "I blacked out on that moment"
+    "A light appeared before me"
+    "It was a small lamp, but for me it was as blinding as a supernova"
+    "An unkown ceiling was what i saw"
+    "Moving my gaze i saw a man and a woman in front of me"
+
+    "{b}IRRELEVANT{/b}"
+
+    "I don't get to distinguish their faces"
+    "I think they said the words 'look after'"
+
+    "{b}IRRELEVANT{/b}"
+
+    "Time passed. I don't know how much. Maybe a couple of months, maybe some years"
+    "I guess people could say i was happy"
+
+    "..."
+    "..."
+    "..."
+    
+    "Atleast, that's what people thought"
+    "Happiness is a wrong concept"
+    "How could someone be happy in such a cruel world where everything is destined to die?"
+
+    "..."
+    "..."
+    "..."
+
+    scene black
+    with dissolve
+    #Fin Recuerdo
+
+    "Waves from the past are interrupted with and uproar"
+
+    "{b}RETRIBUTION!!!{/b}"
+
+    "The birds stopped singing and the wind stopped blowing"
+    "Time feels as if it has stopped with no explanation"
+    "You feel a pressure on the chest and hear an cacophony that felt both strange and familiar at the same time"
+    "You see someone far away slowly getting out of the lake"
+    "Something so repulsive that the first thing that comes to mind is the image of the creature that you read about on irish mythology, a Sluagh, a cursed spirit that chases the living without rest"
+    "Panic gets to you the moment you decypher what is infront of you"
+    "Their height was about two meters, and even then you weren't completley sure because of the limp and hump that this person...no, THAT creature"
+    "It has a ripped yellow raincoat too short for the creature that revealed rotting flesh"
+    "A piece of a tree bark impaled almos the whole body and through the chest it looked like something was coming out, although you could't distinguish what it was"
+    "You hear a low voice, even if you couldn't tell that was voice, calling out for you"
+    sl "Finale...hate...fault"
+    "The creature muttered without order or meaning"
+    "All your instincts tells you to run"
+    "What are you doing?"
+
+    menu:
+        "Flee":
+            jump lago_decision_flee
+        "Stay":
+            jump lago_decision_stay
+
+label lago_decision_flee:
+    "You aren't conscious how, but you are able to escape the creature"
+
+label lago_decision_stay:
+    "Your survival instinct displays its absence and going against every logic impulse that you didn't have, you stay in place while the creature got closer to you"
+    "When the creature is just a couple centimiters away from your face you are able to distinguish an eye under the hood"
+    "The creature starts to do sounds, that only could come from the darkest nightmares in existence, when suddenly it gets completley quiet"
+    "You get to see on his beating chest an image that freezes your blood"
+
+    #CG de pecho Sluagh
+    
+    "A kind of face buried on the chest"
+    # No entiendo la frase "La criatura de dentro de la criatura araña el trozo de madera que tiene clavado atravesándolo y lo miró con una mirada que parecía juzgarlo."
+    "A thought crosses your mind"
+
+    #Player
+    mc "What the hell is this? A matryoshka?"
+
+    "A thought totaly out of line on the actual life or death situation"
+    "Although not so strange"
+    "He was on a situation of complete awareness"
+    "His brain hardly could work properly"
+    "It was correctly proven the moment he decide to stay in place"
+    "Maybe from fear"
+    "Maybe..."
+    "..."
+    "..."
+    "That thought of process was cut violently like when pulling a weed from the garden"
+    "The only thought that crossed his mind again was"
+    #Player
+    #Go/jo reference
+    mc "Huh, aren't those my legs?"
+
+    "A fast cut from the creature's hands was all it was needed to separate the superior half of the boy from his inferior half"
+
+    "He hardly felt any pain"
+    "It was an almost instant death"
+    "In a certain way it was a blessing, knowing averything that it was approaching"
+    "The creature got closer to the boy's body kneeling beside him, in a strange way taking into account the wood fragment that impaled him,
+    it proceed to bury his giant claws on the heart ripping it out"
+    "Then the creature proceeded to devour it"
+    "It was a disgusting sound. It made it sound like a pig was eating. Although that would be an insult to pigs"
+    "After eating the creature only said one word"
+    #Criatura
+    sl "Empty..."
+    
+    centered "{color=#732020}BAD ENDING: INSATIABLE APPETITE."
+
+
+
+
+
+    
+
+
+    
 
 #Bloque bosque
 
