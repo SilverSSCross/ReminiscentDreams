@@ -66,10 +66,10 @@ image SluaghFrame1 = "gui/SluaghFrame1.png"
 image SluaghFrame2 = "gui/SluaghFrame2.png"
 define om = Character("Old Man")
 image om:
-    "gui/Lago/Sprites/ImagenViejo.png"
+    "gui/lago/Sprites/ImagenViejo.png"
 define ym = Character("Young Man")
 image ym:
-    "gui/Lago/Sprites/ImagenJoven2.png"
+    "gui/lago/Sprites/ImagenJoven2.png"
 
 # El juego comienza aquí.
 
@@ -98,7 +98,7 @@ label start:
 
 
     #Zona inicio pruebas
-    jump lago_lore
+    jump lago
     ########################################
 
 
@@ -954,15 +954,15 @@ label school_lore:
 ###################################################################################################################################
 
 
-#Bloque Lago
+#Bloque lago
 
 #Definir cualquier funcion que se quiera usar
 
 
-label Lago:
+label lago:
     stop music fadeout 1.0
     #Se añade la imagen de fondo del lago
-    #Interactuable Cielo, Barcaza, Lago (Puzle Musical)
+    #Interactuable Cielo, Barcaza, lago (Puzle Musical)
     call screen lago_main
 
 label lago_cielo:
@@ -971,7 +971,7 @@ label lago_cielo:
     "Blue like this rarely appears on the sky accentuating it's beauty"
     pause 1.5
     "It really makes me want to vomit"
-    jump Lago
+    jump lago
 
 label lago_barcaza:
     #Imagen es la escena base de llegada a la zona
@@ -979,11 +979,11 @@ label lago_barcaza:
     "I remember one time that a teenager stole it to commit suicide"
     "It gave the place a picturesque touch to such a vulgar place"
     "I appreciate it"
-    jump Lago
+    jump lago
 
 label lago_puzle_zona:
     #Imagen directamente mirando al lago
-    play music "audio/Lago/Sample.ogg" fadein 1.0
+    play music "audio/lago/Sample.ogg" fadein 1.0
     "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
     #Se define la solucion del puzle musical
     $ lago_solution=[1,2,3,4,5]
@@ -1024,7 +1024,7 @@ label lago_lore:
     "The route continued for a long time.It was long like the night on the north and heavy like the years that everybody goes through"
 
     "*CRUNCH*"
-    #Tendria que poner una imagen aqui? Porque si no el disolve to black no tiene sentido
+    #Tendria que poner una imagen aqui
 
     #Mediana edad
     show ym at left
@@ -1116,6 +1116,7 @@ label lago_lore:
 
 label lago_decision_flee:
     "You aren't conscious how, but you are able to escape the creature"
+    jump lago
 
 label lago_decision_stay:
     "Your survival instinct displays its absence and going against every logic impulse that you didn't have, you stay in place while the creature got closer to you"

@@ -1,55 +1,117 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-<<<<<<< HEAD
-  File "game/tl/spanish/screens.rpy", line 326, in script
-    old "Skip"
-Exception: A translation for "Skip" already exists at game/tl/spanish/screens.rpy:15.
-=======
-  File "game/script.rpy", line 768, in script
-    $ cantidad_recuerdos += 1
-  File "game/script.rpy", line 768, in <module>
-    $ cantidad_recuerdos += 1
-      ^^^^^^^^^^^^^^^^^^     
-NameError: name 'cantidad_recuerdos' is not defined
->>>>>>> Lago
+  File "game/script.rpy", line 287, in script
+    call screen mapa
+renpy.game.JumpException: lago
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "game/script.rpy", line 287, in script
+    call screen mapa
+renpy.script.LabelNotFound: could not find label 'lago'. Did you mean: 'Lago'?
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-<<<<<<< HEAD
-  File "game/tl/spanish/screens.rpy", line 326, in script
-    old "Skip"
-  File "renpy/ast.py", line 3036, in execute
-    renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/translation/__init__.py", line 586, in add_string_translation
-    stl.add(old, new, newloc)
-    ~~~~~~~^^^^^^^^^^^^^^^^^^
-  File "renpy/translation/__init__.py", line 532, in add
-    raise Exception('A translation for "{}" already exists at {}:{}.'.format(quote_unicode(old), fn, line))
-Exception: A translation for "Skip" already exists at game/tl/spanish/screens.rpy:15.
+  File "game/script.rpy", line 287, in script
+    call screen mapa
+  File "renpy/ast.py", line 2241, in execute
+    self.call("execute")
+    ~~~~~~~~~^^^^^^^^^^^
+  File "renpy/ast.py", line 2195, in call
+    return renpy.statements.call(method, parsed, *args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/statements.py", line 381, in call
+    return method(parsed, *args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000statements.rpy", line 695, in execute_call_screen
+    store._return = renpy.call_screen(name, *args, **kwargs)
+                    ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 358, in call_screen
+    raise rv
+  File "renpy/exports/statementexports.py", line 348, in call_screen
+    rv = renpy.ui.interact(mouse="screen", type="screen", roll_forward=roll_forward)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/ui.py", line 304, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/core.py", line 2117, in interact
+    repeat, rv = self.interact_core(
+                 ~~~~~~~~~~~~~~~~~~^
+        preloads=preloads,
+        ^^^^^^^^^^^^^^^^^^
+    ...<4 lines>...
+        **kwargs,
+        ^^^^^^^^^
+    )
+    ^
+  File "renpy/display/core.py", line 3203, in interact_core
+    rv = root_widget.event(ev, x, y, 0)
+         ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/screen.py", line 805, in event
+    rv = self.child.event(ev, x, y, st)
+         ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/layout.py", line 1281, in event
+    rv = i.event(ev, x - xo, y - yo, cst)
+         ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/behavior.py", line 1185, in event
+    return handle_click(self.clicked)
+           ~~~~~~~~~~~~^^^^^^^^^^^^^^
+  File "renpy/display/behavior.py", line 1107, in handle_click
+    rv = run(action)
+         ~~~^^^^^^^^
+  File "renpy/display/behavior.py", line 404, in run
+    new_rv = run(i, *args, **kwargs)
+             ~~~^^^^^^^^^^^^^^^^^^^^
+  File "renpy/display/behavior.py", line 411, in run
+    return action(*args, **kwargs)
+           ~~~~~~^^^^^^^^^^^^^^^^^
+  File "renpy/common/00action_control.rpy", line 79, in __call__
+    renpy.jump(self.label)
+    ~~~~~~~~~~^^^^^^^^^^^^
+  File "renpy/exports/statementexports.py", line 271, in jump
+    raise renpy.game.JumpException(label)
+renpy.game.JumpException: lago
 
-Windows-11-10.0.26200-SP0 AMD64
-Ren'Py 8.4.1.25072401
-Reminiscent Dream 1.0
-Wed Jan 21 19:04:51 2026
-=======
-  File "game/script.rpy", line 768, in script
-    $ cantidad_recuerdos += 1
-  File "renpy/ast.py", line 1187, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "renpy/python.py", line 1273, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-    ~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
-  File "game/script.rpy", line 768, in <module>
-    $ cantidad_recuerdos += 1
-      ^^^^^^^^^^^^^^^^^^     
-NameError: name 'cantidad_recuerdos' is not defined
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "renpy/bootstrap.py", line 401, in bootstrap
+    renpy.main.main()
+    ~~~~~~~~~~~~~~~^^
+  File "renpy/main.py", line 591, in main
+    run(restart)
+    ~~~^^^^^^^^^
+  File "renpy/main.py", line 137, in run
+    renpy.execution.run_context(True)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "renpy/execution.py", line 1027, in run_context
+    context.run()
+    ~~~~~~~~~~~^^
+  File "game/script.rpy", line 287, in script
+    call screen mapa
+  File "renpy/script.py", line 1201, in lookup
+    raise LabelNotFound(original)
+renpy.script.LabelNotFound: could not find label 'lago'. Did you mean: 'Lago'?
 
 Windows-10-10.0.19045-SP0 AMD64
 Ren'Py 8.5.0.25111603
-SilencioGilM 1.0
-Mon Jan 26 18:01:26 2026
->>>>>>> Lago
+Reminiscent Dream 1.0
+Mon Jan 26 18:56:11 2026
