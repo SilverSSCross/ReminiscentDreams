@@ -327,10 +327,10 @@ label house_puzzle:
     scene black
     with dissolve
 
+    play music nieve loop
     label puzzle_loop:
         window hide
         call screen casa
-        play music nieve loop
         jump puzzle_loop
 
     
@@ -529,7 +529,7 @@ label school_puzzle:
         with dissolve
 
 label niño:
-    call screen pasillo
+    show screen pasillo
     window show
     kid "Hey you. Wanna know something?"
     menu:
@@ -544,7 +544,7 @@ label niño:
             jump scene_pasillo
 
 label profesora:
-    call screen clase
+    show screen clase
     Profe "What are you doing here? Shouldn't you be somewhere else wasting someone else time?"
     menu:
         "Not really. Why can't i unlock my locker? I want some stuff that I left there":
@@ -584,7 +584,7 @@ label scene_taquilla:
         pause
 
 label puzle_armario:
-    call screen armario_cerrado
+    show screen armario_cerrado
     window show
 
     mc "It needs a code"
@@ -599,27 +599,28 @@ label puzle_armario:
     jump scene_armario 
 
 label puzle_taquilla:
-    $Correct_Answer = "7531"
-    call screen taquilla_cerrada
+    show screen taquilla_cerrada
     window show
     
     mc "It needs a code"
 
     $Answer = renpy.input("Code: ")
-    if Answer != Correct_Answer:
-        call screen taquilla_cerrada
+    if Answer != "7531":
+        show screen taquilla_cerrada
         mc "Damn it! \n maybe the code is somewhere around here."
+        window hide
         jump scene_taquilla
         
         
-    if Answer == Correct_Answer:
-        call screen taquilla_abierta
+    if Answer == "7531":
+        show screen taquilla_abierta
         mc "Got it!"
+        window hide
         $Taquilla_Open = True
         jump scene_taquilla    
 
 label interior_armario:
-    call screen interior_armario_puzzle
+    show screen interior_armario_puzzle
     with dissolve
     pause
     
@@ -758,6 +759,8 @@ screen armario_abierto():
     add "gui/School/Puzzle/Armario_Abierto.jpg"
 
     imagebutton:
+        xpos 0.315
+        ypos 0.35
         idle "gui/School/Puzzle/InteriorArmario.png"
         hover "gui/School/Puzzle/InteriorArmario_hover.png"
         action Jump("interior_armario")
@@ -773,10 +776,6 @@ screen interior_armario_puzzle():
     add "gui/School/Puzzle/InteriorArmarioPuzzle.jpg"
 
     imagebutton:
-        idle "gui/School/Puzzle/arrow.jpg"
-        hover "gui/School/Puzzle/arrowhover.jpg"
-        action jump("back_puzle_armario")
-    imagebutton:
         xpos 0.45
         ypos 0.7
     
@@ -786,40 +785,46 @@ screen interior_armario_puzzle():
     draggroup:
         drag:
             drag_name "pieza1"
-            child "pieza1.png"
+            child Transform("gui/School/Puzzle/Pieza1.png", zoom=0.2)
             draggable True
             droppable False
             xpos 100 ypos 200
+            focus_mask True
         drag:
             drag_name "pieza2"
-            child "pieza2.png"
+            child Transform("gui/School/Puzzle/Pieza2.png", zoom=0.2)
             draggable True
             droppable False
             xpos 100 ypos 200
+            focus_mask True
         drag:
             drag_name "pieza3"
-            child "pieza3.png"
+            child Transform("gui/School/Puzzle/Pieza3.png", zoom=0.2)
             draggable True
             droppable False
             xpos 100 ypos 200
+            focus_mask True
         drag:
             drag_name "pieza4"
-            child "pieza4.png"
+            child Transform("gui/School/Puzzle/Pieza4.png", zoom=0.2)
             draggable True
             droppable False
             xpos 100 ypos 200
+            focus_mask True
         drag:
             drag_name "pieza5"
-            child "pieza5.png"
+            child Transform("gui/School/Puzzle/Pieza5.png", zoom=0.2)
             draggable True
             droppable False
             xpos 100 ypos 200
+            focus_mask True
         drag:
             drag_name "pieza6"
-            child "pieza6.png"
+            child Transform("gui/School/Puzzle/Pieza6.png", zoom=0.2)
             draggable True
             droppable False
             xpos 100 ypos 200
+            focus_mask True
 
 label school_lore:
     scene bg_escuela
