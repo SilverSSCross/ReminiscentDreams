@@ -925,7 +925,7 @@ label school_lore:
 #Bloque lago
 #Backgrounds
 image bg lago_gen = "gui/lago/Imagenes/barco_final_pixel.png"
-
+image bg pecho_sluagh = "gui/Pecho_Sluagh.png"
 #Definir cualquier funcion que se quiera usar
 
 
@@ -946,7 +946,7 @@ label lago_cielo:
     "Blue like this rarely appears on the sky accentuating it's beauty"
     pause 1.5
     "It really makes me want to vomit"
-    jump lago
+    call screen lago_main
 
 label lago_barcaza:
     #Imagen es la escena base de llegada a la zona
@@ -954,7 +954,7 @@ label lago_barcaza:
     "I remember one time that a teenager stole it to commit suicide"
     "It gave the place a picturesque touch to such a vulgar place"
     "I appreciate it"
-    jump lago
+    call screen lago_main
 
 label lago_puzle_zona:
     #Imagen directamente mirando al lago
@@ -1098,13 +1098,16 @@ label lago_decision_stay:
     "When the creature is just a couple centimiters away from your face you are able to distinguish an eye under the hood"
     "The creature starts to do sounds, that only could come from the darkest nightmares in existence, when suddenly it gets completley quiet"
     "You get to see on his beating chest an image that freezes your blood"
-
     #CG de pecho Sluagh
-    
+    scene bg pecho_sluagh with fade:
+        xsize config.screen_width
+        ysize config.screen_height
+
     "A kind of face buried on the chest"
     # No entiendo la frase "La criatura de dentro de la criatura araña el trozo de madera que tiene clavado atravesándolo y lo miró con una mirada que parecía juzgarlo."
     "A thought crosses your mind"
-
+    scene black
+    with fade
     #Player
     mc "What the hell is this? A matryoshka?"
 
