@@ -2,27 +2,9 @@
 errors listed below, and try again.
 
 
-<<<<<<< HEAD
-File "game/script.rpy", line 697: The imagebutton statement is not a valid child of the imagebutton statement.
-    imagebutton:
-               ^
-
-Ren'Py Version: Ren'Py 8.5.0.25111603
-Mon Jan 26 19:28:55 2026
-=======
-<<<<<<< HEAD
-File "game/script.rpy", line 71: expected end of line
-    stop music MusicaMenu
-               ^
-
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Tue Jan 20 17:29:15 2026
-=======
-File "game/script.rpy", line 583: end of line expected.
-    hide ym,om
+File "game/screens.rpy", line 1665: the action keyword argument was not given a value.
+    action return
            ^
 
 Ren'Py Version: Ren'Py 8.5.0.25111603
-Mon Jan 26 17:43:31 2026
->>>>>>> Lago
->>>>>>> 10c78f7cd25c53170abab5ada5b64924aa1eadd9
+Thu Jan 29 19:48:10 2026
