@@ -70,7 +70,8 @@ image om:
 define ym = Character("Young Man")
 image ym:
     "gui/lago/Sprites/ImagenJoven2.png"
-
+define kidA = Character("Kid 1")
+define kidB = Character("Kid 2")
 # El juego comienza aquí.
 
 label start:
@@ -98,7 +99,7 @@ label start:
 
 
     #Zona inicio pruebas
-    jump lago
+    jump orfanato
     ########################################
 
 
@@ -955,15 +956,22 @@ label school_lore:
 
 
 #Bloque lago
+#Backgrounds
+image bg lago_gen = "gui/lago/Imagenes/barco_final_pixel.png"
 
 #Definir cualquier funcion que se quiera usar
 
 
 label lago:
+    scene bg lago_gen with fade:
+        xsize config.screen_width
+        ysize config.screen_height
     stop music fadeout 1.0
     #Se añade la imagen de fondo del lago
     #Interactuable Cielo, Barcaza, lago (Puzle Musical)
     call screen lago_main
+        
+    
 
 label lago_cielo:
     #Imagen es la escena base de llegada a la zona
@@ -1165,12 +1173,118 @@ label lago_decision_stay:
 
 
 
+#Bloque Orfanato
 
+label orfanato:    
+    call screen orfanato_general
+
+label orfanato_puzle:
+    $solution_orfanato = "love"
+    $answer_orfanato=""
+    call screen orfanato_puzle_screen
+    $answer_orfanato=_return
+    if solution_orfanato !=answer_orfanato.lower():
+        "Maybe is not that"
+        jump orfanato_puzle
+    else:
+        jump orfanato_lore
 
     
 
-
+label orfanato_lore:
+    "You feel a sharp pain on your head"
+    "Your vision gets blurry"
+    mc "Ahhhgggg!!!!!!!"
+    "A pained scream escapes your throat and all you can see is red"
+    #Poner fondo de la escena
+    scene grey
+    show SluaghFrame2:
+        matrixcolor TintMatrix("#000")
+    "You barely see an outline getting near"
     
+    #Escena usando el fuego
+    scene expression Image("gui/Infierno.jpg")
+    with fade
+    "An abyss calls another abyss"
+    "In the roar of your waterfalls"
+    "All your waves and your waves they have rushed at me"
+
+    scene black
+    with fade
+
+    "The people of the past should stay on the past"
+    "Let the dead rest"
+
+    #Flashback
+    #Escena de una zona del orfanato sin derruir
+    kidA "From now this will be your home"
+    kidB "I hope you can adapt fast"
+    kidA "Otherwise HE will get angry"
+
+    #Flash blanco a temblor en la escena
+
+    kidA "Those who are not prepared to ascend to a superior plane need to be purged"
+    kidB "The dirty hand of those who lied to us should be cut off, no?"
+    kidA "Once you see death cross infront of you, you learn what is real beauty on this world"
+
+    #Sonido de gente quemandose
+
+    "The noise is deafening"
+    "The screaming doesn't stop no matter how hard you try"
+    "You see dead people"
+    "More precisely, you are seeing dead kids"
+    "The smell to burnt flesh makes you want to vomit"
+    "It is a hellish scene"
+    "You distinguish a silhouette impaled on the wall" # Is this mf Dante?
+    "No..."
+    "More exactly, you see half silhouette impaled on the wall"
+    "The bottom half of the body remains on an unkown place"
+    "The only thing left of this half are the guts hanging from the body"
+
+    "Enough..."
+
+    "You get to see a small kid lying on the floor"
+    "The skin on her face has been cut"
+    "The only reason you know the kid is a girl is because of her pigtails burning on the fire"
+
+    "Enough!"
+
+    #Audio tambien
+    "PLAF!!!"
+
+    "You turn your head to see the source of the noise"
+    "Only to realize that it comes from a kid that jumped from a window"
+
+    #Gabriel
+    "ENOUGH!!!"
+    "..."
+    "..."
+    "..."
+    
+    "Your senses felt dampened after seeing such images"
+    "You feel like vomiting"
+    "However, that feeling doesn't come from the disgust from the atrocity"
+    "You fell disgust because of how bland people is"
+    "Disgust for how predictable is human behaviour is"
+    "Although, what you feel the most is annoyance"
+    "Annoyed that a fragment of charred wood gade you a burn on the side and splash of blood got on your shirt"
+    "..."
+    "Definitely if hell existed it was this exact place"
+
+    #Meter efecto RCT(televisor) y sonido
+
+    "When the devil falls in love he also dreams of heaven"
+
+    scene black
+    with fade
+
+    #Termina el flashback
+
+    "You feel like the presence watching you gets more crushing"
+    mc "I should get out of this place"
+    
+    #Se llama al mapa automaticamente
+    call screen mapa
 
 #Bloque bosque
 

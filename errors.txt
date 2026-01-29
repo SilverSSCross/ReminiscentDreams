@@ -2,18 +2,9 @@
 errors listed below, and try again.
 
 
-<<<<<<< HEAD
-File "game/script.rpy", line 71: expected end of line
-    stop music MusicaMenu
-               ^
-
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Tue Jan 20 17:29:15 2026
-=======
-File "game/script.rpy", line 583: end of line expected.
-    hide ym,om
-           ^
+File "game/screens.rpy", line 1754: The screen statement is not a valid child of the textbutton statement.
+    action call screen orfanato_general
+                      ^
 
 Ren'Py Version: Ren'Py 8.5.0.25111603
-Mon Jan 26 17:43:31 2026
->>>>>>> Lago
+Wed Jan 28 23:47:28 2026
