@@ -1,6 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
   File "game/script.rpy", line 625, in script
     with dissolve
   File "game/script.rpy", line 776, in execute
@@ -15,10 +16,16 @@ While running game code:
     action jump("back_puzle_armario")
            ^^^^                      
 NameError: name 'jump' is not defined. Did you mean: 'Jump'?
+=======
+  File "game/options.rpy", line 217, in script
+    define config.adjust_viewport_scale = True
+Exception: config.adjust_viewport_scale is not a known configuration variable.
+>>>>>>> orfanato
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "game/script.rpy", line 625, in script
     with dissolve
   File "renpy/ast.py", line 1581, in execute
@@ -87,8 +94,28 @@ Traceback (most recent call last):
     action jump("back_puzle_armario")
            ^^^^                      
 NameError: name 'jump' is not defined. Did you mean: 'Jump'?
+=======
+  File "game/options.rpy", line 217, in script
+    define config.adjust_viewport_scale = True
+  File "renpy/ast.py", line 2463, in execute
+    self.set()
+    ~~~~~~~~^^
+  File "renpy/ast.py", line 2479, in set
+    ns.set(self.varname, value)
+    ~~~~~~^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/common/000namespaces.rpy", line 34, in set
+    setattr(self.nso, name, value)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/defaultstore.py", line 100, in __setattr__
+    raise Exception("config.%s is not a known configuration variable." % (name))
+Exception: config.adjust_viewport_scale is not a known configuration variable.
+>>>>>>> orfanato
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.0.25111603
 Reminiscent Dream 1.0
+<<<<<<< HEAD
 Tue Jan 27 21:05:29 2026
+=======
+Thu Jan 29 19:02:14 2026
+>>>>>>> orfanato

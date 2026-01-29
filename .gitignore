@@ -12,6 +12,7 @@
 /game/**/*.new
 /game/**/*.old
 
+
 # Error, log, and output files.
 /errors.txt
 /files.txt
@@ -24,3 +25,6 @@
 /dialogue.tab
 /dialogue.txt
 /strings.json
+
+/game/cache/
+/game/saves/
