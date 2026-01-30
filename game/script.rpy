@@ -1285,7 +1285,7 @@ label Bosque:
     stop music
     stop audio
     stop sound
-    
+
     play music bosquenieve loop
 
     "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
@@ -1519,6 +1519,7 @@ label eleccionFinal:
     image AcantiladoBg = "gui/AcantiladoBg.jpg"
 
     scene AcantiladoBg
+    with dissolve
 
     stop sound
     
