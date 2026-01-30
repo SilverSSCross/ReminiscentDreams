@@ -1560,7 +1560,7 @@ label eleccionFinal:
     hide SluaghFrame2
 
     show SluaghFrame1
-    with fade
+    with dissolve
 
     "Olive tenses slightly."
    
@@ -1596,17 +1596,31 @@ label eleccionFinal:
     hide SluaghFrame1
     with dissolve
 
+    image Sluagh-Olive-S = "CG/Sluagh-Olive(S).jpg"
+
+    scene Sluagh-Olive-S
+    with dissolve
+
     "Olive steps closer to the edge of the precipice."
 
     "The cold wind blows."
 
     #CG de Olive sin capucha
 
+    image Sluagh-Olive-O = "CG/Sluagh-Olive(O).jpg"
+
+    scene Sluagh-Olive-O
+    with dissolve
+
     "Olive looks at you one last time, and the wind uncovers his hood."
 
     "Then he jumps."
 
     "The wind stops."
+
+    scene AcantiladoBg
+    with dissolve
+
 
     stop music
 
