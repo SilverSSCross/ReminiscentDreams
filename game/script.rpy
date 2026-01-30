@@ -328,6 +328,10 @@ label house_puzzle:
     scene black
     with dissolve
 
+    stop music
+    stop audio
+    stop sound
+
     play sound nieve loop
     label puzzle_loop:
         window hide
@@ -505,6 +509,8 @@ label school_puzzle:
     with dissolve
 
     stop music
+    stop audio
+    stop sound
     
     
     label scene_escuela:
@@ -967,6 +973,10 @@ label lago_barcaza:
 
 label lago_puzle_zona:
     #Imagen directamente mirando al lago
+    stop music
+    stop audio
+    stop sound
+
     play music "audio/lago/Sample.ogg" fadein 1.0
     "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
     #Se define la solucion del puzle musical
@@ -1273,7 +1283,9 @@ label Bosque:
     scene BosqueBg
 
     stop music
-
+    stop audio
+    stop sound
+    
     play music bosquenieve loop
 
     "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
