@@ -8,6 +8,9 @@ transform character_Base:
     xanchor 0.1
     yanchor 0.1
     zoom 3
+transform down:
+    xpos 0.4
+    ypos 0.3
 image th:
     "gui/PsicologoFrame1.png"
     pause 4
@@ -22,10 +25,10 @@ image th:
 define mc = Character("You")
 define np = Character("News of Helsinki")
 define mf = Character("Mefi")
-define unknown = Character("???")
+define stranger = Character("???")
 define kid = Character("Student")
 define Profe = Character("Teacher")
-image unknown:
+image unkown:
     "gui/Ojos1.jpg"
     pause 0.2
 
@@ -630,8 +633,6 @@ label interior_armario:
 
 label foto:
     mc "Wait a minute, this picture reminds me of something....."
-    show scene black
-    with dissolve
     jump school_lore
 
 
@@ -837,23 +838,28 @@ screen interior_armario_puzzle():
             focus_mask True
 
 label school_lore:
+    image bg_escuela = "gui/School/puzzle/Pasillo.jpg"
     scene bg_escuela
     with dissolve
 
     "You have a vague memory of this place."
 
-    show unknown
+    image stranger = "gui/School/puzzle/SiluetaNiño.png"
+    show stranger at down
     with dissolve
 
-    unknown "Are you daydreaming again?"
+    stranger "Are you daydreaming again?"
 
-    unknown "Hey. I'm talking to you."
+    stranger "Hey. I'm talking to you."
     
     "The voice comes from a boy your age."
     
     "It's your friend Olive."
 
-    show ol
+    hide stranger
+
+    image ol = "gui/School/Lore/SiluetaOlive.png"
+    show ol at down
     
     "You nod your head and make a small grimace to let him know you're listening."
 
@@ -1449,7 +1455,7 @@ label eleccionFinal:
 
     play music daisy 
 
-    show unknown 
+    show unkown 
 
 
 
