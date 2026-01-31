@@ -331,6 +331,10 @@ label house_puzzle:
     scene black
     with dissolve
 
+    stop music
+    stop audio
+    stop sound
+
     play sound nieve loop
     label puzzle_loop:
         window hide
@@ -508,6 +512,8 @@ label school_puzzle:
     with dissolve
 
     stop music
+    stop audio
+    stop sound
     
     
     label scene_escuela:
@@ -973,6 +979,10 @@ label lago_barcaza:
 
 label lago_puzle_zona:
     #Imagen directamente mirando al lago
+    stop music
+    stop audio
+    stop sound
+
     play music "audio/lago/Sample.ogg" fadein 1.0
     "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
     #Se define la solucion del puzle musical
@@ -1279,6 +1289,8 @@ label Bosque:
     scene BosqueBg
 
     stop music
+    stop audio
+    stop sound
 
     play music bosquenieve loop
 
@@ -1513,6 +1525,7 @@ label eleccionFinal:
     image AcantiladoBg = "gui/AcantiladoBg.jpg"
 
     scene AcantiladoBg
+    with dissolve
 
     stop sound
     
@@ -1566,7 +1579,7 @@ label eleccionFinal:
     hide SluaghFrame2
 
     show SluaghFrame1
-    with fade
+    with dissolve
 
     "Olive tenses slightly."
    
@@ -1602,17 +1615,31 @@ label eleccionFinal:
     hide SluaghFrame1
     with dissolve
 
+    image Sluagh-Olive-S = "CG/Sluagh-Olive(S).jpg"
+
+    scene Sluagh-Olive-S
+    with dissolve
+
     "Olive steps closer to the edge of the precipice."
 
     "The cold wind blows."
 
     #CG de Olive sin capucha
 
+    image Sluagh-Olive-O = "CG/Sluagh-Olive(O).jpg"
+
+    scene Sluagh-Olive-O
+    with dissolve
+
     "Olive looks at you one last time, and the wind uncovers his hood."
 
     "Then he jumps."
 
     "The wind stops."
+
+    scene AcantiladoBg
+    with dissolve
+
 
     stop music
 

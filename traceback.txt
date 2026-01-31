@@ -1,16 +1,23 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
+<<<<<<< HEAD
   File "game/script.rpy", line 847, in script
     show stranger at down
   File "game/script.rpy", line 847, in <module>
     show stranger at down
                      ^^^^
 NameError: name 'down' is not defined
+=======
+  File "game/tl/spanish/script.rpy", line 1892, in script
+    old "Yes"
+Exception: A translation for "Yes" already exists at game/tl/spanish/screens.rpy:265.
+>>>>>>> ec00912bc16d0183571891094008390251a45296
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
+<<<<<<< HEAD
   File "game/script.rpy", line 847, in script
     show stranger at down
   File "renpy/ast.py", line 1357, in execute
@@ -29,8 +36,25 @@ Traceback (most recent call last):
     show stranger at down
                      ^^^^
 NameError: name 'down' is not defined
+=======
+  File "game/tl/spanish/script.rpy", line 1892, in script
+    old "Yes"
+  File "renpy/ast.py", line 3036, in execute
+    renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 586, in add_string_translation
+    stl.add(old, new, newloc)
+    ~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "renpy/translation/__init__.py", line 532, in add
+    raise Exception('A translation for "{}" already exists at {}:{}.'.format(quote_unicode(old), fn, line))
+Exception: A translation for "Yes" already exists at game/tl/spanish/screens.rpy:265.
+>>>>>>> ec00912bc16d0183571891094008390251a45296
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.0.25111603
 Reminiscent Dream 1.0
+<<<<<<< HEAD
 Sat Jan 31 17:39:24 2026
+=======
+Fri Jan 30 18:36:05 2026
+>>>>>>> ec00912bc16d0183571891094008390251a45296
