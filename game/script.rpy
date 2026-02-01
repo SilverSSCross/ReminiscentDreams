@@ -99,7 +99,7 @@ label start:
 
 
     #Zona inicio pruebas
-    
+    jump lago
     ########################################
 
 
@@ -941,6 +941,7 @@ label school_lore:
 #Backgrounds
 image bg lago_gen = "gui/lago/Imagenes/barco_final_pixel.png"
 image bg pecho_sluagh = "gui/Pecho_Sluagh.png"
+image bg lago_puzle_mview="gui/Lago/Imagenes/puzle_view_pixel.png"
 #Definir cualquier funcion que se quiera usar
 
 
@@ -973,6 +974,11 @@ label lago_barcaza:
 
 label lago_puzle_zona:
     #Imagen directamente mirando al lago
+    scene bg lago_puzle_mview:
+        xsize config.screen_width
+        ysize config.screen_height
+
+
     stop music
     stop audio
     stop sound
@@ -996,20 +1002,21 @@ label lago_puzle_zona:
 label lago_lore:
     #Inicio Recuerdo
     #En negro todo esto probablemente
+    scene black
+    with fade
     #Audio de coche probablemente
     "A mechanic noise is heard. The noise of a car"
     "The noise that is heard when sitting inside of a car"
     "An elder and a man sit on the front seats"
     "No face was identifiable from the backseats"
-    scene grey
     #Mediana edad
-    show ym at left
+    # show ym at left
     ym "Think that this is a good one boss?"
     #Viejo    
-    show om at right
+    # show om at right
     om "Im sure. Now shut up, i don't pay you to talk"
-    hide ym
-    hide om
+    # hide ym
+    # hide om
 
     "Silence filled the car, only interrupted with the ocasional groan that the elder made from coughing, 
     probably from a respiratory disease"
