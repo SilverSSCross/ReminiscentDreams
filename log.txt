@@ -1,6 +1,0 @@
-2026-01-29 18:45:44 UTC
-Windows-10-10.0.19045-SP0
-Ren'Py 8.5.0.25111603
-
-Early init took 33 ms
-Loading error handling took 26 ms

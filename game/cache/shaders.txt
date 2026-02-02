@@ -9,8 +9,8 @@ renpy.dissolve renpy.dissolve
 >>>>>>> orfanato
 renpy.alpha renpy.geometry renpy.texture
 renpy.alpha renpy.texture
->>>>>>> Stashed changes
 >>>>>>> 13d4b0bad331ec79a32cbfa1d69cb9d367a6b856
+>>>>>>> Stashed changes
 renpy.ftl
 renpy.matrixcolor renpy.solid
 renpy.matrixcolor renpy.texture
