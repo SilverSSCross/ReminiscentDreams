@@ -8,6 +8,9 @@ transform character_Base:
     xanchor 0.1
     yanchor 0.1
     zoom 3
+transform down:
+    xpos 0.4
+    ypos 0.3
 image th:
     "gui/PsicologoFrame1.png"
     pause 4
@@ -22,10 +25,10 @@ image th:
 define mc = Character("You")
 define np = Character("News of Helsinki")
 define mf = Character("Mefi")
-define unknown = Character("???")
+define stranger = Character("???")
 define kid = Character("Student")
 define Profe = Character("Teacher")
-image unknown:
+image unkown:
     "gui/Ojos1.jpg"
     pause 0.2
 
@@ -328,7 +331,11 @@ label house_puzzle:
     scene black
     with dissolve
 
-    play music nieve loop
+    stop music
+    stop audio
+    stop sound
+
+    play sound nieve loop
     label puzzle_loop:
         window hide
         call screen casa
@@ -372,6 +379,7 @@ label libro:
         hide TherapyBg
         hide padre
         scene black
+        stop sound
         jump house_lore
 
 
@@ -504,6 +512,8 @@ label school_puzzle:
     with dissolve
 
     stop music
+    stop audio
+    stop sound
     
     
     label scene_escuela:
@@ -531,7 +541,6 @@ label school_puzzle:
 
 label niño:
     show screen pasillo
-    window show
     kid "Hey you. Wanna know something?"
     menu:
         "Yeah, sure":
@@ -540,8 +549,10 @@ label niño:
             kid "Do you think i could do it too?"
             mc "I don't think you should, but you gave me an idea, now go kid."
             $Profesora_tip = True
+            hide screen pasillo
             jump scene_pasillo
         "Get lost kid":
+            hide screen pasillo
             jump scene_pasillo
 
 label profesora:
@@ -558,6 +569,7 @@ label profesora:
             Profe "Ok ok, the locker's sheet code is in the cupboard at mi right"
             Profe "The code is 3516"
             Profe "Now go!\n AND DON'T YOU DARE TELL ANYONE WHAT WE KNOW OR YOU WILL REGRET IT!"
+    hide screen clase
     jump scene_clase
 
 label scene_armario:
@@ -586,7 +598,6 @@ label scene_taquilla:
 
 label puzle_armario:
     show screen armario_cerrado
-    window show
 
     mc "It needs a code"
 
@@ -596,12 +607,11 @@ label puzle_armario:
         $ Armario_Open = True
     else:
         mc "Damn it! Maybe the code is somewhere else."
-    
+    hide screen armario_cerrado
     jump scene_armario 
 
 label puzle_taquilla:
     show screen taquilla_cerrada
-    window show
     
     mc "It needs a code"
 
@@ -609,15 +619,16 @@ label puzle_taquilla:
     if Answer != "7531":
         show screen taquilla_cerrada
         mc "Damn it! \n maybe the code is somewhere around here."
-        window hide
+        hide screen taquilla_cerrada
         jump scene_taquilla
         
         
     if Answer == "7531":
         show screen taquilla_abierta
         mc "Got it!"
-        window hide
         $Taquilla_Open = True
+        hide screen taquilla_cerrada
+        hide screen taquilla_abierta
         jump scene_taquilla    
 
 label interior_armario:
@@ -628,8 +639,6 @@ label interior_armario:
 
 label foto:
     mc "Wait a minute, this picture reminds me of something....."
-    show scene black
-    with dissolve
     jump school_lore
 
 
@@ -649,6 +658,7 @@ screen escuela():
     
         idle "gui/School/Puzzle/FlechaAbajo.png"
         hover "gui/School/Puzzle/FlechaAbajo_hover.png"
+        focus_mask True
         action Jump("scene_salir")
 
 
@@ -673,14 +683,14 @@ screen pasillo():
     
         idle "gui/School/Puzzle/FlechaAbajo.png"
         hover "gui/School/Puzzle/FlechaAbajo_hover.png"
+        focus_mask True
         action Jump("scene_escuela")
     imagebutton:
-        at right
-        xsize 0.3
-        ysize 0.7
+        xpos 0.7
+        ypos 0.5
         focus_mask True
-        idle "gui/School/Puzzle/SiluetaNiño.png"
-        hover "gui/School/Puzzle/SiluetaNiño_hover.png"
+        idle Transform("gui/School/Puzzle/SiluetaNiño.png", zoom=0.75)
+        hover Transform("gui/School/Puzzle/SiluetaNiño_hover.png", zoom=0.75)
         action Jump("niño")
 
 screen taquilla_cerrada():
@@ -697,6 +707,7 @@ screen taquilla_cerrada():
     
         idle "gui/School/Puzzle/FlechaIzquierda.png"
         hover "gui/School/Puzzle/FlechaIzquierda_hover.png"
+        focus_mask True
         action Jump("scene_pasillo")
 
 screen taquilla_abierta():
@@ -707,6 +718,7 @@ screen taquilla_abierta():
         ypos 0.4
         idle "gui/School/Puzzle/Imagen_lore.png"
         hover "gui/School/Puzzle/Imagen_Lore.png"
+        focus_mask True
         action Jump("foto")
     imagebutton:
         xpos 0.1
@@ -714,6 +726,7 @@ screen taquilla_abierta():
     
         idle "gui/School/Puzzle/FlechaIzquierda.png"
         hover "gui/School/Puzzle/FlechaIzquierda_hover.png"
+        focus_mask True
         action Jump("scene_pasillo")
 
 screen clase():
@@ -734,9 +747,9 @@ screen clase():
     imagebutton:
         at left
         ysize 0.7
-        focus_mask True
         idle "gui/School/Puzzle/SiluetaProfesora.png"
         hover "gui/School/Puzzle/SiluetaProfesora_hover.png"
+        focus_mask True
         action Jump("profesora")
 
 screen armario_cerrado():
@@ -754,6 +767,7 @@ screen armario_cerrado():
     
         idle "gui/School/Puzzle/FlechaDerecha.png"
         hover "gui/School/Puzzle/FlechaDerecha_hover.png"
+        focus_mask True
         action Jump("scene_clase")
 
 screen armario_abierto():
@@ -771,6 +785,7 @@ screen armario_abierto():
     
         idle "gui/School/Puzzle/FlechaDerecha.png"
         hover "gui/School/Puzzle/FlechaDerecha_hover.png"
+        focus_mask True
         action Jump("scene_clase")
 
 screen interior_armario_puzzle():
@@ -782,6 +797,7 @@ screen interior_armario_puzzle():
     
         idle "gui/School/Puzzle/FlechaAbajo.png"
         hover "gui/School/Puzzle/FlechaAbajo_hover.png"
+        focus_mask True
         action Jump("scene_clase")
     draggroup:
         drag:
@@ -828,23 +844,28 @@ screen interior_armario_puzzle():
             focus_mask True
 
 label school_lore:
+    image bg_escuela = "gui/School/puzzle/Pasillo.jpg"
     scene bg_escuela
     with dissolve
 
     "You have a vague memory of this place."
 
-    show unknown
+    image stranger = "gui/School/puzzle/SiluetaNiño.png"
+    show stranger at down
     with dissolve
 
-    unknown "Are you daydreaming again?"
+    stranger "Are you daydreaming again?"
 
-    unknown "Hey. I'm talking to you."
+    stranger "Hey. I'm talking to you."
     
     "The voice comes from a boy your age."
     
     "It's your friend Olive."
 
-    show ol
+    hide stranger
+
+    image ol = "gui/School/Lore/SiluetaOlive.png"
+    show ol at down
     
     "You nod your head and make a small grimace to let him know you're listening."
 
@@ -958,6 +979,10 @@ label lago_barcaza:
 
 label lago_puzle_zona:
     #Imagen directamente mirando al lago
+    stop music
+    stop audio
+    stop sound
+
     play music "audio/lago/Sample.ogg" fadein 1.0
     "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
     #Se define la solucion del puzle musical
@@ -1264,6 +1289,8 @@ label Bosque:
     scene BosqueBg
 
     stop music
+    stop audio
+    stop sound
 
     play music bosquenieve loop
 
@@ -1440,7 +1467,7 @@ label eleccionFinal:
 
     play music daisy 
 
-    show unknown 
+    show unkown 
 
 
 
@@ -1498,6 +1525,7 @@ label eleccionFinal:
     image AcantiladoBg = "gui/AcantiladoBg.jpg"
 
     scene AcantiladoBg
+    with dissolve
 
     stop sound
     
@@ -1551,7 +1579,7 @@ label eleccionFinal:
     hide SluaghFrame2
 
     show SluaghFrame1
-    with fade
+    with dissolve
 
     "Olive tenses slightly."
    
@@ -1587,17 +1615,31 @@ label eleccionFinal:
     hide SluaghFrame1
     with dissolve
 
+    image Sluagh-Olive-S = "CG/Sluagh-Olive(S).jpg"
+
+    scene Sluagh-Olive-S
+    with dissolve
+
     "Olive steps closer to the edge of the precipice."
 
     "The cold wind blows."
 
     #CG de Olive sin capucha
 
+    image Sluagh-Olive-O = "CG/Sluagh-Olive(O).jpg"
+
+    scene Sluagh-Olive-O
+    with dissolve
+
     "Olive looks at you one last time, and the wind uncovers his hood."
 
     "Then he jumps."
 
     "The wind stops."
+
+    scene AcantiladoBg
+    with dissolve
+
 
     stop music
 
