@@ -148,7 +148,7 @@ translate spanish strings:
 
     # renpy/common/00accessibility.rpy:296
     old "Return"
-    new ""
+    new "Volver"
 
     # renpy/common/00accessibility.rpy:306
     old "The options on this menu are intended to improve accessibility. They may not work with all games, and some combinations of options may render the game unplayable. This is not an issue with the game or engine. For the best results when changing fonts, try to keep the text size the same as it originally was."
@@ -336,35 +336,35 @@ translate spanish strings:
 
     # renpy/common/00action_file.rpy:675
     old "Page {}"
-    new ""
+    new "Página {}"
 
     # renpy/common/00action_file.rpy:675
     old "Automatic saves"
-    new ""
+    new "Grabación automática"
 
     # renpy/common/00action_file.rpy:675
     old "Quick saves"
-    new ""
+    new "Grabación rápida"
 
     # renpy/common/00action_file.rpy:816
     old "Next file page."
-    new ""
+    new "Página siguiente."
 
     # renpy/common/00action_file.rpy:888
     old "Previous file page."
-    new ""
+    new "Página anterior."
 
     # renpy/common/00action_file.rpy:949
     old "Quick save complete."
-    new ""
+    new "Guardado rápido completado."
 
     # renpy/common/00action_file.rpy:964
     old "Quick save."
-    new ""
+    new "Guardado rápido."
 
     # renpy/common/00action_file.rpy:983
     old "Quick load."
-    new ""
+    new "Carga rápida."
 
     # renpy/common/00action_other.rpy:416
     old "Language [text]"
@@ -496,27 +496,27 @@ translate spanish strings:
 
     # renpy/common/00gui.rpy:448
     old "Are you sure?"
-    new ""
+    new "¿Seguro?"
 
     # renpy/common/00gui.rpy:449
     old "Are you sure you want to delete this save?"
-    new ""
+    new "¿Seguro que quieres borrar esta partida?"
 
     # renpy/common/00gui.rpy:450
     old "Are you sure you want to overwrite your save?"
-    new ""
+    new "¿Seguro que quieres sobreescribir esta partida?"
 
     # renpy/common/00gui.rpy:451
     old "Loading will lose unsaved progress.\nAre you sure you want to do this?"
-    new ""
+    new "Al cargar se perderá el progreso no guardado.\n¿Seguro que quieres hacer esto?"
 
     # renpy/common/00gui.rpy:452
     old "Are you sure you want to quit?"
-    new ""
+    new "¿Seguro que quieres salir?"
 
     # renpy/common/00gui.rpy:453
     old "Are you sure you want to return to the main menu?\nThis will lose unsaved progress."
-    new ""
+    new "¿Seguro que quieres volver al menú principal?\nSe perderá el progreso no guardado."
 
     # renpy/common/00gui.rpy:454
     old "Are you sure you want to continue where you left off?"
@@ -1100,7 +1100,7 @@ translate spanish strings:
 
     # renpy/common/00gltest.rpy:147
     old "Screen"
-    new ""
+    new "Pantalla"
 
     # renpy/common/00gltest.rpy:151
     old "60"
@@ -1257,4 +1257,3 @@ translate spanish strings:
     # renpy/common/_errorhandling.rpym:885
     old "Parsing the script failed."
     new ""
-
