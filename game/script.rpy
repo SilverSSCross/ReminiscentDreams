@@ -974,7 +974,7 @@ label lago_barcaza:
 
 label lago_puzle_zona:
     #Imagen directamente mirando al lago
-    scene bg lago_puzle_mview:
+    scene bg lago_puzle_mview with fade:
         xsize config.screen_width
         ysize config.screen_height
 
@@ -1093,6 +1093,11 @@ label lago_lore:
     "Waves from the past are interrupted with and uproar"
 
     "{b}RETRIBUTION!!!{/b}"
+
+    #Imagen de Sluagh
+    scene bg lago_gen with fade:
+        xsize config.screen_width
+        ysize config.screen_height
 
     "The birds stopped singing and the wind stopped blowing"
     "Time feels as if it has stopped with no explanation"
