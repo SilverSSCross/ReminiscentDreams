@@ -957,6 +957,7 @@ label lago:
     stop music fadeout 1.0
     #Se añade la imagen de fondo del lago
     #Interactuable Cielo, Barcaza, lago (Puzle Musical)
+    #Aprovecha que Jesus hizo algo similar en la casa para hacer los objetos interactuables
     call screen lago_main
         
     
@@ -1002,7 +1003,9 @@ label lago_puzle_zona:
 label lago_lore:
     #Inicio Recuerdo
     #En negro todo esto probablemente
+   
     #Audio de coche probablemente
+    #Introduce como audio LluviaCoche
     "A mechanic noise is heard. The noise of a car"
     "The noise that is heard when sitting inside of a car"
     "An elder and a man sit on the front seats"
@@ -1025,15 +1028,20 @@ label lago_lore:
 
     "*CRUNCH*"
     #Tendria que poner una imagen aqui
+    #Hay que hacer una CG de eso
+    
 
     #Mediana edad
     show ym at left
     ym "Ah, you are finally awake" #Toda la seccion despues de las palabras no pintan en primera persona. "Dijo el hombre con una alegría casi infantil que no se correspondía en lo más mínimo a la lúgubre expresión que portaba en el rostro."
+    #Son dialogos que no dice ninguno. Son narracion
     ym "From now on we will get along, okay?"
     hide ym
     "..."
     "..."
     "..."
+
+    #Aqui se corta la CG del coche y se pasa a fundido a negroo o bien al cielo o alguna cosa por el estilo para enfatizar el dialogo
 
     "The is no such thing as love"
     "Therefore there is no sadness"
@@ -1048,6 +1056,7 @@ label lago_lore:
     with dissolve
     
     #Borroso?
+    #O bien borroso o buscar alguna imagen de nieve y pixelarla
     "The ice chilled me to the bone preventing me from breathing right"
     "I don't know how long i walked without a specific direction on mind"
     "The only thing i remember is a word"
@@ -1064,6 +1073,8 @@ label lago_lore:
     "Moving my gaze i saw a man and a woman in front of me"
 
     "{b}IRRELEVANT{/b}"
+
+    #Poner las siluetas de personas (recicla alguna existente)
 
     "I don't get to distinguish their faces"
     "I think they said the words 'look after'"
@@ -1094,11 +1105,14 @@ label lago_lore:
     "{b}RETRIBUTION!!!{/b}"
 
     "The birds stopped singing and the wind stopped blowing"
+    #Para cualquier audio que este puesto
     "Time feels as if it has stopped with no explanation"
     "You feel a pressure on the chest and hear an cacophony that felt both strange and familiar at the same time"
     "You see someone far away slowly getting out of the lake"
+    #sonido 
     "Something so repulsive that the first thing that comes to mind is the image of the creature that you read about on irish mythology, a Sluagh, a cursed spirit that chases the living without rest"
     "Panic gets to you the moment you decypher what is infront of you"
+    #Introduce al Sluagh, preferiblemente el segundo frame
     "Their height was about two meters, and even then you weren't completley sure because of the limp and hump that this person...no, THAT creature"
     "It has a ripped yellow raincoat too short for the creature that revealed rotting flesh"
     "A piece of a tree bark impaled almos the whole body and through the chest it looked like something was coming out, although you could't distinguish what it was"
@@ -1130,6 +1144,7 @@ label lago_decision_stay:
 
     "A kind of face buried on the chest"
     # No entiendo la frase "La criatura de dentro de la criatura araña el trozo de madera que tiene clavado atravesándolo y lo miró con una mirada que parecía juzgarlo."
+    #Se refiere a literalmente eso, dentro del monstruo hay otro mas que araña el trozo de madera que lo atraviesa
     "A thought crosses your mind"
     scene black
     with fade
@@ -1141,14 +1156,18 @@ label lago_decision_stay:
     "He was on a situation of complete awareness"
     "His brain hardly could work properly"
     "It was correctly proven the moment he decide to stay in place"
-    "Maybe from fear"
-    "Maybe..."
+    "Perhaps from fear"
+    "Perhaps he was one of those people who, in moments of stress, would make unfunny jokes"
+    "Perhaps..."
     "..."
     "..."
+    #Introduce sonido de corte
     "That thought of process was cut violently like when pulling a weed from the garden"
     "The only thought that crossed his mind again was"
     #Player
     #Go/jo reference
+    #No era la intencion
+
     mc "Huh, aren't those my legs?"
 
     "A fast cut from the creature's hands was all it was needed to separate the superior half of the boy from his inferior half"
@@ -1159,11 +1178,13 @@ label lago_decision_stay:
     "The creature got closer to the boy's body kneeling beside him, in a strange way taking into account the wood fragment that impaled him,
     it proceed to bury his giant claws on the heart ripping it out"
     "Then the creature proceeded to devour it"
+    #Introduce el audio de la criatura comiendo
     "It was a disgusting sound. It made it sound like a pig was eating. Although that would be an insult to pigs"
     "After eating the creature only said one word"
     #Criatura
     sl "Empty..."
     
+    #Puedes poner el sonido de bad ending
     centered "{color=#732020}BAD ENDING: INSATIABLE APPETITE."
 
 
@@ -1217,12 +1238,13 @@ label orfanato_lore:
     kidA "Otherwise HE will get angry"
 
     #Flash blanco a temblor en la escena
+    #Escena del orfanato ardiendo
 
     kidA "Those who are not prepared to ascend to a superior plane need to be purged"
     kidB "The dirty hand of those who lied to us should be cut off, no?"
     kidA "Once you see death cross infront of you, you learn what is real beauty on this world"
 
-    #Sonido de gente quemandose
+    #Sonido de gente quemandose y del fuego
 
     "The noise is deafening"
     "The screaming doesn't stop no matter how hard you try"
@@ -1230,7 +1252,7 @@ label orfanato_lore:
     "More precisely, you are seeing dead kids"
     "The smell to burnt flesh makes you want to vomit"
     "It is a hellish scene"
-    "You distinguish a silhouette impaled on the wall" # Is this mf Dante?
+    "You distinguish a silhouette impaled on the wall" # Is this mf Dante? No era la intencion pero si
     "No..."
     "More exactly, you see half silhouette impaled on the wall"
     "The bottom half of the body remains on an unkown place"
@@ -1267,6 +1289,7 @@ label orfanato_lore:
     "Definitely if hell existed it was this exact place"
 
     #Meter efecto RCT(televisor) y sonido
+    #Puedes usar el q he puesto de Bad Ending ya que es estatica
 
     "When the devil falls in love he also dreams of heaven"
 
