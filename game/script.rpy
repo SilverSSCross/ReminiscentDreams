@@ -529,6 +529,7 @@ label school_puzzle:
         jump scene_pasillo
     
     label scene_clase:
+        hide screen interior_armario_puzzle
         window hide
         call screen clase
         with dissolve

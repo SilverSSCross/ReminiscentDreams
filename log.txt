@@ -1,33 +1,34 @@
-2026-02-04 19:46:32 UTC
+2026-02-09 21:36:57 UTC
 Windows-11-10.0.26200-SP0
 Ren'Py 8.5.0.25111603
 
-Early init took 42 ms
-Loading error handling took 21 ms
-Loading script took 136 ms
-Loading save slot metadata took 24 ms
-Loading persistent took 1 ms
-Running init code took 45 ms
-Loading analysis data took 6 ms
+Early init took 52 ms
+Loading error handling took 80 ms
+Loading script took 1947 ms
+Loading save slot metadata took 106 ms
+Loading persistent took 0 ms
+Running init code took 258 ms
+Loading analysis data took 13 ms
 Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 10 ms
-Dump and make backups took 35 ms
+Reloading save slot metadata took 82 ms
+Backing up script files to 'C:\\Users\\jesus\\AppData\\Roaming/RenPy/backups\\Reminiscent Dreams':
+Dump and make backups took 46 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 35 ms
+Initial gc took 34 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 259 ms
+Creating interface object took 281 ms
 Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 40 ms
-Analyze screens took 1 ms
-Save screen analysis took 0 ms
-Save pyanalysis took 0 ms
+Load screen analysis took 7 ms
+Analyze screens took 18 ms
+Save screen analysis took 14 ms
+Save pyanalysis took 7 ms
 Save bytecode took 25 ms
 Running _start took 0 ms
-Interface start took 285 ms
+Interface start took 277 ms
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 3440, 1440)
@@ -42,15 +43,3 @@ Maximum texture size: 4096x4096
 INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
 Screen sizes: virtual=(1920, 1080) physical=(3440, 1369) drawable=(3440, 1369)
 Maximum texture size: 4096x4096
-Cleaning stores took 0 ms
-Load screen analysis took 28 ms
-Analyze screens took 0 ms
-Running _start took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 26 ms
-Analyze screens took 1 ms
-Running _start took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 25 ms
-Analyze screens took 0 ms
-Running _start took 2 ms

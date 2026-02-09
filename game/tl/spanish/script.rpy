@@ -382,7 +382,7 @@ translate spanish house_lore_5e4ef54a:
 translate spanish house_lore_aee7734e:
 
     # "The other was a thin man with long eyes who lived in poverty."
-    "l otro, un hombre flaco de ojos largos que vivía en la pobreza."
+    "Y el otro, un hombre flaco de ojos largos que vivía en la pobreza."
 
 # game/script.rpy:403
 translate spanish house_lore_a5df2a9c:
@@ -520,7 +520,7 @@ translate spanish niño_69bda58f:
 translate spanish niño_ae042795:
 
     # kid "So he followed him in the recess \nand he found out that the teacher gives him chores in her house in exchange of getting good grades."
-    kid "Asi que lo sigió en el descanso \ny descubrió que le hace las tareas de casa a la profesora a cambio de buenas notas. "
+    kid "Asi que lo siguió en el descanso \ny descubrió que le hace las tareas de casa a la profesora a cambio de buenas notas. "
 
 # game/script.rpy:567
 translate spanish niño_ecc90040:
@@ -538,13 +538,13 @@ translate spanish niño_71888ff4:
 translate spanish puzle_taquilla_da31c1a4:
 
     # mc "It needs a code"
-    mc "Necesita un código"
+    mc "Necesita un código."
 
 # game/script.rpy:624
 translate spanish puzle_taquilla_5f7e7609:
 
     # mc "Damn it! \n maybe the code is somewhere around here."
-    mc "¡Mierda! \n quizas el código esta por algún lugar cercano"
+    mc "¡Mierda! \n quizas el código esta por algún lugar cercano."
 
 # game/script.rpy:630
 translate spanish puzle_taquilla_3ab180c4:
@@ -562,7 +562,7 @@ translate spanish profesora_d7b01973:
 translate spanish profesora_e3a71ff2:
 
     # Profe "It's not your locker anymore silly, besides, it's been inhabilitated and the code has been changed, \n I don't know what the hell you have in there for that, and I ain't giving you the code."
-    Profe "Ya no es tu taquilla tontito, además, ha sido inavilitada y el codigo ha sido cambiado. \n No se que demonios tienes ahí y no pienso darte el código. "
+    Profe "Ya no es tu taquilla tontito, además, ha sido inhabilitada y el codigo ha sido cambiado. \n No se que demonios tienes ahí y no pienso darte el código. "
 
 # game/script.rpy:684
 translate spanish profesora_2368868a:
@@ -604,7 +604,7 @@ translate spanish profesora_458515d9:
 translate spanish puzle_armario_da31c1a4:
 
     # mc "It needs a code"
-    mc "Necesita un código"
+    mc "Necesita un código."
 
 # game/script.rpy:721
 translate spanish puzle_armario_5f7e7609:
@@ -820,7 +820,7 @@ translate spanish school_lore_d7b228f5:
 translate spanish school_lore_4cd08cbe:
 
     # "The ripples of memory fade like waves in the water."
-    "Las hondas del recuerdo se desvanecen como ondas en el agua."
+    "Las ondas del recuerdo se desvanecen como ondas en el agua."
 
 # game/script.rpy:940
 translate spanish school_lore_e5bafc20:
@@ -1914,7 +1914,7 @@ translate spanish strings:
 
     # game/script.rpy:687
     old "Like you waste the time of your students doing stuff\n you don't want to do in exchange for an easy A++?"
-    new "¿Como que malgastas el tiempo de tus estudiantes haciendoles hacer cosas\n que no quieres hacer a cambio de una A++ facil?"
+    new "¿Como tú, que malgastas el tiempo de tus estudiantes haciendoles hacer cosas\n que no quieres hacer a cambio de una A++ facil?"
 
     # game/script.rpy:964
     old "Entrar al bosque"
