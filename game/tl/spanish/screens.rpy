@@ -241,7 +241,7 @@ translate spanish strings:
     new "Rueda del ratón abajo"
 
     # game/screens.rpy:1096
-    old " Right trigger\nA/Bottom button"
+    old "Right trigger\nA/Bottom button"
     new "Gatillo derecho\nA/Botón inferior"
 
     # game/screens.rpy:1100
@@ -260,8 +260,16 @@ translate spanish strings:
     old "Y/Top button"
     new "Y/Botón superior"
 
+    #game/screens.rpy:1232
+    old "Skipping"
+    new "Saltando"
 
     # game/screens.rpy:1546
     old "Menu"
     new "Menú"
 
+    old "empty"
+    new "vacío"
+
+    old "Window"
+    new "Ventana"
