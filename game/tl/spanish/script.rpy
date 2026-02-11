@@ -382,7 +382,7 @@ translate spanish house_lore_5e4ef54a:
 translate spanish house_lore_aee7734e:
 
     # "The other was a thin man with long eyes who lived in poverty."
-    "l otro, un hombre flaco de ojos largos que vivía en la pobreza."
+    "Y el otro, un hombre flaco de ojos largos que vivía en la pobreza."
 
 # game/script.rpy:403
 translate spanish house_lore_a5df2a9c:
@@ -520,7 +520,7 @@ translate spanish niño_69bda58f:
 translate spanish niño_ae042795:
 
     # kid "So he followed him in the recess \nand he found out that the teacher gives him chores in her house in exchange of getting good grades."
-    kid "Asi que lo sigió en el descanso \ny descubrió que le hace las tareas de casa a la profesora a cambio de buenas notas. "
+    kid "Asi que lo siguió en el descanso \ny descubrió que le hace las tareas de casa a la profesora a cambio de buenas notas. "
 
 # game/script.rpy:567
 translate spanish niño_ecc90040:
@@ -538,13 +538,13 @@ translate spanish niño_71888ff4:
 translate spanish puzle_taquilla_da31c1a4:
 
     # mc "It needs a code"
-    mc "Necesita un código"
+    mc "Necesita un código."
 
 # game/script.rpy:624
 translate spanish puzle_taquilla_5f7e7609:
 
     # mc "Damn it! \n maybe the code is somewhere around here."
-    mc "¡Mierda! \n quizas el código esta por algún lugar cercano"
+    mc "¡Mierda! \n quizas el código esta por algún lugar cercano."
 
 # game/script.rpy:630
 translate spanish puzle_taquilla_3ab180c4:
@@ -562,7 +562,7 @@ translate spanish profesora_d7b01973:
 translate spanish profesora_e3a71ff2:
 
     # Profe "It's not your locker anymore silly, besides, it's been inhabilitated and the code has been changed, \n I don't know what the hell you have in there for that, and I ain't giving you the code."
-    Profe "Ya no es tu taquilla tontito, además, ha sido inavilitada y el codigo ha sido cambiado. \n No se que demonios tienes ahí y no pienso darte el código. "
+    Profe "Ya no es tu taquilla tontito, además, ha sido inhabilitada y el codigo ha sido cambiado. \n No se que demonios tienes ahí y no pienso darte el código. "
 
 # game/script.rpy:684
 translate spanish profesora_2368868a:
@@ -604,7 +604,7 @@ translate spanish profesora_458515d9:
 translate spanish puzle_armario_da31c1a4:
 
     # mc "It needs a code"
-    mc "Necesita un código"
+    mc "Necesita un código."
 
 # game/script.rpy:721
 translate spanish puzle_armario_5f7e7609:
@@ -820,7 +820,7 @@ translate spanish school_lore_d7b228f5:
 translate spanish school_lore_4cd08cbe:
 
     # "The ripples of memory fade like waves in the water."
-    "Las hondas del recuerdo se desvanecen como ondas en el agua."
+    "Las ondas del recuerdo se desvanecen como ondas en el agua."
 
 # game/script.rpy:940
 translate spanish school_lore_e5bafc20:
@@ -1914,7 +1914,7 @@ translate spanish strings:
 
     # game/script.rpy:687
     old "Like you waste the time of your students doing stuff\n you don't want to do in exchange for an easy A++?"
-    new "¿Como que malgastas el tiempo de tus estudiantes haciendoles hacer cosas\n que no quieres hacer a cambio de una A++ facil?"
+    new "¿Como tú, que malgastas el tiempo de tus estudiantes haciendoles hacer cosas\n que no quieres hacer a cambio de una A++ facil?"
 
     # game/script.rpy:964
     old "Entrar al bosque"
@@ -1931,4 +1931,988 @@ translate spanish strings:
     # game/script.rpy:974
     old "Final Verdadero"
     new "Final Verdadero"
+
+# TODO: Translation updated at 2026-01-30 18:12
+
+# game/script.rpy:154
+translate spanish start_8e48a247:
+
+    # mc "Of that {color=#FF0000}{b}Sluagh{/b}{/color}."
+    mc "De ese Sluagh"
+
+# game/script.rpy:562
+translate spanish profesora_52599e80:
+
+    # Profe "Jerk."
+    Profe "Cretino"
+
+# game/script.rpy:565
+translate spanish profesora_137c094c:
+
+    # Profe "Damn big mouth!"
+    Profe "¡Maldito charlatan!"
+
+# game/script.rpy:568
+translate spanish profesora_f4b6f468:
+
+    # Profe "Now go!\n AND DON'T YOU DARE TELL ANYONE WHAT WE KNOW OR YOU WILL REGRET IT!"
+    Profe "¡Ahora vete!\n ¡Y NO LE DIGAS A NADIE NADA DE LO QUE SABES O LO LAMENTARAS!"
+
+# game/script.rpy:606
+translate spanish puzle_armario_59fd2fbc:
+
+    # mc "Damn it! Maybe the code is somewhere else."
+    mc "¡Mierda! El código quizás este en otro lugar"
+
+# game/script.rpy:960
+translate spanish lago_cielo_71dcc2d8:
+
+    # "The sky is completely clear"
+    "El cielo está completamente despejado."
+
+# game/script.rpy:961
+translate spanish lago_cielo_55498a72:
+
+    # "Blue like this rarely appears on the sky accentuating it's beauty"
+    "Se aprecia el azul como pocas veces acentuando su belleza."
+
+# game/script.rpy:963
+translate spanish lago_cielo_7634c9fa:
+
+    # "It really makes me want to vomit"
+    "Realmente me da ganas de vomitar."
+
+# game/script.rpy:968
+translate spanish lago_barcaza_97352c74:
+
+    # "A small boat that they use on the town to take a stroll through the lake"
+    "Una pequeña barca que usan en el pueblo para dar pequeños paseos por el lago."
+
+# game/script.rpy:969
+translate spanish lago_barcaza_a3c68aa7:
+
+    # "I remember one time that a teenager stole it to commit suicide"
+    "Recuerdo que una vez un chico la robó para tirarse al lago a suicidarse."
+
+# game/script.rpy:970
+translate spanish lago_barcaza_494fdc5f:
+
+    # "It gave the place a picturesque touch to such a vulgar place"
+    "Le dio un toque pintoresco a un lago tan vulgar."
+
+# game/script.rpy:971
+translate spanish lago_barcaza_e84e8e11:
+
+    # "I appreciate it"
+    "Eso se lo agradezco."
+
+# game/script.rpy:981
+translate spanish lago_puzle_zona_a1598c76:
+
+    # "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
+    "Las ondas que se forman en el lago son melódicas. Me recuerda a algo la melodía que suena."
+
+# game/script.rpy:1000
+translate spanish lago_lore_0395607b:
+
+    # "A mechanic noise is heard. The noise of a car"
+    "Un ruido mecánico se escucha. El ruido de un coche."
+
+# game/script.rpy:1001
+translate spanish lago_lore_6ad8d8e4:
+
+    # "The noise that is heard when sitting inside of a car"
+    "El ruido que se escucha al estar en el interior de un coche."
+
+# game/script.rpy:1002
+translate spanish lago_lore_e554cdf3:
+
+    # "An elder and a man sit on the front seats"
+    "Un anciano y un hombre de mediana edad estaban en los asientos de delante."
+
+# game/script.rpy:1003
+translate spanish lago_lore_b9441c86:
+
+    # "No face was identifiable from the backseats"
+    "Las caras de ninguno eran identificables desde los asientos traseros."
+
+# game/script.rpy:1007
+translate spanish lago_lore_2410f5c2:
+
+    # ym "Think that this is a good one boss?"
+    ym "¿Cree que este es uno bueno jefe? "
+
+# game/script.rpy:1010
+translate spanish lago_lore_e33a07bb:
+
+    # om "Im sure. Now shut up, i don't pay you to talk"
+    om "Estoy convencido. Ahora cállate, no te pago para charlar."
+
+# game/script.rpy:1014
+translate spanish lago_lore_242305b3:
+
+    # "Silence filled the car, only interrupted with the ocasional groan that the elder made from coughing, probably from a respiratory disease"
+    "El silencio volvió a inundar el vehículo solo interrumpido por los leves quejidos que hacia el anciano al toser de vez en cuando. Probablemente alguna enfermedad respiratoria."
+
+# game/script.rpy:1016
+translate spanish lago_lore_ecaf162f:
+
+    # "Or maybe it was simply from the age"
+    "O quizás simplemente era por la edad."
+
+# game/script.rpy:1017
+translate spanish lago_lore_8acfabe8:
+
+    # "I guess that is irrelevant"
+    "Supongo que es algo irrelevante."
+
+# game/script.rpy:1018
+translate spanish lago_lore_45eefdbf:
+
+    # "The route continued for a long time.It was long like the night on the north and heavy like the years that everybody goes through"
+    "El trayecto continuó durante un largo tiempo. Era largo como la noche en el norte y pesado como los años que nos pasan a todos."
+
+# game/script.rpy:1020
+translate spanish lago_lore_55d56d6e:
+
+    # "*CRUNCH*"
+    "*Crack*"
+
+# game/script.rpy:1025
+translate spanish lago_lore_3afa0798:
+
+    # ym "Ah, you are finally awake"
+    ym "Ah, veo que finalmente has despertado."
+
+# game/script.rpy:1026
+translate spanish lago_lore_fbbe888f:
+
+    # ym "From now on we will get along, okay?"
+    ym "Desde ahora vamos a llevarnos bien. ¿De acuerdo?"
+
+# game/script.rpy:1028
+translate spanish lago_lore_a20cefa7:
+
+    # "..."
+    "."
+
+# game/script.rpy:1029
+translate spanish lago_lore_a20cefa7_1:
+
+    # "..."
+    ".."
+
+# game/script.rpy:1030
+translate spanish lago_lore_a20cefa7_2:
+
+    # "..."
+    "..."
+
+# game/script.rpy:1032
+translate spanish lago_lore_7251952d:
+
+    # "The is no such thing as love"
+    "No hay tal cosa como el amor."
+
+# game/script.rpy:1033
+translate spanish lago_lore_16e81e82:
+
+    # "Therefore there is no sadness"
+    "Por lo tanto, no hay tristeza."
+
+# game/script.rpy:1034
+translate spanish lago_lore_dcc3b48b:
+
+    # "Without love we avoid getting hurt."
+    "Sin el amor evitamos el dolor."
+
+# game/script.rpy:1035
+translate spanish lago_lore_bb62556e:
+
+    # "Why do we expose ourselves to suffering then?"
+    "¿Por qué nos exponemos a sufrir entonces?"
+
+# game/script.rpy:1037
+translate spanish lago_lore_a20cefa7_3:
+
+    # "..."
+    "."
+
+# game/script.rpy:1038
+translate spanish lago_lore_a20cefa7_4:
+
+    # "..."
+    ".."
+
+# game/script.rpy:1039
+translate spanish lago_lore_a20cefa7_5:
+
+    # "..."
+    "..."
+
+# game/script.rpy:1045
+translate spanish lago_lore_cae43de9:
+
+    # "The ice chilled me to the bone preventing me from breathing right"
+    "El hielo me calaba hasta los huesos impidiéndome respirar bien."
+
+# game/script.rpy:1046
+translate spanish lago_lore_be534b59:
+
+    # "I don't know how long i walked without a specific direction on mind"
+    "No sé cuánto tiempo camine ni si tenía siquiera una dirección fija en mente."
+
+# game/script.rpy:1047
+translate spanish lago_lore_f324d6ed:
+
+    # "The only thing i remember is a word"
+    "Lo único que logro recordar era una palabra"
+
+# game/script.rpy:1048
+translate spanish lago_lore_f2d7b187:
+
+    # "Move"
+    "Muévete"
+
+# game/script.rpy:1049
+translate spanish lago_lore_f2d7b187_1:
+
+    # "Move"
+    "Muévete"
+
+# game/script.rpy:1050
+translate spanish lago_lore_887ceb42:
+
+    # "{b}MOVE!!!{/b}"
+    "¡Muévete!"
+
+# game/script.rpy:1052
+translate spanish lago_lore_68bdd22c:
+
+    # "My legs wouldn't respond and my eyes began to redden due to blood clotting"
+    "Las piernas no me respondían y mis ojos empezaron a ver de color rojo a causa de la coagulación de sangre."
+
+# game/script.rpy:1053
+translate spanish lago_lore_cae4bdfd:
+
+    # "On the contrary of what it could look like, i felt warm and the soft touch of death whispering on my ear was kind"
+    "Al contrario de lo que podía aparentar, me sentía cálido. El suave toque de la muerte susurrándome al oído era amable, gentil."
+
+# game/script.rpy:1054
+translate spanish lago_lore_221b2ce9:
+
+    # "I blacked out on that moment"
+    "Me desmaye en ese momento."
+
+# game/script.rpy:1055
+translate spanish lago_lore_b327c6fe:
+
+    # "A light appeared before me"
+    "Una luz apareció frente a mí."
+
+# game/script.rpy:1056
+translate spanish lago_lore_d2fbb07c:
+
+    # "It was a small lamp, but for me it was as blinding as a supernova"
+    "Era una pequeña lampara de mano, pero para mi era cegadora como una supernova."
+
+# game/script.rpy:1057
+translate spanish lago_lore_6d06d470:
+
+    # "An unkown ceiling was what i saw"
+    "Un techo desconocido era lo que veía."
+
+# game/script.rpy:1058
+translate spanish lago_lore_3036914e:
+
+    # "Moving my gaze i saw a man and a woman in front of me"
+    "Al girar la vista vi a un hombre y una mujer enfrente de mí."
+
+# game/script.rpy:1060
+translate spanish lago_lore_cb27e5fb:
+
+    # "{b}IRRELEVANT{/b}"
+    "IRRELEVANTES"
+
+# game/script.rpy:1062
+translate spanish lago_lore_c12371c0:
+
+    # "I don't get to distinguish their faces"
+    "No logro distinguir sus rostros."
+
+# game/script.rpy:1063
+translate spanish lago_lore_ae2cac94:
+
+    # "I think they said the words 'look after'"
+    "Creo que mencionaron la palabra cuidar."
+
+# game/script.rpy:1065
+translate spanish lago_lore_cb27e5fb_1:
+
+    # "{b}IRRELEVANT{/b}"
+    "IRRELEVANTE"
+
+# game/script.rpy:1067
+translate spanish lago_lore_91bd0c96:
+
+    # "Time passed. I don't know how much. Maybe a couple of months, maybe some years"
+    "El tiempo pasaba. No se cuánto fue. Unos meses, quizás unos años más bien."
+
+# game/script.rpy:1068
+translate spanish lago_lore_86d31d60:
+
+    # "I guess people could say i was happy"
+    "Supongo que la gente podría decir que era feliz."
+
+# game/script.rpy:1070
+translate spanish lago_lore_a20cefa7_6:
+
+    # "..."
+    "."
+
+# game/script.rpy:1071
+translate spanish lago_lore_a20cefa7_7:
+
+    # "..."
+    ".."
+
+# game/script.rpy:1072
+translate spanish lago_lore_a20cefa7_8:
+
+    # "..."
+    "..."
+
+# game/script.rpy:1074
+translate spanish lago_lore_a803415a:
+
+    # "Atleast, that's what people thought"
+    "Al menos eso es lo que la gente creía."
+
+# game/script.rpy:1075
+translate spanish lago_lore_9e9c4210:
+
+    # "Happiness is a wrong concept"
+    "La felicidad es un concepto errado."
+
+# game/script.rpy:1076
+translate spanish lago_lore_7ddbb176:
+
+    # "How could someone be happy in such a cruel world where everything is destined to die?"
+    "¿Por qué alguien sería feliz en un mundo tan cruel donde todo está destinado a morir?"
+
+# game/script.rpy:1078
+translate spanish lago_lore_a20cefa7_9:
+
+    # "..."
+    "."
+
+# game/script.rpy:1079
+translate spanish lago_lore_a20cefa7_10:
+
+    # "..."
+    ".."
+
+# game/script.rpy:1080
+translate spanish lago_lore_a20cefa7_11:
+
+    # "..."
+    "..."
+
+# game/script.rpy:1086
+translate spanish lago_lore_4812b91c:
+
+    # "Waves from the past are interrupted with and uproar"
+    "Las ondas del pasado son interrumpidas con un sórdido estruendo."
+
+# game/script.rpy:1088
+translate spanish lago_lore_78bd6b8f:
+
+    # "{b}RETRIBUTION!!!{/b}"
+    "¡¡¡RETRIBUCIÓN!!!"
+
+# game/script.rpy:1090
+translate spanish lago_lore_7c9562b2:
+
+    # "The birds stopped singing and the wind stopped blowing"
+    "Los pájaros han dejado de cantar y el viento ha dejado de soplar."
+
+# game/script.rpy:1091
+translate spanish lago_lore_049df16c:
+
+    # "Time feels as if it has stopped with no explanation"
+    "El tiempo parece haberse detenido sin explicación aparente."
+
+# game/script.rpy:1092
+translate spanish lago_lore_f012ef4f:
+
+    # "You feel a pressure on the chest and hear an cacophony that felt both strange and familiar at the same time"
+    "Sientes una presión desconcertante en el pecho y escuchas una cacofonía desconocida y al mismo tiempo familiar."
+
+# game/script.rpy:1093
+translate spanish lago_lore_235f2adc:
+
+    # "You see someone far away slowly getting out of the lake"
+    "Ves una figura en la lejanía saliendo del lago lentamente."
+
+# game/script.rpy:1094
+translate spanish lago_lore_a6050380:
+
+    # "Something so repulsive that the first thing that comes to mind is the image of the creature that you read about on irish mythology, a Sluagh, a cursed spirit that chases the living without rest"
+    "Algo tan repulsivo que lo primero que te viene a la mente es la imagen de una criatura de la que leíste en un libro de mitología irlandesa, de un Sluagh, un espíritu maldito que persigue a los vivos sin descanso."
+
+# game/script.rpy:1095
+translate spanish lago_lore_dc92f3af:
+
+    # "Panic gets to you the moment you decypher what is infront of you"
+    "El pánico se apodera de ti a medida que distingues aquello que se encuentra frente a ti."
+
+# game/script.rpy:1096
+translate spanish lago_lore_860f0ccb:
+
+    # "Their height was about two meters, and even then you weren't completley sure because of the limp and hump that this person...no, THAT creature"
+    "Medirá unos dos metros, aunque no estas completamente seguro debido a la más que notable cojera y joroba que ostenta esa persona…. No, ese ser."
+
+# game/script.rpy:1097
+translate spanish lago_lore_a949c5c7:
+
+    # "It has a ripped yellow raincoat too short for the creature that revealed rotting flesh"
+    "Porta un chubasquero amarillo desgarrado que le queda corto y deja ver trozos de piel podrida."
+
+# game/script.rpy:1098
+translate spanish lago_lore_40278c1d:
+
+    # "A piece of a tree bark impaled almos the whole body and through the chest it looked like something was coming out, although you could't distinguish what it was"
+    "Tiene un trozo de la corteza de un árbol atravesando casi todo su cuerpo y del pecho parece que le sale algo, aunque no eres capaz de distinguir el que."
+
+# game/script.rpy:1099
+translate spanish lago_lore_c9dc0fb0:
+
+    # "You hear a low voice, even if you couldn't tell that was voice, calling out for you"
+    "Escuchas una leve voz, si es que se le puede llamar voz, llamándote."
+
+# game/script.rpy:1100
+translate spanish lago_lore_4a32af0e:
+
+    # sl "Finale...hate...fault"
+    sl "Final…odio…culpa…"
+
+# game/script.rpy:1101
+translate spanish lago_lore_27f02c0b:
+
+    # "The creature muttered without order or meaning"
+    "La criatura murmura palabras aparentemente sin orden ni sentido."
+
+# game/script.rpy:1102
+translate spanish lago_lore_e3d62703:
+
+    # "All your instincts tells you to run"
+    "Todos tus instintos te gritan que huyas."
+
+# game/script.rpy:1103
+translate spanish lago_lore_a02f28b2:
+
+    # "What are you doing?"
+    "¿Qué haces?"
+
+# game/script.rpy:1112
+translate spanish lago_decision_flee_9d9b5015:
+
+    # "You aren't conscious how, but you are able to escape the creature"
+    "No eres consciente muy bien de cómo, pero eres capaz de escapar de la criatura"
+
+# game/script.rpy:1116
+translate spanish lago_decision_stay_18cd5fe8:
+
+    # "Your survival instinct displays its absence and going against every logic impulse that you didn't have, you stay in place while the creature got closer to you"
+    "Tu instinto de supervivencia hace gala de su inexistencia y pese a cualquier impulso lógico decides quedarte en el lugar en el que estás mientras la criatura se acerca hacia ti."
+
+# game/script.rpy:1117
+translate spanish lago_decision_stay_fde8d50a:
+
+    # "When the creature is just a couple centimiters away from your face you are able to distinguish an eye under the hood"
+    "Cuando se encuentra a escasos centímetros de tu cara apenas logras vislumbrar un ojo dentro de su capucha."
+
+# game/script.rpy:1118
+translate spanish lago_decision_stay_26521823:
+
+    # "The creature starts to do sounds, that only could come from the darkest nightmares in existence, when suddenly it gets completley quiet"
+    "La criatura comienza a hacer una serie de gruñidos salidos de una pesadilla más que retorcida solo para de repente entrar en un estado de completo silencio y quietud."
+
+# game/script.rpy:1119
+translate spanish lago_decision_stay_c14f6356:
+
+    # "You get to see on his beating chest an image that freezes your blood"
+    "Logras ver en su pecho palpitante una imagen que te hiela la sangre."
+
+# game/script.rpy:1125
+translate spanish lago_decision_stay_6cc600b6:
+
+    # "A kind of face buried on the chest"
+    "Una especie de cara enterrada dentro de su pecho."
+
+# game/script.rpy:1127
+translate spanish lago_decision_stay_7abc00af:
+
+    # "A thought crosses your mind"
+    "Un pensamiento cruza tu mente."
+
+# game/script.rpy:1131
+translate spanish lago_decision_stay_245dd801:
+
+    # mc "What the hell is this? A matryoshka?"
+    mc "¿Qué se supone que es esto? ¿Una matrioshka?"
+
+# game/script.rpy:1133
+translate spanish lago_decision_stay_10d81ee5:
+
+    # "A thought totaly out of line on the actual life or death situation"
+    "Un pensamiento completamente fuera de lugar en una situación de vida o muerte."
+
+# game/script.rpy:1134
+translate spanish lago_decision_stay_a1531a68:
+
+    # "Although not so strange"
+    "Pese a ello no tan extraño."
+
+# game/script.rpy:1135
+translate spanish lago_decision_stay_5ceab8dc:
+
+    # "He was on a situation of complete awareness"
+    "El joven se encontraba en una situación de completa alerta."
+
+# game/script.rpy:1136
+translate spanish lago_decision_stay_2fa2e66d:
+
+    # "His brain hardly could work properly"
+    "Su cerebro lograba funcionar a duras penas."
+
+# game/script.rpy:1137
+translate spanish lago_decision_stay_236ca5f4:
+
+    # "It was correctly proven the moment he decide to stay in place"
+    "Ya se demostró al quedarse en ese lugar."
+
+# game/script.rpy:1138
+translate spanish lago_decision_stay_06e0746c:
+
+    # "Maybe from fear"
+    "Tal vez por el miedo."
+
+# game/script.rpy:1139
+translate spanish lago_decision_stay_5917d0bd:
+
+    # "Maybe..."
+    "Tal vez…"
+
+# game/script.rpy:1140
+translate spanish lago_decision_stay_a20cefa7:
+
+    # "..."
+    "."
+
+# game/script.rpy:1141
+translate spanish lago_decision_stay_a20cefa7_1:
+
+    # "..."
+    ".."
+
+# game/script.rpy:1142
+translate spanish lago_decision_stay_d108b3ac:
+
+    # "That thought of process was cut violently like when pulling a weed from the garden"
+    "El hilo de pensamientos se cortó de golpe como cuando se corta una mala hierba de jardín para que deje de crecer."
+
+# game/script.rpy:1143
+translate spanish lago_decision_stay_1136913e:
+
+    # "The only thought that crossed his mind again was"
+    "El único pensamiento que volvió a cruzar por la mente del joven fue el siguiente:"
+
+# game/script.rpy:1146
+translate spanish lago_decision_stay_71d59cf0:
+
+    # mc "Huh, aren't those my legs?"
+    mc "Eh, ¿no son esas mis piernas?"
+
+# game/script.rpy:1148
+translate spanish lago_decision_stay_e08132a7:
+
+    # "A fast cut from the creature's hands was all it was needed to separate the superior half of the boy from his inferior half"
+    "Un tajo rápido de las manos de la criatura fue todo lo que hizo falta para separar la mitad superior e inferior del joven."
+
+# game/script.rpy:1150
+translate spanish lago_decision_stay_944122ce:
+
+    # "He hardly felt any pain"
+    "No sintió demasiado dolor."
+
+# game/script.rpy:1151
+translate spanish lago_decision_stay_6dc972a7:
+
+    # "It was an almost instant death"
+    "Fue una muerte casi instantánea."
+
+# game/script.rpy:1152
+translate spanish lago_decision_stay_4d8d1ef9:
+
+    # "In a certain way it was a blessing, knowing averything that it was approaching"
+    "Lo cual en cierto aspecto fue una bendición. Más aun teniendo en cuenta lo que se avecinaba."
+
+# game/script.rpy:1153
+translate spanish lago_decision_stay_14fac8b9:
+
+    # "The creature got closer to the boy's body kneeling beside him, in a strange way taking into account the wood fragment that impaled him, it proceed to bury his giant claws on the heart ripping it out"
+    "La criatura se acercó al torso del joven agachándose, de una manera extraña a causa del enorme trozo de madera que le atravesaba, y procedió a clavarle sus enormes garras en el corazón arrancándoselo de cuajo."
+
+# game/script.rpy:1155
+translate spanish lago_decision_stay_582ac3ad:
+
+    # "Then the creature proceeded to devour it"
+    "Acto seguido, la criatura devoró el corazón del joven."
+
+# game/script.rpy:1156
+translate spanish lago_decision_stay_17a07f3d:
+
+    # "It was a disgusting sound. It made it sound like a pig was eating. Although that would be an insult to pigs"
+    "El ruido era asqueroso. Parecía el ruido que haría un cerdo al comer. Aunque eso sería insultar a los cerdos."
+
+# game/script.rpy:1157
+translate spanish lago_decision_stay_f8906d10:
+
+    # "After eating the creature only said one word"
+    "Al terminar de comer, la criatura solo articuló una palabra."
+
+# game/script.rpy:1159
+translate spanish lago_decision_stay_5c4433e3:
+
+    # sl "Empty..."
+    sl "Vacío..."
+
+# game/script.rpy:1161
+translate spanish lago_decision_stay_589e9850:
+
+    # centered "{color=#732020}BAD ENDING: INSATIABLE APPETITE."
+    centered " {color=#732020}BAD ENDING: APETITO INSACIABLE"
+
+# game/script.rpy:1176
+translate spanish orfanato_puzle_38b230fd:
+
+    # "Maybe is not that"
+    "Quizas no es eso"
+
+# game/script.rpy:1184
+translate spanish orfanato_lore_5fb95dac:
+
+    # "You feel a sharp pain on your head"
+    "Sientes un dolor punzante en el cerebro."
+
+# game/script.rpy:1185
+translate spanish orfanato_lore_6c9a1a29:
+
+    # "Your vision gets blurry"
+    "Tu vista se vuelve borrosa."
+
+# game/script.rpy:1186
+translate spanish orfanato_lore_1d5d24ce:
+
+    # mc "Ahhhgggg!!!!!!!"
+    mc "Ahhhgggg!!!!!!!"
+
+# game/script.rpy:1187
+translate spanish orfanato_lore_35b93f35:
+
+    # "A pained scream escapes your throat and all you can see is red"
+    "Un grito de dolor punzante se escapa por tu garganta y tu visión se vuelve roja."
+
+# game/script.rpy:1192
+translate spanish orfanato_lore_20434ad5:
+
+    # "You barely see an outline getting near"
+    "A duras penas distingues una silueta acercándose"
+
+# game/script.rpy:1197
+translate spanish orfanato_lore_c1e01781:
+
+    # "An abyss calls another abyss"
+    "Un abismo llama a otro abismo"
+
+# game/script.rpy:1198
+translate spanish orfanato_lore_e0efc9b7:
+
+    # "In the roar of your waterfalls"
+    "en el rugir de tus cascadas;"
+
+# game/script.rpy:1199
+translate spanish orfanato_lore_f4827634:
+
+    # "All your waves and your waves they have rushed at me"
+    "todas tus ondas y tus olas se han precipitado sobre mí."
+
+# game/script.rpy:1204
+translate spanish orfanato_lore_31ea4c28:
+
+    # "The people of the past should stay on the past"
+    "La gente del pasado debería quedarse en el pasado."
+
+# game/script.rpy:1205
+translate spanish orfanato_lore_1ee54221:
+
+    # "Let the dead rest"
+    "Deja a los muertos descansar en paz."
+
+# game/script.rpy:1209
+translate spanish orfanato_lore_04628255:
+
+    # kidA "From now this will be your home"
+    kidA "Este será tu nuevo hogar a partir de hoy."
+
+# game/script.rpy:1210
+translate spanish orfanato_lore_022f2c3b:
+
+    # kidB "I hope you can adapt fast"
+    kidB "Espero que puedas adaptarte pronto."
+
+# game/script.rpy:1211
+translate spanish orfanato_lore_f86f863b:
+
+    # kidA "Otherwise HE will get angry"
+    kidA "Él se enfadará si no eres bueno."
+
+# game/script.rpy:1215
+translate spanish orfanato_lore_a609da6b:
+
+    # kidA "Those who are not prepared to ascend to a superior plane need to be purged"
+    kidA "Aquellos que no están preparados para ascender a un plano superior deben ser purgados"
+
+# game/script.rpy:1216
+translate spanish orfanato_lore_2b59dd51:
+
+    # kidB "The dirty hand of those who lied to us should be cut off, no?"
+    kidB "¿La sucia mano de aquel que nos mintió debería ser cortada no?"
+
+# game/script.rpy:1217
+translate spanish orfanato_lore_43dcb2ab:
+
+    # kidA "Once you see death cross infront of you, you learn what is real beauty on this world"
+    kidA "Una vez ves pasar la muerte por delante de ti aprendes lo verdaderamente hermoso que es este mundo."
+
+# game/script.rpy:1221
+translate spanish orfanato_lore_701f5203:
+
+    # "The noise is deafening"
+    "El ruido es ensordecedor."
+
+# game/script.rpy:1222
+translate spanish orfanato_lore_5e8861cd:
+
+    # "The screaming doesn't stop no matter how hard you try"
+    "Los gritos no cesan por mucho que lo intentes."
+
+# game/script.rpy:1223
+translate spanish orfanato_lore_a1cebe81:
+
+    # "You see dead people"
+    "Ves imágenes de muertos."
+
+# game/script.rpy:1224
+translate spanish orfanato_lore_ddfe3541:
+
+    # "More precisely, you are seeing dead kids"
+    "Imágenes de niños para ser más precisos."
+
+# game/script.rpy:1225
+translate spanish orfanato_lore_cb61ff77:
+
+    # "The smell to burnt flesh makes you want to vomit"
+    "El olor a carne quemada te da ganas de vomitar."
+
+# game/script.rpy:1226
+translate spanish orfanato_lore_66cd5518:
+
+    # "It is a hellish scene"
+    "La escena es infernal"
+
+# game/script.rpy:1227
+translate spanish orfanato_lore_e10fa3cb:
+
+    # "You distinguish a silhouette impaled on the wall"
+    "Distingues una silueta clavada en la pared."
+
+# game/script.rpy:1228
+translate spanish orfanato_lore_7072f3b4:
+
+    # "No..."
+    "No…."
+
+# game/script.rpy:1229
+translate spanish orfanato_lore_6e6d0ab4:
+
+    # "More exactly, you see half silhouette impaled on the wall"
+    "Siendo exactos, distingues media silueta clavada en la pared."
+
+# game/script.rpy:1230
+translate spanish orfanato_lore_672e69f9:
+
+    # "The bottom half of the body remains on an unkown place"
+    "La mitad inferior de su cuerpo yace en algún otro lugar lejano."
+
+# game/script.rpy:1231
+translate spanish orfanato_lore_4b007772:
+
+    # "The only thing left of this half are the guts hanging from the body"
+    "Lo único restante de esta son los trozos de intestinos aun colgando del torso."
+
+# game/script.rpy:1233
+translate spanish orfanato_lore_3341fb60:
+
+    # "Enough..."
+    "Basta."
+
+# game/script.rpy:1235
+translate spanish orfanato_lore_58474b5e:
+
+    # "You get to see a small kid lying on the floor"
+    "Atisbas a vislumbrar a una pequeña niña tumbada en el suelo."
+
+# game/script.rpy:1236
+translate spanish orfanato_lore_661fbece:
+
+    # "The skin on her face has been cut"
+    "La piel de su cara ha sido cortada."
+
+# game/script.rpy:1237
+translate spanish orfanato_lore_698eaf17:
+
+    # "The only reason you know the kid is a girl is because of her pigtails burning on the fire"
+    "El único motivo por el que sabes que se trata de una niña son sus coletas quemándose en el fuego."
+
+# game/script.rpy:1239
+translate spanish orfanato_lore_69debf8e:
+
+    # "Enough!"
+    "Basta."
+
+# game/script.rpy:1242
+translate spanish orfanato_lore_ba855185:
+
+    # "PLAF!!!"
+    "¡¡Plaf!!"
+
+# game/script.rpy:1244
+translate spanish orfanato_lore_de11947f:
+
+    # "You turn your head to see the source of the noise"
+    "Giras la cabeza solo para el resultado de la acción que tomo lugar."
+
+# game/script.rpy:1245
+translate spanish orfanato_lore_787af906:
+
+    # "Only to realize that it comes from a kid that jumped from a window"
+    "El cadáver de un niño el cual se ha tirado voluntariamente desde el piso superior del edificio."
+
+# game/script.rpy:1248
+translate spanish orfanato_lore_4c83cfd5:
+
+    # "ENOUGH!!!"
+    "¡¡Basta!!"
+
+# game/script.rpy:1249
+translate spanish orfanato_lore_a20cefa7:
+
+    # "..."
+    "."
+
+# game/script.rpy:1250
+translate spanish orfanato_lore_a20cefa7_1:
+
+    # "..."
+    ".."
+
+# game/script.rpy:1251
+translate spanish orfanato_lore_a20cefa7_2:
+
+    # "..."
+    "..."
+
+# game/script.rpy:1253
+translate spanish orfanato_lore_eca25185:
+
+    # "Your senses felt dampened after seeing such images"
+    "Tus sentidos se sienten embotados tras las imágenes dantescas que has presenciado."
+
+# game/script.rpy:1254
+translate spanish orfanato_lore_c01316cb:
+
+    # "You feel like vomiting"
+    "Sientes ganas de vomitar."
+
+# game/script.rpy:1255
+translate spanish orfanato_lore_bc3f5340:
+
+    # "However, that feeling doesn't come from the disgust from the atrocity"
+    "Sin embargo, ese sentimiento no proviene de un asco provocado por la atrocidad como tal."
+
+# game/script.rpy:1256
+translate spanish orfanato_lore_309a360e:
+
+    # "You fell disgust because of how bland people is"
+    "Sientes asco por lo terriblemente aburrida que es la gente."
+
+# game/script.rpy:1257
+translate spanish orfanato_lore_54644f16:
+
+    # "Disgust for how predictable is human behaviour is"
+    "Asco por lo tremendamente predecible que es el comportamiento humano."
+
+# game/script.rpy:1258
+translate spanish orfanato_lore_d3e242cc:
+
+    # "Although, what you feel the most is annoyance"
+    "Aunque lo que más sientes es molestia."
+
+# game/script.rpy:1259
+translate spanish orfanato_lore_0deee913:
+
+    # "Annoyed that a fragment of charred wood gade you a burn on the side and splash of blood got on your shirt"
+    "Molestia de que un trozo de madera quemada te hizo una quemadura en el costado y una salpicadura de sangre infante te alcanzó la camisa."
+
+# game/script.rpy:1260
+translate spanish orfanato_lore_a20cefa7_3:
+
+    # "..."
+    "..."
+
+# game/script.rpy:1261
+translate spanish orfanato_lore_44c6f8fe:
+
+    # "Definitely if hell existed it was this exact place"
+    "Definitivamente si el infierno existe se encuentra en este mismo lugar."
+
+# game/script.rpy:1265
+translate spanish orfanato_lore_e18e68f4:
+
+    # "When the devil falls in love he also dreams of heaven"
+    "Cuando el diablo se enamora también sueña con el cielo."
+
+# game/script.rpy:1272
+translate spanish orfanato_lore_fba2ab6a:
+
+    # "You feel like the presence watching you gets more crushing"
+    "Sientes que la presencia que te observa se hace más opresora."
+
+# game/script.rpy:1273
+translate spanish orfanato_lore_3adec308:
+
+    # mc "I should get out of this place"
+    mc "Mejor me voy de aquí. Me trae malos recuerdos."
+
+translate spanish strings:
+
+    # game/script.rpy:1106
+    old "Flee"
+    new "Huir"
+
+    # game/script.rpy:1108
+    old "Stay"
+    new "Quedarte"
 
