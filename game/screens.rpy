@@ -1657,12 +1657,16 @@ screen mapa():
 #lago
 #Zonas del lago
 screen lago_main():
+
     #Opcion cielo
     imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Do.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.3
-        action Jump ("lago_cielo")
+        idle "gui/lago/Imagenes/cielo_sprite.png"
+        hover "gui/lago/Imagenes/cielo_sprite.png"
+        xpos -63
+        ypos -319
+        at transform:
+            zoom 2.17
+        action Jump("lago_cielo")
     #Opcion Barcaza
     imagebutton:
         idle "gui/lago/Buttons/Placeholder_Do.png"
@@ -1677,7 +1681,7 @@ screen lago_main():
         action Jump ("lago_puzle_zona")
 
 #Puzle lago
-screen lago_puzle():
+screen lago_puzle:
     text "[lago_player_input]":
         xalign 0.5
         yalign 0.1
@@ -1685,37 +1689,37 @@ screen lago_puzle():
     imagebutton:
         idle "gui/lago/Buttons/Placeholder_Do.png"
         hover "gui/lago/Buttons/Blanco.png"
-        action Function(lago_player_input.append, 1)
+        action Function(lago_player_input.append, "1")
     imagebutton:
         idle "gui/lago/Buttons/Placeholder_Re.png"
         hover "gui/lago/Buttons/Blanco.png"
         xalign 0.2
-        action Function(lago_player_input.append, 2)
+        action Function(lago_player_input.append, "2")
     imagebutton:
         idle "gui/lago/Buttons/Placeholder_Mi.png"
         hover "gui/lago/Buttons/Blanco.png"
         xalign 0.4
-        action Function(lago_player_input.append, 3)
+        action Function(lago_player_input.append, "3")
     imagebutton:
         idle "gui/lago/Buttons/Placeholder_Fa.png"
         hover "gui/lago/Buttons/Blanco.png"
         xalign 0.6
-        action Function(lago_player_input.append, 4)
+        action Function(lago_player_input.append, "4")
     imagebutton:
         idle "gui/lago/Buttons/Placeholder_Sol.png"
         hover "gui/lago/Buttons/Blanco.png"
         xalign 0.7
-        action Function(lago_player_input.append, 5)
+        action Function(lago_player_input.append, "5")
     imagebutton:
         idle "gui/lago/Buttons/Placeholder_La.png"
         hover "gui/lago/Buttons/Blanco.png"
         xalign 0.8
-        action Function(lago_player_input.append, 6)
+        action Function(lago_player_input.append, "6")
     imagebutton:
         idle "gui/lago/Buttons/Placeholder_Si.png"
         hover "gui/lago/Buttons/Blanco.png"
         xalign 1.0
-        action Function(lago_player_input.append, 7)
+        action Function(lago_player_input.append, "7")
     imagebutton:
         idle "gui/lago/Buttons/Verificar.png"
         hover "gui/lago/Buttons/Blanco.png"

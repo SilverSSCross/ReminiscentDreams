@@ -946,17 +946,29 @@ label school_lore:
 
 #Bloque lago
 #Backgrounds
+#General
 image bg lago_gen = "gui/lago/Imagenes/barco_final_pixel.png"
+image cielo_recortado=Crop((0,0,200,150), "gui/lago/Imagenes/barco_final_pixel.png")
+image bg lago_puzle_mview="gui/lago/Imagenes/puzle_view_pixel.png"
+image bg lago_cielo="gui/Cielo.png"
+#Puzle
+
+#Lore
 image bg pecho_sluagh = "gui/Pecho_Sluagh.png"
-image bg lago_puzle_mview="gui/Lago/Imagenes/puzle_view_pixel.png"
+image bg coche_lore="gui/lago/coche_pixelado_1.png"
+image bg nieve_lore="gui/lago/nieve_lore_pixelated.png"
+image bg nieve_lore2="gui/lago/nieve_lore_pixelated2.png"
+image bg habitacion_lago_lore="gui/lago/habitacion_lore_pixel.png"
+image bg lore_sluagh_bg="gui/lago/presentacion_sluagh_lago_pixel.png"
 #Definir cualquier funcion que se quiera usar
 
 
 label lago:
+    play music "audio/Insectos.mp3" fadein 1.0
     scene bg lago_gen with fade:
         xsize config.screen_width
         ysize config.screen_height
-    stop music fadeout 1.0
+        
     #Se añade la imagen de fondo del lago
     #Interactuable Cielo, Barcaza, lago (Puzle Musical)
     #Aprovecha que Jesus hizo algo similar en la casa para hacer los objetos interactuables
@@ -991,33 +1003,32 @@ label lago_puzle_zona:
     stop audio
     stop sound
 
-    play music "audio/lago/Sample.ogg" fadein 1.0
+    
     "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
     #Se define la solucion del puzle musical
-    $ lago_solution=[1,2,3,4,5]
+    $ lago_solution=["7","7","1","2","3","4","4"]
     #Se define lo que introduce el jugador
     $ lago_player_input=[]
         #Se inicializa un loop
     label .loop:
-    call screen lago_puzle
-    if lago_player_input == lago_solution:
-        stop music fadeout 1.0
-        jump lago_lore
-    else:
-        $ lago_player_input.clear()
-        jump .loop
+        call screen lago_puzle
+        if lago_player_input == lago_solution:
+            stop music fadeout 1.0
+            jump lago_lore
+        else:
+            $ lago_player_input=[]
+            jump .loop
 
 label lago_lore:
     #Inicio Recuerdo
     #En negro todo esto probablemente
-<<<<<<< HEAD
     scene black
     with fade
-=======
-   
->>>>>>> main
+
+
     #Audio de coche probablemente
     #Introduce como audio LluviaCoche
+    play music "audio/LluviaCoche.mp3" fadein 1.0
     "A mechanic noise is heard. The noise of a car"
     "The noise that is heard when sitting inside of a car"
     "An elder and a man sit on the front seats"
@@ -1035,24 +1046,29 @@ label lago_lore:
     probably from a respiratory disease"
     "Or maybe it was simply from the age"
     "I guess that is irrelevant"
-    "The route continued for a long time.It was long like the night on the north and heavy like the years that everybody goes through"
+    "The route continued for a long time. It was long like the night on the north and heavy like the years that everybody goes through"
 
     "*CRUNCH*"
     #Tendria que poner una imagen aqui
     #Hay que hacer una CG de eso
     
+    scene bg coche_lore with fade:
+        xsize config.screen_width
+        ysize config.screen_height
+
 
     #Mediana edad
-    show ym at left
-    ym "Ah, you are finally awake" #Toda la seccion despues de las palabras no pintan en primera persona. "Dijo el hombre con una alegría casi infantil que no se correspondía en lo más mínimo a la lúgubre expresión que portaba en el rostro."
+    ym "Ah, you are finally awake" 
+    "That was said by the young man with a joy that did not correlate with the somber expression he had" 
     #Son dialogos que no dice ninguno. Son narracion
     ym "From now on we will get along, okay?"
-    hide ym
     "..."
     "..."
     "..."
-
+    stop music fadeout 1.0
     #Aqui se corta la CG del coche y se pasa a fundido a negroo o bien al cielo o alguna cosa por el estilo para enfatizar el dialogo
+    scene black with fade
+
 
     "The is no such thing as love"
     "Therefore there is no sadness"
@@ -1068,18 +1084,39 @@ label lago_lore:
     
     #Borroso?
     #O bien borroso o buscar alguna imagen de nieve y pixelarla
+    play music "audio/nieve.mp3"
+    play sound "audio/pasosnieve.mp3"
+    scene bg nieve_lore with fade:
+        xsize config.screen_width
+        ysize config.screen_height
+
     "The ice chilled me to the bone preventing me from breathing right"
     "I don't know how long i walked without a specific direction on mind"
     "The only thing i remember is a word"
     "Move"
     "Move"
     "{b}MOVE!!!{/b}"
-
+    stop sound fadeout 2.0
+    
     "My legs wouldn't respond and my eyes began to redden due to blood clotting"
     "On the contrary of what it could look like, i felt warm and the soft touch of death whispering on my ear was kind"
     "I blacked out on that moment"
-    "A light appeared before me"
+    
+    scene black with fade
+
+    "And a light appeared before me"
+
+    scene bg nieve_lore2 with fade:
+        xsize config.screen_width
+        ysize config.screen_height
+        
     "It was a small lamp, but for me it was as blinding as a supernova"
+    stop music fadeout 3.0
+    #Se prodria llegar a interpretar o busco otra?
+
+    scene bg habitacion_lago_lore with fade:
+        xsize config.screen_width
+        ysize config.screen_height
     "An unkown ceiling was what i saw"
     "Moving my gaze i saw a man and a woman in front of me"
 
@@ -1087,11 +1124,13 @@ label lago_lore:
 
     #Poner las siluetas de personas (recicla alguna existente)
 
+
+
     "I don't get to distinguish their faces"
     "I think they said the words 'look after'"
-
+    
     "{b}IRRELEVANT{/b}"
-
+    scene black with fade
     "Time passed. I don't know how much. Maybe a couple of months, maybe some years"
     "I guess people could say i was happy"
 
@@ -1122,6 +1161,7 @@ label lago_lore:
 
     "The birds stopped singing and the wind stopped blowing"
     #Para cualquier audio que este puesto
+    stop music
     "Time feels as if it has stopped with no explanation"
     "You feel a pressure on the chest and hear an cacophony that felt both strange and familiar at the same time"
     "You see someone far away slowly getting out of the lake"
@@ -1129,6 +1169,10 @@ label lago_lore:
     "Something so repulsive that the first thing that comes to mind is the image of the creature that you read about on irish mythology, a Sluagh, a cursed spirit that chases the living without rest"
     "Panic gets to you the moment you decypher what is infront of you"
     #Introduce al Sluagh, preferiblemente el segundo frame
+    scene bg lore_sluagh_bg:
+        xsize config.screen_width
+        ysize config.screen_height
+    show SluaghFrame2
     "Their height was about two meters, and even then you weren't completley sure because of the limp and hump that this person...no, THAT creature"
     "It has a ripped yellow raincoat too short for the creature that revealed rotting flesh"
     "A piece of a tree bark impaled almos the whole body and through the chest it looked like something was coming out, although you could't distinguish what it was"
@@ -1162,8 +1206,10 @@ label lago_decision_stay:
     # No entiendo la frase "La criatura de dentro de la criatura araña el trozo de madera que tiene clavado atravesándolo y lo miró con una mirada que parecía juzgarlo."
     #Se refiere a literalmente eso, dentro del monstruo hay otro mas que araña el trozo de madera que lo atraviesa
     "A thought crosses your mind"
-    scene black
-    with fade
+    scene bg lore_sluagh_bg:
+        xsize config.screen_width
+        ysize config.screen_height
+    show SluaghFrame2
     #Player
     mc "What the hell is this? A matryoshka?"
 
@@ -1178,12 +1224,18 @@ label lago_decision_stay:
     "..."
     "..."
     #Introduce sonido de corte
+    play sound "audio/corte.mp3"
     "That thought of process was cut violently like when pulling a weed from the garden"
     "The only thought that crossed his mind again was"
     #Player
     #Go/jo reference
     #No era la intencion
 
+    #No queda muy bien aunque sea lore acurate probablemente una pantalla en negro baste
+    show SluaghFrame2:
+        rotate 90
+        xpos 1.160
+        ypos 1.500
     mc "Huh, aren't those my legs?"
 
     "A fast cut from the creature's hands was all it was needed to separate the superior half of the boy from his inferior half"
@@ -1195,12 +1247,15 @@ label lago_decision_stay:
     it proceed to bury his giant claws on the heart ripping it out"
     "Then the creature proceeded to devour it"
     #Introduce el audio de la criatura comiendo
+    play sound "audio/MonstruoComiendo (Bad Ending Lago).mp3"
     "It was a disgusting sound. It made it sound like a pig was eating. Although that would be an insult to pigs"
     "After eating the creature only said one word"
     #Criatura
     sl "Empty..."
     
     #Puedes poner el sonido de bad ending
+    scene black
+    play sound "audio/SonidoCartelBadEnding.mp3"
     centered "{color=#732020}BAD ENDING: INSATIABLE APPETITE."
 
 
