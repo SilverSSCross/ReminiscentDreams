@@ -118,7 +118,7 @@ label start:
 
 
     #Zona inicio pruebas
-    jump lago
+    #jump lago
     ########################################
 
 
