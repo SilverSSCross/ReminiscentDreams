@@ -1155,7 +1155,7 @@ label lago_lore:
     "{b}RETRIBUTION!!!{/b}"
 
     #Imagen de Sluagh
-    scene bg lago_gen with fade:
+    scene bg lore_sluagh_bg with fade:
         xsize config.screen_width
         ysize config.screen_height
 
@@ -1169,9 +1169,6 @@ label lago_lore:
     "Something so repulsive that the first thing that comes to mind is the image of the creature that you read about on irish mythology, a Sluagh, a cursed spirit that chases the living without rest"
     "Panic gets to you the moment you decypher what is infront of you"
     #Introduce al Sluagh, preferiblemente el segundo frame
-    scene bg lore_sluagh_bg:
-        xsize config.screen_width
-        ysize config.screen_height
     show SluaghFrame2
     "Their height was about two meters, and even then you weren't completley sure because of the limp and hump that this person...no, THAT creature"
     "It has a ripped yellow raincoat too short for the creature that revealed rotting flesh"
@@ -1232,10 +1229,12 @@ label lago_decision_stay:
     #No era la intencion
 
     #No queda muy bien aunque sea lore acurate probablemente una pantalla en negro baste
-    show SluaghFrame2:
-        rotate 90
-        xpos 1.160
-        ypos 1.500
+    #Lo guardo por si se considera
+    #show SluaghFrame2:
+    #    rotate 90
+    #    xpos 1.160
+    #    ypos 1.500
+    scene black with fade
     mc "Huh, aren't those my legs?"
 
     "A fast cut from the creature's hands was all it was needed to separate the superior half of the boy from his inferior half"

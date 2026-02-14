@@ -1661,76 +1661,98 @@ screen lago_main():
     #Opcion cielo
     imagebutton:
         idle "gui/lago/Imagenes/cielo_sprite.png"
-        hover "gui/lago/Imagenes/cielo_sprite.png"
-        xpos -63
-        ypos -319
+        hover "gui/lago/Imagenes/cielo_sprite_hover.png"
+        xpos 575
+        ypos 109
         at transform:
-            zoom 2.17
+            zoom 2.175
         action Jump("lago_cielo")
     #Opcion Barcaza
     imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Do.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.5
+        idle "gui/lago/Imagenes/barco_sprite.png"
+        hover "gui/lago/Imagenes/barco_sprite_hover.png"
+        xpos 0
+        ypos 788
+        at transform:
+            zoom 2.175
         action Jump ("lago_barcaza")
     #Puzle
     imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Do.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.7
+        idle "gui/lago/Imagenes/lago_sprite.png"
+        hover "gui/lago/Imagenes/lago_sprite_hover.png"
+        xpos 783
+        ypos 807
+        at transform:
+            zoom 2.18
         action Jump ("lago_puzle_zona")
+
+
+#Funcion para el sonido
+init python:
+    def reproducir_sonido(archivo):
+        renpy.music.play(archivo, channel="sound")
 
 #Puzle lago
 screen lago_puzle:
-    text "[lago_player_input]":
-        xalign 0.5
-        yalign 0.1
+    #text "[lago_player_input]":
+    #    xalign 0.5
+    #    yalign 0.1
     #Se introducen las funcionalidades de los botones
     imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Do.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        action Function(lago_player_input.append, "1")
+        idle "gui/lago/Imagenes/onda_puzle_final.png"
+        hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
+        xpos 100
+        ypos 200
+        action [Function(lago_player_input.append, "1"),Function(reproducir_sonido, "audio/Lago/do-stretched.ogg")]
     imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Re.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.2
-        action Function(lago_player_input.append, "2")
+        idle "gui/lago/Imagenes/onda_puzle_final.png"
+        hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
+        xpos 500
+        ypos 200
+        action [Function(lago_player_input.append, "2"), Function(reproducir_sonido, "audio/Lago/re-stretched.ogg")]
     imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Mi.png"
-        hover "gui/lago/Buttons/Blanco.png"
+        idle "gui/lago/Imagenes/onda_puzle_final.png"
+        hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
+        xpos 900
+        ypos 200
+        action [Function(lago_player_input.append, "3"),Function(reproducir_sonido, "audio/Lago/mi-stretched.ogg")]
+    imagebutton:
+        idle "gui/lago/Imagenes/onda_puzle_final.png"
+        hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
+        xpos 1300
+        ypos 200
+        action [Function(lago_player_input.append, "4"), Function(reproducir_sonido, "audio/Lago/fa-stretched.ogg")]
+    imagebutton:
+        idle "gui/lago/Imagenes/onda_puzle_final.png"
+        hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
+        xpos 300
+        ypos 500
+        action [Function(lago_player_input.append, "5"),Function(reproducir_sonido, "audio/Lago/sol-stretched.ogg")]
+    imagebutton:
+        idle "gui/lago/Imagenes/onda_puzle_final.png"
+        hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
+        xpos 700
+        ypos 500
+        action [Function(lago_player_input.append, "6"), Function(reproducir_sonido, "audio/Lago/la-stretched.ogg")]
+    imagebutton:
+        idle "gui/lago/Imagenes/onda_puzle_final.png"
+        hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
+        xpos 1100
+        ypos 500
+        action [Function(lago_player_input.append, "7"),Function(reproducir_sonido, "audio/Lago/si-stretched.ogg")]
+    imagebutton:
+        idle "gui/lago/Buttons/confirmar_puzle_lago_pixel_hover.png"
+        hover "gui/lago/Buttons/confirmar_puzle_lago_pixel.png"
         xalign 0.4
-        action Function(lago_player_input.append, "3")
-    imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Fa.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.6
-        action Function(lago_player_input.append, "4")
-    imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Sol.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.7
-        action Function(lago_player_input.append, "5")
-    imagebutton:
-        idle "gui/lago/Buttons/Placeholder_La.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.8
-        action Function(lago_player_input.append, "6")
-    imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Si.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 1.0
-        action Function(lago_player_input.append, "7")
-    imagebutton:
-        idle "gui/lago/Buttons/Verificar.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.4
-        yalign 0.8
+        yalign 0.9
+        at transform:
+            zoom 0.6 
         action Return()
     imagebutton:
-        idle "gui/lago/Buttons/Borrar.png"
-        hover "gui/lago/Buttons/Blanco.png"
+        idle "gui/School/Puzzle/FlechaAbajo.png"
+        hover "gui/School/Puzzle/FlechaAbajo_hover.png"
         xalign 0.6
-        yalign 0.8
+        yalign 0.9
         action Jump ("lago")
 ####################################################
 
