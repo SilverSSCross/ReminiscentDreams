@@ -1,6 +1,22 @@
-﻿# Coloca el código de tu juego en este archivo.
+﻿
+# Coloca el código de tu juego en este archivo.
 image grey = Solid("#252525")
 # Declara los personajes usados en el juego como en el ejemplo:
+default persistent.casaDesbloqueada = False
+default persistent.escuelaDesbloqueada = False
+default persistent.lagoDesbloqueado = False
+default persistent.orfanatoDesbloqueado = False
+
+#Bloque if para cada lore
+
+#if persistent.casaDesbloqueada == False:
+#    $persistent.casaDesbloqueada = True
+#    call screen mapa 
+#elif persistent.casaDesbloqueada == True:
+#    return
+
+#Fin Bloque if para cada lore
+
 define th = Character("Therapist")
 transform character_Base:
     xpos 0.3
