@@ -1,6 +1,7 @@
 ﻿
 # Coloca el código de tu juego en este archivo.
-image grey = Solid("#252525")
+#Colores solidos personalizados
+image dred = Solid("#420505")
 # Declara los personajes usados en el juego como en el ejemplo:
 default persistent.casaDesbloqueada = False
 default persistent.escuelaDesbloqueada = False
@@ -119,7 +120,7 @@ label start:
 
 
     #Zona inicio pruebas
-    jump lago
+    jump orfanato
     ########################################
 
 
@@ -1283,11 +1284,24 @@ label lago_decision_stay:
 #Bloque Orfanato
 #Backgrounds
 #Lore
-image bg orfanato_pasado="gui/orfanato/lore/OrfanatoPast.jpg"
-image bg orfanato_quemado="gui/orfanato/lore/OrfanatoCG.jpg"
-
+image bg orfanato_pasado:
+    "gui/orfanato/lore/OrfanatoPast.jpg"
+    xsize config.screen_width
+    ysize config.screen_height
+image bg orfanato_quemado:
+    "gui/orfanato/lore/OrfanatoCG.jpg"
+    xsize config.screen_width
+    ysize config.screen_height
 label orfanato:    
     call screen orfanato_general
+
+
+
+#Codigo para que ambos sonidos del lore suenen
+init python:
+    renpy.music.register_channel("sfx1", mixer="sfx")
+    renpy.music.register_channel("sfx2", mixer="sfx")
+
 
 label orfanato_puzle:
     $solution_orfanato = "love"
@@ -1308,7 +1322,7 @@ label orfanato_lore:
     mc "Ahhhgggg!!!!!!!"
     "A pained scream escapes your throat and all you can see is red"
     #Poner fondo de la escena
-    scene grey
+    scene dred
     show SluaghFrame2:
         matrixcolor TintMatrix("#000")
     "You barely see an outline getting near"
@@ -1328,18 +1342,23 @@ label orfanato_lore:
 
     #Flashback
     #Escena de una zona del orfanato sin derruir
+    scene bg orfanato_pasado
     kidA "From now this will be your home"
     kidB "I hope you can adapt fast"
     kidC "Otherwise HE will get angry"
 
     #Flash blanco a temblor en la escena
+    scene white
     #Escena del orfanato ardiendo
-
+    scene bg orfanato_quemado
+    play sfx1 "audio/Incendio (orfanato pasado).mp3" 
+    play sfx2 "audio/GritosPanico(orfanato pasado).mp3"
     kidA "Those who are not prepared to ascend to a superior plane need to be purged"
     kidB "The dirty hand of those who lied to us should be cut off, no?"
     kidC "Once you see death cross infront of you, you learn what is real beauty on this world"
 
     #Sonido de gente quemandose y del fuego
+    #Lo pongo antes para que tenga sentido con la imagen
 
     "The noise is deafening"
     "The screaming doesn't stop no matter how hard you try"
@@ -1362,12 +1381,15 @@ label orfanato_lore:
     "Enough!"
 
     #Audio tambien
+    play sound "audio/caida.mp3"
     "PLAF!!!"
 
     "You turn your head to see the source of the noise"
     "Only to realize that it comes from a kid that jumped from a window"
-
-    #Gabriel
+    stop sfx1
+    stop sfx2
+    #Gabriel (Es por la coña. Se quita y ya)
+    play audio "audio/orfanato/enough.mp3"
     "ENOUGH!!!"
     "..."
     "..."
@@ -1385,12 +1407,12 @@ label orfanato_lore:
 
     #Meter efecto RCT(televisor) y sonido
     #Puedes usar el q he puesto de Bad Ending ya que es estatica
-
+    play sfx1 "audio/SonidoCartelBadEnding.mp3"
     "When the devil falls in love he also dreams of heaven"
 
     scene black
     with fade
-
+    stop sfx1
     #Termina el flashback
 
     "You feel like the presence watching you gets more crushing"
