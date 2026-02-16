@@ -91,6 +91,7 @@ image ym:
     "gui/lago/Sprites/ImagenJoven2.png"
 define kidA = Character("Kid 1")
 define kidB = Character("Kid 2")
+define kidC = Character("Kid 3")
 # El juego comienza aquí.
 
 label start:
@@ -118,7 +119,7 @@ label start:
 
 
     #Zona inicio pruebas
-    #jump lago
+    jump lago
     ########################################
 
 
@@ -971,11 +972,12 @@ image bg lago_cielo="gui/Cielo.png"
 
 #Lore
 image bg pecho_sluagh = "gui/Pecho_Sluagh.png"
-image bg coche_lore="gui/lago/coche_pixelado_1.png"
+image bg coche_lore="gui/lago/coche_pixelado_2.jpg"
 image bg nieve_lore="gui/lago/nieve_lore_pixelated.png"
 image bg nieve_lore2="gui/lago/nieve_lore_pixelated2.png"
 image bg habitacion_lago_lore="gui/lago/habitacion_lore_pixel.png"
 image bg lore_sluagh_bg="gui/lago/presentacion_sluagh_lago_pixel.png"
+image bg bad_ending_lago="gui/lago/BadEndingLago.jpg"
 #Definir cualquier funcion que se quiera usar
 
 
@@ -1270,13 +1272,19 @@ label lago_decision_stay:
     sl "Empty..."
     
     #Puedes poner el sonido de bad ending
-    scene black
+    scene bg bad_ending_lago:
+        xsize config.screen_width
+        ysize config.screen_height
     play sound "audio/SonidoCartelBadEnding.mp3"
-    centered "{color=#732020}BAD ENDING: INSATIABLE APPETITE."
-
+    centered "BAD ENDING: INSATIABLE APPETITE."
+    #{color=#732020}
 
 
 #Bloque Orfanato
+#Backgrounds
+#Lore
+image bg orfanato_pasado="gui/orfanato/lore/OrfanatoPast.jpg"
+image bg orfanato_quemado="gui/orfanato/lore/OrfanatoCG.jpg"
 
 label orfanato:    
     call screen orfanato_general
@@ -1322,14 +1330,14 @@ label orfanato_lore:
     #Escena de una zona del orfanato sin derruir
     kidA "From now this will be your home"
     kidB "I hope you can adapt fast"
-    kidA "Otherwise HE will get angry"
+    kidC "Otherwise HE will get angry"
 
     #Flash blanco a temblor en la escena
     #Escena del orfanato ardiendo
 
     kidA "Those who are not prepared to ascend to a superior plane need to be purged"
     kidB "The dirty hand of those who lied to us should be cut off, no?"
-    kidA "Once you see death cross infront of you, you learn what is real beauty on this world"
+    kidC "Once you see death cross infront of you, you learn what is real beauty on this world"
 
     #Sonido de gente quemandose y del fuego
 
