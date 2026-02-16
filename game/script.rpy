@@ -28,13 +28,13 @@ transform down:
     xpos 0.4
     ypos 0.3
 image th:
-    "gui/PsicologoFrame1.png"
+    "gui/Prologo/Frames/PsicologoFrame1.png"
     pause 4
 
-    "gui/PsicologoFrame2.png"
+    "gui/Prologo/Frames/PsicologoFrame2.png"
     pause 0.5
 
-    "gui/PsicologoFrame1.png"
+    "gui/Prologo/Frames/PsicologoFrame1.png"
     pause 0.5
 
     repeat
@@ -45,34 +45,34 @@ define stranger = Character("???")
 define kid = Character(_("Student"))
 define Profe = Character(_("Teacher"))
 image unkown:
-    "gui/Ojos1.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos1.jpg"
     pause 0.2
 
-    "gui/Ojos2.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos2.jpg"
     pause 0.2
 
-    "gui/Ojos3.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos3.jpg"
     pause 0.2
 
-    "gui/Ojos4.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos4.jpg"
     pause 0.2
 
-    "gui/Ojos5.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos5.jpg"
     pause 0.2
 
-    "gui/Ojos6.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos6.jpg"
     pause 0.2
 
-    "gui/Ojos7.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos7.jpg"
     pause 0.2
 
-    "gui/Ojos8.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos8.jpg"
     pause 0.2
 
-    "gui/Ojos9.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos9.jpg"
     pause 0.2
 
-    "gui/Ojos10.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos10.jpg"
     pause 0.2
 
     repeat
@@ -118,7 +118,7 @@ label start:
 
 
     #Zona inicio pruebas
-    
+    #jump lago
     ########################################
 
 
@@ -140,13 +140,19 @@ label start:
     
     scene red
 
+    play sound cristal 
+
+    play music latidocorazon
+
     "{color=#732020}It was your fault"
 
     scene black
 
     ""
 
-    image TherapyBg = "gui/TherapyBg.jpg"
+    stop music
+
+    image TherapyBg = "gui/Prologo/Escenas/TherapyBg.jpg"
 
     scene TherapyBg
 
@@ -243,7 +249,7 @@ label bad_ending1:
     play sound sonidoperiodico
     play music undiamas
 
-    image news = "gui/newspaper.jpg"
+    image news = "gui/Prologo/Escenas/newspaper.jpg"
     scene black
     scene news
     with dissolve
@@ -308,7 +314,7 @@ label new_beggining:
 
     #return
 
-#Bloque casa
+#Bloque casa#############################################################################################
 
 screen casa():
     add "gui/House/Puzzle/Casa.jpg"
@@ -520,7 +526,7 @@ label house_lore:
 #Fin bloque casa
 
 
-#bloque escuela
+#bloque escuela######################################################################################################################
 
 default Taquilla_Open = False 
 default Armario_Open = False
@@ -538,6 +544,8 @@ label school_puzzle:
     stop music
     stop audio
     stop sound
+
+    play music niñosescuela loop
     
     
     label scene_escuela:
@@ -920,7 +928,13 @@ label school_lore:
     
     "..."
 
+    stop music
+
     scene red
+
+    play sound cristal
+
+    play music latidocorazon
 
     centered "*CRACK*"
 
@@ -946,6 +960,10 @@ label school_lore:
     
     "..."
 
+    stop music
+
+    play music niñosescuela
+
     scene bg_escuela
 
     "You calm down."
@@ -954,7 +972,7 @@ label school_lore:
     
     "You whisper a melody that was stored in your subconscious."
     
-    "(Insert melody that is the lake puzzle solution)"
+    "Si, Si, Do, Re, Mi, Fa, Fa"
     
     "The ripples of memory fade like waves in the water."
 
@@ -962,6 +980,7 @@ label school_lore:
 
     if persistent.escuelaDesbloqueada == False:
         $persistent.escuelaDesbloqueada = True
+        stop music
         call screen mapa 
     elif persistent.escuelaDesbloqueada == True:
         jump menuRecuerdos
@@ -974,17 +993,30 @@ label school_lore:
 
 #Bloque lago
 #Backgrounds
+#General
 image bg lago_gen = "gui/lago/Imagenes/barco_final_pixel.png"
+image cielo_recortado=Crop((0,0,200,150), "gui/lago/Imagenes/barco_final_pixel.png")
+image bg lago_puzle_mview="gui/lago/Imagenes/puzle_view_pixel.png"
+image bg lago_cielo="gui/Cielo.png"
+#Puzle
+
+#Lore
 image bg pecho_sluagh = "gui/Pecho_Sluagh.png"
+image bg coche_lore="gui/lago/coche_pixelado_1.png"
+image bg nieve_lore="gui/lago/nieve_lore_pixelated.png"
+image bg nieve_lore2="gui/lago/nieve_lore_pixelated2.png"
+image bg habitacion_lago_lore="gui/lago/habitacion_lore_pixel.png"
+image bg lore_sluagh_bg="gui/lago/presentacion_sluagh_lago_pixel.png"
 #Definir cualquier funcion que se quiera usar
 
 
 label lago:
     $persistent.lagoDesbloqueado = False
+    play music "audio/Insectos.mp3" fadein 1.0
     scene bg lago_gen with fade:
         xsize config.screen_width
         ysize config.screen_height
-    stop music fadeout 1.0
+        
     #Se añade la imagen de fondo del lago
     #Interactuable Cielo, Barcaza, lago (Puzle Musical)
     #Aprovecha que Jesus hizo algo similar en la casa para hacer los objetos interactuables
@@ -1010,68 +1042,81 @@ label lago_barcaza:
 
 label lago_puzle_zona:
     #Imagen directamente mirando al lago
+    scene bg lago_puzle_mview with fade:
+        xsize config.screen_width
+        ysize config.screen_height
+
+
     stop music
     stop audio
     stop sound
 
-    play music "audio/lago/Sample.ogg" fadein 1.0
+    
     "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
     #Se define la solucion del puzle musical
-    $ lago_solution=[1,2,3,4,5]
+    $ lago_solution=["7","7","1","2","3","4","4"]
     #Se define lo que introduce el jugador
     $ lago_player_input=[]
         #Se inicializa un loop
     label .loop:
-    call screen lago_puzle
-    if lago_player_input == lago_solution:
-        stop music fadeout 1.0
-        jump lago_lore
-    else:
-        $ lago_player_input.clear()
-        jump .loop
+        call screen lago_puzle
+        if lago_player_input == lago_solution:
+            stop music fadeout 1.0
+            jump lago_lore
+        else:
+            $ lago_player_input=[]
+            jump .loop
 
 label lago_lore:
     #Inicio Recuerdo
     #En negro todo esto probablemente
-   
+    scene black
+    with fade
+
+
     #Audio de coche probablemente
     #Introduce como audio LluviaCoche
+    play music "audio/LluviaCoche.mp3" fadein 1.0
     "A mechanic noise is heard. The noise of a car"
     "The noise that is heard when sitting inside of a car"
     "An elder and a man sit on the front seats"
     "No face was identifiable from the backseats"
-    scene grey
     #Mediana edad
-    show ym at left
+    # show ym at left
     ym "Think that this is a good one boss?"
     #Viejo    
-    show om at right
+    # show om at right
     om "Im sure. Now shut up, i don't pay you to talk"
-    hide ym
-    hide om
+    # hide ym
+    # hide om
 
     "Silence filled the car, only interrupted with the ocasional groan that the elder made from coughing, 
     probably from a respiratory disease"
     "Or maybe it was simply from the age"
     "I guess that is irrelevant"
-    "The route continued for a long time.It was long like the night on the north and heavy like the years that everybody goes through"
+    "The route continued for a long time. It was long like the night on the north and heavy like the years that everybody goes through"
 
     "*CRUNCH*"
     #Tendria que poner una imagen aqui
     #Hay que hacer una CG de eso
     
+    scene bg coche_lore with fade:
+        xsize config.screen_width
+        ysize config.screen_height
+
 
     #Mediana edad
-    show ym at left
-    ym "Ah, you are finally awake" #Toda la seccion despues de las palabras no pintan en primera persona. "Dijo el hombre con una alegría casi infantil que no se correspondía en lo más mínimo a la lúgubre expresión que portaba en el rostro."
+    ym "Ah, you are finally awake" 
+    "That was said by the young man with a joy that did not correlate with the somber expression he had" 
     #Son dialogos que no dice ninguno. Son narracion
     ym "From now on we will get along, okay?"
-    hide ym
     "..."
     "..."
     "..."
-
+    stop music fadeout 1.0
     #Aqui se corta la CG del coche y se pasa a fundido a negroo o bien al cielo o alguna cosa por el estilo para enfatizar el dialogo
+    scene black with fade
+
 
     "The is no such thing as love"
     "Therefore there is no sadness"
@@ -1087,18 +1132,39 @@ label lago_lore:
     
     #Borroso?
     #O bien borroso o buscar alguna imagen de nieve y pixelarla
+    play music "audio/nieve.mp3"
+    play sound "audio/pasosnieve.mp3"
+    scene bg nieve_lore with fade:
+        xsize config.screen_width
+        ysize config.screen_height
+
     "The ice chilled me to the bone preventing me from breathing right"
     "I don't know how long i walked without a specific direction on mind"
     "The only thing i remember is a word"
     "Move"
     "Move"
     "{b}MOVE!!!{/b}"
-
+    stop sound fadeout 2.0
+    
     "My legs wouldn't respond and my eyes began to redden due to blood clotting"
     "On the contrary of what it could look like, i felt warm and the soft touch of death whispering on my ear was kind"
     "I blacked out on that moment"
-    "A light appeared before me"
+    
+    scene black with fade
+
+    "And a light appeared before me"
+
+    scene bg nieve_lore2 with fade:
+        xsize config.screen_width
+        ysize config.screen_height
+        
     "It was a small lamp, but for me it was as blinding as a supernova"
+    stop music fadeout 3.0
+    #Se prodria llegar a interpretar o busco otra?
+
+    scene bg habitacion_lago_lore with fade:
+        xsize config.screen_width
+        ysize config.screen_height
     "An unkown ceiling was what i saw"
     "Moving my gaze i saw a man and a woman in front of me"
 
@@ -1106,11 +1172,13 @@ label lago_lore:
 
     #Poner las siluetas de personas (recicla alguna existente)
 
+
+
     "I don't get to distinguish their faces"
     "I think they said the words 'look after'"
-
+    
     "{b}IRRELEVANT{/b}"
-
+    scene black with fade
     "Time passed. I don't know how much. Maybe a couple of months, maybe some years"
     "I guess people could say i was happy"
 
@@ -1134,8 +1202,14 @@ label lago_lore:
 
     "{b}RETRIBUTION!!!{/b}"
 
+    #Imagen de Sluagh
+    scene bg lore_sluagh_bg with fade:
+        xsize config.screen_width
+        ysize config.screen_height
+
     "The birds stopped singing and the wind stopped blowing"
     #Para cualquier audio que este puesto
+    stop music
     "Time feels as if it has stopped with no explanation"
     "You feel a pressure on the chest and hear an cacophony that felt both strange and familiar at the same time"
     "You see someone far away slowly getting out of the lake"
@@ -1143,6 +1217,7 @@ label lago_lore:
     "Something so repulsive that the first thing that comes to mind is the image of the creature that you read about on irish mythology, a Sluagh, a cursed spirit that chases the living without rest"
     "Panic gets to you the moment you decypher what is infront of you"
     #Introduce al Sluagh, preferiblemente el segundo frame
+    show SluaghFrame2
     "Their height was about two meters, and even then you weren't completley sure because of the limp and hump that this person...no, THAT creature"
     "It has a ripped yellow raincoat too short for the creature that revealed rotting flesh"
     "A piece of a tree bark impaled almos the whole body and through the chest it looked like something was coming out, although you could't distinguish what it was"
@@ -1180,8 +1255,10 @@ label lago_decision_stay:
     # No entiendo la frase "La criatura de dentro de la criatura araña el trozo de madera que tiene clavado atravesándolo y lo miró con una mirada que parecía juzgarlo."
     #Se refiere a literalmente eso, dentro del monstruo hay otro mas que araña el trozo de madera que lo atraviesa
     "A thought crosses your mind"
-    scene black
-    with fade
+    scene bg lore_sluagh_bg:
+        xsize config.screen_width
+        ysize config.screen_height
+    show SluaghFrame2
     #Player
     mc "What the hell is this? A matryoshka?"
 
@@ -1196,12 +1273,20 @@ label lago_decision_stay:
     "..."
     "..."
     #Introduce sonido de corte
+    play sound "audio/corte.mp3"
     "That thought of process was cut violently like when pulling a weed from the garden"
     "The only thought that crossed his mind again was"
     #Player
     #Go/jo reference
     #No era la intencion
 
+    #No queda muy bien aunque sea lore acurate probablemente una pantalla en negro baste
+    #Lo guardo por si se considera
+    #show SluaghFrame2:
+    #    rotate 90
+    #    xpos 1.160
+    #    ypos 1.500
+    scene black with fade
     mc "Huh, aren't those my legs?"
 
     "A fast cut from the creature's hands was all it was needed to separate the superior half of the boy from his inferior half"
@@ -1213,17 +1298,20 @@ label lago_decision_stay:
     it proceed to bury his giant claws on the heart ripping it out"
     "Then the creature proceeded to devour it"
     #Introduce el audio de la criatura comiendo
+    play sound "audio/MonstruoComiendo (Bad Ending Lago).mp3"
     "It was a disgusting sound. It made it sound like a pig was eating. Although that would be an insult to pigs"
     "After eating the creature only said one word"
     #Criatura
     sl "Empty..."
     
     #Puedes poner el sonido de bad ending
+    scene black
+    play sound "audio/SonidoCartelBadEnding.mp3"
     centered "{color=#732020}BAD ENDING: INSATIABLE APPETITE."
 
 
 
-#Bloque Orfanato
+#Bloque Orfanato#####################################################################################
 
 label orfanato:    
     $persistent.orfanatoDesbloqueado = False
@@ -1343,11 +1431,11 @@ label orfanato_lore:
     elif persistent.orfanatoDesbloqueado == True:
         jump menuRecuerdos
 
-#Bloque bosque
+#Bloque bosque############################################################################################################
 
 label Bosque:
 
-    image BosqueBg = "gui/BosqueBg.jpg"
+    image BosqueBg = "gui/Bosque/BosqueBg.jpg"
     scene BosqueBg
 
     stop music
@@ -1498,13 +1586,13 @@ label eleccionFinal:
 
     "The psychologist simply watched as, from one moment to the next, you began convulsing until you lay completely still on the floor."
 
-    image SirenaPoliciaBg = "gui/SirenaPolicia.jpg"
+    image SirenaPoliciaBg = "gui/Bosque/FinalMalo/SirenaPolicia.jpg"
     scene SirenaPoliciaBg
     with dissolve
     
     "The police arrived shortly after."
 
-    image CementerioBg = "gui/Cementerio.jpg"
+    image CementerioBg = "gui/Bosque/FinalMalo/Cementerio.jpg"
     scene CementerioBg
     with dissolve
 
@@ -1596,7 +1684,7 @@ label eleccionFinal:
     
     "You’re not aware of how much time has passed when you reach a cliff."
 
-    image AcantiladoBg = "gui/AcantiladoBg.jpg"
+    image AcantiladoBg = "gui/Bosque/AcantiladoBg.jpg"
 
     scene AcantiladoBg
     with dissolve
@@ -1637,6 +1725,8 @@ label eleccionFinal:
     mc "What I can’t quite remember is precisely why it took me so long to recall it."
 
     mc "I suppose the monotony and disappointment from not finding what I was looking for made me lock myself in a bubble and never come out."
+    
+    play sound mueca
     
     mc "Well, look at me!"
    
@@ -1747,7 +1837,7 @@ label eleccionFinal:
 
     #Tal vez poner imagen del cielo 
 
-    image CieloBg = "gui/Cielo.jpg"
+    image CieloBg = "gui/Bosque/FinalBueno/Cielo.jpg"
 
     scene CieloBg
 
@@ -1783,7 +1873,7 @@ label eleccionFinal:
 
     #Escena de pueblo abandonado
 
-    image PuebloAbandonadoBg = "gui/PuebloAbandonado.jpg"
+    image PuebloAbandonadoBg = "gui/Bosque/FinalBueno/PuebloAbandonado.jpg"
 
     scene PuebloAbandonadoBg
 
@@ -1835,7 +1925,7 @@ label eleccionFinal:
 
     #Imagen mural Dibujo figura amarilla
 
-    image ParedMonstruoBg = "gui/ParedMonstruo.jpg"
+    image ParedMonstruoBg = "gui/Bosque/FinalBueno/ParedMonstruo.jpg"
 
     scene ParedMonstruoBg
 
@@ -1847,7 +1937,7 @@ label eleccionFinal:
 
     #Imagen diablo
 
-    image SatanBg = "gui/Satan.jpg"
+    image SatanBg = "gui/Bosque/FinalBueno/Satan.jpg"
 
     scene SatanBg
 
@@ -1875,7 +1965,7 @@ label eleccionFinal:
 
     #Pensando si poner una imagen de un libro, una silueta o algo tipo narrador omnisciente (musica o Daisy Daisy o algo similar)
 
-    image NarradorBg = "gui/Narrador.jpg"
+    image NarradorBg = "gui/Bosque/FinalBueno/Narrador.jpg"
 
     scene NarradorBg
 
