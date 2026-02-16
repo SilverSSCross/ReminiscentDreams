@@ -17,7 +17,7 @@ default persistent.orfanatoDesbloqueado = False
 
 #Fin Bloque if para cada lore
 
-define th = Character("Therapist")
+define th = Character(_("Therapist"))
 transform character_Base:
     xpos 0.3
     ypos 0.2
@@ -38,12 +38,12 @@ image th:
     pause 0.5
 
     repeat
-define mc = Character("You")
+define mc = Character(_("You"))
 define np = Character("News of Helsinki")
 define mf = Character("Mefi")
 define stranger = Character("???")
-define kid = Character("Student")
-define Profe = Character("Teacher")
+define kid = Character(_("Student"))
+define Profe = Character(_("Teacher"))
 image unkown:
     "gui/Ojos1.jpg"
     pause 0.2
@@ -78,7 +78,7 @@ image unkown:
     repeat
 
 define ol = Character("Olive")
-define ft = Character("Father?")
+define ft = Character(_("Father?"))
 define sl = Character("Sluagh")
 image SluaghFrame1 = "gui/SluaghFrame1.png"
 
@@ -342,6 +342,8 @@ screen casa():
 
 label house_puzzle:
 
+    $persistent.casaDesbloqueada = False
+
     mc "Im going home."
 
     scene black
@@ -380,16 +382,16 @@ label padre:
     jump puzzle_loop
 
 label libro:
-    $Correct_Answer = "Knowledge"
+    $Correct_Answer = renpy.translate_string(_("knowledge"))
     show screen casa
     "It appears to have an inscription."
-    $Answer = renpy.input("I am that which drives all thinking beings, even towards their own destruction. I am that which scholars covet and for which they would be willing to sell their souls to the devil. What am I?")
-    if Answer != Correct_Answer:
+    $Answer = renpy.input(_("I am that which drives all thinking beings, even towards their own destruction. I am that which scholars covet and for which they would be willing to sell their souls to the devil. What am I?"))
+    if Answer.lower() != Correct_Answer:
         show screen casa
         mc "No, I don't think that will do anything, gotta find more information. \nCould there be anything useful here?"
         window hide
         jump puzzle_loop
-    if Answer == Correct_Answer:
+    if Answer.lower() == Correct_Answer:
         hide screen casa
         hide th
         hide TherapyBg
@@ -507,7 +509,11 @@ label house_lore:
 
     "You come back to reality."
 
-    call screen mapa
+    if persistent.casaDesbloqueada == False:
+        $persistent.casaDesbloqueada = True
+        call screen mapa 
+    elif persistent.casaDesbloqueada == True:
+        jump menuRecuerdos
 
     #return
 
@@ -521,6 +527,8 @@ default Armario_Open = False
 default Profesora_tip = False
 
 label school_puzzle:
+
+    $persistent.escuelaDesbloqueada = False
 
     mc "I'm gonna check something in my old school"
 
@@ -952,7 +960,11 @@ label school_lore:
 
     "You return to reality."
 
-    call screen mapa
+    if persistent.escuelaDesbloqueada == False:
+        $persistent.escuelaDesbloqueada = True
+        call screen mapa 
+    elif persistent.escuelaDesbloqueada == True:
+        jump menuRecuerdos
 
 #fin bloque escuela
 
@@ -968,6 +980,7 @@ image bg pecho_sluagh = "gui/Pecho_Sluagh.png"
 
 
 label lago:
+    $persistent.lagoDesbloqueado = False
     scene bg lago_gen with fade:
         xsize config.screen_width
         ysize config.screen_height
@@ -1147,7 +1160,11 @@ label lago_lore:
 
 label lago_decision_flee:
     "You aren't conscious how, but you are able to escape the creature"
-    jump lago
+    if persistent.lagoDesbloqueado == False:
+        $persistent.lagoDesbloqueado = True
+        call screen mapa 
+    elif persistent.lagoDesbloqueado == True:
+        jump menuRecuerdos
 
 label lago_decision_stay:
     "Your survival instinct displays its absence and going against every logic impulse that you didn't have, you stay in place while the creature got closer to you"
@@ -1209,6 +1226,7 @@ label lago_decision_stay:
 #Bloque Orfanato
 
 label orfanato:    
+    $persistent.orfanatoDesbloqueado = False
     call screen orfanato_general
 
 label orfanato_puzle:
@@ -1319,7 +1337,11 @@ label orfanato_lore:
     mc "I should get out of this place"
     
     #Se llama al mapa automaticamente
-    call screen mapa
+    if persistent.orfanatoDesbloqueado == False:
+        $persistent.orfanatoDesbloqueado = True
+        call screen mapa 
+    elif persistent.orfanatoDesbloqueado == True:
+        jump menuRecuerdos
 
 #Bloque bosque
 
@@ -1336,9 +1358,21 @@ label Bosque:
 
     "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
 
-    menu:
+    menu menuBosque:
         "Entrar al bosque":
             jump eleccionFinal
+        "Recordar":
+            menu menuRecuerdos:
+                "El hombre de nariz grande y ojos largos" if persistent.casaDesbloqueada == True:
+                    jump house_lore
+                "Un recuerdo con Olive" if persistent.escuelaDesbloqueada == True:
+                    jump school_lore
+                "Un viaje borroso" if persistent.lagoDesbloqueado == True:
+                    jump lago_lore
+                "A veces el pasado no debe revelarse" if persistent.orfanatoDesbloqueado == True:
+                    jump orfanato_lore
+                "Volver":
+                    jump menuBosque
         "Dar la vuelta":
             stop music
             call screen mapa
