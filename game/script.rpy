@@ -1025,6 +1025,7 @@ label lago_puzle_zona:
     $ lago_solution=["7","7","1","2","3","4","4"]
     #Se define lo que introduce el jugador
     $ lago_player_input=[]
+    $ lago_player_visual=[]
         #Se inicializa un loop
     label .loop:
         call screen lago_puzle
