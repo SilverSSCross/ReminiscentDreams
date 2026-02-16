@@ -28,13 +28,13 @@ transform down:
     xpos 0.4
     ypos 0.3
 image th:
-    "gui/PsicologoFrame1.png"
+    "gui/Prologo/Frames/PsicologoFrame1.png"
     pause 4
 
-    "gui/PsicologoFrame2.png"
+    "gui/Prologo/Frames/PsicologoFrame2.png"
     pause 0.5
 
-    "gui/PsicologoFrame1.png"
+    "gui/Prologo/Frames/PsicologoFrame1.png"
     pause 0.5
 
     repeat
@@ -45,34 +45,34 @@ define stranger = Character("???")
 define kid = Character("Student")
 define Profe = Character("Teacher")
 image unkown:
-    "gui/Ojos1.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos1.jpg"
     pause 0.2
 
-    "gui/Ojos2.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos2.jpg"
     pause 0.2
 
-    "gui/Ojos3.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos3.jpg"
     pause 0.2
 
-    "gui/Ojos4.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos4.jpg"
     pause 0.2
 
-    "gui/Ojos5.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos5.jpg"
     pause 0.2
 
-    "gui/Ojos6.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos6.jpg"
     pause 0.2
 
-    "gui/Ojos7.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos7.jpg"
     pause 0.2
 
-    "gui/Ojos8.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos8.jpg"
     pause 0.2
 
-    "gui/Ojos9.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos9.jpg"
     pause 0.2
 
-    "gui/Ojos10.jpg"
+    "gui/Bosque/FinalMalo/Animacion/Ojos10.jpg"
     pause 0.2
 
     repeat
@@ -140,13 +140,19 @@ label start:
     
     scene red
 
+    play sound cristal 
+
+    play music latidocorazon
+
     "{color=#732020}It was your fault"
 
     scene black
 
     ""
 
-    image TherapyBg = "gui/TherapyBg.jpg"
+    stop music
+
+    image TherapyBg = "gui/Prologo/Escenas/TherapyBg.jpg"
 
     scene TherapyBg
 
@@ -243,7 +249,7 @@ label bad_ending1:
     play sound sonidoperiodico
     play music undiamas
 
-    image news = "gui/newspaper.jpg"
+    image news = "gui/Prologo/Escenas/newspaper.jpg"
     scene black
     scene news
     with dissolve
@@ -308,7 +314,7 @@ label new_beggining:
 
     #return
 
-#Bloque casa
+#Bloque casa#############################################################################################
 
 screen casa():
     add "gui/House/Puzzle/Casa.jpg"
@@ -514,7 +520,7 @@ label house_lore:
 #Fin bloque casa
 
 
-#bloque escuela
+#bloque escuela######################################################################################################################
 
 default Taquilla_Open = False 
 default Armario_Open = False
@@ -530,6 +536,8 @@ label school_puzzle:
     stop music
     stop audio
     stop sound
+
+    play music niñosescuela loop
     
     
     label scene_escuela:
@@ -912,7 +920,13 @@ label school_lore:
     
     "..."
 
+    stop music
+
     scene red
+
+    play sound cristal
+
+    play music latidocorazon
 
     centered "*CRACK*"
 
@@ -938,6 +952,10 @@ label school_lore:
     
     "..."
 
+    stop music
+
+    play music niñosescuela
+
     scene bg_escuela
 
     "You calm down."
@@ -946,11 +964,13 @@ label school_lore:
     
     "You whisper a melody that was stored in your subconscious."
     
-    "(Insert melody that is the lake puzzle solution)"
+    "Si, Si, Do, Re, Mi, Fa, Fa"
     
     "The ripples of memory fade like waves in the water."
 
     "You return to reality."
+
+    stop music
 
     call screen mapa
 
@@ -1276,7 +1296,7 @@ label lago_decision_stay:
 
 
 
-#Bloque Orfanato
+#Bloque Orfanato#####################################################################################
 
 label orfanato:    
     call screen orfanato_general
@@ -1391,11 +1411,11 @@ label orfanato_lore:
     #Se llama al mapa automaticamente
     call screen mapa
 
-#Bloque bosque
+#Bloque bosque############################################################################################################
 
 label Bosque:
 
-    image BosqueBg = "gui/BosqueBg.jpg"
+    image BosqueBg = "gui/Bosque/BosqueBg.jpg"
     scene BosqueBg
 
     stop music
@@ -1534,13 +1554,13 @@ label eleccionFinal:
 
     "The psychologist simply watched as, from one moment to the next, you began convulsing until you lay completely still on the floor."
 
-    image SirenaPoliciaBg = "gui/SirenaPolicia.jpg"
+    image SirenaPoliciaBg = "gui/Bosque/FinalMalo/SirenaPolicia.jpg"
     scene SirenaPoliciaBg
     with dissolve
     
     "The police arrived shortly after."
 
-    image CementerioBg = "gui/Cementerio.jpg"
+    image CementerioBg = "gui/Bosque/FinalMalo/Cementerio.jpg"
     scene CementerioBg
     with dissolve
 
@@ -1632,7 +1652,7 @@ label eleccionFinal:
     
     "You’re not aware of how much time has passed when you reach a cliff."
 
-    image AcantiladoBg = "gui/AcantiladoBg.jpg"
+    image AcantiladoBg = "gui/Bosque/AcantiladoBg.jpg"
 
     scene AcantiladoBg
     with dissolve
@@ -1673,6 +1693,8 @@ label eleccionFinal:
     mc "What I can’t quite remember is precisely why it took me so long to recall it."
 
     mc "I suppose the monotony and disappointment from not finding what I was looking for made me lock myself in a bubble and never come out."
+    
+    play sound mueca
     
     mc "Well, look at me!"
    
@@ -1783,7 +1805,7 @@ label eleccionFinal:
 
     #Tal vez poner imagen del cielo 
 
-    image CieloBg = "gui/Cielo.jpg"
+    image CieloBg = "gui/Bosque/FinalBueno/Cielo.jpg"
 
     scene CieloBg
 
@@ -1819,7 +1841,7 @@ label eleccionFinal:
 
     #Escena de pueblo abandonado
 
-    image PuebloAbandonadoBg = "gui/PuebloAbandonado.jpg"
+    image PuebloAbandonadoBg = "gui/Bosque/FinalBueno/PuebloAbandonado.jpg"
 
     scene PuebloAbandonadoBg
 
@@ -1871,7 +1893,7 @@ label eleccionFinal:
 
     #Imagen mural Dibujo figura amarilla
 
-    image ParedMonstruoBg = "gui/ParedMonstruo.jpg"
+    image ParedMonstruoBg = "gui/Bosque/FinalBueno/ParedMonstruo.jpg"
 
     scene ParedMonstruoBg
 
@@ -1883,7 +1905,7 @@ label eleccionFinal:
 
     #Imagen diablo
 
-    image SatanBg = "gui/Satan.jpg"
+    image SatanBg = "gui/Bosque/FinalBueno/Satan.jpg"
 
     scene SatanBg
 
@@ -1911,7 +1933,7 @@ label eleccionFinal:
 
     #Pensando si poner una imagen de un libro, una silueta o algo tipo narrador omnisciente (musica o Daisy Daisy o algo similar)
 
-    image NarradorBg = "gui/Narrador.jpg"
+    image NarradorBg = "gui/Bosque/FinalBueno/Narrador.jpg"
 
     scene NarradorBg
 
