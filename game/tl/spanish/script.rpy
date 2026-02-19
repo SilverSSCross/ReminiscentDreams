@@ -4,13 +4,13 @@
 translate spanish start_6c003d58:
 
     # "According to the Multiple Trace Theory, every time we retrieve a memory, the record of that memory constitutes another memory in itself."
-    "Según la Teoría de las huellas Múltiples, cada vez que recuperamos un recuerdo, el registro de este mismo constituye otra memoria en sí."
+    "Según la Teoría de las Huellas Múltiples, cada vez que recuperamos un recuerdo, el registro de este mismo constituye otra memoria en sí."
 
 # game/script.rpy:96
 translate spanish start_7495badf:
 
     # "Memory is closely related to an individual's emotions, since the greater the emotional impact, the greater the capacity for recall itself."
-    "La memoria como tal está estrechamente relacionada con las emociones de un individuo siendo que cuanto mayor impacto emocional mayor es la capacidad del recuerdo mismo."
+    "La memoria como tal está estrechamente relacionada con las emociones de un individuo, siendo que cuanto mayor impacto emocional, mayor es la capacidad del recuerdo mismo."
 
 # game/script.rpy:98
 translate spanish start_e9b95348:
@@ -58,7 +58,7 @@ translate spanish start_0ae9bcd0:
 translate spanish start_4c1b0cd7:
 
     # th "It's quite cold today, isn't it? Even for this area of the mountains, it's a low temperature."
-    th "¿Hoy hace bastante frio no? Incluso para esta zona de las montañas es una temperatura baja."
+    th "Hoy hace bastante frio, ¿No? Incluso para esta zona de las montañas es una temperatura baja."
 
 # game/script.rpy:128
 translate spanish start_3b21f354:
@@ -130,7 +130,7 @@ translate spanish start_6a730951:
 translate spanish start_0907b68b:
 
     # th "If I remember correctly, these last few weeks have been more consistent."
-    th "Si mal no recuerdo, estas últimas semanas han sido más constantes"
+    th "Si mal no recuerdo, estas últimas semanas han sido más constantes."
 
 # game/script.rpy:152
 translate spanish start_69c25b65:
@@ -142,7 +142,7 @@ translate spanish start_69c25b65:
 translate spanish start_93a6631e:
 
     # th "You have been coming to my consultations for {color=#FF0000}years{/color}, and yet I don't feel that we have made {color=#5F24B5}{i}any progress at all{/i}{/color}."
-    th "Llevas años viniendo a mis consultas y sin embargo no siento que hayamos avanzado nada."
+    th "Llevas años viniendo a mis consultas y, sin embargo, no siento que hayamos avanzado nada."
 
 # game/script.rpy:156
 translate spanish start_88a18ce7:
@@ -172,7 +172,7 @@ translate spanish start_9e6fc90f:
 translate spanish start_b18366b5:
 
     # mc "Mind your own buisness."
-    mc "Métase en sus asuntos"
+    mc "Métase en sus asuntos."
 
 # game/script.rpy:166
 translate spanish start_e24eea0f:
@@ -226,13 +226,13 @@ translate spanish start_ca05ba9f:
 translate spanish start_1d8eee3f:
 
     # th "It is your decision whether to accept it and try to face what has been tormenting you since childhood."
-    th ""
+    th "Es tu decisión si aceptarla e intentar hacerle frente a aquello que te ha estado atormentando desde la infancia."
 
 # game/script.rpy:184
 translate spanish start_e57d1125:
 
     # th "Or, on the contrary, would you rather continue living in a cage that smells like cheap Kossu? (a Finnish liqueur that tastes like pure ethanol)"
-    th "Es decisión tuya si aceptarla e intentar hacer frente a aquello que lleva atormentándote desde niño o, por el contrario, prefieres seguir viviendo en una jaula con olor a Kossu barato"
+    th "O, por el contrario, prefieres seguir viviendo en una jaula con olor a Kossu barato."
 
 # game/script.rpy:196
 translate spanish bad_ending1_67ebec6a:
@@ -244,7 +244,7 @@ translate spanish bad_ending1_67ebec6a:
 translate spanish bad_ending1_9827a00f:
 
     # centered "Some days later...."
-    centered "Algunos dias más tarde"
+    centered "Algunos dias más tarde...."
 
 # game/script.rpy:218
 translate spanish bad_ending1_976e3225:
@@ -328,13 +328,13 @@ translate spanish new_beggining_8340d099:
 translate spanish house_puzzle_c4390554:
 
     # mc "Im going home."
-    mc "Me voy a casa"
+    mc "Me voy a casa."
 
 # game/script.rpy:333
 translate spanish cuadro_de03c09f:
 
     # "A strange painting for sure. \nA gentleman with a book and a pen, I think. He seems obsessed with finding something."
-    "Una pintura extraña desde luego. \nUn señor con un libro y una pluma creo. Parece obsesionado con encontrar algo. "
+    "Una pintura extraña desde luego. \nUn señor con un libro y una pluma, creo. Parece obsesionado con encontrar algo. "
 
 # game/script.rpy:338
 translate spanish ventana_a6092416:
@@ -346,7 +346,7 @@ translate spanish ventana_a6092416:
 translate spanish padre_a9c66fe5:
 
     # ft "I am the spirit that always denies. And I do so with full rights, for everything that is born deserves to be destroyed; it would be better, then, if it had never been born. Therefore, my true nature is what you call sin and destruction, in a word, Evil."
-    ft "Soy el espíritu que siempre niega. Y lo hago con pleno derecho, pues todo lo que nace merece ser aniquilado, mejor sería entonces que no naciera. Por ello, mi auténtica naturaleza es eso que llamáis pecado y destrucción, en una palabra, Mal."
+    ft "Soy el espíritu que siempre niega. Y lo hago con pleno derecho, pues todo lo que nace merece ser aniquilado; mejor sería pues no naber nacido. Por ello, mi auténtica naturaleza es aquello a lo que llamáis pecado y destrucción, en una palabra, Mal."
 
 # game/script.rpy:350
 translate spanish libro_1d2858e6:
@@ -358,7 +358,7 @@ translate spanish libro_1d2858e6:
 translate spanish libro_50cc37d9:
 
     # mc "No, I don't think that will do anything, gotta find more information. \nCould there be anything useful here?"
-    mc "No, creo que eso no servira. Necesito encontrar más información. \nTal vez encuentre algo de utilidad por aquí"
+    mc "No, creo que eso no servirá. Necesito encontrar más información. \nTal vez encuentre algo de utilidad por aquí."
 
 # game/script.rpy:387
 translate spanish house_lore_5b6b7fa2:
@@ -400,13 +400,13 @@ translate spanish house_lore_9b51e4d3:
 translate spanish house_lore_4a0ede77:
 
     # mf "Do you want to make a deal? Your flowers will grow and the plants will sprout."
-    mf "¿Queréis hacer un trato? Vuestras flores crecerán y las plantas germinarán"
+    mf "¿Queréis hacer un trato? Vuestras flores crecerán y las plantas germinarán."
 
 # game/script.rpy:417
 translate spanish house_lore_322fabba:
 
     # "The man with the big nose accepted without a doubt, while the man with long eyes rejected him without hesitation."
-    "El hombre de nariz grande acepto sin pensar mientras que el hombre de ojos largos lo rechazó sin dudar."
+    "El hombre de nariz grande acepto sin pensar, mientras que el hombre de ojos largos lo rechazó sin dudar."
 
 # game/script.rpy:423
 translate spanish house_lore_fd18c81e:
@@ -424,13 +424,13 @@ translate spanish house_lore_406a1161:
 translate spanish house_lore_b2b5c045:
 
     # "The man with the long eyes wept incessantly because he was so poor that he didn't know what else to do."
-    "El hombre de los ojos largos lloraba sin cesar pues era tan pobre que no sabía que más hacer."
+    "El hombre de los ojos largos lloraba sin cesar, pues era tan pobre que no sabía que más hacer."
 
 # game/script.rpy:433
 translate spanish house_lore_0218af62:
 
     # "On the other hand, the big-nosed man was ecstatic with joy as he looked at his large garden and satisfied his appetite with juicy apples that grew in it."
-    "Por otro lado, el hombre de nariz grande estaba extasiado de alegría mientras veía su gran jardín y saciaba su apetito con jugosas manzanas que crecían en su jardín."
+    "Por otro lado, el hombre de nariz grande estaba extasiado de alegría mientras veía su gran jardín y saciaba su apetito con jugosas manzanas que crecían en él."
 
 # game/script.rpy:435
 translate spanish house_lore_4c26121a:
@@ -472,7 +472,7 @@ translate spanish house_lore_f8773e30:
 translate spanish house_lore_2ad68d83:
 
     # "Said the devil."
-    "Dijo el diablo"
+    "Dijo el diablo."
 
 # game/script.rpy:464
 translate spanish house_lore_67ca2b2e:
@@ -484,7 +484,7 @@ translate spanish house_lore_67ca2b2e:
 translate spanish house_lore_c7cd8128:
 
     # "It really is irrelevant."
-    "Realmente es irrelevante"
+    "Realmente es irrelevante."
 
 # game/script.rpy:474
 translate spanish house_lore_df43da7d:
@@ -502,13 +502,13 @@ translate spanish house_lore_261f1f3c:
 translate spanish school_puzzle_f84ed20b:
 
     # mc "I'm gonna check something in my old school"
-    mc "Voy a echarle un vistazo a mi vieja escuela"
+    mc "Voy a echarle un vistazo a mi vieja escuela."
 
 # game/script.rpy:562
 translate spanish niño_19a32d24:
 
     # kid "Hey you. Wanna know something?"
-    kid "Hey tu. ¿Quieres saber algo?"
+    kid "Hey tú. ¿Quieres saber algo?"
 
 # game/script.rpy:565
 translate spanish niño_69bda58f:
@@ -544,7 +544,7 @@ translate spanish puzle_taquilla_da31c1a4:
 translate spanish puzle_taquilla_5f7e7609:
 
     # mc "Damn it! \n maybe the code is somewhere around here."
-    mc "¡Mierda! \n quizas el código esta por algún lugar cercano."
+    mc "¡Mierda! \n quizás el código esta por algún lugar cercano."
 
 # game/script.rpy:630
 translate spanish puzle_taquilla_3ab180c4:
@@ -556,7 +556,7 @@ translate spanish puzle_taquilla_3ab180c4:
 translate spanish profesora_d7b01973:
 
     # Profe "What are you doing here? Shouldn't you be somewhere else wasting someone else time?"
-    Profe "¿Qué estás haciendo aquí? No deberías estar en otra parte haciéndole perder el tiempo a otra persona"
+    Profe "¿Qué estás haciendo aquí? ¿No deberías estar en otra parte haciéndole perder el tiempo a otra persona?"
 
 # game/script.rpy:680
 translate spanish profesora_e3a71ff2:
@@ -568,7 +568,7 @@ translate spanish profesora_e3a71ff2:
 translate spanish profesora_2368868a:
 
     # Profe "Jerk"
-    Profe "Cretino"
+    Profe "Cretino."
 
 # game/script.rpy:688
 translate spanish profesora_db6a9ca8:
@@ -586,19 +586,19 @@ translate spanish profesora_13e3fdf0:
 translate spanish profesora_aabde004:
 
     # Profe "Ok ok, the locker's sheet code is in the cupboard at mi right"
-    Profe "OK ok, el codigo de la taquilla esta en ese armario a mi derecha"
+    Profe "OK ok, el codigo de la taquilla está en ese armario a mi derecha."
 
 # game/script.rpy:691
 translate spanish profesora_506eed25:
 
     # Profe "The code is 3516"
-    Profe "El codigo es 3516"
+    Profe "El código es 3516."
 
 # game/script.rpy:692
 translate spanish profesora_458515d9:
 
     # Profe "Now go!\n AND DON'T YOU DARE TELL ANYONE WHAT YOU KNOW OR YOU WILL REGRET IT!"
-    Profe "¡Ahora largo!\n ¡Y no te atrecas a decirle a nadie lo que sabes o te arrepentiras!"
+    Profe "¡Ahora largo!\n ¡Y no te atrecas a decirle a nadie lo que sabes o te arrepentirás!"
 
 # game/script.rpy:716
 translate spanish puzle_armario_da31c1a4:
@@ -610,7 +610,7 @@ translate spanish puzle_armario_da31c1a4:
 translate spanish puzle_armario_5f7e7609:
 
     # mc "Damn it! \n maybe the code is somewhere around here."
-    mc "¡Mierda! \n Quizas el código esta por alguna parte. "
+    mc "¡Mierda! \n Quizás el código esta por alguna parte. "
 
 # game/script.rpy:727
 translate spanish puzle_armario_3ab180c4:
@@ -688,13 +688,13 @@ translate spanish school_lore_617ac1c8:
 translate spanish school_lore_3cbbc6c4:
 
     # ol "But I plan to find my mother and we'll clear this up."
-    ol "Pero pienso encontrar a mi madre y aclararemos esto"
+    ol "Pero pienso encontrar a mi madre y aclararemos esto."
 
 # game/script.rpy:886
 translate spanish school_lore_482e0bac:
 
     # ol "No mother would abandon her child."
-    ol "Ninguna madre abandonaría a su hijo"
+    ol "Ninguna madre abandonaría a su hijo."
 
 # game/script.rpy:888
 translate spanish school_lore_a8b0e558:
@@ -706,19 +706,19 @@ translate spanish school_lore_a8b0e558:
 translate spanish school_lore_58d1a0ef:
 
     # "You don't know what expression to put on your face when you hear those words."
-    "No sabes que expresión poner ante tales palabras"
+    "No sabes que expresión poner ante tales palabras."
 
 # game/script.rpy:892
 translate spanish school_lore_d39efa0a:
 
     # "You're not sure whether to feel sorry for him or be happy that he still has hope inside him after everything that's happened in his life."
-    "No entiendes muy bien si sentir lastima por el o alegrarte de que albergue en su interior esperanzas aun tras todo lo acontecido en su vida."
+    "No sabes muy bien si sentir lastima por él o alegrarte de que albergue en su interior esperanzas tras todo lo acontecido en su vida."
 
 # game/script.rpy:894
 translate spanish school_lore_470e6764:
 
     # ol "I'm sure it's nice to have a full table."
-    ol "Seguro que se esta bien en una mesa completa"
+    ol "Seguro que se esta bien en una mesa completa."
 
 # game/script.rpy:900
 translate spanish school_lore_a20cefa7:
@@ -760,7 +760,7 @@ translate spanish school_lore_34418f53:
 translate spanish school_lore_cb4a754f:
 
     # "But something grates on your mind when you hear it."
-    "Pero algo chirria en tu mente al escucharla."
+    "Pero algo chirría en tu mente al escucharla."
 
 # game/script.rpy:916
 translate spanish school_lore_6900b8e0:
@@ -778,7 +778,7 @@ translate spanish school_lore_cc808825:
 translate spanish school_lore_02080365:
 
     # "Part of you wants to ⫣⊫⫣⊫⫣⊫⫣⊫⫣⊫⫣l͞⊫⫣⊫"
-    "Una parte de ti quiere ⫣⊫⫣⊫⫣⊫⫣⊫⫣⊫⫣l͞⊫⫣⊫"
+    "Una parte de tí quiere ⫣⊫⫣⊫⫣⊫⫣⊫⫣⊫⫣l͞⊫⫣⊫"
 
 # game/script.rpy:924
 translate spanish school_lore_8dabefc6:
@@ -814,7 +814,7 @@ translate spanish school_lore_d80b09c6:
 translate spanish school_lore_d7b228f5:
 
     # "(Insert melody that is the lake puzzle solution)"
-    "(Insertar melodía que es solución puzle lago)"
+    "Si,Si,Do,Re,Mi,Fa,Fa"
 
 # game/script.rpy:938
 translate spanish school_lore_4cd08cbe:
@@ -832,7 +832,7 @@ translate spanish school_lore_e5bafc20:
 translate spanish Bosque_3b427ecb:
 
     # "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
-    "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
+    "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos."
 
 # game/script.rpy:998
 translate spanish Final1_115434a3:
@@ -886,7 +886,7 @@ translate spanish Final1_0e982518:
 translate spanish Final1_cae4e44b:
 
     # "The fact that you're alive is a completely objective and undeniable truth."
-    "El hecho de que estes vivo es un hecho completamente objetivo e innegable."
+    "El hecho de que estés vivo es un hecho completamente objetivo e innegable."
 
 # game/script.rpy:1018
 translate spanish Final1_beca21de:
@@ -952,7 +952,7 @@ translate spanish Final1_478af033:
 translate spanish Final1_7a98d0c7:
 
     # "You're not even aware of why you're suddenly asking yourself such profound questions out of nowhere."
-    "Ni siquiera eres consciente siquiera de por qué te haces cuestiones así de profundas de un momento a otro."
+    "Ni siquiera eres consciente de por qué te haces cuestiones así de profundas de un momento a otro."
 
 # game/script.rpy:1050
 translate spanish Final1_06239d1d:
@@ -964,7 +964,7 @@ translate spanish Final1_06239d1d:
 translate spanish Final1_63c0403e:
 
     # "You can't even get to the root of why you're having these thoughts in the first place."
-    "Tampoco puedes llegar a la raíz del pensamiento de porque tienes esos pensamientos precisamente"
+    "Tampoco puedes llegar a la raíz del pensamiento de porque tienes esos pensamientos precisamente."
 
 # game/script.rpy:1054
 translate spanish Final1_14fa16ac:
@@ -1042,7 +1042,7 @@ translate spanish Final1_1c75a544:
 translate spanish Final1_1c568af1:
 
     # "The only person present was your psychologist, and he only stayed for a little while."
-    "El único presente fue tu psicólogo y se quedó solo un rato."
+    "El único presente fue tu psicólogo, y solo se quedó solo un rato."
 
 # game/script.rpy:1104
 translate spanish Final1_bd64795f:
@@ -1084,7 +1084,7 @@ translate spanish Final1_925805c8:
 translate spanish Final1_9a73abe0:
 
     # "Can it even be said that you existed?"
-    "¿Puede decirse siquiera que has existido?"
+    "¿Puede decirse acaso que has existido?"
 
 # game/script.rpy:1123
 translate spanish Final1_8dabefc6_2:
@@ -1108,7 +1108,7 @@ translate spanish Final1_d1b81deb:
 translate spanish Final1_b39227ec:
 
     # "Who knows."
-    "Quien sabe."
+    "Quién sabe."
 
 # game/script.rpy:1139
 translate spanish Final1_3420af42:
@@ -1198,7 +1198,7 @@ translate spanish Final2_65ab73c0:
 translate spanish Final2_48df478c:
 
     # "Your steps are determined and agile."
-    "Tus pasos son decididos y agiles."
+    "Tus pasos son decididos y ágiles."
 
 # game/script.rpy:1184
 translate spanish Final2_fc9a838a:
@@ -1270,13 +1270,13 @@ translate spanish Final2_7f432e15:
 translate spanish Final2_7015f033:
 
     # mc "I didn’t think you would actually jump."
-    mc "No creí que realmente fueras a saltar"
+    mc "No creí que realmente fueras a saltar."
 
 # game/script.rpy:1217
 translate spanish Final2_a7813dc6:
 
     # mc "I was just testing the limits of how much someone could endure."
-    mc "Simplemente estaba probando los límites de cuanto podría aguantar alguien."
+    mc "Simplemente estaba probando los límites de cuánto podría aguantar alguien."
 
 # game/script.rpy:1219
 translate spanish Final2_8b4dcf37:
@@ -1300,7 +1300,7 @@ translate spanish Final2_40ae17d8:
 translate spanish Final2_6d0051c7:
 
     # mc "What I can’t quite remember is precisely why it took me so long to recall it."
-    mc "Lo que no consigo recordar es precisamente el porque he tardado tanto en recordar."
+    mc "Lo que no consigo recordar es precisamente el por qué he tardado tanto en recordar."
 
 # game/script.rpy:1227
 translate spanish Final2_8945d03d:
@@ -1318,7 +1318,7 @@ translate spanish Final2_e81281b6:
 translate spanish Final2_d365b86d:
 
     # mc "I’m no longer bound by those chains, and here I am again, Olive."
-    mc "Ya no tengo esas cadenas que me atan y aquí estoy otra vez Olive."
+    mc "Ya no tengo esas cadenas que me atan, y aquí estoy otra vez, Olive."
 
 # game/script.rpy:1233
 translate spanish Final2_7d9c2407:
@@ -1336,13 +1336,13 @@ translate spanish Final2_eb891473:
 translate spanish Final2_be7e26ec:
 
     # mc "Hey, Olive."
-    mc "Oye Olive."
+    mc "Oye, Olive."
 
 # game/script.rpy:1239
 translate spanish Final2_6936714c:
 
     # mc "Before we end all this, why don’t we reminisce about the old times?"
-    mc "Antes de acabar con todo esto ¿por qué no rememoramos los viejos tiempos?"
+    mc "Antes de acabar con todo esto, ¿por qué no rememoramos los viejos tiempos?"
 
 # game/script.rpy:1246
 translate spanish Final2_999c1957:
@@ -1354,13 +1354,13 @@ translate spanish Final2_999c1957:
 translate spanish Final2_8b50b30e:
 
     # mc "We are born because we are loved."
-    mc "Nacemos porque somos amados"
+    mc "Nacemos porque somos amados."
 
 # game/script.rpy:1250
 translate spanish Final2_36414d6f:
 
     # mc "Our birth has meaning because someone loved us."
-    mc "Nuestro nacimiento tiene sentido porque alguien nos amaba"
+    mc "Nuestro nacimiento tiene sentido porque alguien nos amaba."
 
 # game/script.rpy:1252
 translate spanish Final2_2bede903:
@@ -1372,25 +1372,25 @@ translate spanish Final2_2bede903:
 translate spanish Final2_0dcc5e29:
 
     # mc "But you… you were abandoned, Olive."
-    mc "Pero a ti. A ti te abandonaron Olive"
+    mc "Pero a tí. A tí te abandonaron Olive"
 
 # game/script.rpy:1256
 translate spanish Final2_31aecb7f:
 
     # mc "Maybe your mother loved you because she hated you."
-    mc "Puede ser que tu madre te amaba porque te odiaba"
+    mc "Puede ser que tu madre te amaba porque te odiaba."
 
 # game/script.rpy:1258
 translate spanish Final2_794d4cee:
 
     # mc "There is nothing special about being born."
-    mc "No hay nada en especial en nacer"
+    mc "No hay nada especial en nacer."
 
 # game/script.rpy:1260
 translate spanish Final2_42b9c803:
 
     # mc "Most of the universe is dead."
-    mc "La mayor parte del universo está muerto"
+    mc "La mayor parte del universo está muerto."
 
 # game/script.rpy:1262
 translate spanish Final2_45a66c82:
@@ -1402,13 +1402,13 @@ translate spanish Final2_45a66c82:
 translate spanish Final2_c8cd61dd:
 
     # mc "Death is the norm."
-    mc "La muerte es la norma"
+    mc "La muerte es la norma."
 
 # game/script.rpy:1266
 translate spanish Final2_3e5b4a97:
 
     # mc "So why live?"
-    mc "¿Entonces por qué vivir?"
+    mc "Entonces, ¿por qué vivir?"
 
 # game/script.rpy:1268
 translate spanish Final2_dcdf38f0:
@@ -1426,7 +1426,7 @@ translate spanish Final2_d278ec85:
 translate spanish Final2_eb504323:
 
     # mc "If no one loved you, what is your reason for living at all?"
-    mc "Si nadie te amaba, ¿Cuál es siquiera tu razón para vivir?"
+    mc "Si nadie te amaba, ¿cuál es siquiera tu razón para vivir?"
 
 # game/script.rpy:1280
 translate spanish Final2_a3055e35:
@@ -1438,13 +1438,13 @@ translate spanish Final2_a3055e35:
 translate spanish Final2_da56f05d:
 
     # "The cold wind blows."
-    "El frio viento sopla"
+    "El frío viento sopla"
 
 # game/script.rpy:1286
 translate spanish Final2_58e9dc10:
 
     # "Olive looks at you one last time, and the wind uncovers his hood."
-    "Olive te mira una ultima vez y el viento destapa su capucha"
+    "Olive te mira una ultima vez y el viento destapa su capucha."
 
 # game/script.rpy:1288
 translate spanish Final2_715fed29:
@@ -1468,7 +1468,7 @@ translate spanish Final2_10d2b520:
 translate spanish Final2_b716fdf6:
 
     # mc "It feels so good to be free."
-    mc "Que bien sienta ser libre"
+    mc "Que bien sienta ser libre."
 
 # game/script.rpy:1298
 translate spanish Final2_20295941:
@@ -1492,13 +1492,13 @@ translate spanish Final2_f2bbde10:
 translate spanish Final2_a26d5b9a:
 
     # "The gentle touch of moonlight."
-    "El Suave tacto de la luz de la luna."
+    "El suave tacto de la luz de la luna."
 
 # game/script.rpy:1308
 translate spanish Final2_e35686f8:
 
     # "And above everything else, you feel the cold ground running along your body, giving way to a warm sensation of hot blood spilling out from your body shattering against the cold granite."
-    "Y sobre todo lo demás, sientes el frio suelo recorriendo tu cuerpo para dar paso a una cálida sensación de sangre caliente desbordada producto de destrozarse el cuerpo contra el frio granito."
+    "Y sobre todo lo demás, sientes el frio suelo recorriendo tu cuerpo, dando paso a una cálida sensación de sangre caliente desbordada, producto de destrozarse el cuerpo contra el frio granito."
 
 # game/script.rpy:1316
 translate spanish Final2_d7edd024:
@@ -1588,7 +1588,7 @@ translate spanish Final2_a20cefa7_1:
 translate spanish Final2_acdf6b30:
 
     # centered "Months later"
-    centered "Meses después"
+    centered "Meses después."
 
 # game/script.rpy:1366
 translate spanish Final2_058a281e:
@@ -1606,7 +1606,7 @@ translate spanish Final2_fe7cc9ee:
 translate spanish Final2_4449eb44:
 
     # "People thought that so much therapy had finally taken its toll."
-    "La gente creyó que tanta terapia le termino por pasar factura."
+    "La gente creyó que tanta terapia le terminó por pasar factura."
 
 # game/script.rpy:1372
 translate spanish Final2_a9a19516:
@@ -1642,13 +1642,13 @@ translate spanish Final2_4435e2ca:
 translate spanish Final2_5494f8a5:
 
     # "Soon, people began leaving the town or simply disappearing."
-    "Al poco tiempo la gente empezó a dejar el pueblo o desaparecían sin más."
+    "Al poco tiempo, la gente empezó a dejar el pueblo o desaparecía sin más."
 
 # game/script.rpy:1389
 translate spanish Final2_b39227ec:
 
     # "Who knows."
-    "Quien sabe."
+    "Quién sabe."
 
 # game/script.rpy:1394
 translate spanish Final2_0fd63213:
@@ -1660,7 +1660,7 @@ translate spanish Final2_0fd63213:
 translate spanish Final2_b765bb9e:
 
     # "No one did anything directly, but all it took was a small spark to ignite the flame."
-    "Nadie hacia nada directamente pero solo era necesaria una pequeña chispa para encender la llama."
+    "Nadie hacia nada directamente, pero solo era necesaria una pequeña chispa para encender la llama."
 
 # game/script.rpy:1398
 translate spanish Final2_2431797b:
@@ -1672,7 +1672,7 @@ translate spanish Final2_2431797b:
 translate spanish Final2_bc0d2f55:
 
     # "It was a relatively small community, but the images seen after the “incident” suggested there had been many people, judging by the number of bodies."
-    "Era una comunidad relativamente pequeña pero las imágenes que se veían tras el “incidente” darían a entender que había muchas personas por la cantidad de cuerpos."
+    "Era una comunidad relativamente pequeña, pero las imágenes que se veían tras el “incidente” darían a entender que había muchas personas por la cantidad de cuerpos."
 
 # game/script.rpy:1402
 translate spanish Final2_7734df84:
@@ -1690,7 +1690,7 @@ translate spanish Final2_cc44264a:
 translate spanish Final2_895609c9:
 
     # "Others that the small tensions finally exploded because of some madman."
-    "Otros que las pequeñas tensiones acabaron por estallar causa de algún loco."
+    "Otros que las pequeñas tensiones acabaron por estallar a causa de algún loco."
 
 # game/script.rpy:1408
 translate spanish Final2_6091af08:
@@ -1774,25 +1774,25 @@ translate spanish Final2_5bc28660:
 translate spanish Final2_2c03d49b:
 
     # "We grow as people based on our childhood and the memories we hold."
-    "Crecemos como personas en base a nuestra infancia y a las memorias que tenemos."
+    "Crecemos como personas en base a nuestra infancia y a las memorias que poseemos."
 
 # game/script.rpy:1473
 translate spanish Final2_60403283:
 
     # "It’s not completely accurate, but a turbulent childhood often leads to depressive, aggressive, or psychotic behavior…"
-    "No es algo completamente exacto pero una infancia turbulenta suele dar pie a un comportamiento depresivo, agresivo, psicótico..."
+    "No es algo completamente exacto, pero una infancia turbulenta suele dar pie a un comportamiento depresivo, agresivo, psicótico..."
 
 # game/script.rpy:1475
 translate spanish Final2_333c76bc:
 
     # "On the contrary, a joyful childhood full of affection usually forms more empathetic people."
-    "Por el contrario, una infancia alegre llena de afecto suele formar personas más empáticas."
+    "Por el contrario, una infancia alegre y llena de afecto suele formar personas más empáticas."
 
 # game/script.rpy:1477
 translate spanish Final2_60fc996c:
 
     # "But is it possible for a person to be born good and remain so despite everything bad that happens to them?"
-    "Pero, ¿es posible que una persona nazca siendo buena y que pese a todo lo malo que le pase permanezca así?"
+    "Pero, ¿es posible que una persona nazca siendo buena y que, pese a todo lo malo que le pase, permanezca así?"
 
 # game/script.rpy:1479
 translate spanish Final2_a69409e7:
@@ -1816,7 +1816,7 @@ translate spanish Final2_642c3141:
 translate spanish Final2_6c9e6b86:
 
     # "If you restored their memory, they would become a monster again; on the other hand, if you didn’t, you would be robbing them of their reason for living."
-    "Si le devolvieses la memoria volvería a ser un monstruo, aunque por otro lado si no se la devolvieses estarías arrebatándole su razón de vida."
+    "Si le devolvieses la memoria volvería a ser un monstruo; por otro lado, si no se la devolvieses estarías arrebatándole su razón de vida."
 
 # game/script.rpy:1487
 translate spanish Final2_b601abba:
@@ -1834,7 +1834,7 @@ translate spanish Final2_4d69ce65:
 translate spanish Final2_b342d59f:
 
     # "If heaven and hell exist, logic tells us that the wicked will be punished for all eternity."
-    "Si existen el cielo y el infierno la lógica nos dice que aquel que es malvado será castigado durante toda la eternidad."
+    "Si existen el cielo y el infierno, la lógica nos dice que aquel que es malvado será castigado durante toda la eternidad."
 
 # game/script.rpy:1493
 translate spanish Final2_5ec98cac:
@@ -1846,7 +1846,7 @@ translate spanish Final2_5ec98cac:
 translate spanish Final2_d7e06e9d:
 
     # "I have no objective answer to these dilemmas, and I could go on talking about the very concept of existence itself."
-    "No tengo una respuesta objetiva ante estos dilemas y podría ponerme a hablar sobre el propio concepto de la existencia misma."
+    "No tengo una respuesta objetiva ante estos dilemas, y podría ponerme a hablar sobre el propio concepto de la existencia misma."
 
 # game/script.rpy:1497
 translate spanish Final2_ba80350f:
@@ -1858,13 +1858,13 @@ translate spanish Final2_ba80350f:
 translate spanish Final2_79325a2d:
 
     # "I am merely a narrator created by someone so that a reader like you can see their ideas and feelings brought to life."
-    "Solo soy un narrador creado por alguien para que un lector como tu vea sus ideas y sentimientos plasmados."
+    "Solo soy un narrador creado por alguien para que un lector como tú vea sus ideas y sentimientos plasmados."
 
 # game/script.rpy:1501
 translate spanish Final2_aca6584e:
 
     # "In the end of the universe, none of this will matter."
-    "Al final del universo todo esto no importara"
+    "Al final del universo todo esto no importará"
 
 # game/script.rpy:1503
 translate spanish Final2_b4d5544e:
@@ -1986,13 +1986,13 @@ translate spanish lago_cielo_7634c9fa:
 translate spanish lago_barcaza_97352c74:
 
     # "A small boat that they use on the town to take a stroll through the lake"
-    "Una pequeña barca que usan en el pueblo para dar pequeños paseos por el lago."
+    "Una pequeña barca que usan en el pueblo para dar paseos por el lago."
 
 # game/script.rpy:969
 translate spanish lago_barcaza_a3c68aa7:
 
     # "I remember one time that a teenager stole it to commit suicide"
-    "Recuerdo que una vez un chico la robó para tirarse al lago a suicidarse."
+    "Recuerdo que una vez un chico la robó para tirarse al lago y suicidarse."
 
 # game/script.rpy:970
 translate spanish lago_barcaza_494fdc5f:
@@ -2010,7 +2010,7 @@ translate spanish lago_barcaza_e84e8e11:
 translate spanish lago_puzle_zona_a1598c76:
 
     # "The waves that form on the lake resembles the cords of a medoly. I recall hearing this melody somewhere before..."
-    "Las ondas que se forman en el lago son melódicas. Me recuerda a algo la melodía que suena."
+    "Las ondas que se forman en el lago son melódicas. Me suena haber oido esa melodía en alguna parte."
 
 # game/script.rpy:1000
 translate spanish lago_lore_0395607b:
@@ -2915,4 +2915,126 @@ translate spanish strings:
     # game/script.rpy:1108
     old "Stay"
     new "Quedarte"
+
+# TODO: Translation updated at 2026-02-19 17:24
+
+# game/script.rpy:890
+translate spanish school_lore_8eec4006:
+
+    # stranger "Are you daydreaming again?"
+    stranger "¿Estás soñando despierto otra vez?"
+
+# game/script.rpy:892
+translate spanish school_lore_ddf371cd:
+
+    # stranger "Hey. I'm talking to you."
+    stranger "Hey, te estoy hablando a ti"
+
+# game/script.rpy:975
+translate spanish school_lore_eb00ff92:
+
+    # "Si, Si, Do, Re, Mi, Fa, Fa"
+    "Si, Si, Do, Re, Mi, Fa, Fa"
+
+# game/script.rpy:1097
+translate spanish lago_lore_7ef7080d:
+
+    # "The route continued for a long time. It was long like the night on the north and heavy like the years that everybody goes through"
+    "La ruta continuó por un largo tiempo. Era larga como la noche del norte y pesada como los años que todos atraviesan"
+
+# game/script.rpy:1112
+translate spanish lago_lore_6c6fca95:
+
+    # "That was said by the young man with a joy that did not correlate with the somber expression he had"
+    "Fue dicho por el joven hombre con una alegría que no se correspondía con la expresión sombría que portaba "
+
+# game/script.rpy:1157
+translate spanish lago_lore_8250f83a:
+
+    # "And a light appeared before me"
+    "Y una luz apareció frente a mí"
+
+# game/script.rpy:1276
+translate spanish lago_decision_stay_fc28759c:
+
+    # "Perhaps from fear"
+    "Quizás por miedo"
+
+# game/script.rpy:1277
+translate spanish lago_decision_stay_2b37f8d9:
+
+    # "Perhaps he was one of those people who, in moments of stress, would make unfunny jokes"
+    "Quizás era una de esas personas que, en momentos de estrés, hacía bromas sin gracia"
+
+# game/script.rpy:1278
+translate spanish lago_decision_stay_3b3e612a:
+
+    # "Perhaps..."
+    "Quizás..."
+
+# game/script.rpy:1316
+translate spanish lago_decision_stay_d7edd024:
+
+    # "."
+    "."
+
+# game/script.rpy:1317
+translate spanish lago_decision_stay_8dabefc6:
+
+    # ".."
+    ".."
+
+# game/script.rpy:1318
+translate spanish lago_decision_stay_a20cefa7_2:
+
+    # "..."
+    "..."
+
+# game/script.rpy:1327
+translate spanish lago_decision_stay_61dd3e76:
+
+    # centered "BAD ENDING: INSATIABLE APPETITE."
+    centered "BAD ENDING: INSATIABLE APPETITE."
+
+translate spanish strings:
+
+    # game/script.rpy:1471
+    old "Recordar"
+    new "Recordar"
+
+    # game/script.rpy:1473
+    old "El hombre de nariz grande y ojos largos"
+    new "El hombre de nariz grande y ojos largos"
+
+    # game/script.rpy:1475
+    old "Un recuerdo con Olive"
+    new "Un recuerdo con Olive"
+
+    # game/script.rpy:1477
+    old "Un viaje borroso"
+    new "Un viaje borroso"
+
+    # game/script.rpy:1479
+    old "A veces el pasado no debe revelarse"
+    new "A veces el pasado no debe revelarse"
+
+    # game/script.rpy:1481
+    old "Volver"
+    new "Volver"
+
+# TODO: Translation updated at 2026-02-19 18:24
+
+translate spanish strings:
+
+    # game/script.rpy:1469
+    old "Enter the forest"
+    new "Entrar al bosque"
+
+    # game/script.rpy:1471
+    old "Remember"
+    new "Recordar"
+
+    # game/script.rpy:1483
+    old "Turn back"
+    new "Dar la vuelta"
 

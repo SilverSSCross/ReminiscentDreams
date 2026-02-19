@@ -1466,9 +1466,9 @@ label Bosque:
     "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
 
     menu menuBosque:
-        "Entrar al bosque":
+        "Enter the forest":
             jump eleccionFinal
-        "Recordar":
+        "Remember":
             menu menuRecuerdos:
                 "El hombre de nariz grande y ojos largos" if persistent.casaDesbloqueada == True:
                     jump house_lore
@@ -1480,7 +1480,7 @@ label Bosque:
                     jump orfanato_lore
                 "Volver":
                     jump menuBosque
-        "Dar la vuelta":
+        "Turn back":
             stop music
             call screen mapa
 
