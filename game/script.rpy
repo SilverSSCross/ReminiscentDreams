@@ -519,7 +519,7 @@ label house_lore:
         $persistent.casaDesbloqueada = True
         call screen mapa 
     elif persistent.casaDesbloqueada == True:
-        jump menuRecuerdos
+        jump menu_Recuerdos
 
     #return
 
@@ -878,6 +878,7 @@ screen interior_armario_puzzle():
 
 label school_lore:
     image bg_escuela = "gui/School/puzzle/Pasillo.jpg"
+    stop music
     scene bg_escuela
     with dissolve
 
@@ -983,7 +984,10 @@ label school_lore:
         stop music
         call screen mapa 
     elif persistent.escuelaDesbloqueada == True:
-        jump menuRecuerdos
+        stop music
+        play music bosquenieve loop
+        scene BosqueBg
+        jump menu_Recuerdos
 
 #fin bloque escuela
 
@@ -1239,7 +1243,7 @@ label lago_decision_flee:
         $persistent.lagoDesbloqueado = True
         call screen mapa 
     elif persistent.lagoDesbloqueado == True:
-        jump menuRecuerdos
+        jump menu_Recuerdos
 
 label lago_decision_stay:
     "Your survival instinct displays its absence and going against every logic impulse that you didn't have, you stay in place while the creature got closer to you"
@@ -1429,7 +1433,7 @@ label orfanato_lore:
         $persistent.orfanatoDesbloqueado = True
         call screen mapa 
     elif persistent.orfanatoDesbloqueado == True:
-        jump menuRecuerdos
+        jump menu_Recuerdos
 
 #Bloque bosque############################################################################################################
 
@@ -1450,7 +1454,16 @@ label Bosque:
         "Entrar al bosque":
             jump eleccionFinal
         "Recordar":
-            menu menuRecuerdos:
+            jump menu_Recuerdos
+        "Dar la vuelta":
+            stop music
+            call screen mapa
+
+label menu_Recuerdos:
+    if not renpy.showing("BosqueBg") and not renpy.music.is_playing(channel='music'):
+                    scene BosqueBg
+                    play music bosquenieve loop
+    menu menuRecuerdos:
                 "El hombre de nariz grande y ojos largos" if persistent.casaDesbloqueada == True:
                     jump house_lore
                 "Un recuerdo con Olive" if persistent.escuelaDesbloqueada == True:
@@ -1461,9 +1474,6 @@ label Bosque:
                     jump orfanato_lore
                 "Volver":
                     jump menuBosque
-        "Dar la vuelta":
-            stop music
-            call screen mapa
 
 label eleccionFinal:
 
