@@ -272,4 +272,87 @@ translate spanish strings:
     new "vacío"
 
     old "Window"
-    new "Ventana"
+    new "Ventana"# TODO: Translation updated at 2026-02-19 17:24
+
+translate spanish strings:
+
+    # game/screens.rpy:252
+    old "Auto"
+    new ""
+
+    # game/screens.rpy:256
+    old "Prefs."
+    new ""
+
+    # game/screens.rpy:563
+    old "Versión [config.version!t]\n"
+    new ""
+
+    # game/screens.rpy:569
+    old "Hecho con {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]"
+    new ""
+
+    # game/screens.rpy:605
+    old "Página {}"
+    new ""
+
+    # game/screens.rpy:605
+    old "Grabación automática"
+    new ""
+
+    # game/screens.rpy:605
+    old "Grabación rápida"
+    new ""
+
+    # game/screens.rpy:648
+    old "{#file_time}%A, %d de %B %Y, %H:%M"
+    new ""
+
+    # game/screens.rpy:668
+    old "<"
+    new ""
+
+    # game/screens.rpy:672
+    old "{#auto_page}A"
+    new ""
+
+    # game/screens.rpy:675
+    old "{#quick_page}R"
+    new ""
+
+    # game/screens.rpy:681
+    old ">"
+    new ""
+
+    # game/screens.rpy:803
+    old "Prueba"
+    new ""
+
+    # game/screens.rpy:807
+    old "Voice volume"
+    new ""
+
+    # game/screens.rpy:1022
+    old "Intro"
+    new ""
+
+    # game/screens.rpy:1030
+    old "Arrow Keys"
+    new ""
+
+    # game/screens.rpy:1034
+    old "Escape"
+    new ""
+
+    # game/screens.rpy:1038
+    old "Ctrl"
+    new ""
+
+    # game/screens.rpy:1059
+    old "Captura la pantalla."
+    new ""
+
+    # game/screens.rpy:1108
+    old "D-Pad, Sticks"
+    new ""
+

@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/tl/spanish/common.rpy", line 1279: final string is missing a translation
+    old "I am that which drives all thinking beings, even towards their own destruction. I am that which scholars covet and for which they would be willing to sell their souls to the devil. What am I?"
+                                                                                                                                                                                                         ^
+
+Ren'Py Version: Ren'Py 8.5.0.25111603
+Mon Feb 16 18:47:29 2026

@@ -17,7 +17,7 @@ default persistent.orfanatoDesbloqueado = False
 
 #Fin Bloque if para cada lore
 
-define th = Character("Therapist")
+define th = Character(_("Therapist"))
 transform character_Base:
     xpos 0.3
     ypos 0.2
@@ -38,12 +38,12 @@ image th:
     pause 0.5
 
     repeat
-define mc = Character("You")
+define mc = Character(_("You"))
 define np = Character("News of Helsinki")
 define mf = Character("Mefi")
 define stranger = Character("???")
-define kid = Character("Student")
-define Profe = Character("Teacher")
+define kid = Character(_("Student"))
+define Profe = Character(_("Teacher"))
 image unkown:
     "gui/Bosque/FinalMalo/Animacion/Ojos1.jpg"
     pause 0.2
@@ -78,7 +78,7 @@ image unkown:
     repeat
 
 define ol = Character("Olive")
-define ft = Character("Father?")
+define ft = Character(_("Father?"))
 define sl = Character("Sluagh")
 image SluaghFrame1 = "gui/SluaghFrame1.png"
 
@@ -348,6 +348,8 @@ screen casa():
 
 label house_puzzle:
 
+    $persistent.casaDesbloqueada = False
+
     mc "Im going home."
 
     scene black
@@ -386,16 +388,16 @@ label padre:
     jump puzzle_loop
 
 label libro:
-    $Correct_Answer = "Knowledge"
+    $Correct_Answer = renpy.translate_string(_("knowledge"))
     show screen casa
     "It appears to have an inscription."
-    $Answer = renpy.input("I am that which drives all thinking beings, even towards their own destruction. I am that which scholars covet and for which they would be willing to sell their souls to the devil. What am I?")
-    if Answer != Correct_Answer:
+    $Answer = renpy.input(_("I am that which drives all thinking beings, even towards their own destruction. I am that which scholars covet and for which they would be willing to sell their souls to the devil. What am I?"))
+    if Answer.lower() != Correct_Answer:
         show screen casa
         mc "No, I don't think that will do anything, gotta find more information. \nCould there be anything useful here?"
         window hide
         jump puzzle_loop
-    if Answer == Correct_Answer:
+    if Answer.lower() == Correct_Answer:
         hide screen casa
         hide th
         hide TherapyBg
@@ -513,7 +515,11 @@ label house_lore:
 
     "You come back to reality."
 
-    call screen mapa
+    if persistent.casaDesbloqueada == False:
+        $persistent.casaDesbloqueada = True
+        call screen mapa 
+    elif persistent.casaDesbloqueada == True:
+        jump menu_Recuerdos
 
     #return
 
@@ -527,6 +533,8 @@ default Armario_Open = False
 default Profesora_tip = False
 
 label school_puzzle:
+
+    $persistent.escuelaDesbloqueada = False
 
     mc "I'm gonna check something in my old school"
 
@@ -870,6 +878,7 @@ screen interior_armario_puzzle():
 
 label school_lore:
     image bg_escuela = "gui/School/puzzle/Pasillo.jpg"
+    stop music
     scene bg_escuela
     with dissolve
 
@@ -970,9 +979,15 @@ label school_lore:
 
     "You return to reality."
 
-    stop music
-
-    call screen mapa
+    if persistent.escuelaDesbloqueada == False:
+        $persistent.escuelaDesbloqueada = True
+        stop music
+        call screen mapa 
+    elif persistent.escuelaDesbloqueada == True:
+        stop music
+        play music bosquenieve loop
+        scene BosqueBg
+        jump menu_Recuerdos
 
 #fin bloque escuela
 
@@ -1000,6 +1015,7 @@ image bg lore_sluagh_bg="gui/lago/presentacion_sluagh_lago_pixel.png"
 
 
 label lago:
+    $persistent.lagoDesbloqueado = False
     play music "audio/Insectos.mp3" fadein 1.0
     scene bg lago_gen with fade:
         xsize config.screen_width
@@ -1088,8 +1104,10 @@ label lago_lore:
     "*CRUNCH*"
     #Tendria que poner una imagen aqui
     #Hay que hacer una CG de eso
+
+    image CocheBg = "CG/Coche.jpg"
     
-    scene bg coche_lore with fade:
+    scene CocheBg with fade:
         xsize config.screen_width
         ysize config.screen_height
 
@@ -1207,6 +1225,7 @@ label lago_lore:
     "Panic gets to you the moment you decypher what is infront of you"
     #Introduce al Sluagh, preferiblemente el segundo frame
     show SluaghFrame2
+    play music latidocorazon
     "Their height was about two meters, and even then you weren't completley sure because of the limp and hump that this person...no, THAT creature"
     "It has a ripped yellow raincoat too short for the creature that revealed rotting flesh"
     "A piece of a tree bark impaled almos the whole body and through the chest it looked like something was coming out, although you could't distinguish what it was"
@@ -1218,19 +1237,26 @@ label lago_lore:
 
     menu:
         "Flee":
+            stop music
             jump lago_decision_flee
         "Stay":
             jump lago_decision_stay
 
 label lago_decision_flee:
     "You aren't conscious how, but you are able to escape the creature"
-    jump lago
+    if persistent.lagoDesbloqueado == False:
+        $persistent.lagoDesbloqueado = True
+        call screen mapa 
+    elif persistent.lagoDesbloqueado == True:
+        jump menu_Recuerdos
 
 label lago_decision_stay:
     "Your survival instinct displays its absence and going against every logic impulse that you didn't have, you stay in place while the creature got closer to you"
     "When the creature is just a couple centimiters away from your face you are able to distinguish an eye under the hood"
     "The creature starts to do sounds, that only could come from the darkest nightmares in existence, when suddenly it gets completley quiet"
     "You get to see on his beating chest an image that freezes your blood"
+
+   
     #CG de pecho Sluagh
     scene bg pecho_sluagh with fade:
         xsize config.screen_width
@@ -1240,10 +1266,10 @@ label lago_decision_stay:
     # No entiendo la frase "La criatura de dentro de la criatura araña el trozo de madera que tiene clavado atravesándolo y lo miró con una mirada que parecía juzgarlo."
     #Se refiere a literalmente eso, dentro del monstruo hay otro mas que araña el trozo de madera que lo atraviesa
     "A thought crosses your mind"
-    scene bg lore_sluagh_bg:
-        xsize config.screen_width
-        ysize config.screen_height
-    show SluaghFrame2
+    #scene bg lore_sluagh_bg with fade:
+        #xsize config.screen_width
+        #ysize config.screen_height
+    #show SluaghFrame2
     #Player
     mc "What the hell is this? A matryoshka?"
 
@@ -1257,6 +1283,7 @@ label lago_decision_stay:
     "Perhaps..."
     "..."
     "..."
+    stop music
     #Introduce sonido de corte
     play sound "audio/corte.mp3"
     "That thought of process was cut violently like when pulling a weed from the garden"
@@ -1283,22 +1310,35 @@ label lago_decision_stay:
     it proceed to bury his giant claws on the heart ripping it out"
     "Then the creature proceeded to devour it"
     #Introduce el audio de la criatura comiendo
-    play sound "audio/MonstruoComiendo (Bad Ending Lago).mp3"
+    play music "audio/MonstruoComiendo (Bad Ending Lago).mp3"
     "It was a disgusting sound. It made it sound like a pig was eating. Although that would be an insult to pigs"
     "After eating the creature only said one word"
     #Criatura
     sl "Empty..."
+
+    stop music
+
+    "."
+    ".."
+    "..."
     
     #Puedes poner el sonido de bad ending
-    scene black
+    image BELBg = "CG/BadEndingLago.jpg"
+    
+    scene BELBg with fade:
+        xsize config.screen_width
+        ysize config.screen_height
     play sound "audio/SonidoCartelBadEnding.mp3"
-    centered "{color=#732020}BAD ENDING: INSATIABLE APPETITE."
+    centered "BAD ENDING: INSATIABLE APPETITE."
+
+    return
 
 
 
 #Bloque Orfanato#####################################################################################
 
 label orfanato:    
+    $persistent.orfanatoDesbloqueado = False
     call screen orfanato_general
 
 label orfanato_puzle:
@@ -1409,7 +1449,11 @@ label orfanato_lore:
     mc "I should get out of this place"
     
     #Se llama al mapa automaticamente
-    call screen mapa
+    if persistent.orfanatoDesbloqueado == False:
+        $persistent.orfanatoDesbloqueado = True
+        call screen mapa 
+    elif persistent.orfanatoDesbloqueado == True:
+        jump menu_Recuerdos
 
 #Bloque bosque############################################################################################################
 
@@ -1426,12 +1470,30 @@ label Bosque:
 
     "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
 
-    menu:
-        "Entrar al bosque":
+    menu menuBosque:
+        "Enter the forest":
             jump eleccionFinal
-        "Dar la vuelta":
+        "Remember":
+            jump menu_Recuerdos
+        "Turn back":
             stop music
             call screen mapa
+
+label menu_Recuerdos:
+    if not renpy.showing("BosqueBg") and not renpy.music.is_playing(channel='music'):
+                    scene BosqueBg
+                    play music bosquenieve loop
+    menu menuRecuerdos:
+                "The man with the big nose and the man with the long eyes" if persistent.casaDesbloqueada == True:
+                    jump house_lore
+                "A memento with Olive" if persistent.escuelaDesbloqueada == True:
+                    jump school_lore
+                "A blurry trip" if persistent.lagoDesbloqueado == True:
+                    jump lago_lore
+                "Sometimes the past must not be unveiled" if persistent.orfanatoDesbloqueado == True:
+                    jump orfanato_lore
+                "Return":
+                    jump menuBosque
 
 label eleccionFinal:
 

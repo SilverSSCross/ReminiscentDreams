@@ -1257,3 +1257,24 @@ translate spanish strings:
     # renpy/common/_errorhandling.rpym:885
     old "Parsing the script failed."
     new ""
+
+    old "Therapist"
+    new "Psicólogo"
+
+    old "You"
+    new "Tú"
+
+    old "Student"
+    new "Estudiante"
+
+    old "Teacher"
+    new "Estudiante"
+
+    old "Father?"
+    new "Papá?"
+
+    old "knowledge"
+    new "conocimiento"
+
+    old "I am that which drives all thinking beings, even towards their own destruction. I am that which scholars covet and for which they would be willing to sell their souls to the devil. What am I?"
+    new "Soy aquello que mueve a todo ser pensante inclusive hacia su propia destrucción. Soy aquello que los eruditos codician y por lo que estarían dispuestos a venderle su alma al diablo. ¿Qué soy?"
