@@ -1283,6 +1283,15 @@ label lago_decision_stay:
 
 #Bloque Orfanato
 #Backgrounds
+image bg orfanato_generalbg:
+    "gui/orfanato/orfanato_general_pixel.png"
+    xsize config.screen_width
+    ysize config.screen_height
+
+image bg orfanato_puzlebg:
+    "gui/orfanato/orfanato_puzle_pixel.png"
+    xsize config.screen_width
+    ysize config.screen_height
 #Lore
 image bg orfanato_pasado:
     "gui/orfanato/lore/OrfanatoPast.jpg"
@@ -1292,8 +1301,7 @@ image bg orfanato_quemado:
     "gui/orfanato/lore/OrfanatoCG.jpg"
     xsize config.screen_width
     ysize config.screen_height
-label orfanato:    
-    call screen orfanato_general
+image static_effect_orfanato=Movie(play="gui/orfanato/static_effect.webm", loop=True)
 
 
 
@@ -1302,10 +1310,23 @@ init python:
     renpy.music.register_channel("sfx1", mixer="sfx")
     renpy.music.register_channel("sfx2", mixer="sfx")
 
+#Empiezael codigo
+label orfanato:
+    $contador_texto=False
+    jump orfanato_gam
+
+label orfanato_gam:
+    scene bg orfanato_generalbg
+    call screen orfanato_general
 
 label orfanato_puzle:
+    
     $solution_orfanato = "love"
     $answer_orfanato=""
+    if(contador_texto==False):
+        "You feel like something is watching you"
+        $contador_texto=True
+    scene bg orfanato_puzlebg
     call screen orfanato_puzle_screen
     $answer_orfanato=_return
     if solution_orfanato !=answer_orfanato.lower():
@@ -1323,7 +1344,7 @@ label orfanato_lore:
     "A pained scream escapes your throat and all you can see is red"
     #Poner fondo de la escena
     scene dred
-    show SluaghFrame2:
+    show SluaghFrame2 at center:
         matrixcolor TintMatrix("#000")
     "You barely see an outline getting near"
     
@@ -1348,11 +1369,12 @@ label orfanato_lore:
     kidC "Otherwise HE will get angry"
 
     #Flash blanco a temblor en la escena
+    play sfx1 "audio/Incendio (orfanato pasado).mp3" fadein 2.0
     scene white
+    pause 0.1
     #Escena del orfanato ardiendo
     scene bg orfanato_quemado
-    play sfx1 "audio/Incendio (orfanato pasado).mp3" 
-    play sfx2 "audio/GritosPanico(orfanato pasado).mp3"
+    play sfx2 "audio/GritosPanico(orfanato pasado).mp3" fadein 4.0
     kidA "Those who are not prepared to ascend to a superior plane need to be purged"
     kidB "The dirty hand of those who lied to us should be cut off, no?"
     kidC "Once you see death cross infront of you, you learn what is real beauty on this world"
@@ -1391,8 +1413,9 @@ label orfanato_lore:
     #Gabriel (Es por la coña. Se quita y ya)
     play audio "audio/orfanato/enough.mp3"
     "ENOUGH!!!"
-    "..."
-    "..."
+    scene black
+    "."
+    ".."
     "..."
     
     "Your senses felt dampened after seeing such images"
@@ -1403,6 +1426,7 @@ label orfanato_lore:
     "Although, what you feel the most is annoyance"
     "Annoyed that a fragment of charred wood gade you a burn on the side and splash of blood got on your shirt"
     "..."
+    scene static_effect_orfanato
     "Definitely if hell existed it was this exact place"
 
     #Meter efecto RCT(televisor) y sonido
@@ -1414,6 +1438,7 @@ label orfanato_lore:
     with fade
     stop sfx1
     #Termina el flashback
+    #Mostrar la escena general
 
     "You feel like the presence watching you gets more crushing"
     mc "I should get out of this place"

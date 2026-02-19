@@ -1760,27 +1760,36 @@ screen lago_puzle:
 
 #Orfanato
 screen orfanato_general():
-    add Solid("#360000")
     #Mostrar zona de orfanato y sus opciones
     #De aqui se salta a jump label orfanato_puzle
     imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Do.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.3
+        idle "gui/School/Puzzle/FlechaAbajo.png"
+        hover "gui/School/Puzzle/FlechaAbajo_hover.png"
+        xalign 0.55
+        yalign 0.9
+        at transform:
+            zoom 0.8
+            rotate 180
         action Jump ("orfanato_puzle")
+    
     #Guardo este por si hay que moverse
-    imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Do.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.5
-        action Jump ("orfanato")
+    #imagebutton:
+    #    idle "gui/lago/Buttons/Placeholder_Do.png"
+    #    hover "gui/lago/Buttons/Blanco.png"
+    #    xalign 0.5
+    #    action Jump ("orfanato")
 
 #Puzle orfanato
 screen orfanato_puzle_screen():
-    "You feel like something is watching you"
+
+    frame:
+        xalign 0.5
+        yalign 0.3
+        vbox:
+            text "What do you see here?" size 20
     vbox:
         xalign 0.5
-        yalign 0.4
+        yalign 0.55
         spacing 10
 
         input:
@@ -1789,7 +1798,7 @@ screen orfanato_puzle_screen():
         textbutton "Confirm":
             action Return(answer_orfanato)
         textbutton "Cancel":
-            action Jump("orfanato")  #Mostrar cuerpo carbonizado y crucifixion
+            action Jump("orfanato_gam")  #Mostrar cuerpo carbonizado y crucifixion
 
     
 
