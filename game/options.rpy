@@ -151,7 +151,7 @@ define config.save_directory = "Reminiscent_Dream-1762196931"
 ##
 ## El icono mostrado en la barra de tareas.
 
-define config.window_icon = "gui/window_icon.png"
+define config.window_icon = "gui/menu_icon.png"
 
 
 ## Configuración de 'Build' ####################################################
