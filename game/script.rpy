@@ -823,6 +823,7 @@ screen armario_abierto():
 
 screen interior_armario_puzzle():
     add "gui/School/Puzzle/InteriorArmarioPuzzle.jpg"
+    modal True
 
     imagebutton:
         xpos 0.45
@@ -882,6 +883,8 @@ label school_lore:
     scene bg_escuela
     with dissolve
 
+    play music niñosescuela
+
     "You have a vague memory of this place."
 
     image stranger = "gui/School/puzzle/SiluetaNiño.png"
@@ -922,6 +925,8 @@ label school_lore:
     "You're not sure whether to feel sorry for him or be happy that he still has hope inside him after everything that's happened in his life."
 
     ol "I'm sure it's nice to have a full table."
+
+    stop music
 
     hide ol
 
