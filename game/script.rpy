@@ -120,7 +120,7 @@ label start:
 
 
     #Zona inicio pruebas
-    jump orfanato
+    
     ########################################
 
 
@@ -1400,13 +1400,14 @@ label orfanato_lore:
     mc "Ahhhgggg!!!!!!!"
     "A pained scream escapes your throat and all you can see is red"
     #Poner fondo de la escena
-    scene dred
-    show SluaghFrame2 at center:
+    scene dred with fade
+    show SluaghFrame2 at center with fade:
         matrixcolor TintMatrix("#000")
     "You barely see an outline getting near"
     
     #Escena usando el fuego
     scene expression Image("gui/Infierno.jpg")
+    play sound vela loop
     with fade
     "An abyss calls another abyss"
     "In the roar of your waterfalls"
@@ -1417,10 +1418,11 @@ label orfanato_lore:
 
     "The people of the past should stay on the past"
     "Let the dead rest"
+    stop sound
 
     #Flashback
     #Escena de una zona del orfanato sin derruir
-    scene bg orfanato_pasado
+    scene bg orfanato_pasado with fade
     kidA "From now this will be your home"
     kidB "I hope you can adapt fast"
     kidC "Otherwise HE will get angry"
@@ -1470,7 +1472,8 @@ label orfanato_lore:
     #Gabriel (Es por la coña. Se quita y ya)
     play audio "audio/orfanato/enough.mp3"
     "ENOUGH!!!"
-    scene black
+    scene static_effect_orfanato with fade
+    play sfx1 "audio/SonidoCartelBadEnding.mp3"
     "."
     ".."
     "..."
@@ -1483,12 +1486,12 @@ label orfanato_lore:
     "Although, what you feel the most is annoyance"
     "Annoyed that a fragment of charred wood gade you a burn on the side and splash of blood got on your shirt"
     "..."
-    scene static_effect_orfanato
+    
     "Definitely if hell existed it was this exact place"
 
     #Meter efecto RCT(televisor) y sonido
     #Puedes usar el q he puesto de Bad Ending ya que es estatica
-    play sfx1 "audio/SonidoCartelBadEnding.mp3"
+    
     "When the devil falls in love he also dreams of heaven"
 
     scene black
@@ -1549,27 +1552,25 @@ label menu_Recuerdos:
 
 label eleccionFinal:
 
-    menu:
-        "Final Malo":
-            jump Final1
-        "Final Verdadero":
-            jump Final2
+    python:
+        all_true = all([
+            persistent.casaDesbloqueada,
+            persistent.escuelaDesbloqueada,
+            persistent.lagoDesbloqueado,
+            persistent.orfanatoDesbloqueado
+        ])
+        
+    if all_true:
+        jump Final2
+    else:
+        jump Final1
 
-    ###############
-    #Contador para si ocurre un final u otro. Una vez estructurado el proyecto descomentar
-
-    #default numero_recuerdos = 0
-
-    #Cuando consigues un recuerdo
-
-    #label buscar_recuerdos:
-    #"Has recuperado una de tus memorias perdidas."
-    #$ cantidad_recuerdos += 1
-    #"Ahora tienes [cantidad_recuerdos] recuerdos."
+   
 
     ###############
 
-    #if cantidad_recuerdos < 4:
+    #Si todos los persistent están en true se accederá al final verdadero. 
+    #De lo contrario, se accederá al final malo
 
     # FINAL MALO BOSQUE########################################################################################################################
 

@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/tl/spanish/common.rpy", line 1279: final string is missing a translation
-    old "I am that which drives all thinking beings, even towards their own destruction. I am that which scholars covet and for which they would be willing to sell their souls to the devil. What am I?"
-                                                                                                                                                                                                         ^
+File "game/script.rpy", line 1556: invalid syntax
+    Lista de todas las variables persistentes a verificar
+                  ^^
 
-Ren'Py Version: Ren'Py 8.5.0.25111603
-Mon Feb 16 18:47:29 2026
+Ren'Py Version: Ren'Py 8.4.1.25072401
+Fri Feb 20 17:12:41 2026
