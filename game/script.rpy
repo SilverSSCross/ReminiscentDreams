@@ -1383,7 +1383,8 @@ label orfanato_gam:
 
 label orfanato_puzle:
     
-    $solution_orfanato = "love"
+    $solution_orfanato_en = "love"
+    $solution_orfanato_es = "amor"
     $answer_orfanato=""
     if(contador_texto==False):
         "You feel like something is watching you"
@@ -1391,7 +1392,7 @@ label orfanato_puzle:
     scene bg orfanato_puzlebg
     call screen orfanato_puzle_screen
     $answer_orfanato=_return
-    if solution_orfanato !=answer_orfanato.lower():
+    if solution_orfanato_en !=answer_orfanato.lower() and solution_orfanato_es !=answer_orfanato.lower():
         "Maybe is not that"
         jump orfanato_puzle
     else:
