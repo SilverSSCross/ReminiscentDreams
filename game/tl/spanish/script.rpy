@@ -574,7 +574,7 @@ translate spanish profesora_2368868a:
 translate spanish profesora_db6a9ca8:
 
     # Profe "Wait. How do YOU know!?"
-    Profe "Espera. ¿¡Como demonios lo sabes!?"
+    Profe "Espera. ¿¡Cómo demonios lo sabes!?"
 
 # game/script.rpy:689
 translate spanish profesora_13e3fdf0:
@@ -922,7 +922,7 @@ translate spanish Final1_f5d15c8b:
 translate spanish Final1_d739de4b:
 
     # "But if you have no path, what sets you apart from someone who doesn't exist?"
-    "Pero si no tienes camino ¿qué te diferencia de alguien que no existe?"
+    "Pero si no tienes camino, ¿qué te diferencia de alguien que no existe?"
 
 # game/script.rpy:1030
 translate spanish Final1_d7edd024:
@@ -2052,7 +2052,7 @@ translate spanish lago_lore_e33a07bb:
 translate spanish lago_lore_242305b3:
 
     # "Silence filled the car, only interrupted with the ocasional groan that the elder made from coughing, probably from a respiratory disease"
-    "El silencio volvió a inundar el vehículo solo interrumpido por los leves quejidos que hacia el anciano al toser de vez en cuando. Probablemente alguna enfermedad respiratoria."
+    "El silencio volvió a inundar el vehículo, solo interrumpido por los leves quejidos que hacia el anciano al toser de vez en cuando. Probablemente alguna enfermedad respiratoria."
 
 # game/script.rpy:1016
 translate spanish lago_lore_ecaf162f:
@@ -2370,7 +2370,7 @@ translate spanish lago_lore_dc92f3af:
 translate spanish lago_lore_860f0ccb:
 
     # "Their height was about two meters, and even then you weren't completley sure because of the limp and hump that this person...no, THAT creature"
-    "Medirá unos dos metros, aunque no estas completamente seguro debido a la más que notable cojera y joroba que ostenta esa persona…. No, ese ser."
+    "Medirá unos dos metros, aunque no estas completamente seguro debido a la más que notable cojera y a la joroba que ostenta esa persona…. No, ese ser."
 
 # game/script.rpy:1097
 translate spanish lago_lore_a949c5c7:
@@ -2424,7 +2424,7 @@ translate spanish lago_decision_flee_9d9b5015:
 translate spanish lago_decision_stay_18cd5fe8:
 
     # "Your survival instinct displays its absence and going against every logic impulse that you didn't have, you stay in place while the creature got closer to you"
-    "Tu instinto de supervivencia hace gala de su inexistencia y pese a cualquier impulso lógico decides quedarte en el lugar en el que estás mientras la criatura se acerca hacia ti."
+    "Tu instinto de supervivencia hace gala de su inexistencia y, pese a cualquier impulso lógico, decides quedarte en el lugar en el que estás mientras la criatura se acerca hacia ti."
 
 # game/script.rpy:1117
 translate spanish lago_decision_stay_fde8d50a:
@@ -2436,7 +2436,7 @@ translate spanish lago_decision_stay_fde8d50a:
 translate spanish lago_decision_stay_26521823:
 
     # "The creature starts to do sounds, that only could come from the darkest nightmares in existence, when suddenly it gets completley quiet"
-    "La criatura comienza a hacer una serie de gruñidos salidos de una pesadilla más que retorcida solo para de repente entrar en un estado de completo silencio y quietud."
+    "La criatura comienza a hacer una serie de gruñidos salidos de una pesadilla más que retorcida solo para, de repente, entrar en un estado de completo silencio y quietud."
 
 # game/script.rpy:1119
 translate spanish lago_decision_stay_c14f6356:
@@ -2472,7 +2472,7 @@ translate spanish lago_decision_stay_10d81ee5:
 translate spanish lago_decision_stay_a1531a68:
 
     # "Although not so strange"
-    "Pese a ello no tan extraño."
+    "Pese a ello, no tan extraño."
 
 # game/script.rpy:1135
 translate spanish lago_decision_stay_5ceab8dc:
@@ -2556,13 +2556,13 @@ translate spanish lago_decision_stay_6dc972a7:
 translate spanish lago_decision_stay_4d8d1ef9:
 
     # "In a certain way it was a blessing, knowing averything that it was approaching"
-    "Lo cual en cierto aspecto fue una bendición. Más aun teniendo en cuenta lo que se avecinaba."
+    "Lo cual, en cierto aspecto, fue una bendición. Más aun teniendo en cuenta lo que se avecinaba."
 
 # game/script.rpy:1153
 translate spanish lago_decision_stay_14fac8b9:
 
     # "The creature got closer to the boy's body kneeling beside him, in a strange way taking into account the wood fragment that impaled him, it proceed to bury his giant claws on the heart ripping it out"
-    "La criatura se acercó al torso del joven agachándose, de una manera extraña a causa del enorme trozo de madera que le atravesaba, y procedió a clavarle sus enormes garras en el corazón arrancándoselo de cuajo."
+    "La criatura se acercó al torso del joven agachándose, de una manera extraña a causa del enorme trozo de madera que le atravesaba, y procedió a clavarle sus enormes garras en el corazón, arrancándoselo de cuajo."
 
 # game/script.rpy:1155
 translate spanish lago_decision_stay_582ac3ad:
@@ -2616,7 +2616,7 @@ translate spanish orfanato_lore_6c9a1a29:
 translate spanish orfanato_lore_1d5d24ce:
 
     # mc "Ahhhgggg!!!!!!!"
-    mc "Ahhhgggg!!!!!!!"
+    mc "¡¡¡¡¡¡Ahhhgggg!!!!!!!"
 
 # game/script.rpy:1187
 translate spanish orfanato_lore_35b93f35:
@@ -3037,4 +3037,54 @@ translate spanish strings:
     # game/script.rpy:1483
     old "Turn back"
     new "Dar la vuelta"
+
+# TODO: Translation updated at 2026-02-20 17:37
+
+# game/script.rpy:1384
+translate spanish orfanato_puzle_1c668408:
+
+    # "You feel like something is watching you"
+    "Sientes que algo te está observando"
+
+# game/script.rpy:1428
+translate spanish orfanato_lore_40cc1d44:
+
+    # kidC "Otherwise HE will get angry"
+    kidC "De lo contrario, Él se enfadará"
+
+# game/script.rpy:1439
+translate spanish orfanato_lore_395866dc:
+
+    # kidC "Once you see death cross infront of you, you learn what is real beauty on this world"
+    kidC "Una vez que tienes a la muerte frente a ti, aprendes lo que es la verdadera belleza en este mundo"
+
+# game/script.rpy:1477
+translate spanish orfanato_lore_d7edd024:
+
+    # "."
+    "."
+
+# game/script.rpy:1478
+translate spanish orfanato_lore_8dabefc6:
+
+    # ".."
+    ".."
+
+translate spanish strings:
+
+    # game/script.rpy:1542
+    old "The man with the big nose and the man with the long eyes"
+    new "El hombre de la nariz grande y el hombre de los ojos largos"
+
+    # game/script.rpy:1544
+    old "A memento with Olive"
+    new "Un recuerdo con Olive"
+
+    # game/script.rpy:1546
+    old "A blurry trip"
+    new "Un viaje borroso"
+
+    # game/script.rpy:1548
+    old "Sometimes the past must not be unveiled"
+    new "A veces el pasado no debe ser desvelado"
 
