@@ -1,6 +1,7 @@
 ﻿
 # Coloca el código de tu juego en este archivo.
-image grey = Solid("#252525")
+#Colores solidos personalizados
+image dred = Solid("#420505")
 # Declara los personajes usados en el juego como en el ejemplo:
 default persistent.casaDesbloqueada = False
 default persistent.escuelaDesbloqueada = False
@@ -91,6 +92,7 @@ image ym:
     "gui/lago/Sprites/ImagenJoven2.png"
 define kidA = Character("Kid 1")
 define kidB = Character("Kid 2")
+define kidC = Character("Kid 3")
 # El juego comienza aquí.
 
 label start:
@@ -118,7 +120,7 @@ label start:
 
 
     #Zona inicio pruebas
-    #jump lago
+    
     ########################################
 
 
@@ -1011,11 +1013,12 @@ image bg lago_cielo="gui/Cielo.png"
 
 #Lore
 image bg pecho_sluagh = "gui/Pecho_Sluagh.png"
-image bg coche_lore="gui/lago/coche_pixelado_1.png"
+image bg coche_lore="gui/lago/coche_pixelado_2.jpg"
 image bg nieve_lore="gui/lago/nieve_lore_pixelated.png"
 image bg nieve_lore2="gui/lago/nieve_lore_pixelated2.png"
 image bg habitacion_lago_lore="gui/lago/habitacion_lore_pixel.png"
 image bg lore_sluagh_bg="gui/lago/presentacion_sluagh_lago_pixel.png"
+image bg bad_ending_lago="gui/lago/BadEndingLago.jpg"
 #Definir cualquier funcion que se quiera usar
 
 
@@ -1066,6 +1069,7 @@ label lago_puzle_zona:
     $ lago_solution=["7","7","1","2","3","4","4"]
     #Se define lo que introduce el jugador
     $ lago_player_input=[]
+    $ lago_player_visual=[]
         #Se inicializa un loop
     label .loop:
         call screen lago_puzle
@@ -1335,19 +1339,56 @@ label lago_decision_stay:
     play sound "audio/SonidoCartelBadEnding.mp3"
     centered "BAD ENDING: INSATIABLE APPETITE."
 
-    return
 
 
 
 #Bloque Orfanato#####################################################################################
+#Backgrounds
+image bg orfanato_generalbg:
+    "gui/orfanato/orfanato_general_pixel.png"
+    xsize config.screen_width
+    ysize config.screen_height
 
-label orfanato:    
+image bg orfanato_puzlebg:
+    "gui/orfanato/orfanato_puzle_pixel.png"
+    xsize config.screen_width
+    ysize config.screen_height
+#Lore
+image bg orfanato_pasado:
+    "gui/orfanato/lore/OrfanatoPast.jpg"
+    xsize config.screen_width
+    ysize config.screen_height
+image bg orfanato_quemado:
+    "gui/orfanato/lore/OrfanatoCG.jpg"
+    xsize config.screen_width
+    ysize config.screen_height
+image static_effect_orfanato=Movie(play="gui/orfanato/static_effect.webm", loop=True)
+
+
+
+#Codigo para que ambos sonidos del lore suenen
+init python:
+    renpy.music.register_channel("sfx1", mixer="sfx")
+    renpy.music.register_channel("sfx2", mixer="sfx")
+
+#Empiezael codigo
+label orfanato:
     $persistent.orfanatoDesbloqueado = False
+    $contador_texto=False
+    jump orfanato_gam
+
+label orfanato_gam:
+    scene bg orfanato_generalbg
     call screen orfanato_general
 
 label orfanato_puzle:
+    
     $solution_orfanato = "love"
     $answer_orfanato=""
+    if(contador_texto==False):
+        "You feel like something is watching you"
+        $contador_texto=True
+    scene bg orfanato_puzlebg
     call screen orfanato_puzle_screen
     $answer_orfanato=_return
     if solution_orfanato !=answer_orfanato.lower():
@@ -1364,13 +1405,14 @@ label orfanato_lore:
     mc "Ahhhgggg!!!!!!!"
     "A pained scream escapes your throat and all you can see is red"
     #Poner fondo de la escena
-    scene grey
-    show SluaghFrame2:
+    scene dred with fade
+    show SluaghFrame2 at center with fade:
         matrixcolor TintMatrix("#000")
     "You barely see an outline getting near"
     
     #Escena usando el fuego
     scene expression Image("gui/Infierno.jpg")
+    play sound vela loop
     with fade
     "An abyss calls another abyss"
     "In the roar of your waterfalls"
@@ -1381,21 +1423,28 @@ label orfanato_lore:
 
     "The people of the past should stay on the past"
     "Let the dead rest"
+    stop sound
 
     #Flashback
     #Escena de una zona del orfanato sin derruir
+    scene bg orfanato_pasado with fade
     kidA "From now this will be your home"
     kidB "I hope you can adapt fast"
-    kidA "Otherwise HE will get angry"
+    kidC "Otherwise HE will get angry"
 
     #Flash blanco a temblor en la escena
+    play sfx1 "audio/Incendio (orfanato pasado).mp3" fadein 2.0
+    scene white
+    pause 0.1
     #Escena del orfanato ardiendo
-
+    scene bg orfanato_quemado
+    play sfx2 "audio/GritosPanico(orfanato pasado).mp3" fadein 4.0
     kidA "Those who are not prepared to ascend to a superior plane need to be purged"
     kidB "The dirty hand of those who lied to us should be cut off, no?"
-    kidA "Once you see death cross infront of you, you learn what is real beauty on this world"
+    kidC "Once you see death cross infront of you, you learn what is real beauty on this world"
 
     #Sonido de gente quemandose y del fuego
+    #Lo pongo antes para que tenga sentido con la imagen
 
     "The noise is deafening"
     "The screaming doesn't stop no matter how hard you try"
@@ -1418,15 +1467,20 @@ label orfanato_lore:
     "Enough!"
 
     #Audio tambien
+    play sound "audio/caida.mp3"
     "PLAF!!!"
 
     "You turn your head to see the source of the noise"
     "Only to realize that it comes from a kid that jumped from a window"
-
-    #Gabriel
+    stop sfx1
+    stop sfx2
+    #Gabriel (Es por la coña. Se quita y ya)
+    play audio "audio/orfanato/enough.mp3"
     "ENOUGH!!!"
-    "..."
-    "..."
+    scene static_effect_orfanato with fade
+    play sfx1 "audio/SonidoCartelBadEnding.mp3"
+    "."
+    ".."
     "..."
     
     "Your senses felt dampened after seeing such images"
@@ -1437,17 +1491,19 @@ label orfanato_lore:
     "Although, what you feel the most is annoyance"
     "Annoyed that a fragment of charred wood gade you a burn on the side and splash of blood got on your shirt"
     "..."
+    
     "Definitely if hell existed it was this exact place"
 
     #Meter efecto RCT(televisor) y sonido
     #Puedes usar el q he puesto de Bad Ending ya que es estatica
-
+    
     "When the devil falls in love he also dreams of heaven"
 
     scene black
     with fade
-
+    stop sfx1
     #Termina el flashback
+    #Mostrar la escena general
 
     "You feel like the presence watching you gets more crushing"
     mc "I should get out of this place"
@@ -1501,27 +1557,25 @@ label menu_Recuerdos:
 
 label eleccionFinal:
 
-    menu:
-        "Final Malo":
-            jump Final1
-        "Final Verdadero":
-            jump Final2
+    python:
+        all_true = all([
+            persistent.casaDesbloqueada,
+            persistent.escuelaDesbloqueada,
+            persistent.lagoDesbloqueado,
+            persistent.orfanatoDesbloqueado
+        ])
+        
+    if all_true:
+        jump Final2
+    else:
+        jump Final1
 
-    ###############
-    #Contador para si ocurre un final u otro. Una vez estructurado el proyecto descomentar
-
-    #default numero_recuerdos = 0
-
-    #Cuando consigues un recuerdo
-
-    #label buscar_recuerdos:
-    #"Has recuperado una de tus memorias perdidas."
-    #$ cantidad_recuerdos += 1
-    #"Ahora tienes [cantidad_recuerdos] recuerdos."
+   
 
     ###############
 
-    #if cantidad_recuerdos < 4:
+    #Si todos los persistent están en true se accederá al final verdadero. 
+    #De lo contrario, se accederá al final malo
 
     # FINAL MALO BOSQUE########################################################################################################################
 

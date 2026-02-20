@@ -1694,52 +1694,52 @@ init python:
 
 #Puzle lago
 screen lago_puzle:
-    #text "[lago_player_input]":
-    #    xalign 0.5
-    #    yalign 0.1
+    text "[lago_player_visual]":
+        xalign 0.5
+        yalign 0.1
     #Se introducen las funcionalidades de los botones
     imagebutton:
         idle "gui/lago/Imagenes/onda_puzle_final.png"
         hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
         xpos 100
         ypos 200
-        action [Function(lago_player_input.append, "1"),Function(reproducir_sonido, "audio/Lago/do-stretched.ogg")]
+        action [Function(lago_player_input.append, "1"),Function(reproducir_sonido, "audio/Lago/do-stretched.ogg"), Function(lago_player_visual.append, "Do")]
     imagebutton:
         idle "gui/lago/Imagenes/onda_puzle_final.png"
         hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
         xpos 500
         ypos 200
-        action [Function(lago_player_input.append, "2"), Function(reproducir_sonido, "audio/Lago/re-stretched.ogg")]
+        action [Function(lago_player_input.append, "2"), Function(reproducir_sonido, "audio/Lago/re-stretched.ogg"), Function(lago_player_visual.append, "Re")]
     imagebutton:
         idle "gui/lago/Imagenes/onda_puzle_final.png"
         hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
         xpos 900
         ypos 200
-        action [Function(lago_player_input.append, "3"),Function(reproducir_sonido, "audio/Lago/mi-stretched.ogg")]
+        action [Function(lago_player_input.append, "3"),Function(reproducir_sonido, "audio/Lago/mi-stretched.ogg"), Function(lago_player_visual.append, "Mi")]
     imagebutton:
         idle "gui/lago/Imagenes/onda_puzle_final.png"
         hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
         xpos 1300
         ypos 200
-        action [Function(lago_player_input.append, "4"), Function(reproducir_sonido, "audio/Lago/fa-stretched.ogg")]
+        action [Function(lago_player_input.append, "4"), Function(reproducir_sonido, "audio/Lago/fa-stretched.ogg"), Function(lago_player_visual.append, "Fa")]
     imagebutton:
         idle "gui/lago/Imagenes/onda_puzle_final.png"
         hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
         xpos 300
         ypos 500
-        action [Function(lago_player_input.append, "5"),Function(reproducir_sonido, "audio/Lago/sol-stretched.ogg")]
+        action [Function(lago_player_input.append, "5"),Function(reproducir_sonido, "audio/Lago/sol-stretched.ogg"), Function(lago_player_visual.append, "Sol")]
     imagebutton:
         idle "gui/lago/Imagenes/onda_puzle_final.png"
         hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
         xpos 700
         ypos 500
-        action [Function(lago_player_input.append, "6"), Function(reproducir_sonido, "audio/Lago/la-stretched.ogg")]
+        action [Function(lago_player_input.append, "6"), Function(reproducir_sonido, "audio/Lago/la-stretched.ogg"), Function(lago_player_visual.append, "La")]
     imagebutton:
         idle "gui/lago/Imagenes/onda_puzle_final.png"
         hover "gui/lago/Imagenes/onda_puzle_final_hover.png"
         xpos 1100
         ypos 500
-        action [Function(lago_player_input.append, "7"),Function(reproducir_sonido, "audio/Lago/si-stretched.ogg")]
+        action [Function(lago_player_input.append, "7"),Function(reproducir_sonido, "audio/Lago/si-stretched.ogg"), Function(lago_player_visual.append, "Si")]
     imagebutton:
         idle "gui/lago/Buttons/confirmar_puzle_lago_pixel_hover.png"
         hover "gui/lago/Buttons/confirmar_puzle_lago_pixel.png"
@@ -1760,27 +1760,36 @@ screen lago_puzle:
 
 #Orfanato
 screen orfanato_general():
-    add Solid("#360000")
     #Mostrar zona de orfanato y sus opciones
     #De aqui se salta a jump label orfanato_puzle
     imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Do.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.3
+        idle "gui/School/Puzzle/FlechaAbajo.png"
+        hover "gui/School/Puzzle/FlechaAbajo_hover.png"
+        xalign 0.55
+        yalign 0.9
+        at transform:
+            zoom 0.8
+            rotate 180
         action Jump ("orfanato_puzle")
+    
     #Guardo este por si hay que moverse
-    imagebutton:
-        idle "gui/lago/Buttons/Placeholder_Do.png"
-        hover "gui/lago/Buttons/Blanco.png"
-        xalign 0.5
-        action Jump ("orfanato")
+    #imagebutton:
+    #    idle "gui/lago/Buttons/Placeholder_Do.png"
+    #    hover "gui/lago/Buttons/Blanco.png"
+    #    xalign 0.5
+    #    action Jump ("orfanato")
 
 #Puzle orfanato
 screen orfanato_puzle_screen():
-    "You feel like something is watching you"
+
+    frame:
+        xalign 0.5
+        yalign 0.3
+        vbox:
+            text "What do you see here?" size 20
     vbox:
         xalign 0.5
-        yalign 0.4
+        yalign 0.55
         spacing 10
 
         input:
@@ -1789,7 +1798,7 @@ screen orfanato_puzle_screen():
         textbutton "Confirm":
             action Return(answer_orfanato)
         textbutton "Cancel":
-            action Jump("orfanato")  #Mostrar cuerpo carbonizado y crucifixion
+            action Jump("orfanato_gam")  #Mostrar cuerpo carbonizado y crucifixion
 
     
 
