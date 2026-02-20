@@ -1786,7 +1786,7 @@ screen orfanato_puzle_screen():
         xalign 0.5
         yalign 0.3
         vbox:
-            text "What do you see here?" size 20
+            text "What emotion this view evoke on you?" size 20
     vbox:
         xalign 0.5
         yalign 0.55
