@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 1556: invalid syntax
-    Lista de todas las variables persistentes a verificar
-                  ^^
+File "game/screens.rpy", line 300: 'Start' is not a keyword argument or valid child of the imagebutton statement.
+    Start()
+         ^
 
-Ren'Py Version: Ren'Py 8.4.1.25072401
-Fri Feb 20 17:12:41 2026
+Ren'Py Version: Ren'Py 8.5.0.25111603
+Sun Feb 22 18:30:32 2026
