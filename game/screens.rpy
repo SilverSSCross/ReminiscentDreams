@@ -288,49 +288,92 @@ style quick_button_text:
 ## ofrece navegación a los otros menús y al inicio del juego.
 
 screen navigation():
-
     vbox:
-        style_prefix "navigation"
+        imagebutton:
+            idle "gui/overlay/play.jfif"
+            hover "gui/overlay/play.jfif"
+            xpos 1.5
+            ypos 4.0
+            at transform:
+                zoom 0.2
+            
+            action Start()
+        imagebutton:
+            idle "gui/overlay/load.jfif"
+            hover "gui/overlay/load.jfif"
+            xpos 1.5
+            ypos 6.0
+            at transform:
+                zoom 0.2
+            action ShowMenu("load")
+        imagebutton:
+            idle "gui/overlay/options.jfif"
+            hover "gui/overlay/options.jfif"
+            xpos 4.5
+            ypos 2.5
+            at transform:
+                zoom 0.2
+            action ShowMenu("preferences")
+        imagebutton:
+            idle "gui/overlay/about.jfif"
+            hover "gui/overlay/about.jfif"
+            xpos 0.2
+            ypos 4.5
+            at transform:
+                zoom 0.2
+            action ShowMenu("about")
+        imagebutton:
+            idle "gui/overlay/exit.jfif"
+            hover "gui/overlay/exit.jfif"
+            xpos 4.5
+            ypos 2.0
+            at transform:
+                zoom 0.2
+            action Quit(confirm=not main_menu)
 
-        xpos gui.navigation_xpos
-        yalign 0.5
 
-        spacing gui.navigation_spacing
+    # vbox:
+    #     style_prefix "navigation"
 
-        if main_menu:
+    #     xpos gui.navigation_xpos
+    #     yalign 0.5
 
-            textbutton _("Start") action Start()
+    #     spacing gui.navigation_spacing
 
-        else:
+    #     if main_menu:
 
-            textbutton _("Record") action ShowMenu("history")
+    #         textbutton _("Start") action Start()
 
-            textbutton _("Save") action ShowMenu("save")
+    #     else:
 
-        textbutton _("Load") action ShowMenu("load")
+    #         textbutton _("Record") action ShowMenu("history")
 
-        textbutton _("Options") action ShowMenu("preferences")
+    #         textbutton _("Save") action ShowMenu("save")
 
-        if _in_replay:
+    #     textbutton _("Load") action ShowMenu("load")
 
-            textbutton _("End Repetition") action EndReplay(confirm=True)
+    #     textbutton _("Options") action ShowMenu("preferences")
 
-        elif not main_menu:
+    #     if _in_replay:
 
-            textbutton _("Main Menu") action MainMenu()
+    #         textbutton _("End Repetition") action EndReplay(confirm=True)
 
-        textbutton _("About") action ShowMenu("about")
+    #     elif not main_menu:
 
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+    #         textbutton _("Main Menu") action MainMenu()
 
-            ## La ayuda no es necesaria ni relevante en dispositivos móviles.
-            textbutton _("Help") action ShowMenu("help")
+    #     textbutton _("About") action ShowMenu("about")
 
-        if renpy.variant("pc"):
+    #     if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-            ## El botón de salida está prohibido en iOS y no es necesario en
-            ## Android y Web.
-            textbutton _("Exit") action Quit(confirm=not main_menu)
+    #         ## La ayuda no es necesaria ni relevante en dispositivos móviles.
+    #         textbutton _("Help") action ShowMenu("help")
+
+    #     if renpy.variant("pc"):
+
+    #         ## El botón de salida está prohibido en iOS y no es necesario en
+    #         ## Android y Web.
+    #         textbutton _("Exit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -358,8 +401,7 @@ screen main_menu():
     add gui.main_menu_background
 
     ## Este marco vacío oscurece el menu principal.
-    frame:
-        style "main_menu_frame"
+    
 
     ## La sentencia 'use' incluye otra pantalla dentro de esta. El contenido
     ## real del menú principal está en la pantalla de navegación.
@@ -368,12 +410,12 @@ screen main_menu():
     if gui.show_name:
 
         vbox:
-            style "main_menu_vbox"
+            # style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            # text "[config.name!t]":
+            #     style "main_menu_title"
 
-            text "[config.version]":
+            text "V[config.version]":
                 style "main_menu_version"
 
 
@@ -473,7 +515,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
                     transclude
 
-    use navigation
+    #use navigation
 
     textbutton _("Return"):
         style "return_button"
