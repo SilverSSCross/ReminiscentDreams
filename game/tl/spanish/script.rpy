@@ -3088,3 +3088,11 @@ translate spanish strings:
     old "Sometimes the past must not be unveiled"
     new "A veces el pasado no debe ser desvelado"
 
+    old "You feel that this is a place you should only enter with all your memories."
+    new "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos."
+
+    old "You feel like something is watching you."
+    new "Sientes como algo te observa."
+
+    old "Maybe is not that."
+    new "Quizas no sea eso."

@@ -282,7 +282,7 @@ translate spanish strings:
 
     # game/screens.rpy:256
     old "Prefs."
-    new ""
+    new "Opc."
 
     # game/screens.rpy:563
     old "Versión [config.version!t]\n"
@@ -356,3 +356,11 @@ translate spanish strings:
     old "D-Pad, Sticks"
     new ""
 
+    old "What emotion does this view evoke on you?"
+    new "¿Qué emoción te provoca esto?"
+
+    old "Confirm"
+    new "Confirmar"
+
+    old "Cancel "
+    new "Cancelar"

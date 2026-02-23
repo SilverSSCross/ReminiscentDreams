@@ -289,91 +289,47 @@ style quick_button_text:
 
 screen navigation():
     vbox:
-        imagebutton:
-            idle "gui/overlay/play.jfif"
-            hover "gui/overlay/play.jfif"
-            xpos 1.5
-            ypos 4.0
-            at transform:
-                zoom 0.2
-            
-            action Start()
-        imagebutton:
-            idle "gui/overlay/load.jfif"
-            hover "gui/overlay/load.jfif"
-            xpos 1.5
-            ypos 6.0
-            at transform:
-                zoom 0.2
-            action ShowMenu("load")
-        imagebutton:
-            idle "gui/overlay/options.jfif"
-            hover "gui/overlay/options.jfif"
-            xpos 4.5
-            ypos 2.5
-            at transform:
-                zoom 0.2
-            action ShowMenu("preferences")
-        imagebutton:
-            idle "gui/overlay/about.jfif"
-            hover "gui/overlay/about.jfif"
-            xpos 0.2
-            ypos 4.5
-            at transform:
-                zoom 0.2
-            action ShowMenu("about")
-        imagebutton:
-            idle "gui/overlay/exit.jfif"
-            hover "gui/overlay/exit.jfif"
-            xpos 4.5
-            ypos 2.0
-            at transform:
-                zoom 0.2
-            action Quit(confirm=not main_menu)
+        style_prefix "navigation"
 
+        xpos gui.navigation_xpos
+        yalign 0.5
 
-    # vbox:
-    #     style_prefix "navigation"
+        spacing gui.navigation_spacing
 
-    #     xpos gui.navigation_xpos
-    #     yalign 0.5
+        if main_menu:
 
-    #     spacing gui.navigation_spacing
+            textbutton _("Start") action Start()
 
-    #     if main_menu:
+        else:
 
-    #         textbutton _("Start") action Start()
+            textbutton _("Record") action ShowMenu("history")
 
-    #     else:
+            textbutton _("Save") action ShowMenu("save")
 
-    #         textbutton _("Record") action ShowMenu("history")
+        textbutton _("Load") action ShowMenu("load")
 
-    #         textbutton _("Save") action ShowMenu("save")
+        textbutton _("Options") action ShowMenu("preferences")
 
-    #     textbutton _("Load") action ShowMenu("load")
+        if _in_replay:
 
-    #     textbutton _("Options") action ShowMenu("preferences")
+            textbutton _("End Repetition") action EndReplay(confirm=True)
 
-    #     if _in_replay:
+        elif not main_menu:
 
-    #         textbutton _("End Repetition") action EndReplay(confirm=True)
+            textbutton _("Main Menu") action MainMenu()
 
-    #     elif not main_menu:
+        textbutton _("About") action ShowMenu("about")
 
-    #         textbutton _("Main Menu") action MainMenu()
+        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
 
-    #     textbutton _("About") action ShowMenu("about")
+            ## La ayuda no es necesaria ni relevante en dispositivos móviles.
+            textbutton _("Help") action ShowMenu("help")
 
-    #     if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-    #         ## La ayuda no es necesaria ni relevante en dispositivos móviles.
-    #         textbutton _("Help") action ShowMenu("help")
-
-    #     if renpy.variant("pc"):
+        if renpy.variant("pc"):
 
     #         ## El botón de salida está prohibido en iOS y no es necesario en
     #         ## Android y Web.
-    #         textbutton _("Exit") action Quit(confirm=not main_menu)
+            textbutton _("Exit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -405,7 +361,52 @@ screen main_menu():
 
     ## La sentencia 'use' incluye otra pantalla dentro de esta. El contenido
     ## real del menú principal está en la pantalla de navegación.
-    use navigation
+    vbox:
+        imagebutton:
+            idle "gui/overlay/play.png"
+            hover "gui/overlay/play_hover.png"
+            xpos 1.5
+            ypos 4.3
+            at transform:
+                zoom 0.2
+            focus_mask True
+            action Start()
+        imagebutton:
+            idle "gui/overlay/load.png"
+            hover "gui/overlay/load_hover.png"
+            xpos 1.5
+            ypos 5.0
+            at transform:
+                zoom 0.26
+            focus_mask True
+            action ShowMenu("load")
+        imagebutton:
+            idle "gui/overlay/options.png"
+            hover "gui/overlay/options_hover.png"
+            xpos 4.5
+            ypos 2.5
+            at transform:
+                zoom 0.2
+            focus_mask True
+            action ShowMenu("preferences")
+        imagebutton:
+            idle "gui/overlay/help.png"
+            hover "gui/overlay/help_hover.png"
+            xpos 0.2
+            ypos 4.5
+            at transform:
+                zoom 0.2
+            focus_mask True
+            action ShowMenu("help")
+        imagebutton:
+            idle "gui/overlay/exit.png"
+            hover "gui/overlay/exit_hover.png"
+            xpos 4.5
+            ypos 2.0
+            at transform:
+                zoom 0.2
+            focus_mask True
+            action Quit(confirm=not main_menu)
 
     if gui.show_name:
 
@@ -515,7 +516,7 @@ screen game_menu(title, scroll=None, yinitial=0.0, spacing=0):
 
                     transclude
 
-    #use navigation
+    use navigation
 
     textbutton _("Return"):
         style "return_button"
@@ -1839,7 +1840,7 @@ screen orfanato_puzle_screen():
 
         textbutton "Confirm":
             action Return(answer_orfanato)
-        textbutton "Cancel":
+        textbutton "Cancel ":
             action Jump("orfanato_gam")  #Mostrar cuerpo carbonizado y crucifixion
 
     

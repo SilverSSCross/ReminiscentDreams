@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 300: 'Start' is not a keyword argument or valid child of the imagebutton statement.
-    Start()
-         ^
+File "game/script.rpy", line 1391: expected statement.
+    _("You feel like something is watching you.")
+                                                 ^
+
+File "game/script.rpy", line 1397: expected statement.
+    _("Maybe is not that.")
+                           ^
 
 Ren'Py Version: Ren'Py 8.5.0.25111603
-Sun Feb 22 18:30:32 2026
+Mon Feb 23 03:41:28 2026

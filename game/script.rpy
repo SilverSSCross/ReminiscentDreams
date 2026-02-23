@@ -1338,6 +1338,7 @@ label lago_decision_stay:
         ysize config.screen_height
     play sound "audio/SonidoCartelBadEnding.mp3"
     centered "BAD ENDING: INSATIABLE APPETITE."
+    return
 
 
 
@@ -1373,6 +1374,7 @@ init python:
 
 #Empiezael codigo
 label orfanato:
+    stop music
     $persistent.orfanatoDesbloqueado = False
     $contador_texto=False
     jump orfanato_gam
@@ -1383,16 +1385,17 @@ label orfanato_gam:
 
 label orfanato_puzle:
     
-    $solution_orfanato = "love"
+    $solution_orfanato_en = "love"
+    $solution_orfanato_es = "amor"
     $answer_orfanato=""
     if(contador_texto==False):
-        "You feel like something is watching you"
+        "You feel like something is watching you."
         $contador_texto=True
     scene bg orfanato_puzlebg
     call screen orfanato_puzle_screen
     $answer_orfanato=_return
-    if solution_orfanato !=answer_orfanato.lower():
-        "Maybe is not that"
+    if solution_orfanato_en !=answer_orfanato.lower() and solution_orfanato_es !=answer_orfanato.lower():
+        "Maybe is not that."
         jump orfanato_puzle
     else:
         jump orfanato_lore
@@ -1528,7 +1531,7 @@ label Bosque:
 
     play music bosquenieve loop
 
-    "Sientes que este es un lugar al que solo deberias entrar con todos tus recuerdos"
+    "You feel that this is a place you should only enter with all your memories."
 
     menu menuBosque:
         "Enter the forest":
