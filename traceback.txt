@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/tl/spanish/screens.rpy", line 365, in script
-    old "Cancel"
-Exception: A translation for "Cancel" already exists at game/tl/spanish/common.rpy:431.
+  File "game/tl/spanish/screens.rpy", line 280, in script
+    old "Auto"
+Exception: A translation for "Auto" already exists at game/tl/spanish/common.rpy:1283.
 
 -- Full Traceback ------------------------------------------------------------
 
 Traceback (most recent call last):
-  File "game/tl/spanish/screens.rpy", line 365, in script
-    old "Cancel"
+  File "game/tl/spanish/screens.rpy", line 280, in script
+    old "Auto"
   File "renpy/ast.py", line 3044, in execute
     renpy.translation.add_string_translation(self.language, self.old, self.new, newloc)
     ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -18,9 +18,9 @@ Traceback (most recent call last):
     ~~~~~~~^^^^^^^^^^^^^^^^^^
   File "renpy/translation/__init__.py", line 532, in add
     raise Exception('A translation for "{}" already exists at {}:{}.'.format(quote_unicode(old), fn, line))
-Exception: A translation for "Cancel" already exists at game/tl/spanish/common.rpy:431.
+Exception: A translation for "Auto" already exists at game/tl/spanish/common.rpy:1283.
 
 Windows-11-10.0.26200-SP0 AMD64
 Ren'Py 8.5.0.25111603
 Reminiscent Dream 1.0
-Mon Feb 23 03:45:26 2026
+Mon Feb 23 12:23:43 2026

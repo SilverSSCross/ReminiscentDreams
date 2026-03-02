@@ -1268,7 +1268,7 @@ translate spanish strings:
     new "Estudiante"
 
     old "Teacher"
-    new "Estudiante"
+    new "Profesora"
 
     old "Father?"
     new "Papá?"
