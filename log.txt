@@ -1,79 +1,28 @@
-2026-02-27 23:12:28 UTC
+2026-03-05 21:16:46 UTC
 Windows-11-10.0.26200-SP0
 Ren'Py 8.5.0.25111603
 
-Early init took 56 ms
-Loading error handling took 55 ms
-Loading script took 530 ms
-Loading save slot metadata took 124 ms
+Early init took 42 ms
+Loading error handling took 20 ms
+Loading script took 127 ms
+Loading save slot metadata took 22 ms
 Loading persistent took 0 ms
-Running init code took 78 ms
-Loading analysis data took 15 ms
-Analyze and compile ATL took 2 ms
-Reloading save slot metadata took 123 ms
-Dump and make backups took 35 ms
+Running init code took 45 ms
+Loading analysis data took 6 ms
+Analyze and compile ATL took 1 ms
+Reloading save slot metadata took 11 ms
+Dump and make backups took 34 ms
 Cleaning cache took 0 ms
 Making clean stores took 0 ms
-Initial gc took 32 ms
+Initial gc took 31 ms
 DPI scale factor: 1.000000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 253 ms
-Init translation took 1 ms
+Creating interface object took 257 ms
+Init translation took 0 ms
 Cleaning stores took 0 ms
-Load screen analysis took 45 ms
+Load screen analysis took 39 ms
 Analyze screens took 1 ms
 Save screen analysis took 0 ms
 Save pyanalysis took 0 ms
 Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 289 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server
-Resetting cache.
-Early init took 9 ms
-Loading error handling took 19 ms
-Loading script took 128 ms
-Loading save slot metadata took 14 ms
-Loading persistent took 0 ms
-Running init code took 30 ms
-Loading analysis data took 8 ms
-Analyze and compile ATL took 3 ms
-Reloading save slot metadata took 10 ms
-Dump and make backups took 34 ms
-Cleaning cache took 0 ms
-Making clean stores took 1 ms
-Initial gc took 40 ms
-DPI scale factor: 1.000000
-Creating interface object took 0 ms
-Init translation took 1 ms
-Cleaning stores took 0 ms
-Load screen analysis took 37 ms
-Analyze screens took 2 ms
-Save screen analysis took 0 ms
-Save pyanalysis took 0 ms
-Save bytecode took 0 ms
-Running _start took 1 ms
-Interface start took 282 ms
-
-Initializing gl2 renderer:
-primary display bounds: (0, 0, 3440, 1440)
-swap interval: 1 frames
-Windowed mode.
-Vendor: 'NVIDIA Corporation'
-Renderer: 'NVIDIA GeForce RTX 3060 Ti/PCIe/SSE2'
-Version: '4.6.0 NVIDIA 580.88'
-Display Info: <Info({'bitsize': 32, 'bytesize': 4, 'masks': (16711680, 65280, 255, 0), 'shifts': (16, 8, 0, 0), 'losses': (0, 0, 0, 8), 'current_w': 3440, 'current_h': 1440, 'refresh_rate': 60, 'hw': False, 'wm': True, 'video_mem': 268435456, 'blit_hw': False, 'blit_hw_CC': False, 'blit_hw_A': False, 'blit_sw': False, 'blit_sw_CC': False, 'blit_sw_A': False})>
-Screen sizes: virtual=(1920, 1080) physical=(1920, 1080) drawable=(1920, 1080)
-Maximum texture size: 4096x4096
-INFO:renpy_warp_service:service thread started. periodically scanning ports for warp server

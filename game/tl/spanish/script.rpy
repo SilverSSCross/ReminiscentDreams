@@ -505,31 +505,31 @@ translate spanish school_puzzle_f84ed20b:
     mc "Voy a echarle un vistazo a mi vieja escuela."
 
 # game/script.rpy:562
-translate spanish niño_19a32d24:
+translate spanish nino_19a32d24:
 
     # kid "Hey you. Wanna know something?"
     kid "Hey tú. ¿Quieres saber algo?"
 
 # game/script.rpy:565
-translate spanish niño_69bda58f:
+translate spanish nino_69bda58f:
 
     # kid "Ralf told me that Eeli is getting a lot of great grades, it's weird coming from the laziest kid in the class."
     kid "Ralf me dijo que Eeli esta consiguiendo muy buenas notas. Es raro viniendo del crio más vago de la clase"
 
 # game/script.rpy:566
-translate spanish niño_ae042795:
+translate spanish nino_ae042795:
 
     # kid "So he followed him in the recess \nand he found out that the teacher gives him chores in her house in exchange of getting good grades."
     kid "Asi que lo siguió en el descanso \ny descubrió que le hace las tareas de casa a la profesora a cambio de buenas notas. "
 
 # game/script.rpy:567
-translate spanish niño_ecc90040:
+translate spanish nino_ecc90040:
 
     # kid "Do you think i could do it too?"
     kid "¿Crees que podría hacerlo también?"
 
 # game/script.rpy:568
-translate spanish niño_71888ff4:
+translate spanish nino_71888ff4:
 
     # mc "I don't think you should, but you gave me an idea, now go kid."
     mc "No creo que debas. Aunque me has dado una idea, ahora vete chico."
@@ -3096,3 +3096,12 @@ translate spanish strings:
 
     old "Maybe is not that."
     new "Quizas no sea eso."
+
+    old "Kid 1"
+    new "Niño 1"
+
+    old "Kid 2"
+    new "Niño 2"
+
+    old "Kid 3"
+    new "Niño 3"

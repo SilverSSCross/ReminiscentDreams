@@ -547,7 +547,7 @@ label school_puzzle:
     stop audio
     stop sound
 
-    play music niñosescuela loop
+    play music ninosescuela loop
     
     
     label scene_escuela:
@@ -574,7 +574,7 @@ label school_puzzle:
         call screen mapa
         with dissolve
 
-label niño:
+label nino:
     show screen pasillo
     kid "Hey you. Wanna know something?"
     menu:
@@ -724,9 +724,9 @@ screen pasillo():
         xpos 0.7
         ypos 0.5
         focus_mask True
-        idle Transform("gui/School/Puzzle/SiluetaNiño.png", zoom=0.75)
-        hover Transform("gui/School/Puzzle/SiluetaNiño_hover.png", zoom=0.75)
-        action Jump("niño")
+        idle Transform("gui/School/Puzzle/SiluetaNino.png", zoom=0.75)
+        hover Transform("gui/School/Puzzle/SiluetaNino_hover.png", zoom=0.75)
+        action Jump("nino")
 
 screen taquilla_cerrada():
     add "gui/School/Puzzle/Taquilla_Cerrada.jpg"
@@ -885,11 +885,11 @@ label school_lore:
     scene bg_escuela
     with dissolve
 
-    play music niñosescuela
+    play music ninosescuela
 
     "You have a vague memory of this place."
 
-    image stranger = "gui/School/puzzle/SiluetaNiño.png"
+    image stranger = "gui/School/puzzle/SiluetaNino.png"
     show stranger at down
     with dissolve
 
@@ -970,7 +970,7 @@ label school_lore:
 
     stop music
 
-    play music niñosescuela
+    play music ninosescuela
 
     scene bg_escuela
 
